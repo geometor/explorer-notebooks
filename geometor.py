@@ -4,6 +4,9 @@ import sympy.plotting as spp
 import sympy.geometry as spg
 from sympy.abc import x, y
 from matplotlib import style
+import matplotlib.pyplot as mpp
+from sympy.plotting.plot import List2DSeries
+
 style.use('dark_background')
 
 def circle(pt_c, pt_r):
