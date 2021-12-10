@@ -13,18 +13,21 @@ sp.init_printing()
 pts = []
 elements = []
 
-def mpp_init():
+def mpp_init(limx, limy):
     '''configure the MatPlotLib stateful plot engine'''
     mp.style.use('dark_background')
     mpp.figure(num=1, figsize=(6, 4), dpi=120)
     mpp.gca().set_aspect('equal')
-    mpp.gca().set_xlim(-3, 3)
-    mpp.gca().set_ylim(-2, 2)
-    mpp.gca().set_title('TEST')
+    # TODO: pass in limits
+    x1, x2 = limx
+    mpp.gca().set_xlim(x1, x2)
+    y1, y2 = limy
+    mpp.gca().set_ylim(y1, y2)
+    mpp.gca().set_title('G E O M E T O R', fontdict={'color': '#960'})
     mpp.axis(False)
     mpp.tight_layout()
 
-    
+# create independent elements
 def circle(pt_c, pt_r):
     '''make sympy.geometry.Circle from two points'''
     el = spg.Circle(pt_c, pt_c.distance(pt_r))
@@ -43,11 +46,12 @@ def point(pt_x, pt_y):
 #     pt.parents = []
     return pt
 
+# plot elements to mpp
 def plot_circle(circle):
     '''takes a sympy circle and plots with the matplotlib Circle patch'''
     center = (circle.center.x.evalf(), circle.center.y.evalf())
     radius = circle.radius
-    el = mpp.Circle(center, radius, color='gold', linestyle=':', fill=False)
+    el = mpp.Circle(center, radius, color='#c09', linestyle=':', fill=False)
     ax = mpp.gca()
     ax.add_patch(el)
     
@@ -57,6 +61,15 @@ def plot_line(el, bounds):
     ys = [pt.y.evalf() for pt in ends]
 
     mpp.plot(xs, ys, color='#999', linestyle=':', linewidth=1)    
+    
+def plot_points():
+    '''plot all the points in pts'''
+    # collect x, y values into separate arrays
+    xs = [pt.x.evalf() for pt in pts]
+    ys = [pt.y.evalf() for pt in pts]
+
+    mpp.plot(xs, ys, 'ko')
+    mpp.plot(xs, ys, 'w.')
 
 def add_point(pt):
     if not pts.count(pt):
