@@ -27,6 +27,14 @@ def mpp_init(limx, limy):
     mpp.axis(False)
     mpp.tight_layout()
 
+def begin():
+    '''create inital two points - 
+    establishing the unit for the field'''
+    pt = point(sp.Rational(-1, 2), 0)
+    add_point(pt)
+    pt = point(sp.Rational(1, 2), 0)
+    add_point(pt)
+    
 # create independent elements
 def circle(pt_c, pt_r):
     '''make sympy.geometry.Circle from two points'''
@@ -45,6 +53,36 @@ def point(pt_x, pt_y):
     pt = spg.Point(pt_x, pt_y)
 #     pt.parents = []
     return pt
+
+def bisector(pt1, pt2, bounds):
+    '''perform fundamental operations for two points
+    and add perpendicular bisector'''
+    # baseline
+    bline = add_element(line(pt1, pt2))
+    print(f'baseline: {bline}')
+    plot_line(bline, bounds)
+
+    # vesica
+    c1 = add_element(circle(pt1, pt2))
+    plot_circle(c1)
+
+    c2 = add_element(circle(pt2, pt1))
+    plot_circle(c2)
+    
+    print('\n*** points before bisector')
+    print(pts)
+    
+    # bisector
+    print('* pts_bisector')
+    pts_bisector = c1.intersection(c2)
+    print(pts_bisector)
+    
+    print('* bisector')
+    bisector = add_element(line(pts_bisector[0], pts_bisector[1]))
+
+    plot_line(bisector, bounds)
+    
+
 
 # plot elements to mpp
 def plot_circle(circle):
@@ -72,22 +110,45 @@ def plot_points():
     mpp.plot(xs, ys, 'w.')
 
 def add_point(pt):
-    if not pts.count(pt):
-        pts.append(pt)
-#     else:
-#         print(f'point: {pt} found at index: {pts.index(pt)}')
+    print(f'* add_point: {pt}')
+    if isinstance(pt, spg.Point2D):
+        if not pts.count(pt):
+            pts.append(pt)
+            print('  + ',pt)
+        else:
+            print(f'  ! {pt} found at index: {pts.index(pt)}')
+        return pt
 
 def add_intersection_points(el):
+    print(f'* add_intersection_points: {el}')
     for prev in elements:
         for pt in el.intersection(prev):
 #             pt.parents.extend([prev, el])
             add_point(pt)
 
 def add_element(el):
+    print(f'* add_element: {el}')
     add_intersection_points(el)
     if not elements.count(el):
-        elements.append(el)
+        for prev in elements:
+            print(f'    > diff: {prev.equation() - el.equation()}')
+            if prev.equation() - el.equation():
+                elements.append(el)
+                print(f'  + {el}')
+                return el
+            else:
+                print(f'''
+            ! COINCIDENT
+                {el}
+                {prev}
+                ''')
+                return prev
+        else:
+            elements.append(el)
+            print(f'  + {el}')
+            return el
     else:
-        print(f'element: {el} found at index: {elements.index(el)}')
+        print(f'  ! {el} found at index: {elements.index(el)}')
+        return el
 
 
