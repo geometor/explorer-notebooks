@@ -1,0 +1,188 @@
+''' general startup for GEOMETOR '''
+
+from collections import defaultdict
+
+import logging
+logging.basicConfig(filename='geometor.log', filemode='w', encoding='utf-8', level=logging.INFO)
+logging.info('Init Setup3')
+
+import numpy as np
+
+# sympy setup *******************************
+import sympy as sp
+import sympy.plotting as spp
+import sympy.geometry as spg
+from sympy.abc import x, y
+
+Φ = sp.GoldenRatio
+
+sp.init_printing()
+
+# create independent elements
+def circle(pt_c, pt_r):
+    '''make sympy.geometry.Circle from two points'''
+    el = spg.Circle(pt_c, pt_c.distance(pt_r))
+    return el
+
+
+def line(pt_a, pt_b):
+    '''make sympy.geometry.Line'''
+    el = spg.Line(pt_a, pt_b)
+    return el
+
+
+def point(pt_x, pt_y):
+    '''make sympy.geometry.Point'''
+    pt = spg.Point(pt_x, pt_y)
+    return pt
+
+
+
+# matplotlib ************************************
+import matplotlib as mp
+import matplotlib.pyplot as plt
+import mplcursors
+
+fig, ax = plt.subplots()
+
+def plt_init(limx, limy):
+    '''configure the MatPlotLib stateful plot engine'''
+    mp.style.use('dark_background')
+    plt.figure(num=1, figsize=(6, 4), dpi=120)
+    plt.gca().set_aspect('equal')
+    # TODO: pass in limits
+    x1, x2 = limx
+    ax.set_xlim(x1, x2)
+    y1, y2 = limy
+    plt.gca().set_ylim(y1, y2)
+    plt.gca().set_title('G E O M E T O R', fontdict={'color': '#960'})
+    plt.axis(False)
+    plt.tight_layout()
+
+
+# plot elements to plt
+def plot_circle(circle):
+    '''takes a sympy circle and plots with the matplotlib Circle patch'''
+    center = (circle.center.x.evalf(), circle.center.y.evalf())
+    radius = circle.radius
+    el = plt.Circle(center, radius, color='#c09', linestyle=':', fill=False)
+    plt.gca().add_patch(el)
+    
+    
+def plot_line(el, bounds):
+    ends = bounds.intersection(el)
+    xs = [pt.x.evalf() for pt in ends]
+    ys = [pt.y.evalf() for pt in ends]
+
+    plt.plot(xs, ys, color='#999', linestyle=':', linewidth=1)    
+    
+    
+def plot_points():
+    '''plot all the points in pts'''
+    # collect x, y values into separate arrays
+    xs = [pt.x.evalf() for pt in pts]
+    ys = [pt.y.evalf() for pt in pts]
+
+    plt.plot(xs, ys, 'ko')
+    point_plot = plt.plot(xs, ys, 'w.')
+    cursor = mplcursors.cursor(point_plot)
+    
+    def on_add(sel):
+        i = sel.index
+        sel.annotation.set_text(f'{i}:\nx: {pts[i].x}\ny: {pts[i].y}')
+        sel.annotation.arrow_patch.set(arrowstyle="simple", ec="k", fc='w')
+        
+    cursor.connect("add", on_add)
+    
+def plot_segment(pt1, pt2):
+    x1 = pt1.x.evalf()
+    x2 = pt2.x.evalf()
+    y1 = pt1.y.evalf()
+    y2 = pt2.y.evalf()
+    plt.plot([x1, x2], [y1, y2], color='#fc09', linestyle='-', linewidth=3, marker='o')  
+
+
+# model ******************************
+class Relations:
+    parents = []
+    descendents = []
+        
+points = defaultdict(Relations)
+# points = defaultdict({'parents': [], 'desc': []})
+
+pts = []
+elements = []
+
+
+def add_point(pt):
+    logging.info(f'* add_point: {pt}')
+    if isinstance(pt, spg.Point2D):
+        if not pts.count(pt):
+            pts.append(pt)
+            logging.info(f'  + {pt}')
+        else:
+            logging.info(f'  ! {pt} found at index: {pts.index(pt)}')
+        return pt
+
+    
+def add_intersection_points(el):
+    logging.info(f'* add_intersection_points: {el}')
+    for prev in elements:
+        for pt in el.intersection(prev):
+#             pt.parents.extend([prev, el])
+            add_point(pt)
+
+    
+def add_element(el):
+    logging.info(f'* add_element: {el}')
+    add_intersection_points(el)
+    if not elements.count(el):
+        for prev in elements:
+            logging.info(f'    > diff: {prev.equation() - el.equation()}')
+            if prev.equation() - el.equation():
+                elements.append(el)
+                logging.info(f'  + {el}')
+                return el
+            else:
+                logging.info(f'''
+            ! COINCIDENT
+                {el}
+                {prev}
+                ''')
+                return prev
+        else:
+            elements.append(el)
+            logging.info(f'  + {el}')
+            return el
+    else:
+        logging.info(f'  ! {el} found at index: {elements.index(el)}')
+        return el
+
+# helpers ******************************
+def begin():
+    '''create inital two points - 
+    establishing the unit for the field'''
+    pt = point(sp.Rational(-1, 2), 0)
+    add_point(pt)
+    pt = point(sp.Rational(1, 2), 0)
+    add_point(pt)
+    
+def bisector(pt1, pt2, bounds):
+    '''perform fundamental operations for two points
+    and add perpendicular bisector'''
+    
+    # baseline
+    bline = add_element(line(pt1, pt2))
+    plot_line(bline, bounds)
+
+    # vesica
+    c1 = add_element(circle(pt1, pt2))
+    plot_circle(c1)
+    c2 = add_element(circle(pt2, pt1))
+    plot_circle(c2)
+    
+    # bisector
+    pts_bisector = c1.intersection(c2)
+    bisector = add_element(line(pts_bisector[0], pts_bisector[1]))
+
+    plot_line(bisector, bounds)
