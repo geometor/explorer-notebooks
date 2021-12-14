@@ -1,0 +1,162 @@
+INFO:root:Init kepler
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  + Point2D(0, 0)
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  + Point2D(1, 0)
+INFO:root:* add_point: Point2D(0, sqrt(GoldenRatio))
+INFO:root:  + Point2D(0, sqrt(GoldenRatio))
+INFO:root:* add_element: Line2D(Point2D(0, 0), Point2D(1, 0))
+INFO:root:* add_intersection_points: Line2D(Point2D(0, 0), Point2D(1, 0))
+INFO:root:  + Line2D(Point2D(0, 0), Point2D(1, 0))
+INFO:root:* add_element: Circle(Point2D(0, 0), 1)
+INFO:root:* add_intersection_points: Circle(Point2D(0, 0), 1)
+INFO:root:* add_point: Point2D(-1, 0)
+INFO:root:  + Point2D(-1, 0)
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:    > diff: -x**2 - y**2 + y + 1
+INFO:root:  + Circle(Point2D(0, 0), 1)
+INFO:root:* add_element: Circle(Point2D(1, 0), 1)
+INFO:root:* add_intersection_points: Circle(Point2D(1, 0), 1)
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(2, 0)
+INFO:root:  + Point2D(2, 0)
+INFO:root:* add_point: Point2D(1/2, -sqrt(3)/2)
+INFO:root:  + Point2D(1/2, -sqrt(3)/2)
+INFO:root:* add_point: Point2D(1/2, sqrt(3)/2)
+INFO:root:  + Point2D(1/2, sqrt(3)/2)
+INFO:root:    > diff: -y**2 + y - (x - 1)**2 + 1
+INFO:root:  + Circle(Point2D(1, 0), 1)
+INFO:root:* add_element: Line2D(Point2D(1/2, sqrt(3)/2), Point2D(1/2, -sqrt(3)/2))
+INFO:root:* add_intersection_points: Line2D(Point2D(1/2, sqrt(3)/2), Point2D(1/2, -sqrt(3)/2))
+INFO:root:* add_point: Point2D(1/2, 0)
+INFO:root:  + Point2D(1/2, 0)
+INFO:root:* add_point: Point2D(1/2, -sqrt(3)/2)
+INFO:root:  ! Point2D(1/2, -sqrt(3)/2) found at index: 5
+INFO:root:* add_point: Point2D(1/2, sqrt(3)/2)
+INFO:root:  ! Point2D(1/2, sqrt(3)/2) found at index: 6
+INFO:root:* add_point: Point2D(1/2, -sqrt(3)/2)
+INFO:root:  ! Point2D(1/2, -sqrt(3)/2) found at index: 5
+INFO:root:* add_point: Point2D(1/2, sqrt(3)/2)
+INFO:root:  ! Point2D(1/2, sqrt(3)/2) found at index: 6
+INFO:root:    > diff: -x + y + 1/2
+INFO:root:  + Line2D(Point2D(1/2, sqrt(3)/2), Point2D(1/2, -sqrt(3)/2))
+INFO:root:* add_element: Line2D(Point2D(0, 0), Point2D(0, sqrt(GoldenRatio)))
+INFO:root:* add_intersection_points: Line2D(Point2D(0, 0), Point2D(0, sqrt(GoldenRatio)))
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(0, -1)
+INFO:root:  + Point2D(0, -1)
+INFO:root:* add_point: Point2D(0, 1)
+INFO:root:  + Point2D(0, 1)
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:    > diff: -x + y
+INFO:root:  + Line2D(Point2D(0, 0), Point2D(0, sqrt(GoldenRatio)))
+INFO:root:* add_element: Circle(Point2D(0, 0), sqrt(GoldenRatio))
+INFO:root:* add_intersection_points: Circle(Point2D(0, 0), sqrt(GoldenRatio))
+INFO:root:* add_point: Point2D(sqrt(GoldenRatio), 0)
+INFO:root:  + Point2D(sqrt(GoldenRatio), 0)
+INFO:root:* add_point: Point2D(-sqrt(GoldenRatio), 0)
+INFO:root:  + Point2D(-sqrt(GoldenRatio), 0)
+INFO:root:* add_point: Point2D(GoldenRatio/2, sqrt(-1/4 + 3*GoldenRatio/4))
+INFO:root:  + Point2D(GoldenRatio/2, sqrt(-1/4 + 3*GoldenRatio/4))
+INFO:root:* add_point: Point2D(GoldenRatio/2, -sqrt(-1/4 + 3*GoldenRatio/4))
+INFO:root:  + Point2D(GoldenRatio/2, -sqrt(-1/4 + 3*GoldenRatio/4))
+INFO:root:* add_point: Point2D(1/2, sqrt(-1/4 + GoldenRatio))
+INFO:root:  + Point2D(1/2, sqrt(-1/4 + GoldenRatio))
+INFO:root:* add_point: Point2D(1/2, -sqrt(-1/4 + GoldenRatio))
+INFO:root:  + Point2D(1/2, -sqrt(-1/4 + GoldenRatio))
+INFO:root:* add_point: Point2D(0, sqrt(GoldenRatio))
+INFO:root:  ! Point2D(0, sqrt(GoldenRatio)) found at index: 2
+INFO:root:* add_point: Point2D(0, -sqrt(GoldenRatio))
+INFO:root:  + Point2D(0, -sqrt(GoldenRatio))
+INFO:root:    > diff: -x**2 - y**2 + y + GoldenRatio
+INFO:root:  + Circle(Point2D(0, 0), sqrt(GoldenRatio))
+INFO:root:* add_element: Circle(Point2D(0, sqrt(GoldenRatio)), sqrt(GoldenRatio))
+INFO:root:* add_intersection_points: Circle(Point2D(0, sqrt(GoldenRatio)), sqrt(GoldenRatio))
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(sqrt(5/4 - GoldenRatio/4), sqrt(GoldenRatio)*(-1 + GoldenRatio)/2)
+INFO:root:  + Point2D(sqrt(5/4 - GoldenRatio/4), sqrt(GoldenRatio)*(-1 + GoldenRatio)/2)
+INFO:root:* add_point: Point2D(-sqrt(5/4 - GoldenRatio/4), sqrt(GoldenRatio)*(-1 + GoldenRatio)/2)
+INFO:root:  + Point2D(-sqrt(5/4 - GoldenRatio/4), sqrt(GoldenRatio)*(-1 + GoldenRatio)/2)
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(2*GoldenRatio*(2 - GoldenRatio), 2*sqrt(GoldenRatio)*(2 - GoldenRatio))
+INFO:root:  + Point2D(2*GoldenRatio*(2 - GoldenRatio), 2*sqrt(GoldenRatio)*(2 - GoldenRatio))
+INFO:root:* add_point: Point2D(1/2, -sqrt(-1 + 4*GoldenRatio)/2 + sqrt(GoldenRatio))
+INFO:root:  + Point2D(1/2, -sqrt(-1 + 4*GoldenRatio)/2 + sqrt(GoldenRatio))
+INFO:root:* add_point: Point2D(1/2, sqrt(-1 + 4*GoldenRatio)/2 + sqrt(GoldenRatio))
+INFO:root:  + Point2D(1/2, sqrt(-1 + 4*GoldenRatio)/2 + sqrt(GoldenRatio))
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(0, 2*sqrt(GoldenRatio))
+INFO:root:  + Point2D(0, 2*sqrt(GoldenRatio))
+INFO:root:* add_point: Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:    > diff: -x**2 + y - (y - sqrt(GoldenRatio))**2 + GoldenRatio
+INFO:root:  + Circle(Point2D(0, sqrt(GoldenRatio)), sqrt(GoldenRatio))
+INFO:root:* add_element: Line2D(Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4), Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4))
+INFO:root:* add_intersection_points: Line2D(Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4), Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4))
+INFO:root:* add_point: Point2D(sqrt(-5*GoldenRatio/8 - 3*GoldenRatio**(3/2)/8 - 3*sqrt(GoldenRatio)/8 + GoldenRatio**2/8 + GoldenRatio**3/8 + 3/4 + 3*GoldenRatio**(5/2)/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(sqrt(-5*GoldenRatio/8 - 3*GoldenRatio**(3/2)/8 - 3*sqrt(GoldenRatio)/8 + GoldenRatio**2/8 + GoldenRatio**3/8 + 3/4 + 3*GoldenRatio**(5/2)/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(-sqrt(-5*GoldenRatio/8 - 3*GoldenRatio**(3/2)/8 - 3*sqrt(GoldenRatio)/8 + GoldenRatio**2/8 + GoldenRatio**3/8 + 3/4 + 3*GoldenRatio**(5/2)/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(-sqrt(-5*GoldenRatio/8 - 3*GoldenRatio**(3/2)/8 - 3*sqrt(GoldenRatio)/8 + GoldenRatio**2/8 + GoldenRatio**3/8 + 3/4 + 3*GoldenRatio**(5/2)/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(-sqrt(2)*sqrt(-5*GoldenRatio - 3*GoldenRatio**(3/2) - 3*sqrt(GoldenRatio) + GoldenRatio**2 + GoldenRatio**3 + 6 + 3*GoldenRatio**(5/2))/4 + 1, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(-sqrt(2)*sqrt(-5*GoldenRatio - 3*GoldenRatio**(3/2) - 3*sqrt(GoldenRatio) + GoldenRatio**2 + GoldenRatio**3 + 6 + 3*GoldenRatio**(5/2))/4 + 1, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(sqrt(2)*sqrt(-5*GoldenRatio - 3*GoldenRatio**(3/2) - 3*sqrt(GoldenRatio) + GoldenRatio**2 + GoldenRatio**3 + 6 + 3*GoldenRatio**(5/2))/4 + 1, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(sqrt(2)*sqrt(-5*GoldenRatio - 3*GoldenRatio**(3/2) - 3*sqrt(GoldenRatio) + GoldenRatio**2 + GoldenRatio**3 + 6 + 3*GoldenRatio**(5/2))/4 + 1, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(0, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(0, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  ! Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4) found at index: 23
+INFO:root:* add_point: Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  ! Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4) found at index: 24
+INFO:root:* add_point: Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  ! Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4) found at index: 23
+INFO:root:* add_point: Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  ! Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4) found at index: 24
+INFO:root:    > diff: -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4
+INFO:root:  + Line2D(Point2D(-sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4), Point2D(sqrt(-9*GoldenRatio**(5/2)/8 - 3*GoldenRatio**3/8 - 3*GoldenRatio**2/8 + 3/4 + 9*sqrt(GoldenRatio)/8 + 9*GoldenRatio**(3/2)/8 + 15*GoldenRatio/8), -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4))
+INFO:root:* add_element: Circle(Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4), sqrt(1/4 + (-3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)**2))
+INFO:root:* add_intersection_points: Circle(Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4), sqrt(1/4 + (-3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)**2))
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D((-5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))*(-3*GoldenRatio**(5/2)/2 - GoldenRatio**3/2 - GoldenRatio**2/2 + sqrt(GoldenRatio)/2 + 1 + 3*GoldenRatio/2 + 3*GoldenRatio**(3/2)/2) + 1, -5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))
+INFO:root:  + Point2D((-5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))*(-3*GoldenRatio**(5/2)/2 - GoldenRatio**3/2 - GoldenRatio**2/2 + sqrt(GoldenRatio)/2 + 1 + 3*GoldenRatio/2 + 3*GoldenRatio**(3/2)/2) + 1, -5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D((-5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))*(-3*GoldenRatio**(3/2) - 3*GoldenRatio - 2 - sqrt(GoldenRatio) + GoldenRatio**2 + GoldenRatio**3 + 3*GoldenRatio**(5/2))/2, -5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))
+INFO:root:  + Point2D((-5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))*(-3*GoldenRatio**(3/2) - 3*GoldenRatio - 2 - sqrt(GoldenRatio) + GoldenRatio**2 + GoldenRatio**3 + 3*GoldenRatio**(5/2))/2, -5*GoldenRatio**(3/2) - 2*GoldenRatio - 1 + sqrt(GoldenRatio) + GoldenRatio**3 + 3*GoldenRatio**(5/2))
+INFO:root:* add_point: Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + sqrt(1 + (-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + sqrt(GoldenRatio) + 2 + 3*GoldenRatio + 3*GoldenRatio**(3/2))**2/4)/2 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + sqrt(1 + (-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + sqrt(GoldenRatio) + 2 + 3*GoldenRatio + 3*GoldenRatio**(3/2))**2/4)/2 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - sqrt(1 + (-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + sqrt(GoldenRatio) + 2 + 3*GoldenRatio + 3*GoldenRatio**(3/2))**2/4)/2 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - sqrt(1 + (-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + sqrt(GoldenRatio) + 2 + 3*GoldenRatio + 3*GoldenRatio**(3/2))**2/4)/2 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(0, -3*GoldenRatio**(3/2)/2 - 3*GoldenRatio/2 - 1 - sqrt(GoldenRatio)/2 + GoldenRatio**2/2 + GoldenRatio**3/2 + 3*GoldenRatio**(5/2)/2)
+INFO:root:  + Point2D(0, -3*GoldenRatio**(3/2)/2 - 3*GoldenRatio/2 - 1 - sqrt(GoldenRatio)/2 + GoldenRatio**2/2 + GoldenRatio**3/2 + 3*GoldenRatio**(5/2)/2)
+INFO:root:* add_point: Point2D(-48*GoldenRatio**(5/2)/73 - 32*GoldenRatio**3/73 + (-96*GoldenRatio**(5/2)/73 - 64*GoldenRatio**3/73 + 8/73 + 23*sqrt(GoldenRatio)/73 + 72*GoldenRatio/73 + 56*GoldenRatio**2/73 + 96*GoldenRatio**(3/2)/73)*(-36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 - sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73) + 4/73 + 48*sqrt(GoldenRatio)/73 + 28*GoldenRatio**2/73 + 48*GoldenRatio**(3/2)/73 + 109*GoldenRatio/73, -36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 - sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73)
+INFO:root:  + Point2D(-48*GoldenRatio**(5/2)/73 - 32*GoldenRatio**3/73 + (-96*GoldenRatio**(5/2)/73 - 64*GoldenRatio**3/73 + 8/73 + 23*sqrt(GoldenRatio)/73 + 72*GoldenRatio/73 + 56*GoldenRatio**2/73 + 96*GoldenRatio**(3/2)/73)*(-36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 - sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73) + 4/73 + 48*sqrt(GoldenRatio)/73 + 28*GoldenRatio**2/73 + 48*GoldenRatio**(3/2)/73 + 109*GoldenRatio/73, -36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 - sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73)
+INFO:root:* add_point: Point2D(-48*GoldenRatio**(5/2)/73 - 32*GoldenRatio**3/73 + (-96*GoldenRatio**(5/2)/73 - 64*GoldenRatio**3/73 + 8/73 + 23*sqrt(GoldenRatio)/73 + 72*GoldenRatio/73 + 56*GoldenRatio**2/73 + 96*GoldenRatio**(3/2)/73)*(-36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 + sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73) + 4/73 + 48*sqrt(GoldenRatio)/73 + 28*GoldenRatio**2/73 + 48*GoldenRatio**(3/2)/73 + 109*GoldenRatio/73, -36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 + sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73)
+INFO:root:  + Point2D(-48*GoldenRatio**(5/2)/73 - 32*GoldenRatio**3/73 + (-96*GoldenRatio**(5/2)/73 - 64*GoldenRatio**3/73 + 8/73 + 23*sqrt(GoldenRatio)/73 + 72*GoldenRatio/73 + 56*GoldenRatio**2/73 + 96*GoldenRatio**(3/2)/73)*(-36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 + sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73) + 4/73 + 48*sqrt(GoldenRatio)/73 + 28*GoldenRatio**2/73 + 48*GoldenRatio**(3/2)/73 + 109*GoldenRatio/73, -36*GoldenRatio**(5/2)/73 - 24*GoldenRatio**3/73 - 46*GoldenRatio/73 - 70/73 - 37*sqrt(GoldenRatio)/73 + sqrt(-12000*GoldenRatio**(9/2) - 15448*GoldenRatio**(5/2) - 17066*GoldenRatio**2 - 3216*GoldenRatio**5 - 8352*GoldenRatio**(3/2) - 5466 + 576*GoldenRatio**6 + 8684*sqrt(GoldenRatio) + 3196*GoldenRatio**4 + 1728*GoldenRatio**(11/2) + 15766*GoldenRatio + 6921*GoldenRatio**3 + 25580*GoldenRatio**(7/2))/73 + 109*GoldenRatio**(3/2)/73 + 94*GoldenRatio**2/73)
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  ! Point2D(0, 0) found at index: 0
+INFO:root:* add_point: Point2D(2*GoldenRatio*(2 - GoldenRatio), 2*sqrt(GoldenRatio)*(2 - GoldenRatio))
+INFO:root:  ! Point2D(2*GoldenRatio*(2 - GoldenRatio), 2*sqrt(GoldenRatio)*(2 - GoldenRatio)) found at index: 19
+INFO:root:* add_point: Point2D(1/2 + sqrt(2)*sqrt(-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + 3*sqrt(GoldenRatio) + 4 + 3*GoldenRatio**(3/2) + 5*GoldenRatio)/4, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(1/2 + sqrt(2)*sqrt(-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + 3*sqrt(GoldenRatio) + 4 + 3*GoldenRatio**(3/2) + 5*GoldenRatio)/4, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:* add_point: Point2D(-sqrt(2)*sqrt(-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + 3*sqrt(GoldenRatio) + 4 + 3*GoldenRatio**(3/2) + 5*GoldenRatio)/4 + 1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:  + Point2D(-sqrt(2)*sqrt(-3*GoldenRatio**(5/2) - GoldenRatio**3 - GoldenRatio**2 + 3*sqrt(GoldenRatio) + 4 + 3*GoldenRatio**(3/2) + 5*GoldenRatio)/4 + 1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)
+INFO:root:    > diff: y - (x - 1/2)**2 - (y - 3*GoldenRatio**(5/2)/4 - GoldenRatio**3/4 - GoldenRatio**2/4 + sqrt(GoldenRatio)/4 + 1/2 + 3*GoldenRatio/4 + 3*GoldenRatio**(3/2)/4)**2 + 1/4 + (-3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)**2
+INFO:root:  + Circle(Point2D(1/2, -3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4), sqrt(1/4 + (-3*GoldenRatio**(3/2)/4 - 3*GoldenRatio/4 - 1/2 - sqrt(GoldenRatio)/4 + GoldenRatio**2/4 + GoldenRatio**3/4 + 3*GoldenRatio**(5/2)/4)**2))

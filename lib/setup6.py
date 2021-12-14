@@ -1,17 +1,32 @@
 ''' general startup for GEOMETOR '''
-
 from collections import defaultdict
 
 import logging
-logging.basicConfig(filename='geometor.log', filemode='w', encoding='utf-8', level=logging.INFO)
-logging.info('Init Setup5')
 
+def log_init(name):
+    filename = f'logs/{name}.log'
+    with open(filename, 'w'):
+        pass
+
+    logging.basicConfig(
+            filename=f'logs/{name}.log', 
+            filemode='w', 
+            encoding='utf-8', 
+            level=logging.INFO
+            )
+    logging.info(f'Init {name}')
+
+# time *********************
+import datetime
 from timeit import default_timer as timer
 
-#  from concurrent.futures import ProcessPoolExecutor
+def elapsed(start_time):
+    secs = timer() - start_time
+    return str(datetime.timedelta(seconds=secs))
+
+# multiprocessing *************************************
 from multiprocessing import Pool, cpu_count
 num_workers = cpu_count()
-num_workers = 8
 
 # sympy setup *******************************
 import numpy as np
@@ -24,7 +39,6 @@ from sympy.abc import x, y
 Φ = sp.GoldenRatio
 phi = sp.Rational(1, 2) + (sp.sqrt(5) / 2)
 
-
 sp.init_printing()
 
 def set_bounds(limx, limy):
@@ -36,6 +50,13 @@ def set_bounds(limx, limy):
         )
 
 # create independent elements
+def point(x_val, y_val):
+    '''make sympy.geometry.Point'''
+#     pt = spg.Point(x_val, y_val)
+    pt = spg.Point(sp.simplify(x_val), sp.simplify(y_val))
+    return pt
+
+
 def circle(pt_c, pt_r):
     '''make sympy.geometry.Circle from two points'''
     el = spg.Circle(pt_c, pt_c.distance(pt_r))
@@ -48,11 +69,6 @@ def line(pt_a, pt_b):
     return el
 
 
-def point(pt_x, pt_y):
-    '''make sympy.geometry.Point'''
-    pt = spg.Point(pt_x, pt_y)
-    return pt
-
 
 
 # matplotlib ************************************
@@ -61,6 +77,7 @@ import matplotlib.pyplot as plt
 import mplcursors
 
 fig, ax = plt.subplots()
+
 
 def plt_init(limx, limy):
     '''configure the MatPlotLib stateful plot engine'''
@@ -93,6 +110,7 @@ def plot_line(el, bounds):
 
     plt.plot(xs, ys, color='#999', linestyle=':', linewidth=1)
 
+    
 def plot_perp_bisector(el, bounds):
     ends = bounds.intersection(el)
     xs = [pt.x.evalf() for pt in ends]
@@ -100,6 +118,7 @@ def plot_perp_bisector(el, bounds):
 
     plt.plot(xs, ys, color='#393', linestyle='-.', linewidth=1)
 
+    
 def plot_elements(elements, bounds):
     for el in elements:
         if type(el) == sp.Line2D:
@@ -173,9 +192,11 @@ def add_point(pt):
         if not pts.count(pt):
             pts.append(pt)
             logging.info(f'  + {pt}')
+            return pt
         else:
-            logging.info(f'  ! {pt} found at index: {pts.index(pt)}')
-        return pt
+            i = pts.index(pt)
+            logging.info(f'  ! {pt} found at index: {i}')
+            return pts[i]
 
 
 def add_intersection_points(el):
@@ -184,6 +205,7 @@ def add_intersection_points(el):
         for pt in el.intersection(prev):
             add_point(pt)
 
+            
 def add_intersection_points_mp(el):
     logging.info(f'* add_intersection_points: {el}')
     with Pool(num_workers) as pool:
@@ -218,6 +240,7 @@ def add_element(el):
         logging.info(f'  ! {el} found at index: {elements.index(el)}')
         return el
 
+    
 # helpers ******************************
 def begin():
     '''create inital two points -
@@ -227,6 +250,7 @@ def begin():
     pt = point(sp.Rational(1, 2), 0)
     add_point(pt)
 
+    
 def bisector(pt1, pt2):
     '''perform fundamental operations for two points
     and add perpendicular bisector'''
