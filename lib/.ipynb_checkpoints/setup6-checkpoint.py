@@ -264,8 +264,9 @@ def add_element(el):
     add_intersection_points_mp(el)
     if not elements.count(el):
         for prev in elements:
-            logging.info(f'    > diff: {prev.equation() - el.equation()}')
-            if prev.equation() - el.equation():
+            diff = (prev.equation().simplify() - el.equation().simplify()).simplify()
+            logging.info(f'    > diff: {diff}')
+            if diff:
                 elements.append(el)
                 logging.info(f'  + {el}')
                 return el

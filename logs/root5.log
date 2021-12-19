@@ -12,7 +12,7 @@ INFO:root:* add_point: Point2D(-3/2, 0)
 INFO:root:  + Point2D(-3/2, 0)
 INFO:root:* add_point: Point2D(1/2, 0)
 INFO:root:  ! Point2D(1/2, 0) found at index: 1
-INFO:root:    > diff: -y**2 + y - (x + 1/2)**2 + 1
+INFO:root:    > diff: -x**2 - x - y**2 + y + 3/4
 INFO:root:  + Circle(Point2D(-1/2, 0), 1)
 INFO:root:* add_element: Circle(Point2D(1/2, 0), 1)
 INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), 1)
@@ -24,7 +24,7 @@ INFO:root:* add_point: Point2D(0, -sqrt(3)/2)
 INFO:root:  + Point2D(0, -sqrt(3)/2)
 INFO:root:* add_point: Point2D(0, sqrt(3)/2)
 INFO:root:  + Point2D(0, sqrt(3)/2)
-INFO:root:    > diff: -y**2 + y - (x - 1/2)**2 + 1
+INFO:root:    > diff: -x**2 + x - y**2 + y + 3/4
 INFO:root:  + Circle(Point2D(1/2, 0), 1)
 INFO:root:* add_element: Line2D(Point2D(0, sqrt(3)/2), Point2D(0, -sqrt(3)/2))
 INFO:root:* add_intersection_points: Line2D(Point2D(0, sqrt(3)/2), Point2D(0, -sqrt(3)/2))
@@ -71,7 +71,7 @@ INFO:root:* add_point: Point2D(0, -sqrt(15)/2)
 INFO:root:  + Point2D(0, -sqrt(15)/2)
 INFO:root:* add_point: Point2D(0, sqrt(15)/2)
 INFO:root:  + Point2D(0, sqrt(15)/2)
-INFO:root:    > diff: -y**2 + y - (x + 1/2)**2 + 4
+INFO:root:    > diff: -x**2 - x - y**2 + y + 15/4
 INFO:root:  + Circle(Point2D(-1/2, 0), 2)
 INFO:root:* add_element: Circle(Point2D(3/2, 0), 2)
 INFO:root:* add_intersection_points: Circle(Point2D(3/2, 0), 2)
@@ -93,7 +93,7 @@ INFO:root:* add_point: Point2D(1/2, sqrt(3))
 INFO:root:  + Point2D(1/2, sqrt(3))
 INFO:root:* add_point: Point2D(1/2, -sqrt(3))
 INFO:root:  + Point2D(1/2, -sqrt(3))
-INFO:root:    > diff: -y**2 + y - (x - 3/2)**2 + 4
+INFO:root:    > diff: -x**2 + 3*x - y**2 + y + 7/4
 INFO:root:  + Circle(Point2D(3/2, 0), 2)
 INFO:root:* add_element: Line2D(Point2D(1/2, -sqrt(3)), Point2D(1/2, sqrt(3)))
 INFO:root:* add_intersection_points: Line2D(Point2D(1/2, -sqrt(3)), Point2D(1/2, sqrt(3)))
@@ -168,7 +168,7 @@ INFO:root:* add_point: Point2D(1/2, -2)
 INFO:root:  + Point2D(1/2, -2)
 INFO:root:* add_point: Point2D(1/2, 2)
 INFO:root:  + Point2D(1/2, 2)
-INFO:root:    > diff: -y**2 + y - (x - 1/2)**2 + 4
+INFO:root:    > diff: -x**2 + x - y**2 + y + 15/4
 INFO:root:  + Circle(Point2D(1/2, 0), 2)
 INFO:root:* add_element: Circle(Point2D(-3/2, 0), 2)
 INFO:root:* add_intersection_points: Circle(Point2D(-3/2, 0), 2)
@@ -200,7 +200,7 @@ INFO:root:* add_point: Point2D(-1/2, sqrt(3))
 INFO:root:  + Point2D(-1/2, sqrt(3))
 INFO:root:* add_point: Point2D(-1/2, -sqrt(3))
 INFO:root:  + Point2D(-1/2, -sqrt(3))
-INFO:root:    > diff: -y**2 + y - (x + 3/2)**2 + 4
+INFO:root:    > diff: -x**2 - 3*x - y**2 + y + 7/4
 INFO:root:  + Circle(Point2D(-3/2, 0), 2)
 INFO:root:* add_element: Line2D(Point2D(-1/2, -sqrt(3)), Point2D(-1/2, sqrt(3)))
 INFO:root:* add_intersection_points: Line2D(Point2D(-1/2, -sqrt(3)), Point2D(-1/2, sqrt(3)))
@@ -372,7 +372,7 @@ INFO:root:* add_point: Point2D(-sqrt(2)*sqrt(5*sqrt(5) + 13)/10 - 1/10, -sqrt(2)
 INFO:root:  + Point2D(-sqrt(2)*sqrt(5*sqrt(5) + 13)/10 - 1/10, -sqrt(2)*sqrt(5*sqrt(5) + 13)/5 - 1/5)
 INFO:root:* add_point: Point2D(sqrt(5)/2, 0)
 INFO:root:  ! Point2D(sqrt(5)/2, 0) found at index: 50
-INFO:root:    > diff: -y**2 + y - (x + 1/2)**2 + (1/2 + sqrt(5)/2)**2
+INFO:root:    > diff: -x**2 - x - y**2 + y + sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(-1/2, 0), 1/2 + sqrt(5)/2)
 INFO:root:* add_element: Circle(Point2D(1/2, 0), 1/2 + sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), 1/2 + sqrt(5)/2)
@@ -418,7 +418,7 @@ INFO:root:* add_point: Point2D(0, sqrt(sqrt(5)/2 + 5/4))
 INFO:root:  ! Point2D(0, sqrt(sqrt(5)/2 + 5/4)) found at index: 61
 INFO:root:* add_point: Point2D(0, -sqrt(sqrt(5)/2 + 5/4))
 INFO:root:  ! Point2D(0, -sqrt(sqrt(5)/2 + 5/4)) found at index: 62
-INFO:root:    > diff: -y**2 + y - (x - 1/2)**2 + (1/2 + sqrt(5)/2)**2
+INFO:root:    > diff: -x**2 + x - y**2 + y + sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(1/2, 0), 1/2 + sqrt(5)/2)
 INFO:root:* add_element: Circle(Point2D(-1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(-1/2, 0), -1/2 + sqrt(5)/2)
@@ -454,7 +454,7 @@ INFO:root:* add_point: Point2D(-sqrt(5)/2, 0)
 INFO:root:  ! Point2D(-sqrt(5)/2, 0) found at index: 49
 INFO:root:* add_point: Point2D(-sqrt(5)/2, 0)
 INFO:root:  ! Point2D(-sqrt(5)/2, 0) found at index: 49
-INFO:root:    > diff: -y**2 + y - (x + 1/2)**2 + (-1/2 + sqrt(5)/2)**2
+INFO:root:    > diff: -x**2 - x - y**2 + y - sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(-1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_element: Circle(Point2D(1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), -1/2 + sqrt(5)/2)
@@ -494,7 +494,7 @@ INFO:root:* add_point: Point2D(0, sqrt(5/4 - sqrt(5)/2))
 INFO:root:  ! Point2D(0, sqrt(5/4 - sqrt(5)/2)) found at index: 95
 INFO:root:* add_point: Point2D(0, -sqrt(5/4 - sqrt(5)/2))
 INFO:root:  ! Point2D(0, -sqrt(5/4 - sqrt(5)/2)) found at index: 96
-INFO:root:    > diff: -y**2 + y - (x - 1/2)**2 + (-1/2 + sqrt(5)/2)**2
+INFO:root:    > diff: -x**2 + x - y**2 + y - sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_element: Line2D(Point2D(-1/2, 0), Point2D(0, sqrt(sqrt(5)/2 + 5/4)))
 INFO:root:* add_intersection_points: Line2D(Point2D(-1/2, 0), Point2D(0, sqrt(sqrt(5)/2 + 5/4)))
@@ -616,7 +616,7 @@ INFO:root:* add_point: Point2D(1/2 - sqrt(5/4 - sqrt(5)/2)*(-sqrt(2*sqrt(5) + 10
 INFO:root:  + Point2D(1/2 - sqrt(5/4 - sqrt(5)/2)*(-sqrt(2*sqrt(5) + 10)/4 - sqrt(10*sqrt(5) + 50)/20), -sqrt(5/4 - sqrt(5)/2))
 INFO:root:* add_point: Point2D((-7*sqrt(2*sqrt(5) + 5) - 3*sqrt(10*sqrt(5) + 25) + sqrt(10*sqrt(5) + 50)/2 + 3*sqrt(2*sqrt(5) + 10)/2)/(sqrt(10)*sqrt(sqrt(5) + 5) + 3*sqrt(2)*sqrt(sqrt(5) + 5) + 6*sqrt(5)*sqrt(2*sqrt(5) + 5) + 14*sqrt(2*sqrt(5) + 5)), (sqrt(5) + 3)*sqrt(30*sqrt(5) + 70)/(sqrt(10)*sqrt(sqrt(5) + 5) + 3*sqrt(2)*sqrt(sqrt(5) + 5) + 6*sqrt(5)*sqrt(2*sqrt(5) + 5) + 14*sqrt(2*sqrt(5) + 5)))
 INFO:root:  + Point2D((-7*sqrt(2*sqrt(5) + 5) - 3*sqrt(10*sqrt(5) + 25) + sqrt(10*sqrt(5) + 50)/2 + 3*sqrt(2*sqrt(5) + 10)/2)/(sqrt(10)*sqrt(sqrt(5) + 5) + 3*sqrt(2)*sqrt(sqrt(5) + 5) + 6*sqrt(5)*sqrt(2*sqrt(5) + 5) + 14*sqrt(2*sqrt(5) + 5)), (sqrt(5) + 3)*sqrt(30*sqrt(5) + 70)/(sqrt(10)*sqrt(sqrt(5) + 5) + 3*sqrt(2)*sqrt(sqrt(5) + 5) + 6*sqrt(5)*sqrt(2*sqrt(5) + 5) + 14*sqrt(2*sqrt(5) + 5)))
-INFO:root:    > diff: x*sqrt(2*sqrt(5) + 10)/4 + y - y*(-3/4 - sqrt(5)/4) - sqrt(2*sqrt(5) + 10)/8
+INFO:root:    > diff: x*sqrt(2*sqrt(5) + 10)/4 + sqrt(5)*y/4 + 7*y/4 - sqrt(2*sqrt(5) + 10)/8
 INFO:root:  + Line2D(Point2D(1/2, 0), Point2D(-sqrt(5)/4 - 1/4, sqrt(sqrt(5)/8 + 5/8)))
 INFO:root:* add_element: Circle(Point2D(0, sqrt(sqrt(5)/2 + 5/4)), sqrt((-sqrt(sqrt(5)/8 + 5/8) + sqrt(sqrt(5)/2 + 5/4))**2 + (1/4 + sqrt(5)/4)**2))
 INFO:root:* add_intersection_points: Circle(Point2D(0, sqrt(sqrt(5)/2 + 5/4)), sqrt((-sqrt(sqrt(5)/8 + 5/8) + sqrt(sqrt(5)/2 + 5/4))**2 + (1/4 + sqrt(5)/4)**2))
@@ -684,5 +684,5 @@ INFO:root:* add_point: Point2D((-sqrt(2*sqrt(5) + 10)/4 - sqrt(10*sqrt(5) + 50)/
 INFO:root:  + Point2D((-sqrt(2*sqrt(5) + 10)/4 - sqrt(10*sqrt(5) + 50)/20)*(-36474971583*sqrt(10*sqrt(5) + 30)/13564488872 - 89212995755*sqrt(2)/13564488872 - 32246394575*sqrt(2*sqrt(5) + 6)/13564488872 - 16883402945*sqrt(10)/13564488872 - 2397990515*sqrt(sqrt(5) + 3)/13564488872 - sqrt(154141919)*sqrt(-11760580992*sqrt(10)*sqrt(sqrt(5) + 3) - 29269765280*sqrt(2) - 5796223360*sqrt(2)*sqrt(sqrt(5) + 3) - 4097940384*sqrt(10) - 4390031680*sqrt(sqrt(5) + 3) + 17248520514*sqrt(5) + 12585912448*sqrt(5)*sqrt(sqrt(5) + 3) + 65369837915)/616567676 + sqrt(2*sqrt(5) + 10)/16 + sqrt(10*sqrt(5) + 50)/16 + 34360683079*sqrt(5)/6782244436 + 882068205*sqrt(5*sqrt(5) + 15)/330841192 + 107310626245/6782244436) + 1/2, -36474971583*sqrt(10*sqrt(5) + 30)/13564488872 - 89212995755*sqrt(2)/13564488872 - 32246394575*sqrt(2*sqrt(5) + 6)/13564488872 - 16883402945*sqrt(10)/13564488872 - 2397990515*sqrt(sqrt(5) + 3)/13564488872 - sqrt(154141919)*sqrt(-11760580992*sqrt(10)*sqrt(sqrt(5) + 3) - 29269765280*sqrt(2) - 5796223360*sqrt(2)*sqrt(sqrt(5) + 3) - 4097940384*sqrt(10) - 4390031680*sqrt(sqrt(5) + 3) + 17248520514*sqrt(5) + 12585912448*sqrt(5)*sqrt(sqrt(5) + 3) + 65369837915)/616567676 + sqrt(2*sqrt(5) + 10)/16 + sqrt(10*sqrt(5) + 50)/16 + 34360683079*sqrt(5)/6782244436 + 882068205*sqrt(5*sqrt(5) + 15)/330841192 + 107310626245/6782244436)
 INFO:root:* add_point: Point2D((-sqrt(2*sqrt(5) + 10)/4 - sqrt(10*sqrt(5) + 50)/20)*(-36474971583*sqrt(10*sqrt(5) + 30)/13564488872 - 89212995755*sqrt(2)/13564488872 - 32246394575*sqrt(2*sqrt(5) + 6)/13564488872 - 16883402945*sqrt(10)/13564488872 - 2397990515*sqrt(sqrt(5) + 3)/13564488872 + sqrt(154141919)*sqrt(-11760580992*sqrt(10)*sqrt(sqrt(5) + 3) - 29269765280*sqrt(2) - 5796223360*sqrt(2)*sqrt(sqrt(5) + 3) - 4097940384*sqrt(10) - 4390031680*sqrt(sqrt(5) + 3) + 17248520514*sqrt(5) + 12585912448*sqrt(5)*sqrt(sqrt(5) + 3) + 65369837915)/616567676 + sqrt(2*sqrt(5) + 10)/16 + sqrt(10*sqrt(5) + 50)/16 + 34360683079*sqrt(5)/6782244436 + 882068205*sqrt(5*sqrt(5) + 15)/330841192 + 107310626245/6782244436) + 1/2, -36474971583*sqrt(10*sqrt(5) + 30)/13564488872 - 89212995755*sqrt(2)/13564488872 - 32246394575*sqrt(2*sqrt(5) + 6)/13564488872 - 16883402945*sqrt(10)/13564488872 - 2397990515*sqrt(sqrt(5) + 3)/13564488872 + sqrt(154141919)*sqrt(-11760580992*sqrt(10)*sqrt(sqrt(5) + 3) - 29269765280*sqrt(2) - 5796223360*sqrt(2)*sqrt(sqrt(5) + 3) - 4097940384*sqrt(10) - 4390031680*sqrt(sqrt(5) + 3) + 17248520514*sqrt(5) + 12585912448*sqrt(5)*sqrt(sqrt(5) + 3) + 65369837915)/616567676 + sqrt(2*sqrt(5) + 10)/16 + sqrt(10*sqrt(5) + 50)/16 + 34360683079*sqrt(5)/6782244436 + 882068205*sqrt(5*sqrt(5) + 15)/330841192 + 107310626245/6782244436)
 INFO:root:  + Point2D((-sqrt(2*sqrt(5) + 10)/4 - sqrt(10*sqrt(5) + 50)/20)*(-36474971583*sqrt(10*sqrt(5) + 30)/13564488872 - 89212995755*sqrt(2)/13564488872 - 32246394575*sqrt(2*sqrt(5) + 6)/13564488872 - 16883402945*sqrt(10)/13564488872 - 2397990515*sqrt(sqrt(5) + 3)/13564488872 + sqrt(154141919)*sqrt(-11760580992*sqrt(10)*sqrt(sqrt(5) + 3) - 29269765280*sqrt(2) - 5796223360*sqrt(2)*sqrt(sqrt(5) + 3) - 4097940384*sqrt(10) - 4390031680*sqrt(sqrt(5) + 3) + 17248520514*sqrt(5) + 12585912448*sqrt(5)*sqrt(sqrt(5) + 3) + 65369837915)/616567676 + sqrt(2*sqrt(5) + 10)/16 + sqrt(10*sqrt(5) + 50)/16 + 34360683079*sqrt(5)/6782244436 + 882068205*sqrt(5*sqrt(5) + 15)/330841192 + 107310626245/6782244436) + 1/2, -36474971583*sqrt(10*sqrt(5) + 30)/13564488872 - 89212995755*sqrt(2)/13564488872 - 32246394575*sqrt(2*sqrt(5) + 6)/13564488872 - 16883402945*sqrt(10)/13564488872 - 2397990515*sqrt(sqrt(5) + 3)/13564488872 + sqrt(154141919)*sqrt(-11760580992*sqrt(10)*sqrt(sqrt(5) + 3) - 29269765280*sqrt(2) - 5796223360*sqrt(2)*sqrt(sqrt(5) + 3) - 4097940384*sqrt(10) - 4390031680*sqrt(sqrt(5) + 3) + 17248520514*sqrt(5) + 12585912448*sqrt(5)*sqrt(sqrt(5) + 3) + 65369837915)/616567676 + sqrt(2*sqrt(5) + 10)/16 + sqrt(10*sqrt(5) + 50)/16 + 34360683079*sqrt(5)/6782244436 + 882068205*sqrt(5*sqrt(5) + 15)/330841192 + 107310626245/6782244436)
-INFO:root:    > diff: -x**2 + y - (y - sqrt(sqrt(5)/2 + 5/4))**2 + (-sqrt(sqrt(5)/8 + 5/8) + sqrt(sqrt(5)/2 + 5/4))**2 + (1/4 + sqrt(5)/4)**2
+INFO:root:    > diff: -x**2 - y**2 + y + y*sqrt(2*sqrt(5) + 5) - sqrt(30*sqrt(5) + 70)/4 + sqrt(5)/4 + 1
 INFO:root:  + Circle(Point2D(0, sqrt(sqrt(5)/2 + 5/4)), sqrt((-sqrt(sqrt(5)/8 + 5/8) + sqrt(sqrt(5)/2 + 5/4))**2 + (1/4 + sqrt(5)/4)**2))

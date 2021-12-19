@@ -1,2 +1,4 @@
 tags
 tags.lock
+logs/*.log
+__pycache__/
