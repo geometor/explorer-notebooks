@@ -13,6 +13,8 @@ import math as math
 
 fig, ax = plt.subplots()
 
+style_radius = {'color': '#c099', 'marker': ''}
+
 
 def plt_init(limx, limy):
     '''configure the MatPlotLib stateful plot engine'''
@@ -30,20 +32,20 @@ def plt_init(limx, limy):
 
 
 # plot elements to plt
-def plot_circle(circle):
+def plot_circle(circle, color='#c09', linestyle=':', fill=False):
     '''takes a sympy circle and plots with the matplotlib Circle patch'''
     center = (circle.center.x.evalf(), circle.center.y.evalf())
     radius = circle.radius
-    el = plt.Circle(center, radius, color='#c09', linestyle=':', fill=False)
+    el = plt.Circle(center, radius, color=color, linestyle=linestyle, fill=fill)
     plt.gca().add_patch(el)
 
 
-def plot_line(el, bounds):
+def plot_line(el, bounds, color='#999', linestyle=':', linewidth=1):
     ends = bounds.intersection(el)
     xs = [pt.x.evalf() for pt in ends]
     ys = [pt.y.evalf() for pt in ends]
 
-    plt.plot(xs, ys, color='#999', linestyle=':', linewidth=1)
+    plt.plot(xs, ys, color=color, linestyle=linestyle, linewidth=linewidth)
 
     
 def plot_perp_bisector(el, bounds):
@@ -94,33 +96,33 @@ def plot_points(pts):
 
     cursor.connect("add", on_add)
 
-def plot_segment(pt1, pt2):
+def plot_segment(pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=16):
     x1 = pt1.x.evalf()
     x2 = pt2.x.evalf()
     y1 = pt1.y.evalf()
     y2 = pt2.y.evalf()
     plt.plot(
             [x1, x2], [y1, y2], 
-            color='#fc09', 
-            linestyle='-', 
-            linewidth=3, 
-            marker='.',
-            markersize=16)
+            color=color, 
+            linestyle=linestyle, 
+            linewidth=linewidth, 
+            marker=marker,
+            markersize=markersize)
     return pt1.distance(pt2)
 
-def plot_segment2(seg):
-    x1 = pt1.x.evalf()
-    x2 = pt2.x.evalf()
-    y1 = pt1.y.evalf()
-    y2 = pt2.y.evalf()
+def plot_segment2(seg, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=16):
+    x1 = seg.points[0].x.evalf()
+    x2 = seg.points[1].x.evalf()
+    y1 = seg.points[0].y.evalf()
+    y2 = seg.points[1].y.evalf()
     plt.plot(
             [x1, x2], [y1, y2], 
-            color='#fc09', 
-            linestyle='-', 
-            linewidth=3, 
-            marker='.',
-            markersize=16)
-    return pt1.distance(pt2)
+            color=color, 
+            linestyle=linestyle, 
+            linewidth=linewidth, 
+            marker=marker,
+            markersize=markersize)
+    return seg.length
 
 
 def plot_polygon(poly, color='#36c3'):
@@ -131,6 +133,11 @@ def plot_polygon(poly, color='#36c3'):
     plt.gca().add_patch(patch)
     
 
+def plot_polygons(poly_array):
+    for poly in poly_array:
+        plot_polygon(poly)
+    
+
 def plot_wedge(ctr_pt, rad_pt, sweep_pt, color='#0f03', linestyle='', linewidth=6, fill=True):
     '''takes a sympy circle and plots with the matplotlib Circle patch'''
     center = (float(ctr_pt.x.evalf()), float(ctr_pt.y.evalf()))
@@ -138,14 +145,17 @@ def plot_wedge(ctr_pt, rad_pt, sweep_pt, color='#0f03', linestyle='', linewidth=
     print(center, rad_val)
     radius_line = spg.Line(ctr_pt, rad_pt)
     sweep_line = spg.Line(ctr_pt, sweep_pt)
-    a1 = math.degrees(elements[0].angle_between(radius_line).evalf())
-    a2 = math.degrees(elements[0].angle_between(sweep_line).evalf())
+    base_line = spg.Line(spg.Point(0,0), spg.Point(1,0))
+    
+    # t = polygon
+    a1 = math.degrees(base_line.angle_between(radius_line).evalf())
+    a2 = math.degrees(base_line.angle_between(sweep_line).evalf())
     cy = float(ctr_pt.y.evalf())
     ry = float(rad_pt.y.evalf())
     if cy > ry:
         a1 = -a1
     print(a1, a2)
-    el = mp.patches.Wedge(center, rad_val, -a1, a2, 
+    el = mp.patches.Wedge(center, rad_val, a1, a2, 
                           color=color, 
                           linestyle=linestyle, 
                           linewidth=linewidth, 

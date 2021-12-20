@@ -23,6 +23,20 @@ num_workers = cpu_count()
 Φ = sp.GoldenRatio
 phi = sp.Rational(1, 2) + (sp.sqrt(5) / 2)
 
+# globals
+pts = []
+elements = []
+polygons = []
+
+
+# class to handle element ancestry
+class Relations:
+    parents = []
+    descendents = []
+
+points = defaultdict(Relations)
+# points = defaultdict({'parents': [], 'desc': []})
+
 
 def set_bounds(limx, limy):
     return sp.Polygon(
@@ -70,19 +84,22 @@ def polygon_ids(ids):
     return polygon([pts[i] for i in ids])
 
 
+def unit_square(pt):
+    '''creates a unit square from the reference point
+    adds points and returns polygon'''
+    poly_pts = []
+    poly_pts.append(pt)
+    poly_pts.append(point(pt.x + 1, pt.y))
+    poly_pts.append(point(pt.x + 1, pt.y + 1))
+    poly_pts.append(point(pt.x, pt.y + 1))
+    return polygon(poly_pts)
+
+
+
 # model ******************************
-class Relations:
-    parents = []
-    descendents = []
-
-points = defaultdict(Relations)
-# points = defaultdict({'parents': [], 'desc': []})
-
-pts = []
-elements = []
-
 
 def add_point(pt):
+    '''add point - check if exists first'''
     logging.info(f'* add_point: {pt}')
     if isinstance(pt, spg.Point2D):
         if not pts.count(pt):
@@ -94,6 +111,10 @@ def add_point(pt):
             logging.info(f'  ! {pt} found at index: {i}')
             return pts[i]
 
+def add_points(pt_array):
+    '''add an array of points'''
+    for pt in pt_array:
+        add_point(pt)
 
 def add_intersection_points(el):
     logging.info(f'* add_intersection_points: {el}')
