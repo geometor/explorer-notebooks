@@ -160,3 +160,5 @@ INFO:root:* add_point: Point2D(sqrt(14 - 2*sqrt(5))/4 + 1 + sqrt(2)*sqrt(sqrt(2)
 INFO:root:  + Point2D(sqrt(14 - 2*sqrt(5))/4 + 1 + sqrt(2)*sqrt(sqrt(2)*sqrt(7 - sqrt(5)) + 4)/2, sqrt(2 + 2*sqrt(5))/4)
 INFO:root:    > diff: -x**2 + x*sqrt(14 - 2*sqrt(5))/2 + 2*x - y**2 + y + y*sqrt(2 + 2*sqrt(5))/2
 INFO:root:  + Circle(Point2D(sqrt(2)*sqrt(7 - sqrt(5))/4 + 1, sqrt(2 + 2*sqrt(5))/4), sqrt(1/8 + sqrt(5)/8 + (sqrt(2)*sqrt(7 - sqrt(5))/4 + 1)**2))
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<Kernel.poll_control_queue() running at /home/phi/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py:227> wait_for=<Future finished result=<Future at 0x...state=pending>> cb=[_chain_future.<locals>._call_set_state() at /home/phi/anaconda3/lib/python3.9/asyncio/futures.py:391]>

@@ -1,4 +1,6 @@
-'''setup for matplot lib'''
+'''
+The Render Module 
+'''
 
 import matplotlib as mp
 import matplotlib.pyplot as plt
@@ -29,6 +31,20 @@ def plt_init(limx, limy):
     plt.gca().set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
     plt.axis(False)
     plt.tight_layout()
+    
+def plt_init_polar():
+    '''configure the MatPlotLib stateful plot engine'''
+    mp.style.use('dark_background')
+    # plt.figure(num=1, figsize=(7, 5), dpi=120)
+    # fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+    
+    # plt.gca().set_aspect('equal')
+    
+#     ax.set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
+#     ax.set_axis_off()
+    
+    # plt.axis(False)
+    # plt.tight_layout()
 
 
 # plot elements to plt
@@ -162,4 +178,12 @@ def plot_wedge(ctr_pt, rad_pt, sweep_pt, color='#0f03', linestyle='', linewidth=
                           fill=fill ) 
     plt.gca().add_patch(el)
 
+
+# images**********************
+def snapshot(filename):
+    plt.savefig(filename)
+                
+def display(filename):
+    from IPython import display
+    display.Image(filename)
 
