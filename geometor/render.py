@@ -35,7 +35,7 @@ def plt_init(limx, limy):
 def plt_init_polar():
     '''configure the MatPlotLib stateful plot engine'''
     mp.style.use('dark_background')
-    # plt.figure(num=1, figsize=(7, 5), dpi=120)
+    # plt.figure(num=1, figsize=(6.4, 3.6), dpi=120)
     # fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
     
     # plt.gca().set_aspect('equal')
@@ -100,8 +100,7 @@ def plot_points(pts):
             marker='.',
             markersize=5
             )
-    cursor = mplcursors.cursor(point_plot)
-
+    
     def on_add(sel):
         i = sel.index
         sel.annotation.set_text(f'{i}:\nx: {pts[i].x}\ny: {pts[i].y}')
@@ -110,6 +109,7 @@ def plot_points(pts):
         sel.annotation.set_text(f'{i}:\nx: {xval}\ny: {yval}')
         sel.annotation.arrow_patch.set(arrowstyle="simple", ec="k", fc='w')
 
+    cursor = mplcursors.cursor(point_plot)
     cursor.connect("add", on_add)
 
 def plot_segment(pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=16):
