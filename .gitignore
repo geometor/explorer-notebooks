@@ -3,3 +3,4 @@ tags
 tags.lock
 logs/*.log
 __pycache__/
+*.swp

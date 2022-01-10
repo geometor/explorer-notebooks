@@ -1,4 +1,5 @@
 --exclude=.git
+--exclude=logs
 --exclude=**/vendor
 --exclude=**/node_modules
 --exclude=**/packages
