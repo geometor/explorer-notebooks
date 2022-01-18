@@ -178,6 +178,16 @@ def plot_wedge(ctr_pt, rad_pt, sweep_pt, color='#0f03', linestyle='', linewidth=
                           fill=fill ) 
     plt.gca().add_patch(el)
 
+def plot_wedge_2(ctr_pt, rad_val, a1, a2, color='#0ff1', linestyle='', linewidth=6, fill=True):
+    '''takes a sympy circle and plots with the matplotlib Circle patch'''
+    center = (float(ctr_pt.x.evalf()), float(ctr_pt.y.evalf()))
+    el = mp.patches.Wedge(center, rad_val, a1, a2, 
+                          color=color, 
+                          linestyle=linestyle, 
+                          linewidth=linewidth, 
+                          fill=fill ) 
+    plt.gca().add_patch(el)
+
 
 # images**********************
 def snapshot(filename):

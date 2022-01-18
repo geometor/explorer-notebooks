@@ -6,8 +6,10 @@ import os as os
 import stat as stat
 import sys as sys
 
-offsets = [3, 5, 8, 13, 21, 34, 55, 89]
+offsets = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 offsets = list(reversed(offsets))
+
+FRAMERATE = 25
 
 def concat_png(dirname):
     """list files in folder
@@ -27,12 +29,12 @@ def concat_png(dirname):
         i = 0
 
         for f in files:
-            duration = 2
+            duration = 2 / FRAMERATE
             if i < len(offsets):
-                out = offsets[i]
+                duration += (offsets[i] / FRAMERATE)
 
-            file.write(f'file "{f}" \n')
-            file.write(f'duration "{f}" \n')
+            file.write(f"file '{f}' \n")
+            file.write(f'duration {duration} \n')
             i+=1
 
 
@@ -68,5 +70,5 @@ if __name__ == '__main__':
     dirname = '.'
     if len(sys.argv) > 1:
         dirname = sys.argv[1] 
-    melt_png(dirname)
+    concat_png(dirname)
 
