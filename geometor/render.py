@@ -178,6 +178,17 @@ def plot_wedge(ctr_pt, rad_pt, sweep_pt, color='#0f03', linestyle='', linewidth=
                           fill=fill ) 
     plt.gca().add_patch(el)
 
+def plot_wedge_2(ctr_pt, rad_val, a1, a2, fc='#0ff1', ec='#0002', linestyle='', linewidth=6, fill=True):
+    '''light wrapper for Wegde patch'''
+    center = (float(ctr_pt.x.evalf()), float(ctr_pt.y.evalf()))
+    el = mp.patches.Wedge(center, rad_val, a1, a2, 
+                          fc=fc, 
+                          ec=ec, 
+                          linestyle=linestyle, 
+                          linewidth=linewidth, 
+                          fill=fill ) 
+    plt.gca().add_patch(el)
+
 
 # images**********************
 def snapshot(filename):
