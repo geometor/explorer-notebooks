@@ -9,9 +9,9 @@ import sys as sys
 offsets = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 offsets = list(reversed(offsets))
 
-FRAMERATE = 25
+FRAMERATE = 24
 
-def concat(dirname, filetype='.svg'):
+def concat(dirname, filetype='.png'):
     """list files in folder
 
     :dirname: TODO
