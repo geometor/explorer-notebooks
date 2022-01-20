@@ -6,7 +6,7 @@ import os as os
 import stat as stat
 import sys as sys
 
-offsets = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+offsets = [1, 1, 2, 3, 5, 8] #, 13, 21, 34, 55]
 offsets = list(reversed(offsets))
 
 FRAMERATE = 24
@@ -29,9 +29,9 @@ def concat(dirname, filetype='.png'):
         i = 0
 
         for f in files:
-            duration = 2 / FRAMERATE
+            duration = 6 / FRAMERATE
             if i < len(offsets):
-                duration += (offsets[i] / FRAMERATE)
+                duration += (offsets[i] * duration)
 
             file.write(f"file '{f}' \n")
             file.write(f'duration {duration} \n')
