@@ -3,14 +3,7 @@ INFO:root:* add_point: Point2D(0, 0)
 INFO:root:  + Point2D(0, 0)
 INFO:root:* add_point: Point2D(1, 0)
 INFO:root:  + Point2D(1, 0)
-INFO:root:* add_element: Line2D(Point2D(0, 0), Point2D(1, 0))
-INFO:root:* add_intersection_points: Line2D(Point2D(0, 0), Point2D(1, 0))
-INFO:root:  + Line2D(Point2D(0, 0), Point2D(1, 0))
 INFO:root:* add_element: Circle(Point2D(0, 0), 1)
 INFO:root:* add_intersection_points: Circle(Point2D(0, 0), 1)
-INFO:root:* add_point: Point2D(-1, 0)
-INFO:root:  + Point2D(-1, 0)
-INFO:root:* add_point: Point2D(1, 0)
-INFO:root:  ! Point2D(1, 0) found at index: 1
-INFO:root:    > diff: -x**2 - y**2 + y + 1
 INFO:root:  + Circle(Point2D(0, 0), 1)
+WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}

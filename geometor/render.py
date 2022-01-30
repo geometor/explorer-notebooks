@@ -18,16 +18,18 @@ fig, ax = plt.subplots()
 style_radius = {'color': '#c099', 'marker': ''}
 
 
-def plt_init(limx, limy):
+def plt_init(limx='', limy=''):
     '''configure the MatPlotLib stateful plot engine'''
     mp.style.use('dark_background')
     plt.figure(num=1, figsize=(7, 5), dpi=120)
     plt.gca().set_aspect('equal')
-    # TODO: pass in limits
-    x1, x2 = limx
-    ax.set_xlim(x1, x2)
-    y1, y2 = limy
-    plt.gca().set_ylim(y1, y2)
+
+    if limx:
+        x1, x2 = limx
+        ax.set_xlim(x1, x2)
+    if limy:
+        y1, y2 = limy
+        plt.gca().set_ylim(y1, y2)
     plt.gca().set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
     plt.axis(False)
     plt.tight_layout()
@@ -141,11 +143,11 @@ def plot_segment2(seg, color='#fc09', linestyle='-', linewidth=3, marker='.', ma
     return seg.length
 
 
-def plot_polygon(poly, color='#36c3'):
+def plot_polygon(poly, color='#36c3', linestyle='-', linewidth=3):
     '''takes a sympy Polygon and plots with the matplotlib Polygon patch'''
     xy = [(pt.x.evalf(), pt.y.evalf()) for pt in poly.vertices]
     # print(xy)
-    patch = plt.Polygon(xy, color=color, linestyle='-', fill=True)
+    patch = plt.Polygon(xy, color=color, linestyle=linestyle, fill=True)
     plt.gca().add_patch(patch)
     
 
