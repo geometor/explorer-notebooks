@@ -84,25 +84,21 @@ def plot_elements(elements, bounds):
             print('No Match')
 
 
-def plot_points(pts):
+def plot_points(pts, 
+               under_color='k',
+               under_linestyle='',
+               under_marker='.',
+               under_markersize=10,
+               over_color='w',
+               over_linestyle='',
+               over_marker='.',
+               over_markersize=5,
+               ):
     '''plot all the points in pts'''
     # collect x, y values into separate arrays
     xs = [pt.x.evalf() for pt in pts]
     ys = [pt.y.evalf() for pt in pts]
 
-    plt.plot(xs, ys, 
-            color='k', 
-            linestyle='',
-            marker='.',
-            markersize=10
-            )
-    point_plot = plt.plot(xs, ys, 
-            color='w', 
-            linestyle='',
-            marker='.',
-            markersize=5
-            )
-    
     def on_add(sel):
         i = sel.index
         sel.annotation.set_text(f'{i}:\nx: {pts[i].x}\ny: {pts[i].y}')
@@ -110,7 +106,24 @@ def plot_points(pts):
         yval = str(pts[i].y).replace('GoldenRatio', 'Φ')
         sel.annotation.set_text(f'{i}:\nx: {xval}\ny: {yval}')
         sel.annotation.arrow_patch.set(arrowstyle="simple", ec="k", fc='w')
-
+    
+    #under marker
+    plt.plot(xs, ys, 
+            color=under_color, 
+            linestyle=under_linestyle,
+            marker=under_marker,
+            markersize=under_markersize
+            )
+    
+    #over marker
+    # use output for mpl cursors
+    point_plot = plt.plot(xs, ys, 
+            color=over_color, 
+            linestyle=over_linestyle,
+            marker=over_marker,
+            markersize=over_markersize
+            )
+    
     cursor = mplcursors.cursor(point_plot)
     cursor.connect("add", on_add)
 
