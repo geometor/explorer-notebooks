@@ -25,11 +25,9 @@ def plt_init(limx='', limy=''):
     plt.gca().set_aspect('equal')
 
     if limx:
-        x1, x2 = limx
-        ax.set_xlim(x1, x2)
+        ax.set_xlim(limx[0], limx[1])
     if limy:
-        y1, y2 = limy
-        plt.gca().set_ylim(y1, y2)
+        plt.gca().set_ylim(limy[0], limy[1])
     plt.gca().set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
     plt.axis(False)
     plt.tight_layout()
@@ -93,6 +91,7 @@ def plot_points(pts,
                over_linestyle='',
                over_marker='.',
                over_markersize=5,
+               add_to_cursors=True, 
                ):
     '''plot all the points in pts'''
     # collect x, y values into separate arrays
@@ -124,8 +123,9 @@ def plot_points(pts,
             markersize=over_markersize
             )
     
-    cursor = mplcursors.cursor(point_plot)
-    cursor.connect("add", on_add)
+    if add_to_cursors:
+        cursor = mplcursors.cursor(point_plot)
+        cursor.connect("add", on_add)
 
 def plot_segment(pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=16):
     x1 = pt1.x.evalf()
