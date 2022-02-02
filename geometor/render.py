@@ -25,11 +25,9 @@ def plt_init(limx='', limy=''):
     plt.gca().set_aspect('equal')
 
     if limx:
-        x1, x2 = limx
-        ax.set_xlim(x1, x2)
+        plt.gca().set_xlim(limx[0], limx[1])
     if limy:
-        y1, y2 = limy
-        plt.gca().set_ylim(y1, y2)
+        plt.gca().set_ylim(limy[0], limy[1])
     plt.gca().set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
     plt.axis(False)
     plt.tight_layout()
