@@ -124,6 +124,148 @@ INFO:root:* add_point: Point2D(-sqrt(3/8 + 3*sqrt(5)/8), sqrt(2 + 2*sqrt(5))/4)
 INFO:root:  ! Point2D(-sqrt(3/8 + 3*sqrt(5)/8), sqrt(2 + 2*sqrt(5))/4) found at index: 25
 INFO:root:    > diff: sqrt(2 + 2*sqrt(5))/4
 INFO:root:  + Line2D(Point2D(-sqrt(3/8 + 3*sqrt(5)/8), sqrt(2 + 2*sqrt(5))/4), Point2D(sqrt(3/8 + 3*sqrt(5)/8), sqrt(2 + 2*sqrt(5))/4))
+INFO:root:* add_element: Line2D(Point2D(1, 0), Point2D(0, sqrt(2 + 2*sqrt(5))/2))
+INFO:root:* add_intersection_points: Line2D(Point2D(1, 0), Point2D(0, sqrt(2 + 2*sqrt(5))/2))
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2)
+INFO:root:  + Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2)
+INFO:root:* add_point: Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2))
+INFO:root:  + Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2))
+INFO:root:* add_point: Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2))
+INFO:root:  + Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2))
+INFO:root:* add_point: Point2D(1/2, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  ! Point2D(1/2, sqrt(2 + 2*sqrt(5))/4) found at index: 30
+INFO:root:* add_point: Point2D(0, sqrt(2 + 2*sqrt(5))/2)
+INFO:root:  ! Point2D(0, sqrt(2 + 2*sqrt(5))/2) found at index: 2
+INFO:root:* add_point: Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)
+INFO:root:  + Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)
+INFO:root:* add_point: Point2D((sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4 + sqrt(2)*sqrt(-1 + sqrt(5))/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4 + sqrt(2)*sqrt(-1 + sqrt(5))/2)
+INFO:root:  + Point2D((sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4 + sqrt(2)*sqrt(-1 + sqrt(5))/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4 + sqrt(2)*sqrt(-1 + sqrt(5))/2)
+INFO:root:* add_point: Point2D((-1 + sqrt(2 + 2*sqrt(5))/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -1 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:  + Point2D((-1 + sqrt(2 + 2*sqrt(5))/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -1 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:* add_point: Point2D((1 + sqrt(2 + 2*sqrt(5))/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, 1 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:  + Point2D((1 + sqrt(2 + 2*sqrt(5))/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, 1 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:* add_point: Point2D(1/2, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  ! Point2D(1/2, sqrt(2 + 2*sqrt(5))/4) found at index: 30
+INFO:root:    > diff: x*sqrt(2 + 2*sqrt(5))/2 + 2*y - sqrt(2 + 2*sqrt(5))/2
+INFO:root:  + Line2D(Point2D(1, 0), Point2D(0, sqrt(2 + 2*sqrt(5))/2))
+INFO:root:* add_element: Circle(Point2D(1, 0), sqrt(sqrt(5)/2 + 3/2))
+INFO:root:* add_intersection_points: Circle(Point2D(1, 0), sqrt(sqrt(5)/2 + 3/2))
+INFO:root:* add_point: Point2D(1 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0)
+INFO:root:  + Point2D(1 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0)
+INFO:root:* add_point: Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0)
+INFO:root:  + Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0)
+INFO:root:* add_point: Point2D(1/4 - sqrt(5)/4, sqrt(sqrt(5)/8 + 5/8))
+INFO:root:  + Point2D(1/4 - sqrt(5)/4, sqrt(sqrt(5)/8 + 5/8))
+INFO:root:* add_point: Point2D(1/4 - sqrt(5)/4, -sqrt(sqrt(5)/8 + 5/8))
+INFO:root:  + Point2D(1/4 - sqrt(5)/4, -sqrt(sqrt(5)/8 + 5/8))
+INFO:root:* add_point: Point2D(1/2, sqrt(sqrt(5)/2 + 5/4))
+INFO:root:  + Point2D(1/2, sqrt(sqrt(5)/2 + 5/4))
+INFO:root:* add_point: Point2D(1/2, -sqrt(sqrt(5)/2 + 5/4))
+INFO:root:  + Point2D(1/2, -sqrt(sqrt(5)/2 + 5/4))
+INFO:root:* add_point: Point2D(0, sqrt(1/2 + sqrt(5)/2))
+INFO:root:  ! Point2D(0, sqrt(1/2 + sqrt(5)/2)) found at index: 16
+INFO:root:* add_point: Point2D(0, -sqrt(1/2 + sqrt(5)/2))
+INFO:root:  ! Point2D(0, -sqrt(1/2 + sqrt(5)/2)) found at index: 17
+INFO:root:* add_point: Point2D(0, sqrt(1/2 + sqrt(5)/2))
+INFO:root:  ! Point2D(0, sqrt(1/2 + sqrt(5)/2)) found at index: 16
+INFO:root:* add_point: Point2D(0, -sqrt(1/2 + sqrt(5)/2))
+INFO:root:  ! Point2D(0, -sqrt(1/2 + sqrt(5)/2)) found at index: 17
+INFO:root:* add_point: Point2D(-sqrt(5)/4 - 1/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)/2, -sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)
+INFO:root:  + Point2D(-sqrt(5)/4 - 1/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)/2, -sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 - 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)/2, sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)
+INFO:root:  + Point2D(-sqrt(5)/4 - 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)/2, sqrt(2)*sqrt(-7 + 5*sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)
+INFO:root:* add_point: Point2D(1 + sqrt(2)*sqrt(3*sqrt(5) + 11)/4, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(1 + sqrt(2)*sqrt(3*sqrt(5) + 11)/4, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(-sqrt(2)*sqrt(3*sqrt(5) + 11)/4 + 1, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(2)*sqrt(3*sqrt(5) + 11)/4 + 1, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(1/2 + sqrt(5)/2))
+INFO:root:  + Point2D(sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(1/2 + sqrt(5)/2))
+INFO:root:* add_point: Point2D(1 - sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), -sqrt(1/2 + sqrt(5)/2))
+INFO:root:  + Point2D(1 - sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), -sqrt(1/2 + sqrt(5)/2))
+INFO:root:    > diff: -y**2 + y - (x - 1)**2 + sqrt(5)/2 + 3/2
+INFO:root:  + Circle(Point2D(1, 0), sqrt(sqrt(5)/2 + 3/2))
+INFO:root:* add_element: Circle(Point2D(0, sqrt(2 + 2*sqrt(5))/2), sqrt(sqrt(5)/2 + 3/2))
+INFO:root:* add_intersection_points: Circle(Point2D(0, sqrt(2 + 2*sqrt(5))/2), sqrt(sqrt(5)/2 + 3/2))
+INFO:root:* add_point: Point2D(-1, 0)
+INFO:root:  ! Point2D(-1, 0) found at index: 3
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(-1, 0)
+INFO:root:  ! Point2D(-1, 0) found at index: 3
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(1/2 + sqrt(2 + 2*sqrt(5))*(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8 + sqrt(2)*sqrt(5 - sqrt(5))/4)/2, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8 + sqrt(2)*sqrt(5 - sqrt(5))/4)
+INFO:root:  + Point2D(1/2 + sqrt(2 + 2*sqrt(5))*(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8 + sqrt(2)*sqrt(5 - sqrt(5))/4)/2, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8 + sqrt(2)*sqrt(5 - sqrt(5))/4)
+INFO:root:* add_point: Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(2)*sqrt(5 - sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)/2 + 1/2, -sqrt(2)*sqrt(5 - sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)
+INFO:root:  + Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(2)*sqrt(5 - sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)/2 + 1/2, -sqrt(2)*sqrt(5 - sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)
+INFO:root:* add_point: Point2D(1/2, sqrt(2 + 2*sqrt(5))/2 + sqrt(2*sqrt(5) + 5)/2)
+INFO:root:  + Point2D(1/2, sqrt(2 + 2*sqrt(5))/2 + sqrt(2*sqrt(5) + 5)/2)
+INFO:root:* add_point: Point2D(1/2, -sqrt(2*sqrt(5) + 5)/2 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:  + Point2D(1/2, -sqrt(2*sqrt(5) + 5)/2 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:* add_point: Point2D(0, -sqrt(2)*sqrt(sqrt(5) + 3)/2 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:  + Point2D(0, -sqrt(2)*sqrt(sqrt(5) + 3)/2 + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:* add_point: Point2D(0, sqrt(2 + 2*sqrt(5))/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2)
+INFO:root:  + Point2D(0, sqrt(2 + 2*sqrt(5))/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2)
+INFO:root:* add_point: Point2D(sqrt(sqrt(5)/4 + 1), sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)
+INFO:root:  + Point2D(sqrt(sqrt(5)/4 + 1), sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)
+INFO:root:* add_point: Point2D(-sqrt(sqrt(5)/4 + 1), sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)
+INFO:root:  + Point2D(-sqrt(sqrt(5)/4 + 1), sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/8)
+INFO:root:* add_point: Point2D(sqrt(3*sqrt(5)/8 + 11/8), sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(sqrt(3*sqrt(5)/8 + 11/8), sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(-sqrt(3*sqrt(5)/8 + 11/8), sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(3*sqrt(5)/8 + 11/8), sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5)))
+INFO:root:  + Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5)))
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)
+INFO:root:  + Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:    > diff: -x**2 - y**2 + y + y*sqrt(2 + 2*sqrt(5)) + 1
+INFO:root:  + Circle(Point2D(0, sqrt(2 + 2*sqrt(5))/2), sqrt(sqrt(5)/2 + 3/2))
+INFO:root:* add_element: Line2D(Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4), Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2))
+INFO:root:* add_intersection_points: Line2D(Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4), Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2))
+INFO:root:* add_point: Point2D(1/4 - sqrt(5)/4, 0)
+INFO:root:  + Point2D(1/4 - sqrt(5)/4, 0)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-3 + 2*sqrt(5))/2)/2, sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-3 + 2*sqrt(5))/2)
+INFO:root:  + Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-3 + 2*sqrt(5))/2)/2, sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-3 + 2*sqrt(5))/2)
+INFO:root:* add_point: Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(-3 + 2*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)/2 - sqrt(5)/4 + 1/4, -sqrt(-3 + 2*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)
+INFO:root:  + Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(-3 + 2*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)/2 - sqrt(5)/4 + 1/4, -sqrt(-3 + 2*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2, -sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2, -sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2, sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2, sqrt(5 - 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(1/2, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  ! Point2D(1/2, sqrt(2 + 2*sqrt(5))/4) found at index: 30
+INFO:root:* add_point: Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5))))
+INFO:root:  + Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5))))
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-11 + 6*sqrt(5))/2)/2, sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-11 + 6*sqrt(5))/2)
+INFO:root:  + Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-11 + 6*sqrt(5))/2)/2, sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4 + sqrt(-11 + 6*sqrt(5))/2)
+INFO:root:* add_point: Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(-11 + 6*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)/2 - sqrt(5)/4 + 1/4, -sqrt(-11 + 6*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)
+INFO:root:  + Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(-11 + 6*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)/2 - sqrt(5)/4 + 1/4, -sqrt(-11 + 6*sqrt(5))/2 + sqrt(1 + sqrt(5))*(-2*sqrt(2) + sqrt(10))/4)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2, sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2, sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(-3 + 2*sqrt(5))/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(1/2, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  ! Point2D(1/2, sqrt(2 + 2*sqrt(5))/4) found at index: 30
+INFO:root:* add_point: Point2D(1/2, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  ! Point2D(1/2, sqrt(2 + 2*sqrt(5))/4) found at index: 30
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)
+INFO:root:  ! Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2) found at index: 62
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  ! Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4) found at index: 63
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)
+INFO:root:  ! Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2) found at index: 62
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  ! Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4) found at index: 63
+INFO:root:    > diff: sqrt(3)*x - y*sqrt(6 + 6*sqrt(5))/2 + y - sqrt(3)/4 + sqrt(15)/4
+INFO:root:  + Line2D(Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4)/2 + 1/4, -sqrt(3)/2 + sqrt(2 + 2*sqrt(5))/4), Point2D(-sqrt(5)/4 + 1/4 + sqrt(2 + 2*sqrt(5))*(sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2)/2, sqrt(2 + 2*sqrt(5))/4 + sqrt(3)/2))
 INFO:root:* add_element: Circle(Point2D(1/2, sqrt(2 + 2*sqrt(5))/4), sqrt(sqrt(5)/8 + 3/8))
 INFO:root:* add_intersection_points: Circle(Point2D(1/2, sqrt(2 + 2*sqrt(5))/4), sqrt(sqrt(5)/8 + 3/8))
 INFO:root:* add_point: Point2D(0, 0)
@@ -158,5 +300,18 @@ INFO:root:* add_point: Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/4, sqrt(2 + 2*sqr
 INFO:root:  + Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/4, sqrt(2 + 2*sqrt(5))/4)
 INFO:root:* add_point: Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/4 + 1/2, sqrt(2 + 2*sqrt(5))/4)
 INFO:root:  + Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/4 + 1/2, sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(2 + 2*sqrt(5))/2)
+INFO:root:  + Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(2 + 2*sqrt(5))/2)
+INFO:root:* add_point: Point2D(0, sqrt(2 + 2*sqrt(5))/2)
+INFO:root:  ! Point2D(0, sqrt(2 + 2*sqrt(5))/2) found at index: 2
+INFO:root:* add_point: Point2D(1, 0)
+INFO:root:  ! Point2D(1, 0) found at index: 1
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + 1/4 + (1/2 + sqrt(2 + 2*sqrt(5))/4)*sqrt(2 + 2*sqrt(5))/2, 1/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(5)/4 + 1/4 + (1/2 + sqrt(2 + 2*sqrt(5))/4)*sqrt(2 + 2*sqrt(5))/2, 1/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:* add_point: Point2D(-sqrt(5)/4 + (-1/2 + sqrt(2 + 2*sqrt(5))/4)*sqrt(2 + 2*sqrt(5))/2 + 1/4, -1/2 + sqrt(2 + 2*sqrt(5))/4)
+INFO:root:  + Point2D(-sqrt(5)/4 + (-1/2 + sqrt(2 + 2*sqrt(5))/4)*sqrt(2 + 2*sqrt(5))/2 + 1/4, -1/2 + sqrt(2 + 2*sqrt(5))/4)
 INFO:root:    > diff: -x**2 + x - y**2 + y + y*sqrt(2 + 2*sqrt(5))/2
 INFO:root:  + Circle(Point2D(1/2, sqrt(2 + 2*sqrt(5))/4), sqrt(sqrt(5)/8 + 3/8))
+WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}
