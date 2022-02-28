@@ -60,6 +60,12 @@ def plot_line(el, bounds, color='#999', linestyle=':', linewidth=1):
     ends = bounds.intersection(el)
     xs = [pt.x.evalf() for pt in ends]
     ys = [pt.y.evalf() for pt in ends]
+    
+    style = {}
+    for cl in el.classes:
+        cl_style = classes[cl]
+        style.update(cl_style)
+        
 
     plt.plot(xs, ys, color=color, linestyle=linestyle, linewidth=linewidth)
 
