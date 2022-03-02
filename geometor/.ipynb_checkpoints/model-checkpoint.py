@@ -1,6 +1,6 @@
 '''
-the Model module provides a set of tools for constructing geometric models
-relies heavily on sympy for providing the algebraic infrastructure
+The Model module provides a set of tools for constructing geometric models.
+It relies heavily on sympy for providing the algebraic infrastructure
 the functions here are for creating the abstract model, not the rendering
 see the Render module for plotting with matplotlib
 '''
@@ -38,6 +38,29 @@ points = defaultdict(Relations)
 # points = defaultdict({'parents': [], 'desc': []})
 
 
+def get_limits_from_points(pts, margin=1):
+    '''find x, y limits from a set of points'''
+    limx = [0, 0]
+    limy = [0, 0]
+
+    for pt in pts:
+        ptx = float(pt.x.evalf())
+        pty = float(pt.y.evalf())
+        # print(x, y)
+        limx[0] = ptx if limx[0] > ptx else limx[0]
+        limx[1] = ptx if limx[1] < ptx else limx[1]
+        limy[0] = pty if limy[0] > pty else limy[0]
+        limy[1] = pty if limy[1] < pty else limy[1]
+
+    limx[0] -= margin
+    limx[1] += margin
+    limy[0] -= margin
+    limy[1] += margin
+    
+    return [limx, limy]
+    
+
+
 def set_bounds(limx, limy):
     return sp.Polygon(
         point(limx[0], limy[1]),
@@ -47,44 +70,54 @@ def set_bounds(limx, limy):
         )
 
 # structural elements
-def point(x_val, y_val):
+def point(x_val, y_val, classes=[], style={}):
     '''make sympy.geometry.Point'''
     pt = spg.Point(sp.simplify(x_val), sp.simplify(y_val))
+    pt.classes = classes
+    pt.style = style
     return pt
 
 
-def line(pt_a, pt_b):
+def line(pt_a, pt_b, classes=[], style={}):
     '''make sympy.geometry.Line'''
     el = spg.Line(pt_a, pt_b)
+    el.classes = classes
+    el.style = style
     return el
 
 
-def circle(pt_c, pt_r):
+def circle(pt_c, pt_r, classes=[], style={}):
     '''make sympy.geometry.Circle from two points'''
     el = spg.Circle(pt_c, pt_c.distance(pt_r))
     el.radius_pt = pt_r
+    el.classes = classes
+    el.style = style
     return el
 
 
-# geaphical elements
-def segment(pt_a, pt_b):
+# graphical elements
+def segment(pt_a, pt_b, classes=[], style={}):
     '''make sympy.geometry.Segment'''
     el = spg.Segment(pt_a, pt_b)
+    el.classes = classes
+    el.style = style
     return el
 
 
-def polygon(poly_pts):
+def polygon(poly_pts, classes=[], style={}):
     '''- takes array of points - make sympy.geometry.Polygon, Triangle or Segment'''
     el = spg.Polygon(*poly_pts)
+    el.classes = classes
+    el.style = style
     return el
 
 
-def polygon_ids(ids):
+def polygon_ids(ids, classes=[], style={}):
     '''create polygon from list of point ids'''
-    return polygon([pts[i] for i in ids])
+    return polygon([pts[i] for i in ids], classes=classes, style=style)
 
 
-def unit_square(pt):
+def unit_square(pt, classes=[], style={}):
     '''creates a unit square from the reference point
     adds points and returns polygon'''
     poly_pts = []
@@ -92,14 +125,14 @@ def unit_square(pt):
     poly_pts.append(point(pt.x + 1, pt.y))
     poly_pts.append(point(pt.x + 1, pt.y + 1))
     poly_pts.append(point(pt.x, pt.y + 1))
-    return polygon(poly_pts)
+    return polygon(poly_pts, classes=classes, style=style)
 
 
 
 # model ******************************
 
 def add_point(pt):
-    '''add point - check if exists first'''
+    '''add point to pts list - check if exists first'''
     logging.info(f'* add_point: {pt}')
     if isinstance(pt, spg.Point2D):
         if not pts.count(pt):
@@ -112,7 +145,7 @@ def add_point(pt):
             return pts[i]
 
 def add_points(pt_array):
-    '''add an array of points'''
+    '''add an array of points to pts list'''
     for pt in pt_array:
         add_point(pt)
 

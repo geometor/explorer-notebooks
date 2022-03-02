@@ -1,6 +1,6 @@
 '''
-the Model module provides a set of tools for constructing geometric models
-relies heavily on sympy for providing the algebraic infrastructure
+The Model module provides a set of tools for constructing geometric models.
+It relies heavily on sympy for providing the algebraic infrastructure
 the functions here are for creating the abstract model, not the rendering
 see the Render module for plotting with matplotlib
 '''
@@ -95,7 +95,7 @@ def circle(pt_c, pt_r, classes=[], style={}):
     return el
 
 
-# geaphical elements
+# graphical elements
 def segment(pt_a, pt_b, classes=[], style={}):
     '''make sympy.geometry.Segment'''
     el = spg.Segment(pt_a, pt_b)

@@ -314,3 +314,5 @@ INFO:root:* add_point: Point2D(-sqrt(5)/4 + (-1/2 + sqrt(2 + 2*sqrt(5))/4)*sqrt(
 INFO:root:  + Point2D(-sqrt(5)/4 + (-1/2 + sqrt(2 + 2*sqrt(5))/4)*sqrt(2 + 2*sqrt(5))/2 + 1/4, -1/2 + sqrt(2 + 2*sqrt(5))/4)
 INFO:root:    > diff: -x**2 + x - y**2 + y + y*sqrt(2 + 2*sqrt(5))/2
 INFO:root:  + Circle(Point2D(1/2, sqrt(2 + 2*sqrt(5))/4), sqrt(sqrt(5)/8 + 3/8))
+WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}
+WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}

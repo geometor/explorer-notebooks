@@ -1,5 +1,7 @@
 '''
 The Render Module 
+provides functions for plotting elements from the geoemtric model to
+matplotlib.
 '''
 
 import matplotlib as mp
