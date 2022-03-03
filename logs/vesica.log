@@ -1,72 +1,78 @@
 INFO:root:Init vesica
-INFO:root:* add_point: Point2D(0, 0)
-INFO:root:  + Point2D(0, 0)
-INFO:root:* add_point: Point2D(1, 0)
-INFO:root:  + Point2D(1, 0)
-INFO:root:* add_element: Line2D(Point2D(0, 0), Point2D(1, 0))
-INFO:root:* add_intersection_points: Line2D(Point2D(0, 0), Point2D(1, 0))
-INFO:root:  + Line2D(Point2D(0, 0), Point2D(1, 0))
-INFO:root:* add_element: Circle(Point2D(0, 0), 1)
-INFO:root:* add_intersection_points: Circle(Point2D(0, 0), 1)
-INFO:root:* add_point: Point2D(-1, 0)
-INFO:root:  + Point2D(-1, 0)
-INFO:root:* add_point: Point2D(1, 0)
-INFO:root:  ! Point2D(1, 0) found at index: 1
-INFO:root:    > diff: -x**2 - y**2 + y + 1
-INFO:root:  + Circle(Point2D(0, 0), 1)
-INFO:root:* add_element: Circle(Point2D(1, 0), 1)
-INFO:root:* add_intersection_points: Circle(Point2D(1, 0), 1)
-INFO:root:* add_point: Point2D(0, 0)
-INFO:root:  ! Point2D(0, 0) found at index: 0
-INFO:root:* add_point: Point2D(2, 0)
-INFO:root:  + Point2D(2, 0)
-INFO:root:* add_point: Point2D(1/2, -sqrt(3)/2)
-INFO:root:  + Point2D(1/2, -sqrt(3)/2)
-INFO:root:* add_point: Point2D(1/2, sqrt(3)/2)
-INFO:root:  + Point2D(1/2, sqrt(3)/2)
-INFO:root:    > diff: -y**2 + y - (x - 1)**2 + 1
-INFO:root:  + Circle(Point2D(1, 0), 1)
-INFO:root:* add_element: Line2D(Point2D(1/2, sqrt(3)/2), Point2D(1/2, -sqrt(3)/2))
-INFO:root:* add_intersection_points: Line2D(Point2D(1/2, sqrt(3)/2), Point2D(1/2, -sqrt(3)/2))
+INFO:root:* add_point: Point2D(-1/2, 0)
+INFO:root:  + Point2D(-1/2, 0)
 INFO:root:* add_point: Point2D(1/2, 0)
 INFO:root:  + Point2D(1/2, 0)
-INFO:root:* add_point: Point2D(1/2, -sqrt(3)/2)
-INFO:root:  ! Point2D(1/2, -sqrt(3)/2) found at index: 4
-INFO:root:* add_point: Point2D(1/2, sqrt(3)/2)
-INFO:root:  ! Point2D(1/2, sqrt(3)/2) found at index: 5
-INFO:root:* add_point: Point2D(1/2, -sqrt(3)/2)
-INFO:root:  ! Point2D(1/2, -sqrt(3)/2) found at index: 4
-INFO:root:* add_point: Point2D(1/2, sqrt(3)/2)
-INFO:root:  ! Point2D(1/2, sqrt(3)/2) found at index: 5
-INFO:root:    > diff: -x + y + 1/2
-INFO:root:  + Line2D(Point2D(1/2, sqrt(3)/2), Point2D(1/2, -sqrt(3)/2))
-INFO:root:* add_point: Point2D(1/2 - sqrt(5)/2, 0)
-INFO:root:  + Point2D(1/2 - sqrt(5)/2, 0)
-INFO:root:* add_point: Point2D(1/2 + sqrt(5)/2, 0)
-INFO:root:  + Point2D(1/2 + sqrt(5)/2, 0)
-INFO:root:* add_point: Point2D(0, 1)
-INFO:root:  + Point2D(0, 1)
-INFO:root:* add_element: Circle(Point2D(1/2, 0), sqrt(5)/2)
-INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), sqrt(5)/2)
-INFO:root:* add_point: Point2D(1/2 - sqrt(5)/2, 0)
-INFO:root:  ! Point2D(1/2 - sqrt(5)/2, 0) found at index: 7
-INFO:root:* add_point: Point2D(1/2 + sqrt(5)/2, 0)
-INFO:root:  ! Point2D(1/2 + sqrt(5)/2, 0) found at index: 8
-INFO:root:* add_point: Point2D(0, -1)
-INFO:root:  + Point2D(0, -1)
-INFO:root:* add_point: Point2D(0, 1)
-INFO:root:  ! Point2D(0, 1) found at index: 9
-INFO:root:* add_point: Point2D(1, -1)
-INFO:root:  + Point2D(1, -1)
-INFO:root:* add_point: Point2D(1, 1)
-INFO:root:  + Point2D(1, 1)
-INFO:root:* add_point: Point2D(1/2, -sqrt(5)/2)
-INFO:root:  + Point2D(1/2, -sqrt(5)/2)
-INFO:root:* add_point: Point2D(1/2, sqrt(5)/2)
-INFO:root:  + Point2D(1/2, sqrt(5)/2)
-INFO:root:    > diff: -x**2 + x - y**2 + y + 1
-INFO:root:  + Circle(Point2D(1/2, 0), sqrt(5)/2)
-WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}
-WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}
-WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}
+INFO:root:* add_element: Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
+INFO:root:* add_intersection_points: Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
+INFO:root:  + Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
+INFO:root:* add_element: Line2D(Point2D(1/2, 0), Point2D(-1/2, 0))
+INFO:root:* add_intersection_points: Line2D(Point2D(1/2, 0), Point2D(-1/2, 0))
+INFO:root:* add_point: Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
+INFO:root:
+            ! COINCIDENT
+                Line2D(Point2D(1/2, 0), Point2D(-1/2, 0))
+                Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
+                
+INFO:root:* add_element: Circle(Point2D(-1/2, 0), 1)
+INFO:root:* add_intersection_points: Circle(Point2D(-1/2, 0), 1)
+INFO:root:* add_point: Point2D(-3/2, 0)
+INFO:root:  + Point2D(-3/2, 0)
+INFO:root:* add_point: Point2D(1/2, 0)
+INFO:root:  ! Point2D(1/2, 0) found at index: 1
+INFO:root:  + Circle(Point2D(-1/2, 0), 1)
+INFO:root:* add_element: Circle(Point2D(1/2, 0), 1)
+INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), 1)
+INFO:root:* add_point: Point2D(-1/2, 0)
+INFO:root:  ! Point2D(-1/2, 0) found at index: 0
+INFO:root:* add_point: Point2D(3/2, 0)
+INFO:root:  + Point2D(3/2, 0)
+INFO:root:* add_point: Point2D(0, -sqrt(3)/2)
+INFO:root:  + Point2D(0, -sqrt(3)/2)
+INFO:root:* add_point: Point2D(0, sqrt(3)/2)
+INFO:root:  + Point2D(0, sqrt(3)/2)
+INFO:root:  + Circle(Point2D(1/2, 0), 1)
+INFO:root:* add_element: Line2D(Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2))
+INFO:root:* add_intersection_points: Line2D(Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2))
+INFO:root:* add_point: Point2D(0, 0)
+INFO:root:  + Point2D(0, 0)
+INFO:root:* add_point: Point2D(0, -sqrt(3)/2)
+INFO:root:  ! Point2D(0, -sqrt(3)/2) found at index: 4
+INFO:root:* add_point: Point2D(0, sqrt(3)/2)
+INFO:root:  ! Point2D(0, sqrt(3)/2) found at index: 5
+INFO:root:* add_point: Point2D(0, -sqrt(3)/2)
+INFO:root:  ! Point2D(0, -sqrt(3)/2) found at index: 4
+INFO:root:* add_point: Point2D(0, sqrt(3)/2)
+INFO:root:  ! Point2D(0, sqrt(3)/2) found at index: 5
+INFO:root:  + Line2D(Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2))
+INFO:root:* add_element: Circle(Point2D(-1/2, 0), 2)
+INFO:root:* add_intersection_points: Circle(Point2D(-1/2, 0), 2)
+INFO:root:* add_point: Point2D(-5/2, 0)
+INFO:root:  + Point2D(-5/2, 0)
+INFO:root:* add_point: Point2D(3/2, 0)
+INFO:root:  ! Point2D(3/2, 0) found at index: 3
+INFO:root:* add_point: Point2D(3/2, 0)
+INFO:root:  ! Point2D(3/2, 0) found at index: 3
+INFO:root:* add_point: Point2D(0, -sqrt(15)/2)
+INFO:root:  + Point2D(0, -sqrt(15)/2)
+INFO:root:* add_point: Point2D(0, sqrt(15)/2)
+INFO:root:  + Point2D(0, sqrt(15)/2)
+INFO:root:  + Circle(Point2D(-1/2, 0), 2)
+INFO:root:* add_element: Circle(Point2D(1/2, 0), 2)
+INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), 2)
+INFO:root:* add_point: Point2D(-3/2, 0)
+INFO:root:  ! Point2D(-3/2, 0) found at index: 2
+INFO:root:* add_point: Point2D(5/2, 0)
+INFO:root:  + Point2D(5/2, 0)
+INFO:root:* add_point: Point2D(-3/2, 0)
+INFO:root:  ! Point2D(-3/2, 0) found at index: 2
+INFO:root:* add_point: Point2D(0, -sqrt(15)/2)
+INFO:root:  ! Point2D(0, -sqrt(15)/2) found at index: 8
+INFO:root:* add_point: Point2D(0, sqrt(15)/2)
+INFO:root:  ! Point2D(0, sqrt(15)/2) found at index: 9
+INFO:root:* add_point: Point2D(0, -sqrt(15)/2)
+INFO:root:  ! Point2D(0, -sqrt(15)/2) found at index: 8
+INFO:root:* add_point: Point2D(0, sqrt(15)/2)
+INFO:root:  ! Point2D(0, sqrt(15)/2) found at index: 9
+INFO:root:  + Circle(Point2D(1/2, 0), 2)
 WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}

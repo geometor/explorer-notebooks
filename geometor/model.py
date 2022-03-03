@@ -153,6 +153,7 @@ def add_intersection_points(el):
     logging.info(f'* add_intersection_points: {el}')
     for prev in elements:
         for pt in el.intersection(prev):
+            pt.classes = []
             add_point(pt)
 
             
@@ -162,21 +163,21 @@ def add_intersection_points_mp(el):
         results = pool.map(el.intersection, elements)
         for result in results:
             for pt in result:
+                pt.classes = []
                 add_point(pt)
 
 
 def add_element(el):
     logging.info(f'* add_element: {el}')
     add_intersection_points_mp(el)
+    # check if el is in the element list
     if not elements.count(el):
+        # if not found by count, test each element anyway
         for prev in elements:
+
             diff = (prev.equation().simplify() - el.equation().simplify()).simplify()
-            logging.info(f'    > diff: {diff}')
-            if diff:
-                elements.append(el)
-                logging.info(f'  + {el}')
-                return el
-            else:
+            #  logging.info(f'    > diff: {diff}')
+            if not diff:
                 logging.info(f'''
             ! COINCIDENT
                 {el}
