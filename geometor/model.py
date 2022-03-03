@@ -226,3 +226,35 @@ def bisector(pt1, pt2):
     # last two points should be from the last two circles intersection
     el = line(pts[-1], pts[-2])
     add_element(el)
+
+    
+def get_pts_by_class(classname):
+    '''find all points with specifdied classname'''
+    pts_by_class = []
+    for pt in pts:
+        if pt.classes.count(classname):
+            pts_by_class.append(pt)
+    return pts_by_class
+
+def get_elements_by_class(classname):
+    '''find all elements with specifdied classname'''
+    elements_by_class = []
+    for el in elements:
+        if el.classes.count(classname):
+            elements_by_class.append(el)
+    return elements_by_class
+
+
+def line_get_y(l1, x):
+    '''return y value for specific x'''
+    a, b, c = l1.coefficients
+    return (-a * x - c) / b
+
+
+def spread(l1, l2):
+    '''calculate the spread of two lines'''
+    a1, a2, a3 = l1.coefficients
+    b1, b2, b3 = l2.coefficients
+
+    spread = ((a1*b2 - a2*b1) ** 2) / ( (a1 ** 2 + b1 ** 2) * (a2 ** 2 + b2 ** 2) )
+    return spread
