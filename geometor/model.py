@@ -70,9 +70,10 @@ def set_bounds(limx, limy):
         )
 
 # structural elements
-def point(x_val, y_val, classes=[], style={}):
+def point(x_val, y_val, parents=[], classes=[], style={}):
     '''make sympy.geometry.Point'''
     pt = spg.Point(sp.simplify(x_val), sp.simplify(y_val))
+    pt.parents = parents
     pt.classes = classes
     pt.style = style
     return pt
@@ -81,6 +82,7 @@ def point(x_val, y_val, classes=[], style={}):
 def line(pt_a, pt_b, classes=[], style={}):
     '''make sympy.geometry.Line'''
     el = spg.Line(pt_a, pt_b)
+    el.pts = [pt_a, pt_b]
     el.classes = classes
     el.style = style
     return el
@@ -90,6 +92,7 @@ def circle(pt_c, pt_r, classes=[], style={}):
     '''make sympy.geometry.Circle from two points'''
     el = spg.Circle(pt_c, pt_c.distance(pt_r))
     el.radius_pt = pt_r
+    el.pts = [pt_r]
     el.classes = classes
     el.style = style
     return el
@@ -161,9 +164,10 @@ def add_intersection_points_mp(el):
     logging.info(f'* add_intersection_points: {el}')
     with Pool(num_workers) as pool:
         results = pool.map(el.intersection, elements)
-        for result in results:
+        for index, result in enumerate(results):
             for pt in result:
                 pt.classes = []
+                pt.parents = [el, elements[index]]
                 add_point(pt)
 
 

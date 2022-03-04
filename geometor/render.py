@@ -19,6 +19,16 @@ fig, ax = plt.subplots()
 
 style_radius = {'color': '#c099', 'marker': ''}
 
+classes = {}
+classes['blue'] = {'color':'b', 'linestyle':':'}
+classes['red'] = {'color':'r', 'linestyle':':'}
+classes['green'] = {'color':'g', 'linestyle':':'}
+
+classes['circle'] = {'under_color':'#0FF', 'under_markersize':7, 'under_marker':'o'}
+classes['square'] = {'under_color':'#FF0', 'under_markersize':7, 'under_marker':'s'}
+classes['diamond'] = {'under_color':'#F0F', 'under_markersize':7, 'under_marker':'D'}
+
+
 
 def plt_init(limx='', limy=''):
     '''configure the MatPlotLib stateful plot engine'''

@@ -1,5 +1,7 @@
 '''
 The Render Module 
+provides functions for plotting elements from the geoemtric model to
+matplotlib.
 '''
 
 import matplotlib as mp
@@ -17,6 +19,16 @@ fig, ax = plt.subplots()
 
 style_radius = {'color': '#c099', 'marker': ''}
 
+classes = {}
+classes['blue'] = {'color':'b', 'linestyle':':'}
+classes['red'] = {'color':'r', 'linestyle':':'}
+classes['green'] = {'color':'g', 'linestyle':':'}
+
+classes['circle'] = {'under_color':'#0FF', 'under_markersize':7, 'under_marker':'o'}
+classes['square'] = {'under_color':'#FF0', 'under_markersize':7, 'under_marker':'s'}
+classes['diamond'] = {'under_color':'#F0F', 'under_markersize':7, 'under_marker':'D'}
+
+
 
 def plt_init(limx='', limy=''):
     '''configure the MatPlotLib stateful plot engine'''
@@ -25,7 +37,7 @@ def plt_init(limx='', limy=''):
     plt.gca().set_aspect('equal')
 
     if limx:
-        ax.set_xlim(limx[0], limx[1])
+        plt.gca().set_xlim(limx[0], limx[1])
     if limy:
         plt.gca().set_ylim(limy[0], limy[1])
     plt.gca().set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
@@ -60,6 +72,12 @@ def plot_line(el, bounds, color='#999', linestyle=':', linewidth=1):
     ends = bounds.intersection(el)
     xs = [pt.x.evalf() for pt in ends]
     ys = [pt.y.evalf() for pt in ends]
+    
+    #  style = {}
+    #  for cl in el.classes:
+        #  cl_style = classes[cl]
+        #  style.update(cl_style)
+        
 
     plt.plot(xs, ys, color=color, linestyle=linestyle, linewidth=linewidth)
 
