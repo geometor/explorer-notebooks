@@ -20,9 +20,10 @@ fig, ax = plt.subplots()
 style_radius = {'color': '#c099', 'marker': ''}
 
 classes = {}
-classes['blue'] = {'color':'b', 'linestyle':':'}
-classes['red'] = {'color':'r', 'linestyle':':'}
-classes['green'] = {'color':'g', 'linestyle':':'}
+classes['blue'] = {'color':'#33F', 'linestyle':':'}
+classes['red'] = {'color':'#F33', 'linestyle':':'}
+classes['green'] = {'color':'#2F2', 'linestyle':':'}
+classes['pappus'] = {'linestyle':'-'}
 
 classes['circle'] = {'under_color':'#0FF', 'under_markersize':7, 'under_marker':'o'}
 classes['square'] = {'under_color':'#FF0', 'under_markersize':7, 'under_marker':'s'}
