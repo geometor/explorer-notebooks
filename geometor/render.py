@@ -24,6 +24,7 @@ classes['blue'] = {'color':'#33F', 'linestyle':':'}
 classes['red'] = {'color':'#F33', 'linestyle':':'}
 classes['green'] = {'color':'#2F2', 'linestyle':':'}
 classes['pappus'] = {'linestyle':'-'}
+classes['bisector'] = {'linestyle':'.-'}
 
 classes['circle'] = {'under_color':'#0FF', 'under_markersize':7, 'under_marker':'o'}
 classes['square'] = {'under_color':'#FF0', 'under_markersize':7, 'under_marker':'s'}
@@ -61,11 +62,17 @@ def plt_init_polar():
 
 
 # plot elements to plt
-def plot_circle(circle, color='#c09', linestyle=':', fill=False):
+def plot_circle(circle, color='#c09', linestyle=':', linewidth=1, fill=False):
     '''takes a sympy circle and plots with the matplotlib Circle patch'''
     center = (circle.center.x.evalf(), circle.center.y.evalf())
     radius = circle.radius
-    el = plt.Circle(center, radius, color=color, linestyle=linestyle, fill=fill)
+    styles = {'color':color, 'linestyle':linestyle, 'linewidth':linewidth, 'fill':fill}
+    for cl in circle.classes:
+        if cl in classes:
+            styles.update(classes[cl])
+    
+    # el = plt.Circle(center, radius, color=color, linestyle=linestyle, fill=fill)
+    el = plt.Circle(center, radius, **styles)
     plt.gca().add_patch(el)
 
 

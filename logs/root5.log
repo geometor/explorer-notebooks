@@ -12,7 +12,6 @@ INFO:root:* add_point: Point2D(-3/2, 0)
 INFO:root:  + Point2D(-3/2, 0)
 INFO:root:* add_point: Point2D(1/2, 0)
 INFO:root:  ! Point2D(1/2, 0) found at index: 1
-INFO:root:    > diff: -x**2 - x - y**2 + y + 3/4
 INFO:root:  + Circle(Point2D(-1/2, 0), 1)
 INFO:root:* add_element: Circle(Point2D(1/2, 0), 1)
 INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), 1)
@@ -24,7 +23,6 @@ INFO:root:* add_point: Point2D(0, -sqrt(3)/2)
 INFO:root:  + Point2D(0, -sqrt(3)/2)
 INFO:root:* add_point: Point2D(0, sqrt(3)/2)
 INFO:root:  + Point2D(0, sqrt(3)/2)
-INFO:root:    > diff: -x**2 + x - y**2 + y + 3/4
 INFO:root:  + Circle(Point2D(1/2, 0), 1)
 INFO:root:* add_element: Line2D(Point2D(0, sqrt(3)/2), Point2D(0, -sqrt(3)/2))
 INFO:root:* add_intersection_points: Line2D(Point2D(0, sqrt(3)/2), Point2D(0, -sqrt(3)/2))
@@ -38,7 +36,6 @@ INFO:root:* add_point: Point2D(0, -sqrt(3)/2)
 INFO:root:  ! Point2D(0, -sqrt(3)/2) found at index: 4
 INFO:root:* add_point: Point2D(0, sqrt(3)/2)
 INFO:root:  ! Point2D(0, sqrt(3)/2) found at index: 5
-INFO:root:    > diff: -x + y
 INFO:root:  + Line2D(Point2D(0, sqrt(3)/2), Point2D(0, -sqrt(3)/2))
 INFO:root:* add_element: Line2D(Point2D(-1/2, 0), Point2D(3/2, 0))
 INFO:root:* add_intersection_points: Line2D(Point2D(-1/2, 0), Point2D(3/2, 0))
@@ -53,7 +50,6 @@ INFO:root:* add_point: Point2D(3/2, 0)
 INFO:root:  ! Point2D(3/2, 0) found at index: 3
 INFO:root:* add_point: Point2D(0, 0)
 INFO:root:  ! Point2D(0, 0) found at index: 6
-INFO:root:    > diff: 0
 INFO:root:
             ! COINCIDENT
                 Line2D(Point2D(-1/2, 0), Point2D(3/2, 0))
@@ -71,7 +67,6 @@ INFO:root:* add_point: Point2D(0, -sqrt(15)/2)
 INFO:root:  + Point2D(0, -sqrt(15)/2)
 INFO:root:* add_point: Point2D(0, sqrt(15)/2)
 INFO:root:  + Point2D(0, sqrt(15)/2)
-INFO:root:    > diff: -x**2 - x - y**2 + y + 15/4
 INFO:root:  + Circle(Point2D(-1/2, 0), 2)
 INFO:root:* add_element: Circle(Point2D(3/2, 0), 2)
 INFO:root:* add_intersection_points: Circle(Point2D(3/2, 0), 2)
@@ -93,7 +88,6 @@ INFO:root:* add_point: Point2D(1/2, sqrt(3))
 INFO:root:  + Point2D(1/2, sqrt(3))
 INFO:root:* add_point: Point2D(1/2, -sqrt(3))
 INFO:root:  + Point2D(1/2, -sqrt(3))
-INFO:root:    > diff: -x**2 + 3*x - y**2 + y + 7/4
 INFO:root:  + Circle(Point2D(3/2, 0), 2)
 INFO:root:* add_element: Line2D(Point2D(1/2, -sqrt(3)), Point2D(1/2, sqrt(3)))
 INFO:root:* add_intersection_points: Line2D(Point2D(1/2, -sqrt(3)), Point2D(1/2, sqrt(3)))
@@ -113,7 +107,6 @@ INFO:root:* add_point: Point2D(1/2, sqrt(3))
 INFO:root:  ! Point2D(1/2, sqrt(3)) found at index: 15
 INFO:root:* add_point: Point2D(1/2, -sqrt(3))
 INFO:root:  ! Point2D(1/2, -sqrt(3)) found at index: 16
-INFO:root:    > diff: -x + y + 1/2
 INFO:root:  + Line2D(Point2D(1/2, -sqrt(3)), Point2D(1/2, sqrt(3)))
 INFO:root:* add_element: Line2D(Point2D(1/2, 0), Point2D(-3/2, 0))
 INFO:root:* add_intersection_points: Line2D(Point2D(1/2, 0), Point2D(-3/2, 0))
@@ -138,7 +131,6 @@ INFO:root:* add_point: Point2D(7/2, 0)
 INFO:root:  ! Point2D(7/2, 0) found at index: 10
 INFO:root:* add_point: Point2D(1/2, 0)
 INFO:root:  ! Point2D(1/2, 0) found at index: 1
-INFO:root:    > diff: 0
 INFO:root:
             ! COINCIDENT
                 Line2D(Point2D(1/2, 0), Point2D(-3/2, 0))
@@ -168,7 +160,6 @@ INFO:root:* add_point: Point2D(1/2, -2)
 INFO:root:  + Point2D(1/2, -2)
 INFO:root:* add_point: Point2D(1/2, 2)
 INFO:root:  + Point2D(1/2, 2)
-INFO:root:    > diff: -x**2 + x - y**2 + y + 15/4
 INFO:root:  + Circle(Point2D(1/2, 0), 2)
 INFO:root:* add_element: Circle(Point2D(-3/2, 0), 2)
 INFO:root:* add_intersection_points: Circle(Point2D(-3/2, 0), 2)
@@ -200,7 +191,6 @@ INFO:root:* add_point: Point2D(-1/2, sqrt(3))
 INFO:root:  + Point2D(-1/2, sqrt(3))
 INFO:root:* add_point: Point2D(-1/2, -sqrt(3))
 INFO:root:  + Point2D(-1/2, -sqrt(3))
-INFO:root:    > diff: -x**2 - 3*x - y**2 + y + 7/4
 INFO:root:  + Circle(Point2D(-3/2, 0), 2)
 INFO:root:* add_element: Line2D(Point2D(-1/2, -sqrt(3)), Point2D(-1/2, sqrt(3)))
 INFO:root:* add_intersection_points: Line2D(Point2D(-1/2, -sqrt(3)), Point2D(-1/2, sqrt(3)))
@@ -226,7 +216,6 @@ INFO:root:* add_point: Point2D(-1/2, sqrt(3))
 INFO:root:  ! Point2D(-1/2, sqrt(3)) found at index: 29
 INFO:root:* add_point: Point2D(-1/2, -sqrt(3))
 INFO:root:  ! Point2D(-1/2, -sqrt(3)) found at index: 30
-INFO:root:    > diff: -x + y - 1/2
 INFO:root:  + Line2D(Point2D(-1/2, -sqrt(3)), Point2D(-1/2, sqrt(3)))
 INFO:root:* add_element: Circle(Point2D(0, 0), 1/2)
 INFO:root:* add_intersection_points: Circle(Point2D(0, 0), 1/2)
@@ -250,7 +239,6 @@ INFO:root:* add_point: Point2D(1/2, 0)
 INFO:root:  ! Point2D(1/2, 0) found at index: 1
 INFO:root:* add_point: Point2D(-1/2, 0)
 INFO:root:  ! Point2D(-1/2, 0) found at index: 0
-INFO:root:    > diff: -x**2 - y**2 + y + 1/4
 INFO:root:  + Circle(Point2D(0, 0), 1/2)
 INFO:root:* add_element: Circle(Point2D(0, 0), sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(0, 0), sqrt(5)/2)
@@ -286,7 +274,6 @@ INFO:root:* add_point: Point2D(-1/2, -1)
 INFO:root:  ! Point2D(-1/2, -1) found at index: 31
 INFO:root:* add_point: Point2D(-1/2, 1)
 INFO:root:  ! Point2D(-1/2, 1) found at index: 32
-INFO:root:    > diff: -x**2 - y**2 + y + 5/4
 INFO:root:  + Circle(Point2D(0, 0), sqrt(5)/2)
 INFO:root:* add_element: Circle(Point2D(-1/2, 0), 1/2 + sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(-1/2, 0), 1/2 + sqrt(5)/2)
@@ -324,7 +311,6 @@ INFO:root:* add_point: Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2))
 INFO:root:  + Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2))
 INFO:root:* add_point: Point2D(sqrt(5)/2, 0)
 INFO:root:  ! Point2D(sqrt(5)/2, 0) found at index: 38
-INFO:root:    > diff: -x**2 - x - y**2 + y + sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(-1/2, 0), 1/2 + sqrt(5)/2)
 INFO:root:* add_element: Circle(Point2D(1/2, 0), 1/2 + sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), 1/2 + sqrt(5)/2)
@@ -366,7 +352,6 @@ INFO:root:* add_point: Point2D(0, sqrt(sqrt(5)/2 + 5/4))
 INFO:root:  ! Point2D(0, sqrt(sqrt(5)/2 + 5/4)) found at index: 49
 INFO:root:* add_point: Point2D(0, -sqrt(sqrt(5)/2 + 5/4))
 INFO:root:  ! Point2D(0, -sqrt(sqrt(5)/2 + 5/4)) found at index: 50
-INFO:root:    > diff: -x**2 + x - y**2 + y + sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(1/2, 0), 1/2 + sqrt(5)/2)
 INFO:root:* add_element: Circle(Point2D(-1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(-1/2, 0), -1/2 + sqrt(5)/2)
@@ -398,7 +383,6 @@ INFO:root:* add_point: Point2D(-sqrt(5)/2, 0)
 INFO:root:  ! Point2D(-sqrt(5)/2, 0) found at index: 37
 INFO:root:* add_point: Point2D(-sqrt(5)/2, 0)
 INFO:root:  ! Point2D(-sqrt(5)/2, 0) found at index: 37
-INFO:root:    > diff: -x**2 - x - y**2 + y - sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(-1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_element: Circle(Point2D(1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_intersection_points: Circle(Point2D(1/2, 0), -1/2 + sqrt(5)/2)
@@ -434,7 +418,6 @@ INFO:root:* add_point: Point2D(0, sqrt(5/4 - sqrt(5)/2))
 INFO:root:  ! Point2D(0, sqrt(5/4 - sqrt(5)/2)) found at index: 79
 INFO:root:* add_point: Point2D(0, -sqrt(5/4 - sqrt(5)/2))
 INFO:root:  ! Point2D(0, -sqrt(5/4 - sqrt(5)/2)) found at index: 80
-INFO:root:    > diff: -x**2 + x - y**2 + y - sqrt(5)/2 + 5/4
 INFO:root:  + Circle(Point2D(1/2, 0), -1/2 + sqrt(5)/2)
 INFO:root:* add_point: Point2D(-1/2, 0)
 INFO:root:  ! Point2D(-1/2, 0) found at index: 0
@@ -452,4 +435,4 @@ INFO:root:* add_point: Point2D(1/2, 0)
 INFO:root:  ! Point2D(1/2, 0) found at index: 1
 INFO:root:* add_point: Point2D(-1/2, 0)
 INFO:root:  ! Point2D(-1/2, 0) found at index: 0
-WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 0.8955223880597015, 'type': 'set_device_pixel_ratio'}
+WARNING:matplotlib.backends.backend_webagg_core:Unhandled message type set_device_pixel_ratio. {'device_pixel_ratio': 1.2, 'type': 'set_device_pixel_ratio'}
