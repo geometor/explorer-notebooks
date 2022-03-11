@@ -1,9 +1,4 @@
 --exclude=.git
 --exclude=logs
---exclude=**/vendor
---exclude=**/node_modules
---exclude=**/packages
---exclude=**min.js
---exclude=**pack.js
---exclude=**/.ipynb_checkpoints
---exclude=**/__pycache__
+--exclude=.ipynb_checkpoints
+--exclude=__pycache__
