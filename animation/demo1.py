@@ -6,7 +6,9 @@ from matplotlib.animation import FuncAnimation
 # initializing a figure in
 # which the graph will be plotted
 fig = plt.figure()
+ax = plt.gca()
 plt.style.use('dark_background')
+plt.axis('off')
 
 # marking the x-axis and y-axis
 axis = plt.axes(xlim =(0, 4),
@@ -30,8 +32,8 @@ def animate(i):
 	
 	return line,
 
-anim = FuncAnimation(fig, animate, init_func = init, frames = 200, interval = 20, blit = True)
+anim = FuncAnimation(fig, animate, init_func = init, frames = 100, interval = 20, blit = True)
 
 
-anim.save('continuousSineWave.mp4', writer = 'ffmpeg', fps = 30)
+anim.save('demo1.mp4', writer = 'ffmpeg', fps = 30)
 
