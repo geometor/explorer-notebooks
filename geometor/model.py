@@ -24,18 +24,10 @@ num_workers = cpu_count()
 phi = sp.Rational(1, 2) + (sp.sqrt(5) / 2)
 
 # globals
+history = []
 pts = []
 elements = []
 polygons = []
-
-
-# class to handle element ancestry
-class Relations:
-    parents = []
-    descendents = []
-
-points = defaultdict(Relations)
-# points = defaultdict({'parents': [], 'desc': []})
 
 
 def get_limits_from_points(pts, margin=1):
@@ -140,6 +132,7 @@ def add_point(pt):
     if isinstance(pt, spg.Point2D):
         if not pts.count(pt):
             pts.append(pt)
+            history.append(pt)
             logging.info(f'  + {pt}')
             return pt
         else:
@@ -157,6 +150,7 @@ def add_intersection_points(el):
     for prev in elements:
         for pt in el.intersection(prev):
             pt.classes = []
+            pt.parents = [el, elements[index]]
             add_point(pt)
 
             

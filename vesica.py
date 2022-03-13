@@ -1,10 +1,10 @@
 from geometor.utils import *
 from geometor.model import *
 from geometor.render import *
-
-sp.init_printing()
 from geometor.pappus import *
 from itertools import permutations
+
+sp.init_printing()
 
 NAME = 'vesica'
 log_init(NAME)
@@ -55,6 +55,4 @@ print('elements: ', len(elements))
 for el in elements:
     print(f'    {el.equation()} {el.classes} ')
 
-
 plt.show()
-

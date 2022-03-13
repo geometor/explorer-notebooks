@@ -21,7 +21,7 @@ def f(x, freq):
     return np.sin(x * freq)
 
 
-axfreq = plt.axes([0.25, 0.1, 0.65, 0.03])
+axfreq = plt.axes([0.15, 0.1, 0.65, 0.03])
 slider = Slider(axfreq, label="freq", valmin=0.05, valmax=10)
 controls = iplt.plot(x, f, freq=slider, ax=ax)
 plt.show()
