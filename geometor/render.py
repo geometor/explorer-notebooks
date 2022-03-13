@@ -15,7 +15,6 @@ import sympy.geometry as spg
 import logging
 import math as math
 
-fig, ax = plt.subplots()
 
 style_radius = {'color': '#c099', 'marker': ''}
 
@@ -34,8 +33,8 @@ classes['diamond'] = {'under_color':'#F0F', 'under_markersize':7, 'under_marker'
 
 def plt_init(limx='', limy=''):
     '''configure the MatPlotLib stateful plot engine'''
-    mp.style.use('dark_background')
-    plt.figure(num=1, figsize=(7, 5), dpi=120)
+    plt.style.use('dark_background')
+    #  plt.figure(num=1, figsize=(7, 5), dpi=120)
     plt.gca().set_aspect('equal')
 
     if limx:
