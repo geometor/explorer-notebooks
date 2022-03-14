@@ -8,11 +8,13 @@ from itertools import permutations
 
 #  %matplotlib widget
 plt.rcParams['figure.figsize'] = [16, 9]
-
 plt.style.use('dark_background')
+
 #  fig, (ax0, ax1) = plt.subplots(ncols=2, figsize=(7, 4))
 fig, ax = plt.subplots()
 ax.set_aspect('equal')
+
+NAME = 'pappus'
 
 for perm_id in range(6):
     print('PERMUTATION: ', perm_id)
@@ -92,8 +94,8 @@ for perm_id in range(6):
     plot_points(get_pts_by_class('diamond'), **classes['diamond'], add_to_cursors=False)
     plot_points(pts)
 
-    filename = f'/home/phi/Sessions/pappus/line-{perm_id}.png'
-    snapshot(filename)
+    filename = f'line-{perm_id}.png'
+    snapshot(NAME, filename)
 
 
     triangle_sq = polygon(get_pts_by_class('square'))
@@ -117,8 +119,8 @@ for perm_id in range(6):
     else:
         plot_segment2(triangle_dia, color='#F0F9', marker='')
 
-    filename = f'/home/phi/Sessions/pappus/line-{perm_id}-tri.png'
-    snapshot(filename)
+    filename = f'line-{perm_id}-tri.png'
+    snapshot(NAME, filename)
 
 
     print('points: ', len(pts))

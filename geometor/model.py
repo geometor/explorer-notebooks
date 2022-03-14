@@ -139,6 +139,8 @@ def add_point(pt):
             i = pts.index(pt)
             logging.info(f'  ! {pt} found at index: {i}')
             return pts[i]
+    else:
+        logging.info('    not a point')
 
 
 def add_points(pt_array):
@@ -198,6 +200,10 @@ def add_element(el):
         logging.info(f'  ! {el} found at index: {i}')
         return elements[i]
 
+def add_polygon(poly):
+    polygons.append(poly)
+    history.append(poly)
+    return poly
     
 # helpers ******************************
 def begin():

@@ -16,13 +16,12 @@ add_element(line(pts[1], pts[0]))
 add_element(circle(pts[0], pts[1]))
 add_element(circle(pts[1], pts[0]))
 
-bl = add_element(line(pts[4], pts[5]))
+bl = add_element(line(pts[4], pts[5], classes=['bisector']))
 
 add_element(circle(pts[0], pts[3]))
 add_element(circle(pts[1], pts[2]))
 
 plt.rcParams['figure.figsize'] = [16, 9]
-
 plt.style.use('dark_background')
 #  fig, (ax0, ax1) = plt.subplots(ncols=2, figsize=(7, 4))
 fig, ax = plt.subplots()
@@ -43,10 +42,6 @@ fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 ax.axis(False)
 plt.tight_layout()
 
-plot_elements(elements, bounds)
-plot_points(pts)
-
-#  snapshot('vesica/01.png')
 
 print('points: ', len(pts))
 for pt in pts:
@@ -63,26 +58,24 @@ print(bl.pts)
 print(elements[0].pts)
 print(pts[4].elements)
 
-sgs = []
-sgs.append(plot_segment(pts[9], pts[5]))
-sgs.append(plot_segment(pts[5], pts[4]))
-sgs.append(plot_segment(pts[4], pts[8]))
+#  sgs = []
+#  sgs.append(plot_segment(pts[9], pts[5]))
+#  sgs.append(plot_segment(pts[5], pts[4]))
+#  sgs.append(plot_segment(pts[4], pts[8]))
 
-# plot_elements(elements, bounds)
-plot_points(pts)
-#  snapshot('vesica/02.png')
 
-ratios = []
-ratios.append((sgs[0] / sgs[1]).simplify())
-ratios.append((sgs[1] / sgs[2]).simplify())
-print([ratio - phi for ratio in ratios])
+#  ratios = []
+#  ratios.append((sgs[0] / sgs[1]).simplify())
+#  ratios.append((sgs[1] / sgs[2]).simplify())
+#  print([ratio - phi for ratio in ratios])
 
-for i in range(1, len(history)+1):
-    ax.clear()
-    ax.axis(False)
-    plot_sequence(history[0:i], bounds)
-    snapshot(f'vesica/{str(i).zfill(3)}.png')
+#  for i in range(1, len(history)+1):
+    #  ax.clear()
+    #  ax.axis(False)
+    #  plot_sequence(history[0:i], bounds)
+    #  snapshot(NAME, f'{str(i).zfill(3)}.png')
 
+plot_sequence(ax, history, bounds)
 
 plt.show()
 
