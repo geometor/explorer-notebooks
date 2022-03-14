@@ -47,7 +47,9 @@ fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 ax.axis(False)
 plt.tight_layout()
 
-build_sequence(NAME, ax, history, bounds)
+#  build_sequence(NAME, ax, history, bounds)
+
+plot_sequence(ax, history, bounds)
 
 sg_pts = [pts[i] for i in [18, 0, 1, 19]]
 p = polygon_ids([18, 0, 1, 19])
@@ -56,5 +58,6 @@ sgs = [segment(sg_pts[i], sg_pts[i+1]) for i in range(len(sg_pts)-1)]
 
 #  for sg in sgs:
     #  plot_segment2(sg)
+analyze_line(baseline)
 
 plt.show()

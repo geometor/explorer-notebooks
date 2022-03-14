@@ -14,6 +14,7 @@ import numpy as np
 from collections import defaultdict
 import logging
 
+from itertools import permutations, combinations
 
 from multiprocessing import Pool, cpu_count
 
@@ -270,3 +271,33 @@ def spread(l1, l2):
 
     spread = ((a1*b2 - a2*b1) ** 2) / ( (a1 ** 2 + b1 ** 2) * (a2 ** 2 + b2 ** 2) )
     return spread
+
+
+def compare_points(pt1, pt2):
+    if pt1.x.evalf() > pt2.x.evalf():
+        return 1
+    elif pt1.x.evalf() < pt2.x.evalf():
+        return -1
+    else:
+        if pt1.y.evalf() > pt2.y.evalf():
+            return 1
+        elif pt1.y.evalf() < pt2.y.evalf():
+            return -1
+        else:
+            return 0
+
+def point_value(pt):
+    #  return pt.x.evalf()
+    return (pt.x.evalf(), pt.y.evalf())
+
+def check_range(r):
+    pass
+
+def analyze_line(line):
+    line_pts = sorted(list(line.pts), key=point_value)
+    for pt in line_pts:
+        print(pt.x, pt.x.evalf(), pt.y, pt.y.evalf())
+    ranges = list(combinations(line_pts, 4))
+    for r in ranges:
+        print(r)
+    

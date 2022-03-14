@@ -6,10 +6,6 @@ sp.init_printing()
 from geometor.pappus import *
 from itertools import permutations
 
-#  %matplotlib widget
-plt.rcParams['figure.figsize'] = [16, 9]
-plt.style.use('dark_background')
-
 #  fig, (ax0, ax1) = plt.subplots(ncols=2, figsize=(7, 4))
 fig, ax = plt.subplots()
 ax.set_aspect('equal')
@@ -21,6 +17,7 @@ for perm_id in range(6):
     print()
     pts.clear()
     elements.clear()
+    history.clear()
 
     A = []
     A.append( add_point( point(0, 0, classes=['A', 'square']) ) )
@@ -67,14 +64,8 @@ for perm_id in range(6):
         pappus_line.pts.add(meets[2])
         print('collinear: ', sp.Point.is_collinear(*meets))
 
-
-
     limx, limy = get_limits_from_points(pts)
     bounds = set_bounds(limx, limy)
-
-    #  plt.cla()
-    #  fig, ax = plt.subplots()
-
 
     # if limx:
     #     plt.gca().set_xlim(limx[0], limx[1])
@@ -87,40 +78,17 @@ for perm_id in range(6):
     ax.axis(False)
     plt.tight_layout()
 
-    plot_elements(elements, bounds)
-
-    plot_points(get_pts_by_class('circle'), **classes['circle'], add_to_cursors=False)
-    plot_points(get_pts_by_class('square'), **classes['square'], add_to_cursors=False)
-    plot_points(get_pts_by_class('diamond'), **classes['diamond'], add_to_cursors=False)
-    plot_points(pts)
-
-    filename = f'line-{perm_id}.png'
-    snapshot(NAME, filename)
-
-
-    triangle_sq = polygon(get_pts_by_class('square'))
+    triangle_sq = add_polygon(polygon(get_pts_by_class('square'), classes=['yellow']))
     if isinstance(triangle_sq, spg.Triangle):
-        plot_polygon(triangle_sq, color='#FF03')
         print(f'squares area: {triangle_sq.area}')
-    else:
-        plot_segment2(triangle_sq, color='#FF09', marker='')
 
-    triangle_cir = polygon(get_pts_by_class('circle'))
+    triangle_cir = add_polygon(polygon(get_pts_by_class('circle'), classes=['cyan']))
     if isinstance(triangle_cir, spg.Triangle):
-        plot_polygon(triangle_cir, color='#0FF3')
         print(f'circles area: {triangle_cir.area}')
-    else:
-        plot_segment2(triangle_cir, color='#0FF9', marker='')
 
-    triangle_dia = polygon(get_pts_by_class('diamond'))
+    triangle_dia = add_polygon(polygon(get_pts_by_class('diamond'), classes=['magenta']))
     if isinstance(triangle_dia, spg.Triangle):
-        plot_polygon(triangle_dia, color='#F0F3')
         print(f'diamonds area: {triangle_dia.area}')
-    else:
-        plot_segment2(triangle_dia, color='#F0F9', marker='')
-
-    filename = f'line-{perm_id}-tri.png'
-    snapshot(NAME, filename)
 
 
     print('points: ', len(pts))
@@ -130,5 +98,11 @@ for perm_id in range(6):
     for el in elements:
         print(f'{el.coefficients} {el.classes} ')
 
+    folder = f'{NAME}/{perm_id}'
+    build_sequence(folder, ax, history, bounds)
+
+    #  plot_sequence(ax, history, bounds)
+    #  filename = f'line-{perm_id}.png'
+    #  snapshot(NAME, filename)
 
 plt.show()

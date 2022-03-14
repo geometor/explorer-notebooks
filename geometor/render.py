@@ -28,10 +28,14 @@ classes['gold'] = {'color':'#C90', 'linestyle':':'}
 classes['pappus'] = {'linestyle':'-'}
 classes['bisector'] = {'linestyle':'-.'}
 
-classes['circle'] = {'under_color':'#0FF', 'under_markersize':7, 'under_marker':'o'}
-classes['square'] = {'under_color':'#FF0', 'under_markersize':7, 'under_marker':'s'}
-classes['diamond'] = {'under_color':'#F0F', 'under_markersize':7, 'under_marker':'D'}
+classes['circle'] = {'color':'#0FF', 'markersize':7, 'marker':'o'}
+classes['square'] = {'color':'#FF0', 'markersize':7, 'marker':'s'}
+classes['diamond'] = {'color':'#F0F', 'markersize':7, 'marker':'D'}
 
+
+classes['yellow'] = {'edgecolor':'#FF09', 'facecolor':'#FF03', 'linestyle':'-', 'linewidth':1}
+classes['cyan'] = {'color':'#0FF3', 'linestyle':'-'}
+classes['magenta'] = {'color':'#F0F3', 'linestyle':'-'}
 
 
 def plt_init(limx='', limy=''):
@@ -90,14 +94,10 @@ def plot_elements(ax, elements, bounds):
 
 
 def plot_points(ax, pts,
-               under_color='k',
-               under_linestyle='',
-               under_marker='.',
-               under_markersize=10,
-               over_color='w',
-               over_linestyle='',
-               over_marker='.',
-               over_markersize=5,
+               color='w',
+               linestyle='',
+               marker='.',
+               markersize=5,
                add_to_cursors=True,
                ):
     '''plot all the points in pts'''
@@ -113,21 +113,18 @@ def plot_points(ax, pts,
         sel.annotation.set_text(f'{i}:\nx: {xval}\ny: {yval}')
         sel.annotation.arrow_patch.set(arrowstyle="simple", ec="k", fc='w')
 
-    #under marker
-    ax.plot(xs, ys,
-            color=under_color,
-            linestyle=under_linestyle,
-            marker=under_marker,
-            markersize=under_markersize
+    point_plot = ax.plot(xs, ys,
+            color='k',
+            linestyle=linestyle,
+            marker=marker,
+            markersize=markersize+3
             )
-
-    #over marker
     # use output for mpl cursors
     point_plot = ax.plot(xs, ys,
-            color=over_color,
-            linestyle=over_linestyle,
-            marker=over_marker,
-            markersize=over_markersize
+            color=color,
+            linestyle=linestyle,
+            marker=marker,
+            markersize=markersize
             )
 
     if add_to_cursors:
@@ -135,12 +132,37 @@ def plot_points(ax, pts,
         cursor.connect("add", on_add)
 
 
+def highlight_points(ax, pts,
+               color='y',
+               linestyle='',
+               marker='.',
+               markersize=10,
+               ):
+    '''plot all the points in pts'''
+    for pt in pts:
+        if len(pt.classes):
+            styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+            for cl in pt.classes:
+                if cl in classes:
+                    styles.update(classes[cl])
+            # collect x, y values into separate arrays
+            xs = [pt.x.evalf()]
+            ys = [pt.y.evalf()]
+
+            #under marker
+            ax.plot(xs, ys, **styles)
+
+
+
 def plot_sequence(ax, sequence, bounds):
     seq_pts = [step for step in sequence if isinstance(step, spg.Point2D)]
     seq_polys = [step for step in sequence if isinstance(step, spg.Polygon)]
+    seq_segments = [step for step in sequence if isinstance(step, spg.Segment2D)]
     seq_els = [step for step in sequence if isinstance(step, spg.Line2D) or isinstance(step, spg.Circle)]
 
+    highlight_points(ax, seq_pts)
     plot_polygons(ax, seq_polys)
+    plot_segments(ax, seq_segments)
     plot_elements(ax, seq_els, bounds)
     plot_points(ax, seq_pts)
 
@@ -153,39 +175,50 @@ def build_sequence(folder, ax, sequence, bounds):
         snapshot(folder, f'{str(i).zfill(3)}.png')
 
 
-def plot_segment(ax, pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=16):
+def plot_segment(ax, pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=0):
     x1 = pt1.x.evalf()
     x2 = pt2.x.evalf()
     y1 = pt1.y.evalf()
     y2 = pt2.y.evalf()
-    return ax.plot(
-            [x1, x2], [y1, y2],
-            color=color,
-            linestyle=linestyle,
-            linewidth=linewidth,
-            marker=marker,
-            markersize=markersize)
+    styles = {'color':color, 'linestyle':linestyle, 'linewidth':linewidth, 'marker':marker, 'markersize':markersize}
+    ax.plot( [x1, x2], [y1, y2], **styles )
 
-def plot_segment2(ax, seg, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=16):
+
+def plot_segment2(ax, seg, color='#fc09', linestyle='-', linewidth=3, marker='', markersize=0):
     x1 = seg.points[0].x.evalf()
     x2 = seg.points[1].x.evalf()
     y1 = seg.points[0].y.evalf()
     y2 = seg.points[1].y.evalf()
-    ax.plot(
-            [x1, x2], [y1, y2],
-            color=color,
-            linestyle=linestyle,
-            linewidth=linewidth,
-            marker=marker,
-            markersize=markersize)
+    styles = {'color':color, 'linestyle':linestyle, 'linewidth':linewidth, 'marker':marker, 'markersize':markersize}
+    for cl in seg.classes:
+        if cl in classes:
+            styles.update(classes[cl])
+    if 'edgecolor' in styles:
+        styles['color'] = styles['edgecolor']
+        styles.pop('edgecolor')
+    if 'facecolor' in styles:
+        styles.pop('facecolor')
+    ax.plot( [x1, x2], [y1, y2], **styles )
 
 
-def plot_polygon(ax, poly, color='#36c3', linestyle='-', linewidth=3):
+def plot_segments(ax, segs):
+    for seg in segs:
+        plot_segment2(ax, seg)
+
+
+def plot_polygon(ax, poly, edgecolor='#36c9', facecolor='#36c3', linestyle='-', linewidth=3, fill=True):
     '''takes a sympy Polygon and plots with the matplotlib Polygon patch'''
-    xy = [(pt.x.evalf(), pt.y.evalf()) for pt in poly.vertices]
-    # print(xy)
-    patch = plt.Polygon(xy, color=color, linestyle=linestyle, fill=True)
-    ax.add_patch(patch)
+    if isinstance(poly, spg.Segment2D):
+        plot_segment2(ax, poly)
+    else:
+        xy = [(pt.x.evalf(), pt.y.evalf()) for pt in poly.vertices]
+        # print(xy)
+        styles = {'facecolor':facecolor, 'edgecolor':edgecolor, 'linestyle':linestyle, 'linewidth':linewidth, 'fill':fill}
+        for cl in poly.classes:
+            if cl in classes:
+                styles.update(classes[cl])
+        patch = plt.Polygon(xy, **styles)
+        ax.add_patch(patch)
 
 
 def plot_polygons(ax, poly_array):
