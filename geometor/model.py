@@ -62,10 +62,10 @@ def set_bounds(limx, limy):
         )
 
 # structural elements
-def point(x_val, y_val, parents=[], classes=[], style={}):
+def point(x_val, y_val, parents=set(), classes=[], style={}):
     '''make sympy.geometry.Point'''
     pt = spg.Point(sp.simplify(x_val), sp.simplify(y_val))
-    pt.parents = parents
+    pt.elements = parents
     pt.classes = classes
     pt.style = style
     return pt
@@ -74,7 +74,7 @@ def point(x_val, y_val, parents=[], classes=[], style={}):
 def line(pt_a, pt_b, classes=[], style={}):
     '''make sympy.geometry.Line'''
     el = spg.Line(pt_a, pt_b)
-    el.pts = [pt_a, pt_b]
+    el.pts = {pt_a, pt_b}
     el.classes = classes
     el.style = style
     return el
@@ -84,7 +84,7 @@ def circle(pt_c, pt_r, classes=[], style={}):
     '''make sympy.geometry.Circle from two points'''
     el = spg.Circle(pt_c, pt_c.distance(pt_r))
     el.radius_pt = pt_r
-    el.pts = [pt_r]
+    el.pts = {pt_r}
     el.classes = classes
     el.style = style
     return el
@@ -140,17 +140,19 @@ def add_point(pt):
             logging.info(f'  ! {pt} found at index: {i}')
             return pts[i]
 
+
 def add_points(pt_array):
     '''add an array of points to pts list'''
     for pt in pt_array:
         add_point(pt)
+
 
 def add_intersection_points(el):
     logging.info(f'* add_intersection_points: {el}')
     for prev in elements:
         for pt in el.intersection(prev):
             pt.classes = []
-            pt.parents = [el, elements[index]]
+            pt.elements = {el, elements[index]}
             add_point(pt)
 
             
@@ -161,18 +163,21 @@ def add_intersection_points_mp(el):
         for index, result in enumerate(results):
             for pt in result:
                 pt.classes = []
-                pt.parents = [el, elements[index]]
-                add_point(pt)
+                pt.elements = set()
+                pt = add_point(pt)
+                pt.elements.update({el, elements[index]})
+                el.pts.add(pt)
+                elements[index].pts.add(pt)
 
 
 def add_element(el):
     logging.info(f'* add_element: {el}')
-    add_intersection_points_mp(el)
     # check if el is in the element list
     if not elements.count(el):
         # if not found by count, test each element anyway
         for prev in elements:
 
+            #TODO: refine test of elements
             diff = (prev.equation().simplify() - el.equation().simplify()).simplify()
             #  logging.info(f'    > diff: {diff}')
             if not diff:
@@ -183,12 +188,15 @@ def add_element(el):
                 ''')
                 return prev
         else:
+            history.append(el)
+            add_intersection_points_mp(el)
             elements.append(el)
             logging.info(f'  + {el}')
             return el
     else:
-        logging.info(f'  ! {el} found at index: {elements.index(el)}')
-        return el
+        i = elements.index(el)
+        logging.info(f'  ! {el} found at index: {i}')
+        return elements[i]
 
     
 # helpers ******************************

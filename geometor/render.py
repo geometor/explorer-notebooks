@@ -152,6 +152,15 @@ def plot_points(pts,
         cursor = mplcursors.cursor(point_plot)
         cursor.connect("add", on_add)
 
+def plot_sequence(sequence, bounds):
+    seq_pts = [step for step in sequence if isinstance(step, spg.Point2D)]
+    seq_els = [step for step in sequence if not isinstance(step, spg.Point2D)]
+    plot_elements(seq_els, bounds)
+    plot_points(seq_pts)
+    
+
+
+    
 def plot_segment(pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=16):
     x1 = pt1.x.evalf()
     x2 = pt2.x.evalf()
@@ -232,7 +241,9 @@ def plot_wedge_2(ctr_pt, rad_val, a1, a2, fc='#0ff1', ec='#0002', linestyle='', 
 
 # images**********************
 def snapshot(filename):
-    plt.savefig(filename)
+    import os
+    sessions = os.path.expanduser('~') + '/Sessions/'
+    plt.savefig(sessions + filename, dpi=120)
                 
 def display(filename):
     from IPython import display

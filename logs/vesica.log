@@ -7,8 +7,6 @@ INFO:root:* add_element: Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
 INFO:root:* add_intersection_points: Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
 INFO:root:  + Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
 INFO:root:* add_element: Line2D(Point2D(1/2, 0), Point2D(-1/2, 0))
-INFO:root:* add_intersection_points: Line2D(Point2D(1/2, 0), Point2D(-1/2, 0))
-INFO:root:* add_point: Line2D(Point2D(-1/2, 0), Point2D(1/2, 0))
 INFO:root:
             ! COINCIDENT
                 Line2D(Point2D(1/2, 0), Point2D(-1/2, 0))
