@@ -28,6 +28,8 @@ classes['gold'] = {'color':'#C90', 'linestyle':':'}
 classes['pappus'] = {'linestyle':'-'}
 classes['bisector'] = {'linestyle':'-.'}
 
+classes['goldpt'] = {'color':'#C90', 'markersize':7, 'marker':'o'}
+
 classes['circle'] = {'color':'#0FF', 'markersize':7, 'marker':'o'}
 classes['square'] = {'color':'#FF0', 'markersize':7, 'marker':'s'}
 classes['diamond'] = {'color':'#F0F', 'markersize':7, 'marker':'D'}
@@ -135,8 +137,8 @@ def plot_points(ax, pts,
 def highlight_points(ax, pts,
                color='y',
                linestyle='',
-               marker='.',
-               markersize=10,
+               marker='o',
+               markersize=7,
                ):
     '''plot all the points in pts'''
     for pt in pts:
@@ -149,8 +151,21 @@ def highlight_points(ax, pts,
             xs = [pt.x.evalf()]
             ys = [pt.y.evalf()]
 
-            #under marker
             ax.plot(xs, ys, **styles)
+
+def gold_points(ax, pts,
+               color='#C90',
+               linestyle='',
+               marker='o',
+               markersize=7,
+               ):
+    '''plot all the points in pts'''
+    for pt in pts:
+        styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+        # collect x, y values into separate arrays
+        xs = [pt.x.evalf()]
+        ys = [pt.y.evalf()]
+        ax.plot(xs, ys, **styles)
 
 
 

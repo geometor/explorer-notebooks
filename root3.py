@@ -49,15 +49,27 @@ plt.tight_layout()
 
 #  build_sequence(NAME, ax, history, bounds)
 
-plot_sequence(ax, history, bounds)
+#  plot_sequence(ax, history, bounds)
 
-sg_pts = [pts[i] for i in [18, 0, 1, 19]]
-p = polygon_ids([18, 0, 1, 19])
+lines = [el for el in elements if isinstance(el, spg.Line2D)]
+sections = []
+for el in lines:
+   sections.extend(analyze_golden(el))
 
-sgs = [segment(sg_pts[i], sg_pts[i+1]) for i in range(len(sg_pts)-1)]
-
-#  for sg in sgs:
-    #  plot_segment2(sg)
-analyze_line(baseline)
-
-plt.show()
+for i, section in enumerate(sections):
+    print(i, section)
+    num = str(i).zfill(3)
+    ax.clear()
+    ax.axis(False)
+    plt.tight_layout()
+    section_pts = set()
+    for seg in section:
+        for pt in seg.points:
+            #  pt.classes = ['goldpt']
+            section_pts.add(pt)
+    gold_points(ax, section_pts)
+    plot_sequence(ax, history, bounds)
+    plot_segments(ax, section)
+    snapshot(f'{NAME}/sections', f'{num}.png')
+      
+#  plt.show()

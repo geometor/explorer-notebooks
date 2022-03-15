@@ -290,14 +290,47 @@ def point_value(pt):
     #  return pt.x.evalf()
     return (pt.x.evalf(), pt.y.evalf())
 
+def check_golden(ab, bc):
+    '''check range of three points for golden section'''
+    ratio = sp.simplify(ab / bc)
+    chk = sp.simplify(ratio - phi)
+    if chk == 0 or chk == -1:
+        return True
+    else:
+        return False
+    
+    
+def analyze_golden(line):
+    sections = []
+    line_pts = sorted(list(line.pts), key=point_value)
+    ranges = list(combinations(line_pts, 3))
+    for r in ranges:
+        ab = segment(r[0], r[1])
+        bc = segment(r[1], r[2])
+        chk = check_golden(ab.length, bc.length)
+        #  if chk == 1 or chk == -1:
+        if chk:
+            sections.append([ab, bc])
+    return sections
+    
+
 def check_range(r):
-    pass
+    ad = segment(r[0], r[3]).length
+    db = segment(r[3], r[1]).length
+    ac = segment(r[0], r[2]).length
+    cb = segment(r[2], r[1]).length
+    return sp.simplify((ad / db) / (ac / cb))
+    
 
 def analyze_line(line):
     line_pts = sorted(list(line.pts), key=point_value)
-    for pt in line_pts:
-        print(pt.x, pt.x.evalf(), pt.y, pt.y.evalf())
+    #  for pt in line_pts:
+        #  print(pt.x, pt.x.evalf(), pt.y, pt.y.evalf())
     ranges = list(combinations(line_pts, 4))
     for r in ranges:
-        print(r)
+        chk = check_range(r)
+        #  if chk == 1 or chk == -1:
+        if True:
+            print(r)
+            print(chk)
     
