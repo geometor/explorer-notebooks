@@ -131,15 +131,20 @@ def add_point(pt):
     '''add point to pts list - check if exists first'''
     logging.info(f'* add_point: {pt}')
     if isinstance(pt, spg.Point2D):
-        if not pts.count(pt):
+        for prev_pt in pts:
+            if pt.equals(prev_pt):
+                i = pts.index(prev_pt)
+                logging.info(f'  ! {pt} found at index: {i}')
+                # merge parents of points
+                if hasattr(pt, 'elements'):
+                    if hasattr(prev_pt, 'elements'):
+                        prev_pt.elements.update(pt.elements)
+                return prev_pt
+        else:
             pts.append(pt)
             history.append(pt)
             logging.info(f'  + {pt}')
             return pt
-        else:
-            i = pts.index(pt)
-            logging.info(f'  ! {pt} found at index: {i}')
-            return pts[i]
     else:
         logging.info('    not a point')
 
@@ -290,28 +295,57 @@ def point_value(pt):
     #  return pt.x.evalf()
     return (pt.x.evalf(), pt.y.evalf())
 
+
 def check_golden(ab, bc):
     '''check range of three points for golden section'''
-    ratio = sp.simplify(ab / bc)
-    chk = sp.simplify(ratio - phi)
-    if chk == 0 or chk == -1:
+    print('            ', ab)
+    print('            ', bc)
+    #  ratio = ab ** 2 / bc ** 2
+    ratio = ab / bc 
+    #  ratio = sp.simplify(ratio)
+    print('            ', ratio)
+    chk1 = (ratio / phi).evalf()
+    print('            ', chk1)
+    chk2 = (ratio / (1 / phi)).evalf()
+    print('            ', chk2)
+    #  if ratio == (1 / phi) or ratio == (phi):
+    if chk1 == 1 or chk2 == 1:
         return True
     else:
         return False
     
+
+def analyze_golden_lines(lines):
+    sections = []
+
+    print('\nGolden Sections')
+    print('lines:', len(lines))
+    print()
+
+    for i, el in enumerate(lines):
+        print(i, el.coefficients)
+        sections.extend(analyze_golden(el))
+    
+    return sections
+
+
     
 def analyze_golden(line):
-    sections = []
+    goldens = []
     line_pts = sorted(list(line.pts), key=point_value)
-    ranges = list(combinations(line_pts, 3))
-    for r in ranges:
+    sections = list(combinations(line_pts, 3))
+    print('    points: ', len(line_pts))
+    print('    sections: ', len(sections))
+    for i, r in enumerate(sections):
+        print(f'        {i} {r}')
         ab = segment(r[0], r[1])
         bc = segment(r[1], r[2])
-        chk = check_golden(ab.length, bc.length)
-        #  if chk == 1 or chk == -1:
+        chk = check_golden(ab.length.simplify(), bc.length.simplify())
         if chk:
-            sections.append([ab, bc])
-    return sections
+            print(f'            GOLDEN!')
+            goldens.append([ab, bc])
+    print('    goldens: ', len(goldens))
+    return goldens
     
 
 def check_range(r):

@@ -199,7 +199,7 @@ def plot_segment(ax, pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker
     ax.plot( [x1, x2], [y1, y2], **styles )
 
 
-def plot_segment2(ax, seg, color='#fc09', linestyle='-', linewidth=3, marker='', markersize=0):
+def plot_segment2(ax, seg, color='#fc09', linestyle='-', linewidth=4, marker='', markersize=0):
     x1 = seg.points[0].x.evalf()
     x2 = seg.points[1].x.evalf()
     y1 = seg.points[0].y.evalf()
@@ -221,7 +221,7 @@ def plot_segments(ax, segs):
         plot_segment2(ax, seg)
 
 
-def plot_polygon(ax, poly, edgecolor='#36c9', facecolor='#36c3', linestyle='-', linewidth=3, fill=True):
+def plot_polygon(ax, poly, edgecolor='#36c9', facecolor='#36c3', linestyle='-', linewidth=1, fill=True):
     '''takes a sympy Polygon and plots with the matplotlib Polygon patch'''
     if isinstance(poly, spg.Segment2D):
         plot_segment2(ax, poly)
@@ -280,7 +280,7 @@ def plot_wedge_2(ax, ctr_pt, rad_val, a1, a2, fc='#0ff1', ec='#0002', linestyle=
 # images**********************
 def snapshot(folder, filename):
     import os
-    sessions = os.path.expanduser('~') + '/Sessions/'
+    sessions = os.path.expanduser('~') + '/Sessions'
     out = f'{sessions}/{folder}/'
     if not os.path.isdir(out):
         os.mkdir(out)

@@ -52,9 +52,7 @@ plt.tight_layout()
 #  plot_sequence(ax, history, bounds)
 
 lines = [el for el in elements if isinstance(el, spg.Line2D)]
-sections = []
-for el in lines:
-   sections.extend(analyze_golden(el))
+sections = analyze_golden_lines(lines)
 
 for i, section in enumerate(sections):
     print(i, section)
@@ -65,11 +63,10 @@ for i, section in enumerate(sections):
     section_pts = set()
     for seg in section:
         for pt in seg.points:
-            #  pt.classes = ['goldpt']
             section_pts.add(pt)
     gold_points(ax, section_pts)
     plot_sequence(ax, history, bounds)
     plot_segments(ax, section)
     snapshot(f'{NAME}/sections', f'{num}.png')
       
-#  plt.show()
+plt.show()
