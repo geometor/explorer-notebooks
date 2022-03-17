@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root3-2'
+NAME = 'root3-3'
 log_init(NAME)
 # add starting points
 begin()
@@ -37,6 +37,9 @@ add_element(circle(pts[14], pts[4], classes=['gold']))
 # plot *******************
 fig, ax = plt.subplots()
 ax.set_aspect('equal')
+ax.axis(False)
+#  plt.tight_layout()
+
 #  limx, limy = (-2, 2), (-1.5, 1.5)
 limx, limy = get_limits_from_points(pts, margin=.25)
 bounds = set_bounds(limx, limy)
@@ -44,8 +47,6 @@ bounds = set_bounds(limx, limy)
 title = f'G E O M E T O R'
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
-ax.axis(False)
-#  plt.tight_layout()
 
 build_sequence(NAME, ax, history, bounds)
 

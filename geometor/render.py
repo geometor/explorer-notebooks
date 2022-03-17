@@ -15,12 +15,17 @@ import sympy.geometry as spg
 import logging
 import math as math
 
+from geometor.model import *
+
 plt.rcParams['figure.figsize'] = [16, 9]
 plt.style.use('dark_background')
 
 style_radius = {'color': '#c099', 'marker': ''}
 
 classes = {}
+classes['default_line'] = {'color':'#999', 'linestyle':':', 'linewidth':1}
+classes['default_circle'] = {'color':'#C09', 'linestyle':':', 'linewidth':1, 'fill':False}
+
 classes['blue'] = {'color':'#33F', 'linestyle':':'}
 classes['red'] = {'color':'#F33', 'linestyle':':'}
 classes['green'] = {'color':'#2F2', 'linestyle':':'}
@@ -28,9 +33,9 @@ classes['gold'] = {'color':'#C90', 'linestyle':':'}
 classes['pappus'] = {'linestyle':'-'}
 classes['bisector'] = {'linestyle':'-.'}
 
-classes['goldpt'] = {'color':'#C90', 'markersize':7, 'marker':'o'}
+classes['goldpt'] = {'color':'#C90', 'markersize':8, 'marker':'o'}
 
-classes['start'] = {'color':'#FFF', 'markersize':7, 'marker':'o'}
+classes['start'] = {'color':'#FFF6', 'markersize':7, 'marker':'o'}
 classes['circle'] = {'color':'#0FF', 'markersize':7, 'marker':'o'}
 classes['square'] = {'color':'#FF0', 'markersize':7, 'marker':'s'}
 classes['diamond'] = {'color':'#F0F', 'markersize':7, 'marker':'D'}
@@ -55,33 +60,83 @@ def plt_init(limx='', limy=''):
     plt.axis(False)
     plt.tight_layout()
 
+
 def plt_init_polar():
     '''configure the MatPlotLib stateful plot engine'''
     mp.style.use('dark_background')
 
 
-def plot_circle(ax, circle, color='#c09', linestyle=':', linewidth=1, fill=False):
+def ax_prep(ax, bounds, xlabel):
+        ax.clear()
+        ax.axis(True)
+        ax.spines['bottom'].set_color('k')
+        ax.spines['top'].set_color('k')
+        ax.spines['right'].set_color('k')
+        ax.spines['left'].set_color('k')
+        ax.tick_params(axis='x', colors='k')
+        ax.tick_params(axis='y', colors='k')
+        vmin = bounds.vertices[0]
+        vmax = bounds.vertices[2]
+        ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
+        ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
+        ax.invert_yaxis()
+        ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
+
+
+def ax_prep(ax, bounds, xlabel):
+        ax.clear()
+        ax.axis(True)
+        ax.spines['bottom'].set_color('k')
+        ax.spines['top'].set_color('k')
+        ax.spines['right'].set_color('k')
+        ax.spines['left'].set_color('k')
+        ax.tick_params(axis='x', colors='k')
+        ax.tick_params(axis='y', colors='k')
+        vmin = bounds.vertices[0]
+        vmax = bounds.vertices[2]
+        ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
+        ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
+        ax.invert_yaxis()
+        ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
+
+
+def plot_circle(ax, circle, color='', linestyle='', linewidth='', fill=''):
     '''takes a sympy circle and plots with the matplotlib Circle patch'''
     center = (circle.center.x.evalf(), circle.center.y.evalf())
     radius = circle.radius
-    styles = {'color':color, 'linestyle':linestyle, 'linewidth':linewidth, 'fill':fill}
+
+    styles = classes['default_circle'].copy()
     for cl in circle.classes:
         if cl in classes:
             styles.update(classes[cl])
+    if color:
+        styles['color'] = color
+    if linestyle:
+        styles['linestyle'] = linestyle
+    if linewidth:
+        styles['linewidth'] = linewidth
+    if fill:
+        styles['fill'] = fill
 
     patch = plt.Circle(center, radius, **styles)
     ax.add_patch(patch)
 
 
-def plot_line(ax, el, bounds, color='#999', linestyle=':', linewidth=1):
+def plot_line(ax, el, bounds, color='', linestyle='', linewidth=''):
     ends = bounds.intersection(el)
     xs = [pt.x.evalf() for pt in ends]
     ys = [pt.y.evalf() for pt in ends]
 
-    styles = {'color':color, 'linestyle':linestyle, 'linewidth':linewidth}
+    styles = classes['default_line'].copy()
     for cl in el.classes:
         if cl in classes:
             styles.update(classes[cl])
+    if color:
+        styles['color'] = color
+    if linestyle:
+        styles['linestyle'] = linestyle
+    if linewidth:
+        styles['linewidth'] = linewidth
 
     ax.plot(xs, ys, **styles)
 
@@ -184,57 +239,6 @@ def gold_points(ax, pts,
         ax.plot(xs, ys, **styles)
 
 
-
-def plot_sequence(ax, sequence, bounds):
-    '''plot sequence of all types of elements in layers'''
-    seq_pts = [step for step in sequence if isinstance(step, spg.Point2D)]
-    seq_polys = [step for step in sequence if isinstance(step, spg.Polygon)]
-    seq_segments = [step for step in sequence if isinstance(step, spg.Segment2D)]
-    seq_els = [step for step in sequence if isinstance(step, spg.Line2D) or isinstance(step, spg.Circle)]
-
-    highlight_points(ax, seq_pts)
-    plot_polygons(ax, seq_polys)
-    plot_segments(ax, seq_segments)
-    plot_elements(ax, seq_els, bounds)
-    plot_points(ax, seq_pts)
-
-def ax_prep(ax, bounds, xlabel):
-        ax.clear()
-        ax.axis(True)
-        ax.spines['bottom'].set_color('k')
-        ax.spines['top'].set_color('k')
-        ax.spines['right'].set_color('k')
-        ax.spines['left'].set_color('k')
-        ax.tick_params(axis='x', colors='k')
-        ax.tick_params(axis='y', colors='k')
-        vmin = bounds.vertices[0]
-        vmax = bounds.vertices[2]
-        ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
-        ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
-        ax.invert_yaxis()
-        ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
-
-def build_sequence(folder, ax, sequence, bounds):
-    '''create snapshot for each step in sequence'''
-    for i in range(1, len(sequence)+1):
-        last_step = sequence[0:i][-1]
-        xlabel = str(last_step)
-        if isinstance(last_step, spg.Point):
-            pt = last_step
-            xlabel = f'$({sp.latex(pt.x)}, {sp.latex(pt.y)})$'
-        if isinstance(last_step, spg.Line):
-            xlabel = f'${sp.latex(last_step.equation())}$'
-        if isinstance(last_step, spg.Circle):
-            xlabel = f'${sp.latex(last_step.equation())}$'
-        if isinstance(last_step, spg.Polygon):
-            xlabel = f'area: ${sp.latex(last_step.area)}$ • perim: ${sp.latex(last_step.perimeter)}$'
-        ax_prep(ax, bounds, xlabel)
-        if isinstance(last_step, spg.Point):
-            gold_points(ax, [last_step])
-        plot_sequence(ax, sequence[0:i], bounds)
-        snapshot(folder, f'{str(i).zfill(3)}.png')
-
-
 def plot_segment(ax, pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker='.', markersize=0):
     x1 = pt1.x.evalf()
     x2 = pt2.x.evalf()
@@ -321,14 +325,53 @@ def plot_wedge_2(ax, ctr_pt, rad_val, a1, a2, fc='#0ff1', ec='#0002', linestyle=
                           fill=fill )
     ax.add_patch(patch)
 
+def plot_sequence(ax, sequence, bounds):
+    '''plot sequence of all types of elements in layers'''
+    seq_pts = [step for step in sequence if isinstance(step, spg.Point2D)]
+    seq_polys = [step for step in sequence if isinstance(step, spg.Polygon)]
+    seq_segments = [step for step in sequence if isinstance(step, spg.Segment2D)]
+    seq_els = [step for step in sequence if isinstance(step, spg.Line2D) or isinstance(step, spg.Circle)]
+
+    highlight_points(ax, seq_pts)
+    plot_polygons(ax, seq_polys)
+    plot_segments(ax, seq_segments)
+    plot_elements(ax, seq_els, bounds)
+    plot_points(ax, seq_pts)
+
+
+
+def build_sequence(folder, ax, sequence, bounds):
+    '''create snapshot for each step in sequence'''
+    for i in range(1, len(sequence)+1):
+        last_step = sequence[0:i][-1]
+        xlabel = str(last_step)
+        if isinstance(last_step, spg.Point):
+            pt = last_step
+            xlabel = f'$({sp.latex(pt.x)}, {sp.latex(pt.y)})$'
+        if isinstance(last_step, spg.Line):
+            xlabel = f'${sp.latex(last_step.equation())}$'
+        if isinstance(last_step, spg.Circle):
+            xlabel = f'${sp.latex(last_step.equation())}$'
+        if isinstance(last_step, spg.Polygon):
+            xlabel = f'area: ${sp.latex(last_step.area)}$ • perim: ${sp.latex(last_step.perimeter)}$'
+
+        ax_prep(ax, bounds, xlabel)
+
+        if isinstance(last_step, spg.Point):
+            plot_selected_points(ax, [last_step])
+        if isinstance(last_step, spg.Line):
+            plot_line(ax, last_step, bounds, linestyle='-')
+        if isinstance(last_step, spg.Circle):
+            plot_circle(ax, last_step, linestyle='-')
+        plot_sequence(ax, sequence[0:i], bounds)
+        snapshot(folder, f'{str(i).zfill(3)}.png')
+
+
 def plot_sections(NAME, ax, history, sections, bounds):
     for i, section in enumerate(sections):
         print(i, section)
         num = str(i).zfill(3)
         xlabel = f'${sp.latex(section[0].length.simplify())} : {sp.latex(section[1].length.simplify())}$'
-        #  if isinstance(last_step, spg.Point):
-            #  pt = last_step
-            #  xlabel = f'$$({sp.latex(pt.x)}, {sp.latex(pt.y)}'
         ax_prep(ax, bounds, xlabel)
         section_pts = set()
         for seg in section:
@@ -338,6 +381,15 @@ def plot_sections(NAME, ax, history, sections, bounds):
         plot_segments(ax, section)
         plot_sequence(ax, history, bounds)
         snapshot(f'{NAME}/sections', f'{num}.png')
+        
+        limx, limy = get_limits_from_points(section_pts, margin=.5)
+        zoom_bounds = set_bounds(limx, limy)
+        ax_prep(ax, zoom_bounds, xlabel)
+        
+        gold_points(ax, section_pts)
+        plot_segments(ax, section)
+        plot_sequence(ax, history, zoom_bounds)
+        snapshot(f'{NAME}/sections', f'{num}-zoom.png')
 
 # images**********************
 def snapshot(folder, filename):

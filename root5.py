@@ -6,11 +6,11 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root5-3'
+NAME = 'root5-4'
 log_init(NAME)
-# add starting points
 start_time = timer()
 
+# add starting points
 begin()
 
 # find perps for square
