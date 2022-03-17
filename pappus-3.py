@@ -76,7 +76,7 @@ for perm_id in range(6):
     title = f'G E O M E T O R • pappus • perm: {perm_id}'
     ax.set_title(title, fontdict={'color': '#960', 'size':'small'})
     ax.axis(False)
-    plt.tight_layout()
+    #  plt.tight_layout()
 
     triangle_sq = add_polygon(polygon(get_pts_by_class('square'), classes=['yellow']))
     if isinstance(triangle_sq, spg.Triangle):

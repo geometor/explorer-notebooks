@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root5-2'
+NAME = 'root5-3'
 log_init(NAME)
 # add starting points
 start_time = timer()
@@ -73,7 +73,7 @@ title = f'G E O M E T O R'
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
 ax.axis(False)
-plt.tight_layout()
+#  plt.tight_layout()
 
 #  plot_sequence(ax, history, bounds)
 #  plt.show()
@@ -86,20 +86,6 @@ sections = analyze_golden_lines(lines)
 print()
 print('Golden Sections found:', len(sections))
 
-for i, section in enumerate(sections):
-    print(i, section)
-    num = str(i).zfill(3)
-    ax.clear()
-    ax.axis(False)
-    plt.tight_layout()
-    section_pts = set()
-    for seg in section:
-        for pt in seg.points:
-            #  pt.classes = ['goldpt']
-            section_pts.add(pt)
-    gold_points(ax, section_pts)
-    plot_segments(ax, section)
-    plot_sequence(ax, history, bounds)
-    snapshot(f'{NAME}/sections', f'{num}.png')
+plot_sections(NAME, ax, history, sections, bounds)
 
 plt.show()

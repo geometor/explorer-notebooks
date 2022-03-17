@@ -215,17 +215,17 @@ def add_polygon(poly):
 def begin():
     '''create inital two points -
     establishing the unit for the field'''
-    pt = point(sp.Rational(-1, 2), 0)
+    pt = point(sp.Rational(-1, 2), 0, classes=['start'])
     add_point(pt)
-    pt = point(sp.Rational(1, 2), 0)
+    pt = point(sp.Rational(1, 2), 0, classes=['start'])
     add_point(pt)
 
 def begin_zero():
     '''create inital two points -
     establishing the unit for the field'''
-    pt = point(0, 0)
+    pt = point(0, 0, classes=['start'])
     add_point(pt)
-    pt = point(1, 0)
+    pt = point(1, 0, classes=['start'])
     add_point(pt)
 
     
@@ -296,8 +296,11 @@ def point_value(pt):
     return (pt.x.evalf(), pt.y.evalf())
 
 
-def check_golden(ab, bc):
+
+def check_golden(section):
     '''check range of three points for golden section'''
+    ab = segment(section[0], section[1]).length.simplify()
+    bc = segment(section[1], section[2]).length.simplify()
     print('            ', ab)
     print('            ', bc)
     #  ratio = ab ** 2 / bc ** 2
@@ -331,19 +334,30 @@ def analyze_golden_lines(lines):
 
     
 def analyze_golden(line):
+    '''gecj all the points on a line for Golden Sections'''
     goldens = []
     line_pts = sorted(list(line.pts), key=point_value)
     sections = list(combinations(line_pts, 3))
     print('    points: ', len(line_pts))
     print('    sections: ', len(sections))
-    for i, r in enumerate(sections):
-        print(f'        {i} {r}')
-        ab = segment(r[0], r[1])
-        bc = segment(r[1], r[2])
-        chk = check_golden(ab.length.simplify(), bc.length.simplify())
-        if chk:
-            print(f'            GOLDEN!')
-            goldens.append([ab, bc])
+    #  for i, r in enumerate(sections):
+        #  print(f'        {i} {r}')
+        #  ab = segment(r[0], r[1])
+        #  bc = segment(r[1], r[2])
+        #  chk = check_golden(r)
+        #  if chk:
+            #  print(f'            GOLDEN!')
+            #  goldens.append([ab, bc])
+    with Pool(num_workers) as pool:
+        results = pool.map(check_golden, sections)
+        for index, result in enumerate(results):
+            if result:
+                section = sections[index]
+                #  print(f'            GOLDEN!')
+                ab = segment(section[0], section[1])
+                bc = segment(section[1], section[2])
+                goldens.append([ab, bc])
+            
     print('    goldens: ', len(goldens))
     return goldens
     

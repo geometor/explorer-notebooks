@@ -10,29 +10,20 @@ NAME = 'root3-2'
 log_init(NAME)
 # add starting points
 begin()
+bisector(pts[0], pts[1])
 
-# add baseline
-baseline = add_element(line(pts[0], pts[1]))
+add_element(circle(pts[4], pts[0]))
+add_element(circle(pts[5], pts[0]))
 
-# add unit circles
-add_element(circle(pts[0], pts[1]))
-add_element(circle(pts[1], pts[0]))
- 
-add_polygon(polygon_ids([0, 1, 5]))
+add_element(circle(pts[0], pts[6]))
+add_element(circle(pts[1], pts[6]))
 
-add_element(line(pts[0], pts[4]))
-add_element(line(pts[0], pts[5]))
-add_element(line(pts[1], pts[5]))
-add_element(line(pts[1], pts[4]))
+l1 = add_element(line(pts[11], pts[23]))
 
-add_polygon(polygon_ids([4, 6, 9]))
+add_element(circle(pts[3], pts[0]))
+add_element(circle(pts[2], pts[1]))
 
-add_element(line(pts[4], pts[5], classes=['bisector']))
-add_element(line(pts[0], pts[9], classes=['bisector']))
-add_element(line(pts[1], pts[6], classes=['bisector']))
-
-# circumcircle
-add_element(circle(pts[14], pts[4], classes=['gold']))
+l2 = add_element(line(pts[4], pts[45]))
 
 # plot *******************
 fig, ax = plt.subplots()
@@ -42,10 +33,11 @@ limx, limy = get_limits_from_points(pts, margin=.25)
 bounds = set_bounds(limx, limy)
 
 title = f'G E O M E T O R'
+#  ax.set_title(title, fontdict={'color': '#960', 'size':'small'})
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
 ax.axis(False)
-#  plt.tight_layout()
+plt.tight_layout()
 
 build_sequence(NAME, ax, history, bounds)
 

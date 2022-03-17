@@ -30,6 +30,7 @@ classes['bisector'] = {'linestyle':'-.'}
 
 classes['goldpt'] = {'color':'#C90', 'markersize':7, 'marker':'o'}
 
+classes['start'] = {'color':'#FFF', 'markersize':7, 'marker':'o'}
 classes['circle'] = {'color':'#0FF', 'markersize':7, 'marker':'o'}
 classes['square'] = {'color':'#FF0', 'markersize':7, 'marker':'s'}
 classes['diamond'] = {'color':'#F0F', 'markersize':7, 'marker':'D'}
@@ -153,6 +154,21 @@ def highlight_points(ax, pts,
 
             ax.plot(xs, ys, **styles)
 
+def plot_selected_points(ax, pts,
+               color='#FF09',
+               linestyle='',
+               marker='o',
+               markersize=10,
+               ):
+    '''plot all the points in pts'''
+    for pt in pts:
+        styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+        # collect x, y values into separate arrays
+        xs = [pt.x.evalf()]
+        ys = [pt.y.evalf()]
+        ax.plot(xs, ys, **styles)
+
+
 def gold_points(ax, pts,
                color='#C90',
                linestyle='',
@@ -170,6 +186,7 @@ def gold_points(ax, pts,
 
 
 def plot_sequence(ax, sequence, bounds):
+    '''plot sequence of all types of elements in layers'''
     seq_pts = [step for step in sequence if isinstance(step, spg.Point2D)]
     seq_polys = [step for step in sequence if isinstance(step, spg.Polygon)]
     seq_segments = [step for step in sequence if isinstance(step, spg.Segment2D)]
@@ -181,11 +198,39 @@ def plot_sequence(ax, sequence, bounds):
     plot_elements(ax, seq_els, bounds)
     plot_points(ax, seq_pts)
 
+def ax_prep(ax, bounds, xlabel):
+        ax.clear()
+        ax.axis(True)
+        ax.spines['bottom'].set_color('k')
+        ax.spines['top'].set_color('k')
+        ax.spines['right'].set_color('k')
+        ax.spines['left'].set_color('k')
+        ax.tick_params(axis='x', colors='k')
+        ax.tick_params(axis='y', colors='k')
+        vmin = bounds.vertices[0]
+        vmax = bounds.vertices[2]
+        ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
+        ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
+        ax.invert_yaxis()
+        ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
 
 def build_sequence(folder, ax, sequence, bounds):
+    '''create snapshot for each step in sequence'''
     for i in range(1, len(sequence)+1):
-        ax.clear()
-        ax.axis(False)
+        last_step = sequence[0:i][-1]
+        xlabel = str(last_step)
+        if isinstance(last_step, spg.Point):
+            pt = last_step
+            xlabel = f'$({sp.latex(pt.x)}, {sp.latex(pt.y)})$'
+        if isinstance(last_step, spg.Line):
+            xlabel = f'${sp.latex(last_step.equation())}$'
+        if isinstance(last_step, spg.Circle):
+            xlabel = f'${sp.latex(last_step.equation())}$'
+        if isinstance(last_step, spg.Polygon):
+            xlabel = f'area: ${sp.latex(last_step.area)}$ • perim: ${sp.latex(last_step.perimeter)}$'
+        ax_prep(ax, bounds, xlabel)
+        if isinstance(last_step, spg.Point):
+            gold_points(ax, [last_step])
         plot_sequence(ax, sequence[0:i], bounds)
         snapshot(folder, f'{str(i).zfill(3)}.png')
 
@@ -276,6 +321,23 @@ def plot_wedge_2(ax, ctr_pt, rad_val, a1, a2, fc='#0ff1', ec='#0002', linestyle=
                           fill=fill )
     ax.add_patch(patch)
 
+def plot_sections(NAME, ax, history, sections, bounds):
+    for i, section in enumerate(sections):
+        print(i, section)
+        num = str(i).zfill(3)
+        xlabel = f'${sp.latex(section[0].length.simplify())} : {sp.latex(section[1].length.simplify())}$'
+        #  if isinstance(last_step, spg.Point):
+            #  pt = last_step
+            #  xlabel = f'$$({sp.latex(pt.x)}, {sp.latex(pt.y)}'
+        ax_prep(ax, bounds, xlabel)
+        section_pts = set()
+        for seg in section:
+            for pt in seg.points:
+                section_pts.add(pt)
+        gold_points(ax, section_pts)
+        plot_segments(ax, section)
+        plot_sequence(ax, history, bounds)
+        snapshot(f'{NAME}/sections', f'{num}.png')
 
 # images**********************
 def snapshot(folder, filename):
