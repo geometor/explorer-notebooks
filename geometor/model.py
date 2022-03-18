@@ -15,8 +15,9 @@ from collections import defaultdict
 import logging
 
 from itertools import permutations, combinations
-
 from multiprocessing import Pool, cpu_count
+
+from geometor.utils import *
 
 # constants
 num_workers = cpu_count()
@@ -301,16 +302,16 @@ def check_golden(section):
     '''check range of three points for golden section'''
     ab = segment(section[0], section[1]).length.simplify()
     bc = segment(section[1], section[2]).length.simplify()
-    print('            ', ab)
-    print('            ', bc)
+    #  print('            ', ab)
+    #  print('            ', bc)
     #  ratio = ab ** 2 / bc ** 2
     ratio = ab / bc 
     #  ratio = sp.simplify(ratio)
-    print('            ', ratio)
+    #  print('            ', ratio)
     chk1 = (ratio / phi).evalf()
-    print('            ', chk1)
+    #  print('            ', chk1)
     chk2 = (ratio / (1 / phi)).evalf()
-    print('            ', chk2)
+    #  print('            ', chk2)
     #  if ratio == (1 / phi) or ratio == (phi):
     if chk1 == 1 or chk2 == 1:
         return True
@@ -332,33 +333,26 @@ def analyze_golden_lines(lines):
     return sections
 
 
-    
 def analyze_golden(line):
     '''gecj all the points on a line for Golden Sections'''
     goldens = []
     line_pts = sorted(list(line.pts), key=point_value)
     sections = list(combinations(line_pts, 3))
-    print('    points: ', len(line_pts))
-    print('    sections: ', len(sections))
-    #  for i, r in enumerate(sections):
-        #  print(f'        {i} {r}')
-        #  ab = segment(r[0], r[1])
-        #  bc = segment(r[1], r[2])
-        #  chk = check_golden(r)
-        #  if chk:
-            #  print(f'            GOLDEN!')
-            #  goldens.append([ab, bc])
+    print_log(f'Analyze line: {line.equation()})')
+    print_log(f'    points:    {len(line_pts)}')
+    print_log(f'    sections:  {len(sections)}')
+
     with Pool(num_workers) as pool:
         results = pool.map(check_golden, sections)
         for index, result in enumerate(results):
             if result:
                 section = sections[index]
-                #  print(f'            GOLDEN!')
                 ab = segment(section[0], section[1])
                 bc = segment(section[1], section[2])
                 goldens.append([ab, bc])
+                logging.info(f'            GOLDEN: {sections[index]}')
             
-    print('    goldens: ', len(goldens))
+    print_log(f'    goldens: { len(goldens) }')
     return goldens
     
 
@@ -382,3 +376,18 @@ def analyze_line(line):
             print(r)
             print(chk)
     
+
+def group_sections(sections):
+    groups = {}
+    for section in sections:
+        for seg in section:
+            seg_len = seg.length.simplify()
+            seg_len = sp.sqrtdenest(seg_len)
+            if seg_len in groups:
+                groups[seg_len].append(section)
+            else:
+                groups[seg_len] = [section]
+    return groups
+
+
+

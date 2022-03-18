@@ -14,14 +14,15 @@ pt_b = add_point(point(1, 0))
 #this point should be constructed eventually
 pt_c = add_point(point(0, sp.sqrt(phi)))
 
+triangle = add_polygon(polygon([pt_a, pt_b, pt_c]))
+
 bisector(pt_a, pt_b)
 bisector(pt_a, pt_c)
 bisector(pt_b, pt_c)
 
-# circumcircle
+# midpoint circle
 c = add_element(circle(pts[30], pt_a))
 
-triangle = add_polygon(polygon([pt_a, pt_b, pt_c]))
 circle = add_element(circle(pt_a, pt_c))
 poly_pts = []
 poly_pts.append(point(-1, -1))
@@ -52,6 +53,7 @@ build_sequence(NAME, ax, history, bounds)
 lines = [el for el in elements if isinstance(el, spg.Line2D)]
 sections = analyze_golden_lines(lines)
 
+plot_all_sections(NAME, ax, history, sections, bounds)
 plot_sections(NAME, ax, history, sections, bounds)
       
 plt.show()

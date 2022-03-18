@@ -16,6 +16,7 @@ import logging
 import math as math
 
 from geometor.model import *
+from geometor.utils import *
 
 plt.rcParams['figure.figsize'] = [16, 9]
 plt.style.use('dark_background')
@@ -41,6 +42,7 @@ classes['square'] = {'color':'#FF0', 'markersize':7, 'marker':'s'}
 classes['diamond'] = {'color':'#F0F', 'markersize':7, 'marker':'D'}
 
 
+classes['nine'] = {'edgecolor':'#3F06', 'facecolor':'#3F03', 'linestyle':'-', 'linewidth':1}
 classes['yellow'] = {'edgecolor':'#FF09', 'facecolor':'#FF03', 'linestyle':'-', 'linewidth':1}
 classes['cyan'] = {'color':'#0FF3', 'linestyle':'-'}
 classes['magenta'] = {'color':'#F0F3', 'linestyle':'-'}
@@ -213,11 +215,12 @@ def plot_selected_points(ax, pts,
                color='#FF09',
                linestyle='',
                marker='o',
-               markersize=10,
+               markersize=15,
                ):
     '''plot all the points in pts'''
     for pt in pts:
-        styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+        #  styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+        styles = {'markeredgecolor':color, 'fillstyle':'none', 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
         # collect x, y values into separate arrays
         xs = [pt.x.evalf()]
         ys = [pt.y.evalf()]
@@ -228,11 +231,12 @@ def gold_points(ax, pts,
                color='#C90',
                linestyle='',
                marker='o',
-               markersize=7,
+               markersize=12,
                ):
     '''plot all the points in pts'''
     for pt in pts:
         styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+        styles = {'markeredgecolor':color, 'fillstyle':'none', 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
         # collect x, y values into separate arrays
         xs = [pt.x.evalf()]
         ys = [pt.y.evalf()]
@@ -347,31 +351,74 @@ def build_sequence(folder, ax, sequence, bounds):
         xlabel = str(last_step)
         if isinstance(last_step, spg.Point):
             pt = last_step
-            xlabel = f'$({sp.latex(pt.x)}, {sp.latex(pt.y)})$'
+            ptx = sp.sqrtdenest(pt.x.simplify())
+            pty = sp.sqrtdenest(pt.y.simplify())
+            xlabel = f'$\\left( \ {sp.latex(ptx)}, \ {sp.latex(pty)} \ \\right)$'
         if isinstance(last_step, spg.Line):
             xlabel = f'${sp.latex(last_step.equation())}$'
         if isinstance(last_step, spg.Circle):
             xlabel = f'${sp.latex(last_step.equation())}$'
         if isinstance(last_step, spg.Polygon):
-            xlabel = f'area: ${sp.latex(last_step.area)}$ • perim: ${sp.latex(last_step.perimeter)}$'
+            area = sp.sqrtdenest(last_step.area.simplify())
+            perim = sp.sqrtdenest(last_step.perimeter.simplify())
+            xlabel = f'area: ${sp.latex(area)}$ • perim: ${sp.latex(perim)}$'
 
         ax_prep(ax, bounds, xlabel)
 
         if isinstance(last_step, spg.Point):
             plot_selected_points(ax, [last_step])
         if isinstance(last_step, spg.Line):
+            plot_selected_points(ax, last_step.points)
             plot_line(ax, last_step, bounds, linestyle='-')
         if isinstance(last_step, spg.Circle):
+            plot_selected_points(ax, [last_step.center, last_step.radius_pt])
             plot_circle(ax, last_step, linestyle='-')
         plot_sequence(ax, sequence[0:i], bounds)
         snapshot(folder, f'{str(i).zfill(3)}.png')
+
+
+def plot_group_sections(NAME, ax, history, sections, bounds, filename, title='golden sections'):
+    xlabel = f'[{len(sections)}] • {title}'
+    ax_prep(ax, bounds, xlabel)
+    for i, section in enumerate(sections):
+        print(i, section)
+        num = str(i).zfill(3)
+        section_pts = set()
+        for seg in section:
+            for pt in seg.points:
+                section_pts.add(pt)
+        gold_points(ax, section_pts)
+        plot_segments(ax, section)
+
+    plot_sequence(ax, history, bounds)
+    snapshot(f'{NAME}/groups', f'{filename}.png')
+
+def plot_all_sections(NAME, ax, history, sections, bounds):
+    xlabel = f'golden sections: {len(sections)}'
+    ax_prep(ax, bounds, xlabel)
+    for i, section in enumerate(sections):
+        print(i, section)
+        num = str(i).zfill(3)
+        section_pts = set()
+        for seg in section:
+            for pt in seg.points:
+                section_pts.add(pt)
+        gold_points(ax, section_pts)
+        plot_segments(ax, section)
+
+    plot_sequence(ax, history, bounds)
+    snapshot(f'{NAME}/sections', f'all.png')
 
 
 def plot_sections(NAME, ax, history, sections, bounds):
     for i, section in enumerate(sections):
         print(i, section)
         num = str(i).zfill(3)
-        xlabel = f'${sp.latex(section[0].length.simplify())} : {sp.latex(section[1].length.simplify())}$'
+        s0 = section[0].length.simplify()
+        s0 = sp.sqrtdenest(s0)
+        s1 = section[1].length.simplify()
+        s1 = sp.sqrtdenest(s1)
+        xlabel = f'${sp.latex(s0)} : {sp.latex(s1)}$'
         ax_prep(ax, bounds, xlabel)
         section_pts = set()
         for seg in section:
@@ -388,8 +435,9 @@ def plot_sections(NAME, ax, history, sections, bounds):
         
         gold_points(ax, section_pts)
         plot_segments(ax, section)
-        plot_sequence(ax, history, zoom_bounds)
+        plot_sequence(ax, history, bounds)
         snapshot(f'{NAME}/sections', f'{num}-zoom.png')
+
 
 # images**********************
 def snapshot(folder, filename):

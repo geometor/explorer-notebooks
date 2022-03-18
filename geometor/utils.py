@@ -14,6 +14,10 @@ def log_init(name):
             )
     logging.info(f'Init {name}')
 
+def print_log(txt=''):
+    print(txt)
+    logging.info(txt)
+
 # time *********************
 import datetime
 from timeit import default_timer as timer
