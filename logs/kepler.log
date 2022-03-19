@@ -298,3 +298,81 @@ INFO:root:  + Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(2)*sqrt(-2 + sqrt(
 INFO:root:  + Circle(Point2D(0, sqrt(2 + 2*sqrt(5))/4), sqrt(1/8 + sqrt(5)/8))
 INFO:root:* add_element: Circle(Point2D(0, 0), sqrt(1/2 + sqrt(5)/2))
 INFO:root:  ! Circle(Point2D(0, 0), sqrt(1/2 + sqrt(5)/2)) found at index: 5
+INFO:root:Model: 0:03:00.185180
+INFO:root:
+INFO:root:    elements: 13
+INFO:root:    points: 82
+INFO:root:
+INFO:root:limx: [-1.73779215334751, 2.868033988749895]
+INFO:root:limy: [-1.7888417685876268, 3.140053638263964]
+INFO:root:
+INFO:root:lines: 6
+INFO:root:Analyze line: y)
+INFO:root:    points:    10
+INFO:root:    sections:  120
+INFO:root:            GOLDEN: (Point2D(-1, 0), Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0), Point2D(0, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0), Point2D(0, 0), Point2D(1, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0), Point2D(1, 0), Point2D(2, 0))
+INFO:root:            GOLDEN: (Point2D(1/4 - sqrt(5)/4, 0), Point2D(0, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(1/4 - sqrt(5)/4, 0), Point2D(1/2, 0), Point2D(1, 0))
+INFO:root:            GOLDEN: (Point2D(0, 0), Point2D(1, 0), Point2D(1 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(1, 0), Point2D(2, 0), Point2D(1 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:    goldens: 7
+INFO:root:Analyze line: x - 1/2)
+INFO:root:    points:    14
+INFO:root:    sections:  364
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(1/2, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), Point2D(1/2, sqrt(2 + 2*sqrt(5))/4))
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(1/2, sqrt(2 + 2*sqrt(5))/4), Point2D(1/2, sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4))
+INFO:root:    goldens: 2
+INFO:root:Analyze line: x)
+INFO:root:    points:    10
+INFO:root:    sections:  120
+INFO:root:            GOLDEN: (Point2D(0, 0), Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5)))), Point2D(0, sqrt(2 + 2*sqrt(5))/4))
+INFO:root:            GOLDEN: (Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5)))), Point2D(0, sqrt(2 + 2*sqrt(5))/4), Point2D(0, sqrt(2 + 2*sqrt(5))/2))
+INFO:root:    goldens: 2
+INFO:root:Analyze line: y - sqrt(2 + 2*sqrt(5))/4)
+INFO:root:    points:    14
+INFO:root:    sections:  364
+INFO:root:    goldens: 0
+INFO:root:Analyze line: -x*sqrt(2 + 2*sqrt(5))/2 - y + sqrt(2 + 2*sqrt(5))/2)
+INFO:root:    points:    12
+INFO:root:    sections:  220
+INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8))
+INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2), Point2D(1, 0))
+INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2)), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4))
+INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2), Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2)), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2)), Point2D(1, 0))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D(1, 0))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D(1, 0), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4), Point2D(1 - sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), -sqrt(1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2), Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2)), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8))
+INFO:root:            GOLDEN: (Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4))
+INFO:root:            GOLDEN: (Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2)), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D(1, 0))
+INFO:root:            GOLDEN: (Point2D(sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(-1/2 + sqrt(5)/2)), Point2D(1, 0), Point2D(1 - sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), -sqrt(1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D(1, 0), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4))
+INFO:root:            GOLDEN: (Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D(1, 0), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(1, 0), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(1, 0), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)), Point2D(1 - sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), -sqrt(1/2 + sqrt(5)/2)))
+INFO:root:    goldens: 22
+INFO:root:Analyze line: -sqrt(3)*x + y*sqrt(6 + 6*sqrt(5))/2 - sqrt(15)/4 + sqrt(3)/4)
+INFO:root:    points:    15
+INFO:root:    sections:  455
+INFO:root:            GOLDEN: (Point2D(1/4 - sqrt(5)/4, 0), Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5)))), Point2D(1/2, sqrt(2 + 2*sqrt(5))/4))
+INFO:root:    goldens: 1
+INFO:root:
+INFO:root:goldens: 34
+INFO:root:
+INFO:root:groups: 26
+INFO:root:
+INFO:root:Analysis: 0:04:19.278424
+INFO:root:
+INFO:root:Complete: 0:14:33.541648
+INFO:root:    elements: 13
+INFO:root:    points:   82
+INFO:root:    goldens:  34

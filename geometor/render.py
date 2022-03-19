@@ -353,11 +353,18 @@ def build_sequence(folder, ax, sequence, bounds):
             pt = last_step
             ptx = sp.sqrtdenest(pt.x.simplify())
             pty = sp.sqrtdenest(pt.y.simplify())
-            xlabel = f'$\\left( \ {sp.latex(ptx)}, \ {sp.latex(pty)} \ \\right)$'
+            xlabel = f'$\\left( \\ {sp.latex(ptx)}, \\ {sp.latex(pty)} \\ \\right)$'
         if isinstance(last_step, spg.Line):
-            xlabel = f'${sp.latex(last_step.equation())}$'
+            eq = last_step.equation().simplify()
+            seg = segment(last_step.p1, last_step.p2)
+            seg = sp.sqrtdenest(seg.length.simplify())
+            
+            xlabel = f'${sp.latex(eq)}$ • seg: ${sp.latex(seg)}$'
         if isinstance(last_step, spg.Circle):
-            xlabel = f'${sp.latex(last_step.equation())}$'
+            eq = last_step.equation().simplify()
+            rad = sp.sqrtdenest(last_step.radius.simplify())
+            area = sp.sqrtdenest(last_step.area.simplify())
+            xlabel = f'${sp.latex(eq)}$ • rad: ${sp.latex(rad)}$ • A: ${sp.latex(area)}$'
         if isinstance(last_step, spg.Polygon):
             area = sp.sqrtdenest(last_step.area.simplify())
             perim = sp.sqrtdenest(last_step.perimeter.simplify())
@@ -416,9 +423,11 @@ def plot_sections(NAME, ax, history, sections, bounds):
         num = str(i).zfill(3)
         s0 = section[0].length.simplify()
         s0 = sp.sqrtdenest(s0)
+        s0f = float(s0.evalf())
         s1 = section[1].length.simplify()
         s1 = sp.sqrtdenest(s1)
-        xlabel = f'${sp.latex(s0)} : {sp.latex(s1)}$'
+        s1f = float(s1.evalf())
+        xlabel = f'${s0f} \\approx {sp.latex(s0)} \\ :\\  {sp.latex(s1)} \\approx {s1f}$'
         ax_prep(ax, bounds, xlabel)
         section_pts = set()
         for seg in section:

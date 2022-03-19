@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'star-3'
+NAME = 'star-4'
 log_init(NAME)
 start_time = timer()
 
@@ -86,9 +86,9 @@ ax.axis(False)
 #  plot_sequence(ax, history, bounds)
 #  plt.show()
 
-#  build_sequence(NAME, ax, history, bounds)
+build_sequence(NAME, ax, history, bounds)
 
-#  plot_sections(NAME, ax, history, sections, bounds)
+plot_sections(NAME, ax, history, sections, bounds)
 for i, group in enumerate(sorted_groups_keys):
     i = str(i).zfill(3)
     

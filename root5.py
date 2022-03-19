@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root5-8'
+NAME = 'root5-9'
 log_init(NAME)
 start_time = timer()
 
