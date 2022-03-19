@@ -73,3 +73,33 @@ INFO:root:  ! Point2D(0, -sqrt(15)/2) found at index: 8
 INFO:root:* add_point: Point2D(0, sqrt(15)/2)
 INFO:root:  ! Point2D(0, sqrt(15)/2) found at index: 9
 INFO:root:  + Circle(Point2D(1/2, 0), 2)
+INFO:root:Model: 0:00:02.301137
+INFO:root:
+INFO:root:    elements: 6
+INFO:root:    points: 11
+INFO:root:
+INFO:root:limx: [-2.75, 2.75]
+INFO:root:limy: [-2.1864916731037085, 2.1864916731037085]
+INFO:root:
+INFO:root:lines: 2
+INFO:root:Analyze line: y)
+INFO:root:    points:    7
+INFO:root:    sections:  35
+INFO:root:    goldens: 0
+INFO:root:Analyze line: x)
+INFO:root:    points:    5
+INFO:root:    sections:  10
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(15)/2), Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2), Point2D(0, sqrt(15)/2))
+INFO:root:    goldens: 2
+INFO:root:
+INFO:root:goldens: 2
+INFO:root:
+INFO:root:groups: 2
+INFO:root:
+INFO:root:Analysis: 0:00:02.700786
+INFO:root:
+INFO:root:Complete: 0:00:19.480014
+INFO:root:    elements: 6
+INFO:root:    points:   11
+INFO:root:    goldens:  2

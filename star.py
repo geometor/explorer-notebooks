@@ -41,8 +41,6 @@ print_log()
 print_log(f'    elements: {len(elements)}')
 print_log(f'    points: {len(pts)}')
 
-
-
 # analysis  *******************************
 #  limx, limy = (-2, 2), (-1.5, 1.5)
 limx, limy = get_limits_from_points(pts, margin=.25)
@@ -80,10 +78,10 @@ title = f'G E O M E T O R'
 #  ax.set_title(title, fontdict={'color': '#960', 'size':'small'})
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
-ax.axis(False)
-#  plt.tight_layout()
-
-#  plot_sequence(ax, history, bounds)
+xlabel = f'elements: {len(elements)} | points: {len)pts)}'
+ax_prep(ax, bounds, xlabel)
+plot_sequence(ax, history, bounds)
+snapshot(NAME, 'summary.png')
 #  plt.show()
 
 build_sequence(NAME, ax, history, bounds)

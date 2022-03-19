@@ -8,6 +8,7 @@ sp.init_printing()
 
 NAME = 'vesica'
 log_init(NAME)
+start_time = timer()
 
 begin()
 add_element(line(pts[0], pts[1]))
@@ -21,61 +22,70 @@ bl = add_element(line(pts[4], pts[5], classes=['bisector']))
 add_element(circle(pts[0], pts[3]))
 add_element(circle(pts[1], pts[2]))
 
-plt.rcParams['figure.figsize'] = [16, 9]
-plt.style.use('dark_background')
-#  fig, (ax0, ax1) = plt.subplots(ncols=2, figsize=(7, 4))
-fig, ax = plt.subplots()
-ax.set_aspect('equal')
+print_log(f'Model: {elapsed(start_time)}')
+print_log()
+print_log(f'    elements: {len(elements)}')
+print_log(f'    points: {len(pts)}')
 
-# set up plot
-limx, limy = (-3.5, 3.5), (-2.5, 2.5)
+# analysis  *******************************
+#  limx, limy = (-2, 2), (-1.5, 1.5)
+limx, limy = get_limits_from_points(pts, margin=.25)
 bounds = set_bounds(limx, limy)
 
-#  if limx:
-    #  ax.set_xlim(limx[0], limx[1])
-#  if limy:
-    #  ax.set_ylim(limy[0], limy[1])
+print_log()
+print_log(f'limx: {limx}')
+print_log(f'limy: {limy}')
+
+lines = [el for el in elements if isinstance(el, spg.Line2D)]
+print_log()
+print_log(f'lines: {len(lines)}')
+
+sections = analyze_golden_lines(lines)
+print_log()
+print_log(f'goldens: {len(sections)}')
+
+groups = group_sections(sections)
+print_log()
+print_log(f'groups: {len(groups)}')
+
+sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
+
+print_log()
+print_log(f'Analysis: {elapsed(start_time)}')
+
+# plot *******************
+#  plt.ion()
+fig, ax = plt.subplots()
+ax.set_aspect('equal')
+#  limx, limy = (-2, 2), (-1.5, 1.5)
+limx, limy = get_limits_from_points(pts, margin=.25)
+bounds = set_bounds(limx, limy)
+
 title = f'G E O M E T O R'
 #  ax.set_title(title, fontdict={'color': '#960', 'size':'small'})
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
-ax.axis(False)
-plt.tight_layout()
-
-
-print('points: ', len(pts))
-for pt in pts:
-    print(f'{str(pt.x): >8} {str(pt.y): >8} {pt.classes} {[el.equation() for el in pt.elements]}')
-print('elements: ', len(elements))
-for el in elements:
-    print(f'    {el.equation()} {el.classes} ')
-print('history')
-for i, step in enumerate(history):
-    print(f'    {i} • {step}')
-    
-print()
-print(bl.pts)
-print(elements[0].pts)
-print(pts[4].elements)
-
-#  sgs = []
-#  sgs.append(plot_segment(pts[9], pts[5]))
-#  sgs.append(plot_segment(pts[5], pts[4]))
-#  sgs.append(plot_segment(pts[4], pts[8]))
-
-
-#  ratios = []
-#  ratios.append((sgs[0] / sgs[1]).simplify())
-#  ratios.append((sgs[1] / sgs[2]).simplify())
-#  print([ratio - phi for ratio in ratios])
-
-#  for i in range(1, len(history)+1):
-    #  ax.clear()
-    #  ax.axis(False)
-    #  plot_sequence(history[0:i], bounds)
-    #  snapshot(NAME, f'{str(i).zfill(3)}.png')
-
+xlabel = f'elements: {len(elements)} | points: {len(pts)}'
+ax_prep(ax, bounds, xlabel)
 plot_sequence(ax, history, bounds)
+snapshot(NAME, 'summary.png')
+#  plt.show()
 
+build_sequence(NAME, ax, history, bounds)
+
+plot_sections(NAME, ax, history, sections, bounds)
+for i, group in enumerate(sorted_groups_keys):
+    i = str(i).zfill(3)
+    
+    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
+    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
+
+plot_all_sections(NAME, ax, history, sections, bounds)
+
+print_log()
+print_log(f'Complete: {elapsed(start_time)}')
+print_log(f'    elements: {len(elements)}')
+print_log(f'    points:   {len(pts)}')
+print_log(f'    goldens:  {len(sections)}')
+      
 plt.show()
-
