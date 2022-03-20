@@ -1,4 +1,6 @@
 INFO:root:Init root5
+INFO:root:
+MODEL: root5
 INFO:root:* add_point: Point2D(-1/2, 0)
 INFO:root:  + Point2D(-1/2, 0)
 INFO:root:* add_point: Point2D(1/2, 0)
@@ -926,3 +928,1006 @@ INFO:root:  + Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(5)*sqrt(
 INFO:root:* add_point: Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)*sqrt(1 + sqrt(5))/5 - sqrt(5)/5 + 1), -sqrt(5)*sqrt(1 + sqrt(5))/5 - sqrt(5)/5 + 1)
 INFO:root:  + Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)*sqrt(1 + sqrt(5))/5 - sqrt(5)/5 + 1), -sqrt(5)*sqrt(1 + sqrt(5))/5 - sqrt(5)/5 + 1)
 INFO:root:  + Circle(Point2D(-1/2, 1), sqrt((-1/2 - sqrt(5)/10)**2 + (sqrt(5)/5 + 1)**2))
+INFO:root:
+MODEL Summary:
+INFO:root:    elements: 25
+INFO:root:    points: 287
+INFO:root:
+elapsed: 0:18:19.222604
+INFO:root:
+ANALYZE: root5
+INFO:root:
+analyze_model:
+INFO:root:
+    analyze_golden_lines: 11
+INFO:root:    0 • (0, 1, 0)
+INFO:root:        coefficients: (0, 1, 0))
+INFO:root:        points:    17
+INFO:root:        sections:  680
+INFO:root:            GOLDEN: (Point2D(-7/2, 0), Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0))
+INFO:root:            GOLDEN: (Point2D(-5/2, 0), Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-3/2, 0))
+INFO:root:            GOLDEN: (Point2D(-5/2, 0), Point2D(-3/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0))
+INFO:root:            GOLDEN: (Point2D(-5/2, 0), Point2D(-sqrt(5)/2, 0), Point2D(sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-3/2, 0), Point2D(-sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-3/2, 0), Point2D(-1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-sqrt(5)/2, 0), Point2D(-1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-sqrt(5)/2, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-1/2, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-1/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0), Point2D(3/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 0), Point2D(1/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-3/2, 0), Point2D(-sqrt(5)/2, 0), Point2D(-1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-3/2, 0), Point2D(-1/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0))
+INFO:root:            GOLDEN: (Point2D(-3/2, 0), Point2D(-1/2, 0), Point2D(sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-3/2, 0), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-3/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0), Point2D(sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-1/2, 0), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-1/2, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(3/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(1/2, 0), Point2D(3/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(sqrt(5)/2, 0), Point2D(5/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0), Point2D(sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(1/2, 0), Point2D(sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(1/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(sqrt(5)/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(1/2, 0), Point2D(3/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(3/2, 0), Point2D(5/2, 0))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 + 1/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0), Point2D(7/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 0), Point2D(1/2, 0), Point2D(sqrt(5)/2, 0))
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(sqrt(5)/2, 0), Point2D(3/2, 0))
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(sqrt(5)/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(3/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(sqrt(5)/2, 0), Point2D(3/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
+INFO:root:            GOLDEN: (Point2D(3/2, 0), Point2D(1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0), Point2D(5/2, 0))
+INFO:root:        goldens: 42
+INFO:root:    1 • (1, 0, 0)
+INFO:root:        coefficients: (1, 0, 0))
+INFO:root:        points:    24
+INFO:root:        sections:  2024
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(15)/2), Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(sqrt(5)/2 + 5/4)), Point2D(0, -sqrt(5/4 - sqrt(5)/2)), Point2D(0, sqrt(5/4 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(sqrt(5)/2 + 5/4)), Point2D(0, -sqrt(5/4 - sqrt(5)/2)), Point2D(0, sqrt(sqrt(5)/2 + 5/4)))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(sqrt(5)/2 + 5/4)), Point2D(0, sqrt(5/4 - sqrt(5)/2)), Point2D(0, sqrt(sqrt(5)/2 + 5/4)))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(5)/2), Point2D(0, -1/2), Point2D(0, 1/2))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(5)/2), Point2D(0, 0), Point2D(0, 5/4 - sqrt(5)/4))
+INFO:root:            GOLDEN: (Point2D(0, -1), Point2D(0, 0), Point2D(0, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2), Point2D(0, sqrt(15)/2))
+INFO:root:            GOLDEN: (Point2D(0, 1 - sqrt(2*sqrt(5) + 5)/2), Point2D(0, 1 - sqrt(5 - 2*sqrt(5))/2), Point2D(0, sqrt(5 - 2*sqrt(5))/2 + 1))
+INFO:root:            GOLDEN: (Point2D(0, 1 - sqrt(2*sqrt(5) + 5)/2), Point2D(0, 1 - sqrt(5 - 2*sqrt(5))/2), Point2D(0, 1 + sqrt(2*sqrt(5) + 5)/2))
+INFO:root:            GOLDEN: (Point2D(0, 1 - sqrt(2*sqrt(5) + 5)/2), Point2D(0, sqrt(5 - 2*sqrt(5))/2 + 1), Point2D(0, 1 + sqrt(2*sqrt(5) + 5)/2))
+INFO:root:            GOLDEN: (Point2D(0, -1/2), Point2D(0, 1/2), Point2D(0, sqrt(5)/2))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(5/4 - sqrt(5)/2)), Point2D(0, sqrt(5/4 - sqrt(5)/2)), Point2D(0, sqrt(sqrt(5)/2 + 5/4)))
+INFO:root:            GOLDEN: (Point2D(0, 0), Point2D(0, sqrt(6 - 2*sqrt(5))/2), Point2D(0, 1))
+INFO:root:            GOLDEN: (Point2D(0, 0), Point2D(0, 5/4 - sqrt(5)/4), Point2D(0, sqrt(5)/2))
+INFO:root:            GOLDEN: (Point2D(0, 1/2), Point2D(0, sqrt(6 - 2*sqrt(5))/2), Point2D(0, 5/4 - sqrt(5)/4))
+INFO:root:            GOLDEN: (Point2D(0, 1/2), Point2D(0, 5/4 - sqrt(5)/4), Point2D(0, 1))
+INFO:root:            GOLDEN: (Point2D(0, 1 - sqrt(5 - 2*sqrt(5))/2), Point2D(0, sqrt(5 - 2*sqrt(5))/2 + 1), Point2D(0, 1 + sqrt(2*sqrt(5) + 5)/2))
+INFO:root:        goldens: 18
+INFO:root:    2 • (1, 0, -1/2)
+INFO:root:        coefficients: (1, 0, -1/2))
+INFO:root:        points:    16
+INFO:root:        sections:  560
+INFO:root:            GOLDEN: (Point2D(1/2, -2), Point2D(1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, -1))
+INFO:root:            GOLDEN: (Point2D(1/2, -2), Point2D(1/2, -1), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, -2), Point2D(1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, -1), Point2D(1/2, -sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, -1), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, 0), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 2))
+INFO:root:            GOLDEN: (Point2D(1/2, -1), Point2D(1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 0))
+INFO:root:            GOLDEN: (Point2D(1/2, -1), Point2D(1/2, 0), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, -1), Point2D(1/2, 0), Point2D(1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, -1), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 0), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 1), Point2D(1/2, 2))
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(1/2, 1), Point2D(1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(1/2, 1), Point2D(1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(1/2, 1), Point2D(1/2, sqrt(sqrt(5)/2 + 3/2)), Point2D(1/2, 2))
+INFO:root:        goldens: 20
+INFO:root:    3 • (1, 0, 1/2)
+INFO:root:        coefficients: (1, 0, 1/2))
+INFO:root:        points:    16
+INFO:root:        sections:  560
+INFO:root:            GOLDEN: (Point2D(-1/2, -2), Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, -1))
+INFO:root:            GOLDEN: (Point2D(-1/2, -2), Point2D(-1/2, -1), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, -2), Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, -1), Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, -1), Point2D(-1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 0), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 0), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 2))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 1), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, -1), Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, -1), Point2D(-1/2, 0), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, -1), Point2D(-1/2, 0), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, -1), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, -1), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 0), Point2D(-1/2, 3/2 - sqrt(5)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 0), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, 2))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, -sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 1), Point2D(-1/2, 2))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2, 1), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2, 1), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, 0), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-1/2, 1), Point2D(-1/2, 2))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2, 1), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 2))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(-1/2, 2), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(sqrt(5)/2 + 3/2)), Point2D(-1/2, 2), Point2D(-1/2, 1 + sqrt(2)*sqrt(sqrt(5) + 3)/2))
+INFO:root:        goldens: 37
+INFO:root:    4 • (0, 1, -1)
+INFO:root:        coefficients: (0, 1, -1))
+INFO:root:        points:    19
+INFO:root:        sections:  969
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 1), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 - 1/2, 1), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 1), Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 - 1/2, 1), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 - 1/2, 1), Point2D(-1/2, 1), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(3 - sqrt(5))/2 - 1/2, 1), Point2D(-1/2, 1), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 1), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 1), Point2D(-1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(1/2, 1), Point2D(-1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2 + sqrt(2)*sqrt(3 - sqrt(5))/2, 1), Point2D(1/2, 1), Point2D(-1/2 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 1))
+INFO:root:        goldens: 8
+INFO:root:    5 • (0, 1, 1)
+INFO:root:        coefficients: (0, 1, 1))
+INFO:root:        points:    16
+INFO:root:        sections:  560
+INFO:root:        goldens: 0
+INFO:root:    6 • (2, -1, 0)
+INFO:root:        coefficients: (2, -1, 0))
+INFO:root:        points:    26
+INFO:root:        sections:  2600
+INFO:root:            GOLDEN: (Point2D(-1/2, -1), Point2D(-sqrt(5)/10, -sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-1/2, -1), Point2D(0, 0), Point2D(sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/10, -sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(0, 0), Point2D(sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(1/2, 1))
+INFO:root:        goldens: 4
+INFO:root:    7 • (-2, -1, 0)
+INFO:root:        coefficients: (-2, -1, 0))
+INFO:root:        points:    27
+INFO:root:        sections:  2925
+INFO:root:            GOLDEN: (Point2D(-sqrt(10)*sqrt(sqrt(5) + 3)/10 - 1/2, 1 + sqrt(10)*sqrt(sqrt(5) + 3)/5), Point2D(-1/2 - sqrt(10)*sqrt(3 - sqrt(5))/10, sqrt(10)*sqrt(3 - sqrt(5))/5 + 1), Point2D(-1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(-sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(0, 0))
+INFO:root:            GOLDEN: (Point2D(-1/2, 1), Point2D(-sqrt(5)/10, sqrt(5)/5), Point2D(sqrt(5)/10, -sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(0, 0), Point2D(1/2, -1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/10, sqrt(5)/5), Point2D(sqrt(5)/10, -sqrt(5)/5), Point2D(1/2, -1))
+INFO:root:        goldens: 5
+INFO:root:    8 • (0, 1, -sqrt(5)/5)
+INFO:root:        coefficients: (0, 1, -sqrt(5)/5))
+INFO:root:        points:    30
+INFO:root:        sections:  4060
+INFO:root:            GOLDEN: (Point2D(-2*sqrt(5)/5 - 1/2, sqrt(5)/5), Point2D(-1/2 - sqrt(10)*sqrt(3 - sqrt(5))/10, sqrt(5)/5), Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-2*sqrt(5)/5 - 1/2, sqrt(5)/5), Point2D(-1/2 - sqrt(10)*sqrt(3 - sqrt(5))/10, sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-2*sqrt(5)/5 - 1/2, sqrt(5)/5), Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-2*sqrt(5)/5 - 1/2, sqrt(5)/5), Point2D(-sqrt(5)/10, sqrt(5)/5), Point2D(1/2, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-1/2 - sqrt(10)*sqrt(3 - sqrt(5))/10, sqrt(5)/5), Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(5)/5), Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(-sqrt(5)/10, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(5)/5), Point2D(-sqrt(5)/10, sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5), Point2D(1/2 + 2*sqrt(5)/5, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/10, sqrt(5)/5), Point2D(sqrt(5)/10, sqrt(5)/5), Point2D(1/2, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/10, sqrt(5)/5), Point2D(-1/2 + 2*sqrt(5)/5, sqrt(5)/5), Point2D(1/2 + 2*sqrt(5)/5, sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(sqrt(5)/10, sqrt(5)/5), Point2D(-1/2 + 2*sqrt(5)/5, sqrt(5)/5), Point2D(1/2, sqrt(5)/5))
+INFO:root:        goldens: 11
+INFO:root:    9 • (0, 1, -sqrt(3/2 - sqrt(5)/2))
+INFO:root:        coefficients: (0, 1, -sqrt(3/2 - sqrt(5)/2)))
+INFO:root:        points:    28
+INFO:root:        sections:  3276
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5))) - 1/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2 - 1/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2 + sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2 - 1/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2 - sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2 - 1/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2 + sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))))
+INFO:root:            GOLDEN: (Point2D(-1/2 - sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2 + sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))))
+INFO:root:            GOLDEN: (Point2D(-1/2 - sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(1/2 + sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))))
+INFO:root:            GOLDEN: (Point2D(-1/2 - sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2 + sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2 + sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(0, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(-1/2 + sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-1/2 + sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))))
+INFO:root:            GOLDEN: (Point2D(-1/2, sqrt(3/2 - sqrt(5)/2)), Point2D(0, sqrt(6 - 2*sqrt(5))/2), Point2D(sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(-sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(0, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(-sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(0, sqrt(6 - 2*sqrt(5))/2), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(-sqrt(5) + 1 + 2*sqrt(2)*sqrt(3 - sqrt(5)))/2 + 1/2, -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(-1/2 + sqrt(-sqrt(5) + 2*sqrt(2)*sqrt(3 - sqrt(5))), -sqrt(5)/2 + 1/2 + sqrt(6 - 2*sqrt(5))))
+INFO:root:            GOLDEN: (Point2D(0, sqrt(6 - 2*sqrt(5))/2), Point2D(sqrt(6 - 2*sqrt(5))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(1/2, sqrt(3/2 - sqrt(5)/2)))
+INFO:root:        goldens: 14
+INFO:root:    10 • (-1, 1/2 + sqrt(5)/2, -sqrt(5)/2)
+INFO:root:        coefficients: (-1, 1/2 + sqrt(5)/2, -sqrt(5)/2))
+INFO:root:        points:    25
+INFO:root:        sections:  2300
+INFO:root:            GOLDEN: (Point2D(-sqrt(5) - 1/2, -1), Point2D(-sqrt(5)/2, 0), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)*sqrt(1 + sqrt(5))/5 - sqrt(5)/5 + 1), -sqrt(5)*sqrt(1 + sqrt(5))/5 - sqrt(5)/5 + 1), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/10 + sqrt(5)*sqrt(-1 + sqrt(5))/5 + 1/2), -sqrt(5)/10 + sqrt(5)*sqrt(-1 + sqrt(5))/5 + 1/2))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)*sqrt(-1 + sqrt(5))/5 - sqrt(5)/10 + 1/2), -sqrt(5)*sqrt(-1 + sqrt(5))/5 - sqrt(5)/10 + 1/2), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(5)*sqrt(1 + sqrt(5))/5 + 1), -sqrt(5)/5 + sqrt(5)*sqrt(1 + sqrt(5))/5 + 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), -sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(1 - sqrt(5)/5), 1 - sqrt(5)/5), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(sqrt(5)/5 + 1), sqrt(5)/5 + 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2, 0), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(1 - sqrt(5)/5), 1 - sqrt(5)/5))
+INFO:root:            GOLDEN: (Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-5/2 + sqrt(5), 5 - 2*sqrt(5)), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(-1/2, 3/2 - sqrt(5)/2), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(1 - sqrt(5)/5), 1 - sqrt(5)/5), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2))
+INFO:root:            GOLDEN: (Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(1 - sqrt(5)/5), 1 - sqrt(5)/5), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), -sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1))
+INFO:root:            GOLDEN: (Point2D(1/2 - 2*sqrt(5)/5, sqrt(5)/5), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), -sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(1 - sqrt(5)/5), 1 - sqrt(5)/5), Point2D(-sqrt(5)/2 + sqrt(3 - sqrt(5))*(sqrt(2) + sqrt(10))/4, sqrt(6 - 2*sqrt(5))/2), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), -sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(1 - sqrt(5)/5), 1 - sqrt(5)/5), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), -sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), Point2D(1/2, 1))
+INFO:root:            GOLDEN: (Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(-sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), -sqrt(5)/5 + sqrt(10)*sqrt(7 - 3*sqrt(5))/10 + 1), Point2D(1/2, 1), Point2D(-sqrt(5)/2 + (1/2 + sqrt(5)/2)*(sqrt(5)/5 + 1), sqrt(5)/5 + 1))
+INFO:root:        goldens: 17
+INFO:root:
+ANALYZE Summary:
+INFO:root:    goldens: 176
+INFO:root:    groups: 64
+INFO:root:
+elapsed: 0:25:00.086191
+INFO:root:
+PLOT: root5
+INFO:root:
+INFO:root:limx: [-3.75, 3.75]
+INFO:root:limy: [-2.25, 2.868033988749895]
+INFO:root:
+Plot Summary
+INFO:root:    * /home/phi/Sessions/root5/000.png
+INFO:root:
+Plot Build
+INFO:root:    * /home/phi/Sessions/root5/00001-point.png
+INFO:root:    * /home/phi/Sessions/root5/00002-point.png
+INFO:root:    * /home/phi/Sessions/root5/00003-line.png
+INFO:root:    * /home/phi/Sessions/root5/00004-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00005-point.png
+INFO:root:    * /home/phi/Sessions/root5/00006-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00007-point.png
+INFO:root:    * /home/phi/Sessions/root5/00008-point.png
+INFO:root:    * /home/phi/Sessions/root5/00009-point.png
+INFO:root:    * /home/phi/Sessions/root5/00010-line.png
+INFO:root:    * /home/phi/Sessions/root5/00011-point.png
+INFO:root:    * /home/phi/Sessions/root5/00012-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00013-point.png
+INFO:root:    * /home/phi/Sessions/root5/00014-point.png
+INFO:root:    * /home/phi/Sessions/root5/00015-point.png
+INFO:root:    * /home/phi/Sessions/root5/00016-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00017-point.png
+INFO:root:    * /home/phi/Sessions/root5/00018-point.png
+INFO:root:    * /home/phi/Sessions/root5/00019-point.png
+INFO:root:    * /home/phi/Sessions/root5/00020-point.png
+INFO:root:    * /home/phi/Sessions/root5/00021-point.png
+INFO:root:    * /home/phi/Sessions/root5/00022-point.png
+INFO:root:    * /home/phi/Sessions/root5/00023-point.png
+INFO:root:    * /home/phi/Sessions/root5/00024-line.png
+INFO:root:    * /home/phi/Sessions/root5/00025-point.png
+INFO:root:    * /home/phi/Sessions/root5/00026-point.png
+INFO:root:    * /home/phi/Sessions/root5/00027-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00028-point.png
+INFO:root:    * /home/phi/Sessions/root5/00029-point.png
+INFO:root:    * /home/phi/Sessions/root5/00030-point.png
+INFO:root:    * /home/phi/Sessions/root5/00031-point.png
+INFO:root:    * /home/phi/Sessions/root5/00032-point.png
+INFO:root:    * /home/phi/Sessions/root5/00033-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00034-point.png
+INFO:root:    * /home/phi/Sessions/root5/00035-point.png
+INFO:root:    * /home/phi/Sessions/root5/00036-point.png
+INFO:root:    * /home/phi/Sessions/root5/00037-point.png
+INFO:root:    * /home/phi/Sessions/root5/00038-point.png
+INFO:root:    * /home/phi/Sessions/root5/00039-point.png
+INFO:root:    * /home/phi/Sessions/root5/00040-point.png
+INFO:root:    * /home/phi/Sessions/root5/00041-line.png
+INFO:root:    * /home/phi/Sessions/root5/00042-point.png
+INFO:root:    * /home/phi/Sessions/root5/00043-point.png
+INFO:root:    * /home/phi/Sessions/root5/00044-point.png
+INFO:root:    * /home/phi/Sessions/root5/00045-point.png
+INFO:root:    * /home/phi/Sessions/root5/00046-line.png
+INFO:root:    * /home/phi/Sessions/root5/00047-point.png
+INFO:root:    * /home/phi/Sessions/root5/00048-point.png
+INFO:root:    * /home/phi/Sessions/root5/00049-point.png
+INFO:root:    * /home/phi/Sessions/root5/00050-point.png
+INFO:root:    * /home/phi/Sessions/root5/00051-point.png
+INFO:root:    * /home/phi/Sessions/root5/00052-point.png
+INFO:root:    * /home/phi/Sessions/root5/00053-point.png
+INFO:root:    * /home/phi/Sessions/root5/00054-point.png
+INFO:root:    * /home/phi/Sessions/root5/00055-point.png
+INFO:root:    * /home/phi/Sessions/root5/00056-line.png
+INFO:root:    * /home/phi/Sessions/root5/00057-point.png
+INFO:root:    * /home/phi/Sessions/root5/00058-point.png
+INFO:root:    * /home/phi/Sessions/root5/00059-point.png
+INFO:root:    * /home/phi/Sessions/root5/00060-point.png
+INFO:root:    * /home/phi/Sessions/root5/00061-point.png
+INFO:root:    * /home/phi/Sessions/root5/00062-point.png
+INFO:root:    * /home/phi/Sessions/root5/00063-point.png
+INFO:root:    * /home/phi/Sessions/root5/00064-point.png
+INFO:root:    * /home/phi/Sessions/root5/00065-point.png
+INFO:root:    * /home/phi/Sessions/root5/00066-polygon.png
+INFO:root:    * /home/phi/Sessions/root5/00067-polygon.png
+INFO:root:    * /home/phi/Sessions/root5/00068-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00069-point.png
+INFO:root:    * /home/phi/Sessions/root5/00070-point.png
+INFO:root:    * /home/phi/Sessions/root5/00071-point.png
+INFO:root:    * /home/phi/Sessions/root5/00072-point.png
+INFO:root:    * /home/phi/Sessions/root5/00073-point.png
+INFO:root:    * /home/phi/Sessions/root5/00074-point.png
+INFO:root:    * /home/phi/Sessions/root5/00075-point.png
+INFO:root:    * /home/phi/Sessions/root5/00076-point.png
+INFO:root:    * /home/phi/Sessions/root5/00077-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00078-point.png
+INFO:root:    * /home/phi/Sessions/root5/00079-point.png
+INFO:root:    * /home/phi/Sessions/root5/00080-point.png
+INFO:root:    * /home/phi/Sessions/root5/00081-point.png
+INFO:root:    * /home/phi/Sessions/root5/00082-point.png
+INFO:root:    * /home/phi/Sessions/root5/00083-point.png
+INFO:root:    * /home/phi/Sessions/root5/00084-point.png
+INFO:root:    * /home/phi/Sessions/root5/00085-point.png
+INFO:root:    * /home/phi/Sessions/root5/00086-point.png
+INFO:root:    * /home/phi/Sessions/root5/00087-point.png
+INFO:root:    * /home/phi/Sessions/root5/00088-point.png
+INFO:root:    * /home/phi/Sessions/root5/00089-point.png
+INFO:root:    * /home/phi/Sessions/root5/00090-point.png
+INFO:root:    * /home/phi/Sessions/root5/00091-point.png
+INFO:root:    * /home/phi/Sessions/root5/00092-point.png
+INFO:root:    * /home/phi/Sessions/root5/00093-point.png
+INFO:root:    * /home/phi/Sessions/root5/00094-point.png
+INFO:root:    * /home/phi/Sessions/root5/00095-point.png
+INFO:root:    * /home/phi/Sessions/root5/00096-point.png
+INFO:root:    * /home/phi/Sessions/root5/00097-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00098-point.png
+INFO:root:    * /home/phi/Sessions/root5/00099-point.png
+INFO:root:    * /home/phi/Sessions/root5/00100-point.png
+INFO:root:    * /home/phi/Sessions/root5/00101-point.png
+INFO:root:    * /home/phi/Sessions/root5/00102-point.png
+INFO:root:    * /home/phi/Sessions/root5/00103-point.png
+INFO:root:    * /home/phi/Sessions/root5/00104-point.png
+INFO:root:    * /home/phi/Sessions/root5/00105-point.png
+INFO:root:    * /home/phi/Sessions/root5/00106-point.png
+INFO:root:    * /home/phi/Sessions/root5/00107-point.png
+INFO:root:    * /home/phi/Sessions/root5/00108-point.png
+INFO:root:    * /home/phi/Sessions/root5/00109-point.png
+INFO:root:    * /home/phi/Sessions/root5/00110-point.png
+INFO:root:    * /home/phi/Sessions/root5/00111-point.png
+INFO:root:    * /home/phi/Sessions/root5/00112-point.png
+INFO:root:    * /home/phi/Sessions/root5/00113-point.png
+INFO:root:    * /home/phi/Sessions/root5/00114-point.png
+INFO:root:    * /home/phi/Sessions/root5/00115-polygon.png
+INFO:root:    * /home/phi/Sessions/root5/00116-polygon.png
+INFO:root:    * /home/phi/Sessions/root5/00117-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00118-point.png
+INFO:root:    * /home/phi/Sessions/root5/00119-point.png
+INFO:root:    * /home/phi/Sessions/root5/00120-point.png
+INFO:root:    * /home/phi/Sessions/root5/00121-point.png
+INFO:root:    * /home/phi/Sessions/root5/00122-point.png
+INFO:root:    * /home/phi/Sessions/root5/00123-point.png
+INFO:root:    * /home/phi/Sessions/root5/00124-point.png
+INFO:root:    * /home/phi/Sessions/root5/00125-point.png
+INFO:root:    * /home/phi/Sessions/root5/00126-point.png
+INFO:root:    * /home/phi/Sessions/root5/00127-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00128-point.png
+INFO:root:    * /home/phi/Sessions/root5/00129-point.png
+INFO:root:    * /home/phi/Sessions/root5/00130-point.png
+INFO:root:    * /home/phi/Sessions/root5/00131-point.png
+INFO:root:    * /home/phi/Sessions/root5/00132-point.png
+INFO:root:    * /home/phi/Sessions/root5/00133-point.png
+INFO:root:    * /home/phi/Sessions/root5/00134-point.png
+INFO:root:    * /home/phi/Sessions/root5/00135-line.png
+INFO:root:    * /home/phi/Sessions/root5/00136-point.png
+INFO:root:    * /home/phi/Sessions/root5/00137-point.png
+INFO:root:    * /home/phi/Sessions/root5/00138-point.png
+INFO:root:    * /home/phi/Sessions/root5/00139-point.png
+INFO:root:    * /home/phi/Sessions/root5/00140-point.png
+INFO:root:    * /home/phi/Sessions/root5/00141-point.png
+INFO:root:    * /home/phi/Sessions/root5/00142-point.png
+INFO:root:    * /home/phi/Sessions/root5/00143-point.png
+INFO:root:    * /home/phi/Sessions/root5/00144-point.png
+INFO:root:    * /home/phi/Sessions/root5/00145-point.png
+INFO:root:    * /home/phi/Sessions/root5/00146-point.png
+INFO:root:    * /home/phi/Sessions/root5/00147-point.png
+INFO:root:    * /home/phi/Sessions/root5/00148-point.png
+INFO:root:    * /home/phi/Sessions/root5/00149-point.png
+INFO:root:    * /home/phi/Sessions/root5/00150-point.png
+INFO:root:    * /home/phi/Sessions/root5/00151-point.png
+INFO:root:    * /home/phi/Sessions/root5/00152-point.png
+INFO:root:    * /home/phi/Sessions/root5/00153-point.png
+INFO:root:    * /home/phi/Sessions/root5/00154-line.png
+INFO:root:    * /home/phi/Sessions/root5/00155-point.png
+INFO:root:    * /home/phi/Sessions/root5/00156-point.png
+INFO:root:    * /home/phi/Sessions/root5/00157-point.png
+INFO:root:    * /home/phi/Sessions/root5/00158-point.png
+INFO:root:    * /home/phi/Sessions/root5/00159-point.png
+INFO:root:    * /home/phi/Sessions/root5/00160-point.png
+INFO:root:    * /home/phi/Sessions/root5/00161-point.png
+INFO:root:    * /home/phi/Sessions/root5/00162-point.png
+INFO:root:    * /home/phi/Sessions/root5/00163-point.png
+INFO:root:    * /home/phi/Sessions/root5/00164-point.png
+INFO:root:    * /home/phi/Sessions/root5/00165-point.png
+INFO:root:    * /home/phi/Sessions/root5/00166-point.png
+INFO:root:    * /home/phi/Sessions/root5/00167-point.png
+INFO:root:    * /home/phi/Sessions/root5/00168-point.png
+INFO:root:    * /home/phi/Sessions/root5/00169-point.png
+INFO:root:    * /home/phi/Sessions/root5/00170-point.png
+INFO:root:    * /home/phi/Sessions/root5/00171-point.png
+INFO:root:    * /home/phi/Sessions/root5/00172-point.png
+INFO:root:    * /home/phi/Sessions/root5/00173-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00174-point.png
+INFO:root:    * /home/phi/Sessions/root5/00175-point.png
+INFO:root:    * /home/phi/Sessions/root5/00176-point.png
+INFO:root:    * /home/phi/Sessions/root5/00177-point.png
+INFO:root:    * /home/phi/Sessions/root5/00178-point.png
+INFO:root:    * /home/phi/Sessions/root5/00179-point.png
+INFO:root:    * /home/phi/Sessions/root5/00180-point.png
+INFO:root:    * /home/phi/Sessions/root5/00181-point.png
+INFO:root:    * /home/phi/Sessions/root5/00182-point.png
+INFO:root:    * /home/phi/Sessions/root5/00183-point.png
+INFO:root:    * /home/phi/Sessions/root5/00184-line.png
+INFO:root:    * /home/phi/Sessions/root5/00185-point.png
+INFO:root:    * /home/phi/Sessions/root5/00186-point.png
+INFO:root:    * /home/phi/Sessions/root5/00187-point.png
+INFO:root:    * /home/phi/Sessions/root5/00188-point.png
+INFO:root:    * /home/phi/Sessions/root5/00189-point.png
+INFO:root:    * /home/phi/Sessions/root5/00190-point.png
+INFO:root:    * /home/phi/Sessions/root5/00191-point.png
+INFO:root:    * /home/phi/Sessions/root5/00192-point.png
+INFO:root:    * /home/phi/Sessions/root5/00193-point.png
+INFO:root:    * /home/phi/Sessions/root5/00194-point.png
+INFO:root:    * /home/phi/Sessions/root5/00195-point.png
+INFO:root:    * /home/phi/Sessions/root5/00196-point.png
+INFO:root:    * /home/phi/Sessions/root5/00197-point.png
+INFO:root:    * /home/phi/Sessions/root5/00198-point.png
+INFO:root:    * /home/phi/Sessions/root5/00199-point.png
+INFO:root:    * /home/phi/Sessions/root5/00200-point.png
+INFO:root:    * /home/phi/Sessions/root5/00201-point.png
+INFO:root:    * /home/phi/Sessions/root5/00202-point.png
+INFO:root:    * /home/phi/Sessions/root5/00203-point.png
+INFO:root:    * /home/phi/Sessions/root5/00204-point.png
+INFO:root:    * /home/phi/Sessions/root5/00205-point.png
+INFO:root:    * /home/phi/Sessions/root5/00206-point.png
+INFO:root:    * /home/phi/Sessions/root5/00207-point.png
+INFO:root:    * /home/phi/Sessions/root5/00208-point.png
+INFO:root:    * /home/phi/Sessions/root5/00209-point.png
+INFO:root:    * /home/phi/Sessions/root5/00210-line.png
+INFO:root:    * /home/phi/Sessions/root5/00211-point.png
+INFO:root:    * /home/phi/Sessions/root5/00212-point.png
+INFO:root:    * /home/phi/Sessions/root5/00213-point.png
+INFO:root:    * /home/phi/Sessions/root5/00214-point.png
+INFO:root:    * /home/phi/Sessions/root5/00215-point.png
+INFO:root:    * /home/phi/Sessions/root5/00216-point.png
+INFO:root:    * /home/phi/Sessions/root5/00217-point.png
+INFO:root:    * /home/phi/Sessions/root5/00218-point.png
+INFO:root:    * /home/phi/Sessions/root5/00219-point.png
+INFO:root:    * /home/phi/Sessions/root5/00220-point.png
+INFO:root:    * /home/phi/Sessions/root5/00221-point.png
+INFO:root:    * /home/phi/Sessions/root5/00222-point.png
+INFO:root:    * /home/phi/Sessions/root5/00223-point.png
+INFO:root:    * /home/phi/Sessions/root5/00224-point.png
+INFO:root:    * /home/phi/Sessions/root5/00225-point.png
+INFO:root:    * /home/phi/Sessions/root5/00226-point.png
+INFO:root:    * /home/phi/Sessions/root5/00227-point.png
+INFO:root:    * /home/phi/Sessions/root5/00228-point.png
+INFO:root:    * /home/phi/Sessions/root5/00229-point.png
+INFO:root:    * /home/phi/Sessions/root5/00230-point.png
+INFO:root:    * /home/phi/Sessions/root5/00231-point.png
+INFO:root:    * /home/phi/Sessions/root5/00232-line.png
+INFO:root:    * /home/phi/Sessions/root5/00233-point.png
+INFO:root:    * /home/phi/Sessions/root5/00234-point.png
+INFO:root:    * /home/phi/Sessions/root5/00235-point.png
+INFO:root:    * /home/phi/Sessions/root5/00236-point.png
+INFO:root:    * /home/phi/Sessions/root5/00237-point.png
+INFO:root:    * /home/phi/Sessions/root5/00238-point.png
+INFO:root:    * /home/phi/Sessions/root5/00239-point.png
+INFO:root:    * /home/phi/Sessions/root5/00240-point.png
+INFO:root:    * /home/phi/Sessions/root5/00241-point.png
+INFO:root:    * /home/phi/Sessions/root5/00242-point.png
+INFO:root:    * /home/phi/Sessions/root5/00243-point.png
+INFO:root:    * /home/phi/Sessions/root5/00244-point.png
+INFO:root:    * /home/phi/Sessions/root5/00245-point.png
+INFO:root:    * /home/phi/Sessions/root5/00246-point.png
+INFO:root:    * /home/phi/Sessions/root5/00247-point.png
+INFO:root:    * /home/phi/Sessions/root5/00248-point.png
+INFO:root:    * /home/phi/Sessions/root5/00249-point.png
+INFO:root:    * /home/phi/Sessions/root5/00250-point.png
+INFO:root:    * /home/phi/Sessions/root5/00251-point.png
+INFO:root:    * /home/phi/Sessions/root5/00252-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00253-point.png
+INFO:root:    * /home/phi/Sessions/root5/00254-point.png
+INFO:root:    * /home/phi/Sessions/root5/00255-point.png
+INFO:root:    * /home/phi/Sessions/root5/00256-point.png
+INFO:root:    * /home/phi/Sessions/root5/00257-point.png
+INFO:root:    * /home/phi/Sessions/root5/00258-point.png
+INFO:root:    * /home/phi/Sessions/root5/00259-point.png
+INFO:root:    * /home/phi/Sessions/root5/00260-point.png
+INFO:root:    * /home/phi/Sessions/root5/00261-point.png
+INFO:root:    * /home/phi/Sessions/root5/00262-point.png
+INFO:root:    * /home/phi/Sessions/root5/00263-point.png
+INFO:root:    * /home/phi/Sessions/root5/00264-point.png
+INFO:root:    * /home/phi/Sessions/root5/00265-point.png
+INFO:root:    * /home/phi/Sessions/root5/00266-point.png
+INFO:root:    * /home/phi/Sessions/root5/00267-point.png
+INFO:root:    * /home/phi/Sessions/root5/00268-point.png
+INFO:root:    * /home/phi/Sessions/root5/00269-point.png
+INFO:root:    * /home/phi/Sessions/root5/00270-point.png
+INFO:root:    * /home/phi/Sessions/root5/00271-point.png
+INFO:root:    * /home/phi/Sessions/root5/00272-point.png
+INFO:root:    * /home/phi/Sessions/root5/00273-point.png
+INFO:root:    * /home/phi/Sessions/root5/00274-point.png
+INFO:root:    * /home/phi/Sessions/root5/00275-point.png
+INFO:root:    * /home/phi/Sessions/root5/00276-point.png
+INFO:root:    * /home/phi/Sessions/root5/00277-point.png
+INFO:root:    * /home/phi/Sessions/root5/00278-circle.png
+INFO:root:    * /home/phi/Sessions/root5/00279-point.png
+INFO:root:    * /home/phi/Sessions/root5/00280-point.png
+INFO:root:    * /home/phi/Sessions/root5/00281-point.png
+INFO:root:    * /home/phi/Sessions/root5/00282-point.png
+INFO:root:    * /home/phi/Sessions/root5/00283-point.png
+INFO:root:    * /home/phi/Sessions/root5/00284-point.png
+INFO:root:    * /home/phi/Sessions/root5/00285-point.png
+INFO:root:    * /home/phi/Sessions/root5/00286-point.png
+INFO:root:    * /home/phi/Sessions/root5/00287-point.png
+INFO:root:    * /home/phi/Sessions/root5/00288-point.png
+INFO:root:    * /home/phi/Sessions/root5/00289-point.png
+INFO:root:    * /home/phi/Sessions/root5/00290-point.png
+INFO:root:    * /home/phi/Sessions/root5/00291-point.png
+INFO:root:    * /home/phi/Sessions/root5/00292-point.png
+INFO:root:    * /home/phi/Sessions/root5/00293-point.png
+INFO:root:    * /home/phi/Sessions/root5/00294-point.png
+INFO:root:    * /home/phi/Sessions/root5/00295-point.png
+INFO:root:    * /home/phi/Sessions/root5/00296-point.png
+INFO:root:    * /home/phi/Sessions/root5/00297-point.png
+INFO:root:    * /home/phi/Sessions/root5/00298-point.png
+INFO:root:    * /home/phi/Sessions/root5/00299-point.png
+INFO:root:    * /home/phi/Sessions/root5/00300-point.png
+INFO:root:    * /home/phi/Sessions/root5/00301-point.png
+INFO:root:    * /home/phi/Sessions/root5/00302-point.png
+INFO:root:    * /home/phi/Sessions/root5/00303-point.png
+INFO:root:    * /home/phi/Sessions/root5/00304-point.png
+INFO:root:    * /home/phi/Sessions/root5/00305-point.png
+INFO:root:    * /home/phi/Sessions/root5/00306-point.png
+INFO:root:    * /home/phi/Sessions/root5/00307-point.png
+INFO:root:    * /home/phi/Sessions/root5/00308-point.png
+INFO:root:    * /home/phi/Sessions/root5/00309-point.png
+INFO:root:    * /home/phi/Sessions/root5/00310-point.png
+INFO:root:    * /home/phi/Sessions/root5/00311-point.png
+INFO:root:    * /home/phi/Sessions/root5/00312-point.png
+INFO:root:    * /home/phi/Sessions/root5/00313-point.png
+INFO:root:    * /home/phi/Sessions/root5/00314-point.png
+INFO:root:    * /home/phi/Sessions/root5/00315-point.png
+INFO:root:    * /home/phi/Sessions/root5/00316-point.png
+INFO:root:
+Plot Goldens
+INFO:root:    * /home/phi/Sessions/root5/sections/000.png
+INFO:root:    * /home/phi/Sessions/root5/sections/000-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/001.png
+INFO:root:    * /home/phi/Sessions/root5/sections/001-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/002.png
+INFO:root:    * /home/phi/Sessions/root5/sections/002-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/003.png
+INFO:root:    * /home/phi/Sessions/root5/sections/003-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/004.png
+INFO:root:    * /home/phi/Sessions/root5/sections/004-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/005.png
+INFO:root:    * /home/phi/Sessions/root5/sections/005-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/006.png
+INFO:root:    * /home/phi/Sessions/root5/sections/006-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/007.png
+INFO:root:    * /home/phi/Sessions/root5/sections/007-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/008.png
+INFO:root:    * /home/phi/Sessions/root5/sections/008-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/009.png
+INFO:root:    * /home/phi/Sessions/root5/sections/009-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/010.png
+INFO:root:    * /home/phi/Sessions/root5/sections/010-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/011.png
+INFO:root:    * /home/phi/Sessions/root5/sections/011-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/012.png
+INFO:root:    * /home/phi/Sessions/root5/sections/012-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/013.png
+INFO:root:    * /home/phi/Sessions/root5/sections/013-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/014.png
+INFO:root:    * /home/phi/Sessions/root5/sections/014-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/015.png
+INFO:root:    * /home/phi/Sessions/root5/sections/015-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/016.png
+INFO:root:    * /home/phi/Sessions/root5/sections/016-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/017.png
+INFO:root:    * /home/phi/Sessions/root5/sections/017-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/018.png
+INFO:root:    * /home/phi/Sessions/root5/sections/018-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/019.png
+INFO:root:    * /home/phi/Sessions/root5/sections/019-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/020.png
+INFO:root:    * /home/phi/Sessions/root5/sections/020-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/021.png
+INFO:root:    * /home/phi/Sessions/root5/sections/021-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/022.png
+INFO:root:    * /home/phi/Sessions/root5/sections/022-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/023.png
+INFO:root:    * /home/phi/Sessions/root5/sections/023-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/024.png
+INFO:root:    * /home/phi/Sessions/root5/sections/024-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/025.png
+INFO:root:    * /home/phi/Sessions/root5/sections/025-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/026.png
+INFO:root:    * /home/phi/Sessions/root5/sections/026-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/027.png
+INFO:root:    * /home/phi/Sessions/root5/sections/027-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/028.png
+INFO:root:    * /home/phi/Sessions/root5/sections/028-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/029.png
+INFO:root:    * /home/phi/Sessions/root5/sections/029-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/030.png
+INFO:root:    * /home/phi/Sessions/root5/sections/030-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/031.png
+INFO:root:    * /home/phi/Sessions/root5/sections/031-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/032.png
+INFO:root:    * /home/phi/Sessions/root5/sections/032-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/033.png
+INFO:root:    * /home/phi/Sessions/root5/sections/033-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/034.png
+INFO:root:    * /home/phi/Sessions/root5/sections/034-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/035.png
+INFO:root:    * /home/phi/Sessions/root5/sections/035-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/036.png
+INFO:root:    * /home/phi/Sessions/root5/sections/036-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/037.png
+INFO:root:    * /home/phi/Sessions/root5/sections/037-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/038.png
+INFO:root:    * /home/phi/Sessions/root5/sections/038-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/039.png
+INFO:root:    * /home/phi/Sessions/root5/sections/039-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/040.png
+INFO:root:    * /home/phi/Sessions/root5/sections/040-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/041.png
+INFO:root:    * /home/phi/Sessions/root5/sections/041-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/042.png
+INFO:root:    * /home/phi/Sessions/root5/sections/042-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/043.png
+INFO:root:    * /home/phi/Sessions/root5/sections/043-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/044.png
+INFO:root:    * /home/phi/Sessions/root5/sections/044-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/045.png
+INFO:root:    * /home/phi/Sessions/root5/sections/045-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/046.png
+INFO:root:    * /home/phi/Sessions/root5/sections/046-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/047.png
+INFO:root:    * /home/phi/Sessions/root5/sections/047-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/048.png
+INFO:root:    * /home/phi/Sessions/root5/sections/048-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/049.png
+INFO:root:    * /home/phi/Sessions/root5/sections/049-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/050.png
+INFO:root:    * /home/phi/Sessions/root5/sections/050-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/051.png
+INFO:root:    * /home/phi/Sessions/root5/sections/051-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/052.png
+INFO:root:    * /home/phi/Sessions/root5/sections/052-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/053.png
+INFO:root:    * /home/phi/Sessions/root5/sections/053-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/054.png
+INFO:root:    * /home/phi/Sessions/root5/sections/054-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/055.png
+INFO:root:    * /home/phi/Sessions/root5/sections/055-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/056.png
+INFO:root:    * /home/phi/Sessions/root5/sections/056-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/057.png
+INFO:root:    * /home/phi/Sessions/root5/sections/057-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/058.png
+INFO:root:    * /home/phi/Sessions/root5/sections/058-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/059.png
+INFO:root:    * /home/phi/Sessions/root5/sections/059-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/060.png
+INFO:root:    * /home/phi/Sessions/root5/sections/060-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/061.png
+INFO:root:    * /home/phi/Sessions/root5/sections/061-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/062.png
+INFO:root:    * /home/phi/Sessions/root5/sections/062-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/063.png
+INFO:root:    * /home/phi/Sessions/root5/sections/063-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/064.png
+INFO:root:    * /home/phi/Sessions/root5/sections/064-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/065.png
+INFO:root:    * /home/phi/Sessions/root5/sections/065-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/066.png
+INFO:root:    * /home/phi/Sessions/root5/sections/066-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/067.png
+INFO:root:    * /home/phi/Sessions/root5/sections/067-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/068.png
+INFO:root:    * /home/phi/Sessions/root5/sections/068-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/069.png
+INFO:root:    * /home/phi/Sessions/root5/sections/069-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/070.png
+INFO:root:    * /home/phi/Sessions/root5/sections/070-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/071.png
+INFO:root:    * /home/phi/Sessions/root5/sections/071-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/072.png
+INFO:root:    * /home/phi/Sessions/root5/sections/072-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/073.png
+INFO:root:    * /home/phi/Sessions/root5/sections/073-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/074.png
+INFO:root:    * /home/phi/Sessions/root5/sections/074-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/075.png
+INFO:root:    * /home/phi/Sessions/root5/sections/075-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/076.png
+INFO:root:    * /home/phi/Sessions/root5/sections/076-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/077.png
+INFO:root:    * /home/phi/Sessions/root5/sections/077-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/078.png
+INFO:root:    * /home/phi/Sessions/root5/sections/078-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/079.png
+INFO:root:    * /home/phi/Sessions/root5/sections/079-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/080.png
+INFO:root:    * /home/phi/Sessions/root5/sections/080-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/081.png
+INFO:root:    * /home/phi/Sessions/root5/sections/081-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/082.png
+INFO:root:    * /home/phi/Sessions/root5/sections/082-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/083.png
+INFO:root:    * /home/phi/Sessions/root5/sections/083-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/084.png
+INFO:root:    * /home/phi/Sessions/root5/sections/084-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/085.png
+INFO:root:    * /home/phi/Sessions/root5/sections/085-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/086.png
+INFO:root:    * /home/phi/Sessions/root5/sections/086-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/087.png
+INFO:root:    * /home/phi/Sessions/root5/sections/087-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/088.png
+INFO:root:    * /home/phi/Sessions/root5/sections/088-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/089.png
+INFO:root:    * /home/phi/Sessions/root5/sections/089-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/090.png
+INFO:root:    * /home/phi/Sessions/root5/sections/090-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/091.png
+INFO:root:    * /home/phi/Sessions/root5/sections/091-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/092.png
+INFO:root:    * /home/phi/Sessions/root5/sections/092-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/093.png
+INFO:root:    * /home/phi/Sessions/root5/sections/093-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/094.png
+INFO:root:    * /home/phi/Sessions/root5/sections/094-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/095.png
+INFO:root:    * /home/phi/Sessions/root5/sections/095-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/096.png
+INFO:root:    * /home/phi/Sessions/root5/sections/096-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/097.png
+INFO:root:    * /home/phi/Sessions/root5/sections/097-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/098.png
+INFO:root:    * /home/phi/Sessions/root5/sections/098-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/099.png
+INFO:root:    * /home/phi/Sessions/root5/sections/099-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/100.png
+INFO:root:    * /home/phi/Sessions/root5/sections/100-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/101.png
+INFO:root:    * /home/phi/Sessions/root5/sections/101-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/102.png
+INFO:root:    * /home/phi/Sessions/root5/sections/102-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/103.png
+INFO:root:    * /home/phi/Sessions/root5/sections/103-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/104.png
+INFO:root:    * /home/phi/Sessions/root5/sections/104-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/105.png
+INFO:root:    * /home/phi/Sessions/root5/sections/105-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/106.png
+INFO:root:    * /home/phi/Sessions/root5/sections/106-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/107.png
+INFO:root:    * /home/phi/Sessions/root5/sections/107-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/108.png
+INFO:root:    * /home/phi/Sessions/root5/sections/108-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/109.png
+INFO:root:    * /home/phi/Sessions/root5/sections/109-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/110.png
+INFO:root:    * /home/phi/Sessions/root5/sections/110-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/111.png
+INFO:root:    * /home/phi/Sessions/root5/sections/111-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/112.png
+INFO:root:    * /home/phi/Sessions/root5/sections/112-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/113.png
+INFO:root:    * /home/phi/Sessions/root5/sections/113-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/114.png
+INFO:root:    * /home/phi/Sessions/root5/sections/114-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/115.png
+INFO:root:    * /home/phi/Sessions/root5/sections/115-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/116.png
+INFO:root:    * /home/phi/Sessions/root5/sections/116-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/117.png
+INFO:root:    * /home/phi/Sessions/root5/sections/117-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/118.png
+INFO:root:    * /home/phi/Sessions/root5/sections/118-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/119.png
+INFO:root:    * /home/phi/Sessions/root5/sections/119-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/120.png
+INFO:root:    * /home/phi/Sessions/root5/sections/120-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/121.png
+INFO:root:    * /home/phi/Sessions/root5/sections/121-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/122.png
+INFO:root:    * /home/phi/Sessions/root5/sections/122-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/123.png
+INFO:root:    * /home/phi/Sessions/root5/sections/123-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/124.png
+INFO:root:    * /home/phi/Sessions/root5/sections/124-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/125.png
+INFO:root:    * /home/phi/Sessions/root5/sections/125-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/126.png
+INFO:root:    * /home/phi/Sessions/root5/sections/126-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/127.png
+INFO:root:    * /home/phi/Sessions/root5/sections/127-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/128.png
+INFO:root:    * /home/phi/Sessions/root5/sections/128-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/129.png
+INFO:root:    * /home/phi/Sessions/root5/sections/129-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/130.png
+INFO:root:    * /home/phi/Sessions/root5/sections/130-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/131.png
+INFO:root:    * /home/phi/Sessions/root5/sections/131-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/132.png
+INFO:root:    * /home/phi/Sessions/root5/sections/132-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/133.png
+INFO:root:    * /home/phi/Sessions/root5/sections/133-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/134.png
+INFO:root:    * /home/phi/Sessions/root5/sections/134-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/135.png
+INFO:root:    * /home/phi/Sessions/root5/sections/135-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/136.png
+INFO:root:    * /home/phi/Sessions/root5/sections/136-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/137.png
+INFO:root:    * /home/phi/Sessions/root5/sections/137-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/138.png
+INFO:root:    * /home/phi/Sessions/root5/sections/138-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/139.png
+INFO:root:    * /home/phi/Sessions/root5/sections/139-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/140.png
+INFO:root:    * /home/phi/Sessions/root5/sections/140-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/141.png
+INFO:root:    * /home/phi/Sessions/root5/sections/141-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/142.png
+INFO:root:    * /home/phi/Sessions/root5/sections/142-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/143.png
+INFO:root:    * /home/phi/Sessions/root5/sections/143-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/144.png
+INFO:root:    * /home/phi/Sessions/root5/sections/144-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/145.png
+INFO:root:    * /home/phi/Sessions/root5/sections/145-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/146.png
+INFO:root:    * /home/phi/Sessions/root5/sections/146-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/147.png
+INFO:root:    * /home/phi/Sessions/root5/sections/147-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/148.png
+INFO:root:    * /home/phi/Sessions/root5/sections/148-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/149.png
+INFO:root:    * /home/phi/Sessions/root5/sections/149-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/150.png
+INFO:root:    * /home/phi/Sessions/root5/sections/150-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/151.png
+INFO:root:    * /home/phi/Sessions/root5/sections/151-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/152.png
+INFO:root:    * /home/phi/Sessions/root5/sections/152-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/153.png
+INFO:root:    * /home/phi/Sessions/root5/sections/153-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/154.png
+INFO:root:    * /home/phi/Sessions/root5/sections/154-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/155.png
+INFO:root:    * /home/phi/Sessions/root5/sections/155-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/156.png
+INFO:root:    * /home/phi/Sessions/root5/sections/156-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/157.png
+INFO:root:    * /home/phi/Sessions/root5/sections/157-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/158.png
+INFO:root:    * /home/phi/Sessions/root5/sections/158-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/159.png
+INFO:root:    * /home/phi/Sessions/root5/sections/159-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/160.png
+INFO:root:    * /home/phi/Sessions/root5/sections/160-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/161.png
+INFO:root:    * /home/phi/Sessions/root5/sections/161-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/162.png
+INFO:root:    * /home/phi/Sessions/root5/sections/162-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/163.png
+INFO:root:    * /home/phi/Sessions/root5/sections/163-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/164.png
+INFO:root:    * /home/phi/Sessions/root5/sections/164-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/165.png
+INFO:root:    * /home/phi/Sessions/root5/sections/165-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/166.png
+INFO:root:    * /home/phi/Sessions/root5/sections/166-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/167.png
+INFO:root:    * /home/phi/Sessions/root5/sections/167-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/168.png
+INFO:root:    * /home/phi/Sessions/root5/sections/168-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/169.png
+INFO:root:    * /home/phi/Sessions/root5/sections/169-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/170.png
+INFO:root:    * /home/phi/Sessions/root5/sections/170-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/171.png
+INFO:root:    * /home/phi/Sessions/root5/sections/171-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/172.png
+INFO:root:    * /home/phi/Sessions/root5/sections/172-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/173.png
+INFO:root:    * /home/phi/Sessions/root5/sections/173-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/174.png
+INFO:root:    * /home/phi/Sessions/root5/sections/174-zoom.png
+INFO:root:    * /home/phi/Sessions/root5/sections/175.png
+INFO:root:    * /home/phi/Sessions/root5/sections/175-zoom.png
+INFO:root:
+Plot Golden Groups
+INFO:root:    * /home/phi/Sessions/root5/groups/000.png
+INFO:root:    * /home/phi/Sessions/root5/groups/001.png
+INFO:root:    * /home/phi/Sessions/root5/groups/002.png
+INFO:root:    * /home/phi/Sessions/root5/groups/003.png
+INFO:root:    * /home/phi/Sessions/root5/groups/004.png
+INFO:root:    * /home/phi/Sessions/root5/groups/005.png
+INFO:root:    * /home/phi/Sessions/root5/groups/006.png
+INFO:root:    * /home/phi/Sessions/root5/groups/007.png
+INFO:root:    * /home/phi/Sessions/root5/groups/008.png
+INFO:root:    * /home/phi/Sessions/root5/groups/009.png
+INFO:root:    * /home/phi/Sessions/root5/groups/010.png
+INFO:root:    * /home/phi/Sessions/root5/groups/011.png
+INFO:root:    * /home/phi/Sessions/root5/groups/012.png
+INFO:root:    * /home/phi/Sessions/root5/groups/013.png
+INFO:root:    * /home/phi/Sessions/root5/groups/014.png
+INFO:root:    * /home/phi/Sessions/root5/groups/015.png
+INFO:root:    * /home/phi/Sessions/root5/groups/016.png
+INFO:root:    * /home/phi/Sessions/root5/groups/017.png
+INFO:root:    * /home/phi/Sessions/root5/groups/018.png
+INFO:root:    * /home/phi/Sessions/root5/groups/019.png
+INFO:root:    * /home/phi/Sessions/root5/groups/020.png
+INFO:root:    * /home/phi/Sessions/root5/groups/021.png
+INFO:root:    * /home/phi/Sessions/root5/groups/022.png
+INFO:root:    * /home/phi/Sessions/root5/groups/023.png
+INFO:root:    * /home/phi/Sessions/root5/groups/024.png
+INFO:root:    * /home/phi/Sessions/root5/groups/025.png
+INFO:root:    * /home/phi/Sessions/root5/groups/026.png
+INFO:root:    * /home/phi/Sessions/root5/groups/027.png
+INFO:root:    * /home/phi/Sessions/root5/groups/028.png
+INFO:root:    * /home/phi/Sessions/root5/groups/029.png
+INFO:root:    * /home/phi/Sessions/root5/groups/030.png
+INFO:root:    * /home/phi/Sessions/root5/groups/031.png
+INFO:root:    * /home/phi/Sessions/root5/groups/032.png
+INFO:root:    * /home/phi/Sessions/root5/groups/033.png
+INFO:root:    * /home/phi/Sessions/root5/groups/034.png
+INFO:root:    * /home/phi/Sessions/root5/groups/035.png
+INFO:root:    * /home/phi/Sessions/root5/groups/036.png
+INFO:root:    * /home/phi/Sessions/root5/groups/037.png
+INFO:root:    * /home/phi/Sessions/root5/groups/038.png
+INFO:root:    * /home/phi/Sessions/root5/groups/039.png
+INFO:root:    * /home/phi/Sessions/root5/groups/040.png
+INFO:root:    * /home/phi/Sessions/root5/groups/041.png
+INFO:root:    * /home/phi/Sessions/root5/groups/042.png
+INFO:root:    * /home/phi/Sessions/root5/groups/043.png
+INFO:root:    * /home/phi/Sessions/root5/groups/044.png
+INFO:root:    * /home/phi/Sessions/root5/groups/045.png
+INFO:root:    * /home/phi/Sessions/root5/groups/046.png
+INFO:root:    * /home/phi/Sessions/root5/groups/047.png
+INFO:root:    * /home/phi/Sessions/root5/groups/048.png
+INFO:root:    * /home/phi/Sessions/root5/groups/049.png
+INFO:root:    * /home/phi/Sessions/root5/groups/050.png
+INFO:root:    * /home/phi/Sessions/root5/groups/051.png
+INFO:root:    * /home/phi/Sessions/root5/groups/052.png
+INFO:root:    * /home/phi/Sessions/root5/groups/053.png
+INFO:root:    * /home/phi/Sessions/root5/groups/054.png
+INFO:root:    * /home/phi/Sessions/root5/groups/055.png
+INFO:root:    * /home/phi/Sessions/root5/groups/056.png
+INFO:root:    * /home/phi/Sessions/root5/groups/057.png
+INFO:root:    * /home/phi/Sessions/root5/groups/058.png
+INFO:root:    * /home/phi/Sessions/root5/groups/059.png
+INFO:root:    * /home/phi/Sessions/root5/groups/060.png
+INFO:root:    * /home/phi/Sessions/root5/groups/061.png
+INFO:root:    * /home/phi/Sessions/root5/groups/062.png
+INFO:root:    * /home/phi/Sessions/root5/groups/063.png
+INFO:root:    * /home/phi/Sessions/root5/sections/all.png
+INFO:root:
+COMPLETE: root5
+INFO:root:    elements: 25
+INFO:root:    points:   287
+INFO:root:    goldens:  176
+INFO:root:
+elapsed: 0:42:28.141318

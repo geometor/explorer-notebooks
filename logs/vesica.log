@@ -1,4 +1,6 @@
 INFO:root:Init vesica
+INFO:root:
+MODEL: vesica
 INFO:root:* add_point: Point2D(-1/2, 0)
 INFO:root:  + Point2D(-1/2, 0)
 INFO:root:* add_point: Point2D(1/2, 0)
@@ -73,33 +75,80 @@ INFO:root:  ! Point2D(0, -sqrt(15)/2) found at index: 8
 INFO:root:* add_point: Point2D(0, sqrt(15)/2)
 INFO:root:  ! Point2D(0, sqrt(15)/2) found at index: 9
 INFO:root:  + Circle(Point2D(1/2, 0), 2)
-INFO:root:Model: 0:00:02.301137
 INFO:root:
+MODEL Summary:
 INFO:root:    elements: 6
 INFO:root:    points: 11
+INFO:root:
+elapsed: 0:00:00.918539
+INFO:root:
+ANALYZE: vesica
+INFO:root:
+analyze_model:
+INFO:root:
+    analyze_golden_lines: 2
+INFO:root:    0 • (0, 1, 0)
+INFO:root:        coefficients: (0, 1, 0))
+INFO:root:        points:    7
+INFO:root:        sections:  35
+INFO:root:        goldens: 0
+INFO:root:    1 • (1, 0, 0)
+INFO:root:        coefficients: (1, 0, 0))
+INFO:root:        points:    5
+INFO:root:        sections:  10
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(15)/2), Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2))
+INFO:root:            GOLDEN: (Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2), Point2D(0, sqrt(15)/2))
+INFO:root:        goldens: 2
+INFO:root:
+ANALYZE Summary:
+INFO:root:    goldens: 2
+INFO:root:    groups: 2
+INFO:root:
+elapsed: 0:00:01.062533
+INFO:root:
+PLOT: vesica
 INFO:root:
 INFO:root:limx: [-2.75, 2.75]
 INFO:root:limy: [-2.1864916731037085, 2.1864916731037085]
 INFO:root:
-INFO:root:lines: 2
-INFO:root:Analyze line: y)
-INFO:root:    points:    7
-INFO:root:    sections:  35
-INFO:root:    goldens: 0
-INFO:root:Analyze line: x)
-INFO:root:    points:    5
-INFO:root:    sections:  10
-INFO:root:            GOLDEN: (Point2D(0, -sqrt(15)/2), Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2))
-INFO:root:            GOLDEN: (Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2), Point2D(0, sqrt(15)/2))
-INFO:root:    goldens: 2
+Plot Summary
+INFO:root:    * /home/phi/Sessions/vesica/00000.png
 INFO:root:
-INFO:root:goldens: 2
+Plot Build
+INFO:root:    * /home/phi/Sessions/vesica/00001-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00002-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00003-line.png
+INFO:root:    * /home/phi/Sessions/vesica/00004-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00005-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00006-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00007-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00008-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00009-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00010-line.png
+INFO:root:    * /home/phi/Sessions/vesica/00011-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00012-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00013-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00014-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00015-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00016-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00017-point.png
 INFO:root:
-INFO:root:groups: 2
+Plot Goldens
+INFO:root:    * /home/phi/Sessions/vesica/sections/00000.png
+INFO:root:    * /home/phi/Sessions/vesica/sections/00000-zoom.png
+INFO:root:    * /home/phi/Sessions/vesica/sections/00001.png
+INFO:root:    * /home/phi/Sessions/vesica/sections/00001-zoom.png
 INFO:root:
-INFO:root:Analysis: 0:00:02.700786
+Plot Golden Groups
+INFO:root:    * /home/phi/Sessions/vesica/groups/000.png
+INFO:root:    * /home/phi/Sessions/vesica/groups/000-zoom.png
+INFO:root:    * /home/phi/Sessions/vesica/groups/001.png
+INFO:root:    * /home/phi/Sessions/vesica/groups/001-zoom.png
+INFO:root:    * /home/phi/Sessions/vesica/sections/all.png
 INFO:root:
-INFO:root:Complete: 0:00:19.480014
+COMPLETE: vesica
 INFO:root:    elements: 6
 INFO:root:    points:   11
 INFO:root:    goldens:  2
+INFO:root:
+elapsed: 0:00:07.827878

@@ -1,4 +1,6 @@
 INFO:root:Init kepler
+INFO:root:
+MODEL: kepler
 INFO:root:* add_point: Point2D(0, 0)
 INFO:root:  + Point2D(0, 0)
 INFO:root:* add_point: Point2D(1, 0)
@@ -298,18 +300,22 @@ INFO:root:  + Point2D(-sqrt(5)/4 + sqrt(2 + 2*sqrt(5))*(-sqrt(2)*sqrt(-2 + sqrt(
 INFO:root:  + Circle(Point2D(0, sqrt(2 + 2*sqrt(5))/4), sqrt(1/8 + sqrt(5)/8))
 INFO:root:* add_element: Circle(Point2D(0, 0), sqrt(1/2 + sqrt(5)/2))
 INFO:root:  ! Circle(Point2D(0, 0), sqrt(1/2 + sqrt(5)/2)) found at index: 5
-INFO:root:Model: 0:03:00.185180
 INFO:root:
+MODEL Summary:
 INFO:root:    elements: 13
 INFO:root:    points: 82
 INFO:root:
-INFO:root:limx: [-1.73779215334751, 2.868033988749895]
-INFO:root:limy: [-1.7888417685876268, 3.140053638263964]
+elapsed: 0:02:08.833564
 INFO:root:
-INFO:root:lines: 6
-INFO:root:Analyze line: y)
-INFO:root:    points:    10
-INFO:root:    sections:  120
+ANALYZE: kepler
+INFO:root:
+analyze_model:
+INFO:root:
+    analyze_golden_lines: 6
+INFO:root:    0 • (0, 1, 0)
+INFO:root:        coefficients: (0, 1, 0))
+INFO:root:        points:    10
+INFO:root:        sections:  120
 INFO:root:            GOLDEN: (Point2D(-1, 0), Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0), Point2D(0, 0))
 INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0), Point2D(0, 0), Point2D(1, 0))
 INFO:root:            GOLDEN: (Point2D(-sqrt(2)*sqrt(sqrt(5) + 3)/2 + 1, 0), Point2D(1, 0), Point2D(2, 0))
@@ -317,26 +323,30 @@ INFO:root:            GOLDEN: (Point2D(1/4 - sqrt(5)/4, 0), Point2D(0, 0), Point
 INFO:root:            GOLDEN: (Point2D(1/4 - sqrt(5)/4, 0), Point2D(1/2, 0), Point2D(1, 0))
 INFO:root:            GOLDEN: (Point2D(0, 0), Point2D(1, 0), Point2D(1 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
 INFO:root:            GOLDEN: (Point2D(1, 0), Point2D(2, 0), Point2D(1 + sqrt(2)*sqrt(sqrt(5) + 3)/2, 0))
-INFO:root:    goldens: 7
-INFO:root:Analyze line: x - 1/2)
-INFO:root:    points:    14
-INFO:root:    sections:  364
+INFO:root:        goldens: 7
+INFO:root:    1 • (1, 0, -1/2)
+INFO:root:        coefficients: (1, 0, -1/2))
+INFO:root:        points:    14
+INFO:root:        sections:  364
 INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(1/2, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), Point2D(1/2, sqrt(2 + 2*sqrt(5))/4))
 INFO:root:            GOLDEN: (Point2D(1/2, 0), Point2D(1/2, sqrt(2 + 2*sqrt(5))/4), Point2D(1/2, sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4))
-INFO:root:    goldens: 2
-INFO:root:Analyze line: x)
-INFO:root:    points:    10
-INFO:root:    sections:  120
+INFO:root:        goldens: 2
+INFO:root:    2 • (1, 0, 0)
+INFO:root:        coefficients: (1, 0, 0))
+INFO:root:        points:    10
+INFO:root:        sections:  120
 INFO:root:            GOLDEN: (Point2D(0, 0), Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5)))), Point2D(0, sqrt(2 + 2*sqrt(5))/4))
 INFO:root:            GOLDEN: (Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5)))), Point2D(0, sqrt(2 + 2*sqrt(5))/4), Point2D(0, sqrt(2 + 2*sqrt(5))/2))
-INFO:root:    goldens: 2
-INFO:root:Analyze line: y - sqrt(2 + 2*sqrt(5))/4)
-INFO:root:    points:    14
-INFO:root:    sections:  364
-INFO:root:    goldens: 0
-INFO:root:Analyze line: -x*sqrt(2 + 2*sqrt(5))/2 - y + sqrt(2 + 2*sqrt(5))/2)
-INFO:root:    points:    12
-INFO:root:    sections:  220
+INFO:root:        goldens: 2
+INFO:root:    3 • (0, 1, -sqrt(2 + 2*sqrt(5))/4)
+INFO:root:        coefficients: (0, 1, -sqrt(2 + 2*sqrt(5))/4))
+INFO:root:        points:    14
+INFO:root:        sections:  364
+INFO:root:        goldens: 0
+INFO:root:    4 • (-sqrt(2 + 2*sqrt(5))/2, -1, sqrt(2 + 2*sqrt(5))/2)
+INFO:root:        coefficients: (-sqrt(2 + 2*sqrt(5))/2, -1, sqrt(2 + 2*sqrt(5))/2))
+INFO:root:        points:    12
+INFO:root:        sections:  220
 INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8))
 INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D(0, sqrt(2 + 2*sqrt(5))/2), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
 INFO:root:            GOLDEN: (Point2D(sqrt(2 + 2*sqrt(5))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, sqrt(2 + 2*sqrt(5))), Point2D(sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4)/2 + 1, sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/2), Point2D(1, 0))
@@ -359,20 +369,229 @@ INFO:root:            GOLDEN: (Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 +
 INFO:root:            GOLDEN: (Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/4 + sqrt(1 + sqrt(5))*(-sqrt(10) + 5*sqrt(2))/8), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
 INFO:root:            GOLDEN: (Point2D(1, 0), Point2D((-sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(2)*sqrt(-1 + sqrt(5))/2 + sqrt(1 + sqrt(5))*(-sqrt(10) + 3*sqrt(2))/4), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)))
 INFO:root:            GOLDEN: (Point2D(1, 0), Point2D(-sqrt(-1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4) + 1, -sqrt(-1/2 + sqrt(5)/2)), Point2D(1 - sqrt(1/2 + sqrt(5)/2)*(-sqrt(10 + 10*sqrt(5))/4 + sqrt(2 + 2*sqrt(5))/4), -sqrt(1/2 + sqrt(5)/2)))
-INFO:root:    goldens: 22
-INFO:root:Analyze line: -sqrt(3)*x + y*sqrt(6 + 6*sqrt(5))/2 - sqrt(15)/4 + sqrt(3)/4)
-INFO:root:    points:    15
-INFO:root:    sections:  455
+INFO:root:        goldens: 22
+INFO:root:    5 • (-sqrt(3), sqrt(6 + 6*sqrt(5))/2, -sqrt(15)/4 + sqrt(3)/4)
+INFO:root:        coefficients: (-sqrt(3), sqrt(6 + 6*sqrt(5))/2, -sqrt(15)/4 + sqrt(3)/4))
+INFO:root:        points:    15
+INFO:root:        sections:  455
 INFO:root:            GOLDEN: (Point2D(1/4 - sqrt(5)/4, 0), Point2D(0, (-sqrt(2) + sqrt(10))/(4*sqrt(1 + sqrt(5)))), Point2D(1/2, sqrt(2 + 2*sqrt(5))/4))
-INFO:root:    goldens: 1
+INFO:root:        goldens: 1
 INFO:root:
-INFO:root:goldens: 34
+ANALYZE Summary:
+INFO:root:    goldens: 34
+INFO:root:    groups: 26
 INFO:root:
-INFO:root:groups: 26
+elapsed: 0:03:09.995385
 INFO:root:
-INFO:root:Analysis: 0:04:19.278424
+PLOT: kepler
 INFO:root:
-INFO:root:Complete: 0:14:33.541648
+INFO:root:limx: [-1.73779215334751, 2.868033988749895]
+INFO:root:limy: [-1.7888417685876268, 3.140053638263964]
+INFO:root:
+Plot Summary
+INFO:root:    * /home/phi/Sessions/kepler/000.png
+INFO:root:
+Plot Build
+INFO:root:    * /home/phi/Sessions/kepler/001.png
+INFO:root:    * /home/phi/Sessions/kepler/002.png
+INFO:root:    * /home/phi/Sessions/kepler/003.png
+INFO:root:    * /home/phi/Sessions/kepler/004.png
+INFO:root:    * /home/phi/Sessions/kepler/005.png
+INFO:root:    * /home/phi/Sessions/kepler/006.png
+INFO:root:    * /home/phi/Sessions/kepler/007.png
+INFO:root:    * /home/phi/Sessions/kepler/008.png
+INFO:root:    * /home/phi/Sessions/kepler/009.png
+INFO:root:    * /home/phi/Sessions/kepler/010.png
+INFO:root:    * /home/phi/Sessions/kepler/011.png
+INFO:root:    * /home/phi/Sessions/kepler/012.png
+INFO:root:    * /home/phi/Sessions/kepler/013.png
+INFO:root:    * /home/phi/Sessions/kepler/014.png
+INFO:root:    * /home/phi/Sessions/kepler/015.png
+INFO:root:    * /home/phi/Sessions/kepler/016.png
+INFO:root:    * /home/phi/Sessions/kepler/017.png
+INFO:root:    * /home/phi/Sessions/kepler/018.png
+INFO:root:    * /home/phi/Sessions/kepler/019.png
+INFO:root:    * /home/phi/Sessions/kepler/020.png
+INFO:root:    * /home/phi/Sessions/kepler/021.png
+INFO:root:    * /home/phi/Sessions/kepler/022.png
+INFO:root:    * /home/phi/Sessions/kepler/023.png
+INFO:root:    * /home/phi/Sessions/kepler/024.png
+INFO:root:    * /home/phi/Sessions/kepler/025.png
+INFO:root:    * /home/phi/Sessions/kepler/026.png
+INFO:root:    * /home/phi/Sessions/kepler/027.png
+INFO:root:    * /home/phi/Sessions/kepler/028.png
+INFO:root:    * /home/phi/Sessions/kepler/029.png
+INFO:root:    * /home/phi/Sessions/kepler/030.png
+INFO:root:    * /home/phi/Sessions/kepler/031.png
+INFO:root:    * /home/phi/Sessions/kepler/032.png
+INFO:root:    * /home/phi/Sessions/kepler/033.png
+INFO:root:    * /home/phi/Sessions/kepler/034.png
+INFO:root:    * /home/phi/Sessions/kepler/035.png
+INFO:root:    * /home/phi/Sessions/kepler/036.png
+INFO:root:    * /home/phi/Sessions/kepler/037.png
+INFO:root:    * /home/phi/Sessions/kepler/038.png
+INFO:root:    * /home/phi/Sessions/kepler/039.png
+INFO:root:    * /home/phi/Sessions/kepler/040.png
+INFO:root:    * /home/phi/Sessions/kepler/041.png
+INFO:root:    * /home/phi/Sessions/kepler/042.png
+INFO:root:    * /home/phi/Sessions/kepler/043.png
+INFO:root:    * /home/phi/Sessions/kepler/044.png
+INFO:root:    * /home/phi/Sessions/kepler/045.png
+INFO:root:    * /home/phi/Sessions/kepler/046.png
+INFO:root:    * /home/phi/Sessions/kepler/047.png
+INFO:root:    * /home/phi/Sessions/kepler/048.png
+INFO:root:    * /home/phi/Sessions/kepler/049.png
+INFO:root:    * /home/phi/Sessions/kepler/050.png
+INFO:root:    * /home/phi/Sessions/kepler/051.png
+INFO:root:    * /home/phi/Sessions/kepler/052.png
+INFO:root:    * /home/phi/Sessions/kepler/053.png
+INFO:root:    * /home/phi/Sessions/kepler/054.png
+INFO:root:    * /home/phi/Sessions/kepler/055.png
+INFO:root:    * /home/phi/Sessions/kepler/056.png
+INFO:root:    * /home/phi/Sessions/kepler/057.png
+INFO:root:    * /home/phi/Sessions/kepler/058.png
+INFO:root:    * /home/phi/Sessions/kepler/059.png
+INFO:root:    * /home/phi/Sessions/kepler/060.png
+INFO:root:    * /home/phi/Sessions/kepler/061.png
+INFO:root:    * /home/phi/Sessions/kepler/062.png
+INFO:root:    * /home/phi/Sessions/kepler/063.png
+INFO:root:    * /home/phi/Sessions/kepler/064.png
+INFO:root:    * /home/phi/Sessions/kepler/065.png
+INFO:root:    * /home/phi/Sessions/kepler/066.png
+INFO:root:    * /home/phi/Sessions/kepler/067.png
+INFO:root:    * /home/phi/Sessions/kepler/068.png
+INFO:root:    * /home/phi/Sessions/kepler/069.png
+INFO:root:    * /home/phi/Sessions/kepler/070.png
+INFO:root:    * /home/phi/Sessions/kepler/071.png
+INFO:root:    * /home/phi/Sessions/kepler/072.png
+INFO:root:    * /home/phi/Sessions/kepler/073.png
+INFO:root:    * /home/phi/Sessions/kepler/074.png
+INFO:root:    * /home/phi/Sessions/kepler/075.png
+INFO:root:    * /home/phi/Sessions/kepler/076.png
+INFO:root:    * /home/phi/Sessions/kepler/077.png
+INFO:root:    * /home/phi/Sessions/kepler/078.png
+INFO:root:    * /home/phi/Sessions/kepler/079.png
+INFO:root:    * /home/phi/Sessions/kepler/080.png
+INFO:root:    * /home/phi/Sessions/kepler/081.png
+INFO:root:    * /home/phi/Sessions/kepler/082.png
+INFO:root:    * /home/phi/Sessions/kepler/083.png
+INFO:root:    * /home/phi/Sessions/kepler/084.png
+INFO:root:    * /home/phi/Sessions/kepler/085.png
+INFO:root:    * /home/phi/Sessions/kepler/086.png
+INFO:root:    * /home/phi/Sessions/kepler/087.png
+INFO:root:    * /home/phi/Sessions/kepler/088.png
+INFO:root:    * /home/phi/Sessions/kepler/089.png
+INFO:root:    * /home/phi/Sessions/kepler/090.png
+INFO:root:    * /home/phi/Sessions/kepler/091.png
+INFO:root:    * /home/phi/Sessions/kepler/092.png
+INFO:root:    * /home/phi/Sessions/kepler/093.png
+INFO:root:    * /home/phi/Sessions/kepler/094.png
+INFO:root:    * /home/phi/Sessions/kepler/095.png
+INFO:root:    * /home/phi/Sessions/kepler/096.png
+INFO:root:    * /home/phi/Sessions/kepler/097.png
+INFO:root:
+Plot Goldens
+INFO:root:    * /home/phi/Sessions/kepler/sections/000.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/000-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/001.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/001-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/002.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/002-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/003.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/003-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/004.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/004-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/005.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/005-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/006.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/006-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/007.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/007-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/008.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/008-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/009.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/009-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/010.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/010-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/011.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/011-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/012.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/012-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/013.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/013-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/014.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/014-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/015.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/015-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/016.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/016-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/017.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/017-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/018.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/018-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/019.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/019-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/020.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/020-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/021.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/021-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/022.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/022-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/023.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/023-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/024.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/024-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/025.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/025-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/026.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/026-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/027.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/027-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/028.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/028-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/029.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/029-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/030.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/030-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/031.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/031-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/032.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/032-zoom.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/033.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/033-zoom.png
+INFO:root:
+Plot Golden Groups
+INFO:root:    * /home/phi/Sessions/kepler/groups/000.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/001.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/002.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/003.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/004.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/005.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/006.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/007.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/008.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/009.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/010.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/011.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/012.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/013.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/014.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/015.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/016.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/017.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/018.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/019.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/020.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/021.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/022.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/023.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/024.png
+INFO:root:    * /home/phi/Sessions/kepler/groups/025.png
+INFO:root:    * /home/phi/Sessions/kepler/sections/all.png
+INFO:root:
+COMPLETE: kepler
 INFO:root:    elements: 13
 INFO:root:    points:   82
 INFO:root:    goldens:  34
+INFO:root:
+elapsed: 0:10:45.621532

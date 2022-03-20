@@ -180,7 +180,7 @@ def add_intersection_points_mp(el):
 
 
 def add_element(el):
-    logging.info(f'* add_element: {el}')
+    print_log(f'* add_element: {el}')
     # check if el is in the element list
     if not elements.count(el):
         # if not found by count, test each element anyway
@@ -243,7 +243,7 @@ def bisector(pt1, pt2):
 
     # bisector
     # last two points should be from the last two circles intersection
-    el = line(pts[-1], pts[-2])
+    el = line(pts[-1], pts[-2], classes=['bisector'])
     add_element(el)
 
     
@@ -322,25 +322,23 @@ def check_golden(section):
 def analyze_golden_lines(lines):
     sections = []
 
-    print('\nGolden Sections')
-    print('lines:', len(lines))
-    print()
+    print_log(f'\n    analyze_golden_lines: {len(lines)}')
 
     for i, el in enumerate(lines):
-        print(i, el.coefficients)
+        print_log(f'    {i} • {el.coefficients}')
         sections.extend(analyze_golden(el))
     
     return sections
 
 
 def analyze_golden(line):
-    '''gecj all the points on a line for Golden Sections'''
+    '''check all the points on a line for Golden Sections'''
     goldens = []
     line_pts = sorted(list(line.pts), key=point_value)
     sections = list(combinations(line_pts, 3))
-    print_log(f'Analyze line: {line.equation()})')
-    print_log(f'    points:    {len(line_pts)}')
-    print_log(f'    sections:  {len(sections)}')
+    print_log(f'        coefficients: {line.coefficients})')
+    print_log(f'        points:    {len(line_pts)}')
+    print_log(f'        sections:  {len(sections)}')
 
     with Pool(num_workers) as pool:
         results = pool.map(check_golden, sections)
@@ -352,9 +350,20 @@ def analyze_golden(line):
                 goldens.append([ab, bc])
                 logging.info(f'            GOLDEN: {sections[index]}')
             
-    print_log(f'    goldens: { len(goldens) }')
+    print_log(f'        goldens: { len(goldens) }')
     return goldens
     
+
+def analyze_model():
+    '''Analyze all lines in model for golden sections'''
+    print_log(f'\nanalyze_model:')
+
+    lines = [el for el in elements if isinstance(el, spg.Line2D)]
+    goldens = analyze_golden_lines(lines)
+    groups = group_sections(goldens)
+
+    return goldens, groups
+
 
 def check_range(r):
     ad = segment(r[0], r[3]).length
