@@ -44,20 +44,20 @@ add_element(circle(pts[0], goA, classes=['gold']))
 add_element(circle(pts[1], goB, classes=['gold']))
 
 # diagonals
-add_element(line(pts[18], pts[31]))
-add_element(line(pts[17], pts[32]))
+add_element(line(pts[18], pts[31], classes=['green']))
+add_element(line(pts[17], pts[32], classes=['green']))
 
-add_element(line(pts[18], goA))
-add_element(line(pts[17], goA))
+add_element(line(pts[18], goA, classes=['set1']))
+add_element(line(pts[17], goA, classes=['set1']))
 
-add_element(line(pts[18], goB))
-add_element(line(pts[17], goB))
+add_element(line(pts[18], goB, classes=['set2']))
+add_element(line(pts[17], goB, classes=['set2']))
 
-add_element(line(pts[31], goA))
-add_element(line(pts[32], goA))
+add_element(line(pts[31], goA, classes=['set2']))
+add_element(line(pts[32], goA, classes=['set2']))
 
-add_element(line(pts[31], goB))
-add_element(line(pts[32], goB))
+add_element(line(pts[31], goB, classes=['set1']))
+add_element(line(pts[32], goB, classes=['set1']))
 
 add_element(circle(pts[6], pts[0]))
 
