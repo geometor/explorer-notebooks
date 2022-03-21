@@ -92,23 +92,6 @@ def ax_prep(ax, bounds, xlabel):
         ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
 
 
-def ax_prep(ax, bounds, xlabel):
-        ax.clear()
-        ax.axis(True)
-        ax.spines['bottom'].set_color('k')
-        ax.spines['top'].set_color('k')
-        ax.spines['right'].set_color('k')
-        ax.spines['left'].set_color('k')
-        ax.tick_params(axis='x', colors='k')
-        ax.tick_params(axis='y', colors='k')
-        vmin = bounds.vertices[0]
-        vmax = bounds.vertices[2]
-        ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
-        ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
-        ax.invert_yaxis()
-        ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
-
-
 def plot_circle(ax, circle, color='', linestyle='', linewidth='', fill=''):
     '''takes a sympy circle and plots with the matplotlib Circle patch'''
     center = (circle.center.x.evalf(), circle.center.y.evalf())
@@ -406,7 +389,6 @@ def plot_group_sections(NAME, ax, history, sections, bounds, filename, title='go
     section_pts = set()
     group_pts = set()
     for i, section in enumerate(sections):
-        #  print(i, section)
         num = str(i).zfill(5)
         section_pts = set()
         for seg in section:
@@ -421,8 +403,7 @@ def plot_group_sections(NAME, ax, history, sections, bounds, filename, title='go
 
     # zoom around section points
     limx, limy = get_limits_from_points(group_pts, margin=.5)
-    zoom_bounds = set_bounds(limx, limy)
-    #  ax_prep(ax, zoom_bounds, xlabel)
+    limx, limy = adjust_lims(limx, limy)
     ax.set_xlim(limx[0], limx[1])
     ax.set_ylim(limy[0], limy[1])
     
@@ -433,7 +414,6 @@ def plot_all_ranges(NAME, ax, history, ranges, bounds):
     xlabel = f'ranges: {len(ranges)}'
     ax_prep(ax, bounds, xlabel)
     for i, rng in enumerate(ranges):
-
         gold_points(ax, rng)
         seg = segment(rng[0], rng[3])
         plot_segment2(ax, seg)
@@ -458,6 +438,25 @@ def plot_all_sections(NAME, ax, history, sections, bounds):
     plot_sequence(ax, history, bounds)
     snapshot(f'{NAME}/sections', f'all.png')
 
+def adjust_ratio(w, h, r=16/9):
+    if w / h < r:
+        w = r * h
+    if w / h > r:
+        h = w / r
+    return w, h
+
+def adjust_lims(limx, limy):
+    w = abs(limx[1] - limx[0])
+    h = abs(limy[1] - limy[0])
+    w2, h2 = adjust_ratio(w, h)
+    xdiff = abs(w2 - w) / 2
+    ydiff = abs(h2 - h) / 2
+    limx[0] -= xdiff
+    limx[1] += xdiff
+    limy[0] -= ydiff
+    limy[1] += ydiff
+    return limx, limy
+
 
 def plot_sections(NAME, ax, history, sections, bounds):
     for i, section in enumerate(sections):
@@ -481,6 +480,8 @@ def plot_sections(NAME, ax, history, sections, bounds):
         
         # zoom around section points
         limx, limy = get_limits_from_points(section_pts, margin=.5)
+        limx, limy = adjust_lims(limx, limy)
+
         ax.set_xlim(limx[0], limx[1])
         ax.set_ylim(limy[0], limy[1])
         
@@ -514,6 +515,7 @@ def plot_ranges(NAME, ax, history, ranges, bounds):
         
         # zoom around section points
         limx, limy = get_limits_from_points(rng, margin=.5)
+        limx, limy = adjust_lims(limx, limy)
         ax.set_xlim(limx[0], limx[1])
         ax.set_ylim(limy[0], limy[1])
         
