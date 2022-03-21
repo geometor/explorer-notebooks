@@ -207,16 +207,17 @@ def highlight_points(ax, pts,
                ):
     '''plot all the points in pts'''
     for pt in pts:
-        if len(pt.classes):
-            styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
-            for cl in pt.classes:
-                if cl in classes:
-                    styles.update(classes[cl])
-            # collect x, y values into separate arrays
-            xs = [pt.x.evalf()]
-            ys = [pt.y.evalf()]
+        if isinstance(pt, spg.Point2D):
+            if len(pt.classes):
+                styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+                for cl in pt.classes:
+                    if cl in classes:
+                        styles.update(classes[cl])
+                # collect x, y values into separate arrays
+                xs = [pt.x.evalf()]
+                ys = [pt.y.evalf()]
 
-            ax.plot(xs, ys, **styles)
+                ax.plot(xs, ys, **styles)
 
 def plot_selected_points(ax, pts,
                color='#FF09',
@@ -242,7 +243,7 @@ def gold_points(ax, pts,
                ):
     '''plot all the points in pts'''
     for pt in pts:
-        styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
+        #  styles = {'color':color, 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
         styles = {'markeredgecolor':color, 'fillstyle':'none', 'linestyle':linestyle, 'marker':marker, 'markersize':markersize}
         # collect x, y values into separate arrays
         xs = [pt.x.evalf()]
@@ -425,10 +426,21 @@ def plot_group_sections(NAME, ax, history, sections, bounds, filename, title='go
     ax.set_xlim(limx[0], limx[1])
     ax.set_ylim(limy[0], limy[1])
     
-    #  gold_points(ax, section_pts)
-    #  plot_segments(ax, section)
-    #  plot_sequence(ax, history, bounds)
     snapshot(f'{NAME}/groups', f'{filename}-zoom.png')
+
+
+def plot_all_ranges(NAME, ax, history, ranges, bounds):
+    xlabel = f'ranges: {len(ranges)}'
+    ax_prep(ax, bounds, xlabel)
+    for i, rng in enumerate(ranges):
+
+        gold_points(ax, rng)
+        seg = segment(rng[0], rng[3])
+        plot_segment2(ax, seg)
+
+    plot_sequence(ax, history, bounds)
+    snapshot(f'{NAME}/ranges', f'all.png')
+
 
 def plot_all_sections(NAME, ax, history, sections, bounds):
     xlabel = f'golden sections: {len(sections)}'
@@ -449,7 +461,6 @@ def plot_all_sections(NAME, ax, history, sections, bounds):
 
 def plot_sections(NAME, ax, history, sections, bounds):
     for i, section in enumerate(sections):
-        #  print(i, section)
         num = str(i).zfill(5)
         s0 = section[0].length.simplify()
         s0 = sp.sqrtdenest(s0)
@@ -470,15 +481,43 @@ def plot_sections(NAME, ax, history, sections, bounds):
         
         # zoom around section points
         limx, limy = get_limits_from_points(section_pts, margin=.5)
-        #  zoom_bounds = set_bounds(limx, limy)
-        #  ax_prep(ax, zoom_bounds, xlabel)
         ax.set_xlim(limx[0], limx[1])
         ax.set_ylim(limy[0], limy[1])
         
-        #  gold_points(ax, section_pts)
-        #  plot_segments(ax, section)
-        #  plot_sequence(ax, history, bounds)
         snapshot(f'{NAME}/sections', f'{num}-zoom.png')
+
+
+def plot_ranges(NAME, ax, history, ranges, bounds):
+    '''plot each range from points'''
+    for i, rng in enumerate(ranges):
+        ad = segment(rng[0], rng[3]).length.simplify()
+        cd = segment(rng[2], rng[3]).length.simplify()
+        ac = segment(rng[0], rng[2]).length.simplify()
+        bc = segment(rng[1], rng[2]).length.simplify()
+        #  return sp.simplify((ad / cd) - (ac / bc))
+        ratio1 = float((ad/cd).evalf())
+        ratio2 = float((ac/bc).evalf())
+
+        num = str(i).zfill(5)
+        xlabel = num
+        # escape outer brackers for \frac
+        xlabel = f'${ratio1} \\approx \\frac {{ {sp.latex(ad)} }} {{{sp.latex(cd)} }}$'
+        xlabel += f'  :  '
+        xlabel += f'$ \\frac {{ {sp.latex(ac)} }} {{{sp.latex(bc)} }} \\approx {ratio2}$'
+        ax_prep(ax, bounds, xlabel)
+        #  print(i, rng)
+        gold_points(ax, rng)
+        seg = segment(rng[0], rng[3])
+        plot_segment2(ax, seg)
+        plot_sequence(ax, history, bounds)
+        snapshot(f'{NAME}/ranges', f'{num}.png')
+        
+        # zoom around section points
+        limx, limy = get_limits_from_points(rng, margin=.5)
+        ax.set_xlim(limx[0], limx[1])
+        ax.set_ylim(limy[0], limy[1])
+        
+        snapshot(f'{NAME}/ranges', f'{num}-zoom.png')
 
 
 # images**********************

@@ -59,11 +59,24 @@ print_log(f'    points: {len(pts)}')
 print_log(f'\nelapsed: {elapsed(start_time)}')
 
 
-# # ANALYZE ***************************
-# print_log(f'\nANALYZE: {NAME}')
-# goldens, groups = analyze_model()
-# print_log('\nANALYZE Summary:')
-# print_log(f'    goldens: {len(goldens)}')
+# ANALYZE ***************************
+print_log(f'\nANALYZE: {NAME}')
+
+harmonics = []
+for el in get_elements_lines():
+    result  = analyze_harmonics(el)
+    #  print(result)
+    harmonics.extend(result)
+    #  print()
+
+#  print('\n\nharmonics')
+#  for i, h in enumerate(harmonics):
+    #  print(i)
+    #  print(h)
+
+
+print_log('\nANALYZE Summary:')
+print_log(f'    harmonics: {len(harmonics)}')
 # print_log(f'    groups: {len(groups)}')
 # print_log(f'\nelapsed: {elapsed(start_time)}')
 
@@ -94,23 +107,14 @@ snapshot(NAME, '00000.png')
 print_log('\nPlot Build')
 build_sequence(NAME, ax, history, bounds)
 
-# print_log('\nPlot Goldens')
-# plot_sections(NAME, ax, history, goldens, bounds)
-
-# print_log('\nPlot Golden Groups')
-# sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-# for i, group in enumerate(sorted_groups_keys):
-#     i = str(i).zfill(3)
-    
-#     title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-#     plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-# plot_all_sections(NAME, ax, history, goldens, bounds)
+print_log('\nPlot Harmonic Ranges')
+plot_ranges(NAME, ax, history, harmonics, bounds)
+plot_all_ranges(NAME, ax, history, harmonics, bounds)
 
 print_log(f'\nCOMPLETE: {NAME}')
 print_log(f'    elements: {len(elements)}')
 print_log(f'    points:   {len(pts)}')
-# print_log(f'    goldens:  {len(goldens)}')
+print_log(f'    ranges:  {len(ranges)}')
 print_log(f'\nelapsed: {elapsed(start_time)}')
       
 plt.show()

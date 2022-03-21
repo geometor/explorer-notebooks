@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root5'
+NAME = 'root5-diags'
 log_init(NAME)
 start_time = timer()
 
@@ -27,10 +27,12 @@ add_polygon(polygon_ids([0, 1, 17, 31]))
 
 # golden circle
 c = add_element(circle(pts[6], pts[18], classes=['gold']))
+goA = pts[53]
+goB = pts[54]
 
 # outer goldens
-el = add_element(circle(pts[0], pts[54], classes=['gold']))
-el = add_element(circle(pts[1], pts[53], classes=['gold']))
+el = add_element(circle(pts[0], goB, classes=['gold']))
+el = add_element(circle(pts[1], goA, classes=['gold']))
 
 pentagon = polygon_ids([0, 1, 62, 64, 81])
 add_polygon(pentagon)
@@ -38,21 +40,33 @@ pentagon = polygon_ids([0, 1, 63, 65, 82])
 add_polygon(pentagon)
 
 # inner goldens
-add_element(circle(pts[0], pts[53], classes=['gold']))
-add_element(circle(pts[1], pts[54], classes=['gold']))
+add_element(circle(pts[0], goA, classes=['gold']))
+add_element(circle(pts[1], goB, classes=['gold']))
 
 # diagonals
 add_element(line(pts[18], pts[31]))
 add_element(line(pts[17], pts[32]))
 
+add_element(line(pts[18], goA))
+add_element(line(pts[17], goA))
+
+add_element(line(pts[18], goB))
+add_element(line(pts[17], goB))
+
+add_element(line(pts[31], goA))
+add_element(line(pts[32], goA))
+
+add_element(line(pts[31], goB))
+add_element(line(pts[32], goB))
+
 add_element(circle(pts[6], pts[0]))
 
-add_element(line(pts[157], pts[156]))
-add_element(line(pts[104], pts[109]))
-add_element(line(pts[53], pts[18]))
+#  add_element(line(pts[157], pts[156]))
+#  add_element(line(pts[104], pts[109]))
+#  add_element(line(pts[53], pts[18]))
 
-add_element(circle(pts[32], pts[157], classes=['gold']))
-add_element(circle(pts[32], pts[158], classes=['gold']))
+#  add_element(circle(pts[32], pts[157], classes=['gold']))
+#  add_element(circle(pts[32], pts[158], classes=['gold']))
 
 print_log('\nMODEL Summary:')
 print_log(f'    elements: {len(elements)}')

@@ -50,33 +50,27 @@ add_element(line(pts[23], pts[18], classes=['red']))
 
 pt_apex = pts[4]
 add_element(line(pt_apex, pts[22], classes=['green']))
-add_element(line(pt_apex, pts[19], classes=['green']))
-#  add_element(line(pt_apex, pts[9]))
-add_element(line(pt_apex, pts[21], classes=['green']))
-add_element(line(pt_apex, pts[23], classes=['green']))
-#  add_element(line(pt_apex, pts[6]))
-add_element(line(pt_apex, pts[18], classes=['green']))
+add_element(line(pt_apex, pts[19], classes=['set1']))
+add_element(line(pt_apex, pts[21], classes=['set2']))
+add_element(line(pt_apex, pts[23], classes=['set2']))
+add_element(line(pt_apex, pts[18], classes=['set1']))
 add_element(line(pt_apex, pts[20], classes=['green']))
 
 pt_apex = pts[6]
-add_element(line(pt_apex, pts[22], classes=['green']))
-add_element(line(pt_apex, pts[19], classes=['green']))
-#  add_element(line(pt_apex, pts[9]))
-add_element(line(pt_apex, pts[21], classes=['green']))
-add_element(line(pt_apex, pts[23], classes=['green']))
-#  add_element(line(pt_apex, pts[6]))
 add_element(line(pt_apex, pts[18], classes=['green']))
-add_element(line(pt_apex, pts[20], classes=['green']))
+add_element(line(pt_apex, pts[20], classes=['set1']))
+add_element(line(pt_apex, pts[22], classes=['set2']))
+add_element(line(pt_apex, pts[19], classes=['set2']))
+add_element(line(pt_apex, pts[21], classes=['set1']))
+add_element(line(pt_apex, pts[23], classes=['green']))
 
 pt_apex = pts[9]
-add_element(line(pt_apex, pts[22], classes=['green']))
-add_element(line(pt_apex, pts[19], classes=['green']))
-#  add_element(line(pt_apex, pts[9]))
 add_element(line(pt_apex, pts[21], classes=['green']))
-add_element(line(pt_apex, pts[23], classes=['green']))
-#  add_element(line(pt_apex, pts[6]))
-add_element(line(pt_apex, pts[18], classes=['green']))
-add_element(line(pt_apex, pts[20], classes=['green']))
+add_element(line(pt_apex, pts[23], classes=['set1']))
+add_element(line(pt_apex, pts[18], classes=['set2']))
+add_element(line(pt_apex, pts[20], classes=['set2']))
+add_element(line(pt_apex, pts[22], classes=['set1']))
+add_element(line(pt_apex, pts[19], classes=['green']))
 
 print_log('\nMODEL Summary:')
 print_log(f'    elements: {len(elements)}')
@@ -116,11 +110,11 @@ plot_sequence(ax, history, bounds)
 snapshot(NAME, '00000.png')
 #  plt.show()
 
-print_log('\nPlot Build')
-build_sequence(NAME, ax, history, bounds)
+#  print_log('\nPlot Build')
+#  build_sequence(NAME, ax, history, bounds)
 
-print_log('\nPlot Goldens')
-plot_sections(NAME, ax, history, goldens, bounds)
+#  print_log('\nPlot Goldens')
+#  plot_sections(NAME, ax, history, goldens, bounds)
 
 print_log('\nPlot Golden Groups')
 sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
@@ -130,7 +124,7 @@ for i, group in enumerate(sorted_groups_keys):
     title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
     plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
 
-plot_all_sections(NAME, ax, history, goldens, bounds)
+#  plot_all_sections(NAME, ax, history, goldens, bounds)
 
 print_log(f'\nCOMPLETE: {NAME}')
 print_log(f'    elements: {len(elements)}')

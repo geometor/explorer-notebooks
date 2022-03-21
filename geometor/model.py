@@ -354,11 +354,15 @@ def analyze_golden(line):
     return goldens
     
 
+def get_elements_lines():
+    return [el for el in elements if isinstance(el, spg.Line2D)]
+
+
 def analyze_model():
     '''Analyze all lines in model for golden sections'''
     print_log(f'\nanalyze_model:')
 
-    lines = [el for el in elements if isinstance(el, spg.Line2D)]
+    lines = get_elements_lines()
     goldens = analyze_golden_lines(lines)
     groups = group_sections(goldens)
 
@@ -367,23 +371,27 @@ def analyze_model():
 
 def check_range(r):
     ad = segment(r[0], r[3]).length
-    db = segment(r[3], r[1]).length
+    cd = segment(r[2], r[3]).length
     ac = segment(r[0], r[2]).length
-    cb = segment(r[2], r[1]).length
-    return sp.simplify((ad / db) / (ac / cb))
+    bc = segment(r[1], r[2]).length
+    return sp.simplify((ad / cd) - (ac / bc))
     
 
-def analyze_line(line):
+def analyze_harmonics(line):
     line_pts = sorted(list(line.pts), key=point_value)
     #  for pt in line_pts:
         #  print(pt.x, pt.x.evalf(), pt.y, pt.y.evalf())
     ranges = list(combinations(line_pts, 4))
-    for r in ranges:
+    harmonics = []
+    for i, r in enumerate(ranges):
         chk = check_range(r)
         #  if chk == 1 or chk == -1:
-        if True:
-            print(r)
-            print(chk)
+        #  if chk == 0 or chk == -1:
+        if chk == 0:
+            print(i, chk)
+            print(f'    {r}')
+            harmonics.append(r)
+    return harmonics
     
 
 def group_sections(sections):
