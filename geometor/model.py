@@ -129,6 +129,16 @@ def unit_square(pt, classes=[], style={}):
 
 # model ******************************
 
+def find_pt_index(pt):
+    if isinstance(pt, spg.Point2D):
+        for i, prev_pt in enumerate(pts):
+            if pt.equals(prev_pt):
+                #  i = pts.index(prev_pt)
+                print_log(f'  ! {pt} found at index: {i}')
+                return i
+    else:
+        return -1
+    
 def add_point(pt):
     '''add point to pts list - check if exists first'''
     logging.info(f'* add_point: {pt}')

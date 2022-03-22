@@ -35,7 +35,8 @@ classes['default_circle'] = {'color':'#C09', 'linestyle':':', 'linewidth':1, 'fi
 classes['blue'] = {'color':'#66F', 'linestyle':':'}
 classes['red'] = {'color':'#F33', 'linestyle':':'}
 classes['green'] = {'color':'#2F2', 'linestyle':':'}
-classes['pappus'] = {'linestyle':'-'}
+classes['pappus'] = {'linestyle':'--'}
+classes['pink'] = {'color':'#F99', 'linestyle':'--'}
 classes['bisector'] = {'linestyle':'-.'}
 
 classes['set1'] = {'color':'#09C', 'linestyle':':'}
@@ -51,6 +52,7 @@ classes['start'] = {'color':'#FFF6', 'markersize':7, 'marker':'o'}
 classes['circle'] = {'color':'#0FF', 'markersize':7, 'marker':'o'}
 classes['square'] = {'color':'#FF0', 'markersize':7, 'marker':'s'}
 classes['diamond'] = {'color':'#F0F', 'markersize':7, 'marker':'D'}
+classes['star'] = {'color':'#F99', 'markersize':12, 'marker':'*'}
 
 classes['nine'] = {'edgecolor':'#3F06', 'facecolor':'#3F03', 'linestyle':'-', 'linewidth':1}
 classes['yellow'] = {'edgecolor':'#FF09', 'facecolor':'#FF03', 'linestyle':'-', 'linewidth':1}
@@ -94,7 +96,7 @@ def ax_prep(ax, ax_btm, bounds, xlabel):
     vmax = bounds.vertices[2]
     ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
     ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
-    #  ax.invert_yaxis()
+    ax.invert_yaxis()
     #  ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
     ax_btm.text(0.5, 0.5, xlabel, horizontalalignment='center', fontdict={'color': 'w', 'size':'20'})
 
@@ -376,6 +378,10 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
             perim = sp.sqrtdenest(last_step.perimeter.simplify())
             typ = 'polygon'
             xlabel = f'area: ${sp.latex(area)}$ • perim: ${sp.latex(perim)}$'
+        if isinstance(last_step, spg.Segment):
+            seg = sp.sqrtdenest(last_step.length.simplify())
+            typ = 'segment'
+            xlabel = f'seg: ${sp.latex(seg)}$'
 
         ax_prep(ax, ax_btm, bounds, xlabel)
 
@@ -388,7 +394,27 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
             plot_selected_points(ax, [last_step.center, last_step.radius_pt])
             plot_circle(ax, last_step, linestyle='-')
         plot_sequence(ax, sequence[0:i], bounds)
-        snapshot(folder, f'{str(i).zfill(5)}-{typ}.png')
+
+        filename = f'{str(i).zfill(5)}-{typ}'
+        snapshot(folder, f'{filename}.png')
+
+        # zoom around section points
+        current_pts = []
+        if isinstance(last_step, spg.Point):
+            current_pts.append(last_step)
+        if isinstance(last_step, spg.Line):
+            current_pts.extend(last_step.points)
+        if isinstance(last_step, spg.Circle):
+            current_pts.extend(last_step.bounds.vertices)
+        if isinstance(last_step, spg.Polygon):
+            current_pts.extend(last_step.vertices)
+
+        limx, limy = get_limits_from_points(current_pts, margin=.5)
+        limx, limy = adjust_lims(limx, limy)
+        ax.set_xlim(limx[0], limx[1])
+        ax.set_ylim(limy[0], limy[1])
+        
+        snapshot(folder, f'{filename}-zoom.png')
 
 
 def plot_group_sections(NAME, ax, ax_btm, history, sections, bounds, filename, title='golden sections'):

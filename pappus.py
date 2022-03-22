@@ -16,13 +16,14 @@ NAME = 'pappus'
 pappus_lines = []
 Ax = 3
 Bx = 5/2
+B1 = point(0, 1, classes=['B'])
+B2 = point(3/2, 1, classes=['B'])
 
 for perm_id in range(6):
     print('PERMUTATION: ', perm_id)
     print()
 
-    B1 = point(0, 1, classes=['B'])
-    B2 = point(1, 2, classes=['B'])
+
     A, B = pappus_start(Ax, B1, B2, Bx)
     B_perms = list(permutations(B))
 
@@ -50,60 +51,86 @@ for perm_id in range(6):
         pappus_line.pts.add(meets[2])
         print('collinear: ', sp.Point.is_collinear(*meets))
 
+    triangle_sq = add_polygon(polygon(get_pts_by_class('square'), classes=['yellow']))
+    triangle_cir = add_polygon(polygon(get_pts_by_class('circle'), classes=['cyan']))
+    triangle_dia = add_polygon(polygon(get_pts_by_class('diamond'), classes=['magenta']))
+
         
-    # ANALYZE ***************************
-    print_log(f'\nANALYZE: {NAME}')
+    #  # ANALYZE ***************************
+    #  print_log(f'\nANALYZE: {NAME}')
 
-    harmonics = []
-    for el in get_elements_lines():
-        result  = analyze_harmonics(el)
-        harmonics.extend(result)
+    #  harmonics = []
+    #  for el in get_elements_lines():
+        #  result  = analyze_harmonics(el)
+        #  harmonics.extend(result)
 
-    print_log('\nANALYZE Summary:')
-    print_log(f'    harmonics: {len(harmonics)}')
+    #  print_log('\nANALYZE Summary:')
+    #  print_log(f'    harmonics: {len(harmonics)}')
 
+    print_log(f'\nPLOT: {NAME}')
     limx, limy = get_limits_from_points(pts)
     bounds = set_bounds(limx, limy)
 
     ax.clear()
     ax_btm.clear()
-    title = f'G E O M E T O R • pappus • perm: {perm_id}'
 
     ax.axis('off')
     ax_btm.axis('off')
     ax.set_aspect('equal')
     plt.tight_layout()
 
-    title = f'G E O M E T O R'
+    title = f'G E O M E T O R • pappus • perm: {perm_id}'
     fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
-    triangle_sq = add_polygon(polygon(get_pts_by_class('square'), classes=['yellow']))
-    triangle_cir = add_polygon(polygon(get_pts_by_class('circle'), classes=['cyan']))
-    triangle_dia = add_polygon(polygon(get_pts_by_class('diamond'), classes=['magenta']))
-
     folder = f'{NAME}/{perm_id}'
+    print_log('\nPlot Sequence')
     build_sequence(folder, ax, ax_btm, history, bounds)
 
     print_log('\nPlot Harmonic Ranges')
-    plot_ranges(folder, ax, ax_btm, history, harmonics, bounds)
-    plot_all_ranges(folder, ax, ax_btm, history, harmonics, bounds)
+    #  plot_ranges(folder, ax, ax_btm, history, harmonics, bounds)
+    #  plot_all_ranges(folder, ax, ax_btm, history, harmonics, bounds)
 
-    print_log(f'\nCOMPLETE: {NAME}')
+    print_log(f'\nPERM: {perm_id}')
     print_log(f'    elements: {len(elements)}')
     print_log(f'    points:   {len(pts)}')
-    print_log(f'    ranges:  {len(harmonics)}')
+    #  print_log(f'    ranges:  {len(harmonics)}')
 
 
 # ALL *************************
 print_log(f'\nShow All:')
 
-B1 = point(0, 1, classes=['B'])
-B2 = point(1, 2, classes=['B'])
 A, B = pappus_start(Ax, B1, B2, Bx)
 
-for el in pappus_lines:
+print('\STAR POINTS:')
+pappus_ints = set()
+for i, el in enumerate(pappus_lines):
     add_element(el)
+    if i > 0:
+        p1 = el
+        p0 = pappus_lines[i-1]
+        ints = p1.intersection(p0)
+        if ints:
+            pt = ints[0]
+            print(f'    {i}  {pt}')
+            pid = find_pt_index(pt)
+            #  print(f'         {pid}')
+            if pid > -1:
+                pt = pts[pid]
+                print(f'    {pid}  {pt}')
+                pappus_ints.add(pt)
+            
+star_pts = []
+for i, pt in enumerate(pappus_ints):
+    if len(pt.elements) == 3:
+        star_pts.append(pt)
+        pt.classes.append('star')
+        print(i, len(pt.elements), pt)
 
+#  print('\nPOINTS:')
+#  for i, pt in enumerate(pts):
+    #  print(f'    {i}  {pt}')
+if len(star_pts) == 2: 
+    add_element(line(star_pts[0], star_pts[1], classes=['pink']))
 
 # ANALYZE ***************************
 print_log(f'\nANALYZE: ALL')
@@ -129,12 +156,13 @@ ax.set_title(title, fontdict={'color': '#960', 'size':'small'})
 ax.axis(False)
 
 folder = f'{NAME}/all'
-build_sequence(folder, ax, history, bounds)
+print_log('\nPlot Sequence')
+build_sequence(folder, ax, ax_btm, history, bounds)
 
 print_log('\nPlot Harmonic Ranges')
 #  folder += '/ranges'
-plot_ranges(folder, ax, history, harmonics, bounds)
-plot_all_ranges(folder, ax, history, harmonics, bounds)
+plot_ranges(folder, ax, ax_btm, history, harmonics, bounds)
+plot_all_ranges(folder, ax, ax_btm, history, harmonics, bounds)
 
 print_log(f'\nCOMPLETE: {NAME}')
 print_log(f'    elements: {len(elements)}')
