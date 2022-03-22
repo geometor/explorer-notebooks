@@ -7,6 +7,33 @@ B = []
 types = ['square', 'circle', 'diamond']
 
 
+def pappus_start(A3x, B1, B2, B3x):
+    pts.clear()
+    elements.clear()
+    history.clear()
+
+    A = []
+    A.append( add_point( point(0, 0, classes=['A', 'square']) ) )
+    A.append( add_point( point(1, 0, classes=['A', 'circle']) ) )
+    line_a = add_element(line(A[0], A[1], classes=['blue']) )
+    A.append( add_point( point(A3x, 0, classes=['A', 'diamond']) ) )
+    line_a.pts.add(A[-1])
+
+    B = []
+    B1 = add_point(B1)
+    B2 = add_point(B2)
+    B.append( B1 )
+    B.append( B2 )
+
+    line_b = line(B1, B2, classes=['blue']) 
+    add_element(line_b)
+    y_val = line_get_y(line_b, B3x)
+    B.append( add_point( point(B3x, y_val, classes=['B']) ) )
+    line_b.pts.add(B[-1])
+
+    return A, B
+
+
 def set_meet(u, v, A, B):
     '''join pairs of points to find the meet'''
     j1 = add_element( line(A[u], B[v], classes=['red']) )

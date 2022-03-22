@@ -7,37 +7,11 @@ from geometor.pappus import *
 from itertools import permutations
 
 #  fig, (ax0, ax1) = plt.subplots(ncols=2, figsize=(7, 4))
-fig, ax = plt.subplots()
+#  fig, ax = plt.subplots(2, 1)
+fig, (ax, ax_btm) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [10, 1]})
 ax.set_aspect('equal')
 
 NAME = 'pappus'
-
-def pappus_start(A3x, B1, B2, B3x):
-    pts.clear()
-    elements.clear()
-    history.clear()
-
-    A = []
-    A.append( add_point( point(0, 0, classes=['A', 'square']) ) )
-    A.append( add_point( point(1, 0, classes=['A', 'circle']) ) )
-    line_a = add_element(line(A[0], A[1], classes=['blue']) )
-    A.append( add_point( point(A3x, 0, classes=['A', 'diamond']) ) )
-    line_a.pts.add(A[-1])
-
-    B = []
-    B1 = add_point(B1)
-    B2 = add_point(B2)
-    B.append( B1 )
-    B.append( B2 )
-
-    line_b = line(B1, B2, classes=['blue']) 
-    add_element(line_b)
-    y_val = line_get_y(line_b, B3x)
-    B.append( add_point( point(B3x, y_val, classes=['B']) ) )
-    line_b.pts.add(B[-1])
-
-    return A, B
-
 
 pappus_lines = []
 Ax = 3
@@ -92,21 +66,27 @@ for perm_id in range(6):
     bounds = set_bounds(limx, limy)
 
     ax.clear()
+    ax_btm.clear()
     title = f'G E O M E T O R • pappus • perm: {perm_id}'
-    ax.set_title(title, fontdict={'color': '#960', 'size':'small'})
-    ax.axis(False)
+
+    ax.axis('off')
+    ax_btm.axis('off')
+    ax.set_aspect('equal')
+    plt.tight_layout()
+
+    title = f'G E O M E T O R'
+    fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
     triangle_sq = add_polygon(polygon(get_pts_by_class('square'), classes=['yellow']))
     triangle_cir = add_polygon(polygon(get_pts_by_class('circle'), classes=['cyan']))
     triangle_dia = add_polygon(polygon(get_pts_by_class('diamond'), classes=['magenta']))
 
     folder = f'{NAME}/{perm_id}'
-    build_sequence(folder, ax, history, bounds)
+    build_sequence(folder, ax, ax_btm, history, bounds)
 
     print_log('\nPlot Harmonic Ranges')
-    #  folder += '/ranges'
-    plot_ranges(folder, ax, history, harmonics, bounds)
-    plot_all_ranges(folder, ax, history, harmonics, bounds)
+    plot_ranges(folder, ax, ax_btm, history, harmonics, bounds)
+    plot_all_ranges(folder, ax, ax_btm, history, harmonics, bounds)
 
     print_log(f'\nCOMPLETE: {NAME}')
     print_log(f'    elements: {len(elements)}')
