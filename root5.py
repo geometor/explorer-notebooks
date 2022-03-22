@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root5-diags'
+NAME = 'root5-diags2'
 log_init(NAME)
 start_time = timer()
 
@@ -59,11 +59,15 @@ add_element(line(pts[32], goA, classes=['set2']))
 add_element(line(pts[31], goB, classes=['set1']))
 add_element(line(pts[32], goB, classes=['set1']))
 
+# half unit circle
 add_element(circle(pts[6], pts[0]))
 
-#  add_element(line(pts[157], pts[156]))
-#  add_element(line(pts[104], pts[109]))
-#  add_element(line(pts[53], pts[18]))
+# cross
+add_element(line(pts[293], pts[292]))
+add_element(line(pts[293], pts[291]))
+
+add_element(line(pts[294], pts[292]))
+add_element(line(pts[294], pts[291]))
 
 #  add_element(circle(pts[32], pts[157], classes=['gold']))
 #  add_element(circle(pts[32], pts[158], classes=['gold']))
@@ -86,6 +90,7 @@ print_log(f'\nelapsed: {elapsed(start_time)}')
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
 limx, limy = get_limits_from_points(pts, margin=.25)
+limx, limy = adjust_lims(limx, limy)
 bounds = set_bounds(limx, limy)
 print_log()
 print_log(f'limx: {limx}')
@@ -113,12 +118,7 @@ print_log('\nPlot Goldens')
 plot_sections(NAME, ax, history, goldens, bounds)
 
 print_log('\nPlot Golden Groups')
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
+plot_all_groups(NAME, ax, history, groups, bounds)
 
 plot_all_sections(NAME, ax, history, goldens, bounds)
 

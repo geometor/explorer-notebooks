@@ -137,6 +137,7 @@ print_log('\nANALYZE Summary:')
 print_log(f'    harmonics: {len(harmonics)}')
 
 limx, limy = get_limits_from_points(pts)
+limx, limy = adjust_lims(limx, limy)
 bounds = set_bounds(limx, limy)
 
 # ANALYZE ***************************

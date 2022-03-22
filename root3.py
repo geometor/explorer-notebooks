@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root3-full'
+NAME = 'root3-full2'
 log_init(NAME)
 
 start_time = timer()
@@ -89,8 +89,8 @@ print_log(f'\nelapsed: {elapsed(start_time)}')
 
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
-#  limx, limy = (-2, 2), (-1.5, 1.5)
 limx, limy = get_limits_from_points(pts, margin=.25)
+limx, limy = adjust_lims(limx, limy)
 bounds = set_bounds(limx, limy)
 print_log()
 print_log(f'limx: {limx}')
@@ -110,21 +110,16 @@ plot_sequence(ax, history, bounds)
 snapshot(NAME, '00000.png')
 #  plt.show()
 
-#  print_log('\nPlot Build')
-#  build_sequence(NAME, ax, history, bounds)
+print_log('\nPlot Build')
+build_sequence(NAME, ax, history, bounds)
 
-#  print_log('\nPlot Goldens')
-#  plot_sections(NAME, ax, history, goldens, bounds)
+print_log('\nPlot Goldens')
+plot_sections(NAME, ax, history, goldens, bounds)
 
 print_log('\nPlot Golden Groups')
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
+plot_all_groups(NAME, ax, history, groups, bounds)
 
-#  plot_all_sections(NAME, ax, history, goldens, bounds)
+plot_all_sections(NAME, ax, history, goldens, bounds)
 
 print_log(f'\nCOMPLETE: {NAME}')
 print_log(f'    elements: {len(elements)}')

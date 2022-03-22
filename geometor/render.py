@@ -410,6 +410,15 @@ def plot_group_sections(NAME, ax, history, sections, bounds, filename, title='go
     snapshot(f'{NAME}/groups', f'{filename}-zoom.png')
 
 
+def plot_all_groups(NAME, ax, history, groups, bounds):
+    sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
+    for i, group in enumerate(sorted_groups_keys):
+        i = str(i).zfill(5)
+        
+        title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
+        plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
+
+
 def plot_all_ranges(NAME, ax, history, ranges, bounds):
     xlabel = f'ranges: {len(ranges)}'
     ax_prep(ax, bounds, xlabel)
