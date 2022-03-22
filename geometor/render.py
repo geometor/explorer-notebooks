@@ -18,7 +18,12 @@ import math as math
 from geometor.model import *
 from geometor.utils import *
 
-plt.rcParams['figure.figsize'] = [16, 9]
+FIG_W = 16
+FIG_H = 9
+FIG_W = 9
+FIG_H = 9
+
+plt.rcParams['figure.figsize'] = [FIG_W, FIG_H]
 plt.style.use('dark_background')
 
 style_radius = {'color': '#c099', 'marker': ''}
@@ -47,7 +52,6 @@ classes['circle'] = {'color':'#0FF', 'markersize':7, 'marker':'o'}
 classes['square'] = {'color':'#FF0', 'markersize':7, 'marker':'s'}
 classes['diamond'] = {'color':'#F0F', 'markersize':7, 'marker':'D'}
 
-
 classes['nine'] = {'edgecolor':'#3F06', 'facecolor':'#3F03', 'linestyle':'-', 'linewidth':1}
 classes['yellow'] = {'edgecolor':'#FF09', 'facecolor':'#FF03', 'linestyle':'-', 'linewidth':1}
 classes['cyan'] = {'color':'#0FF3', 'linestyle':'-'}
@@ -75,21 +79,24 @@ def plt_init_polar():
     mp.style.use('dark_background')
 
 
-def ax_prep(ax, bounds, xlabel):
-        ax.clear()
-        ax.axis(True)
-        ax.spines['bottom'].set_color('k')
-        ax.spines['top'].set_color('k')
-        ax.spines['right'].set_color('k')
-        ax.spines['left'].set_color('k')
-        ax.tick_params(axis='x', colors='k')
-        ax.tick_params(axis='y', colors='k')
-        vmin = bounds.vertices[0]
-        vmax = bounds.vertices[2]
-        ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
-        ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
-        ax.invert_yaxis()
-        ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
+def ax_prep(ax, ax_btm, bounds, xlabel):
+    ax.clear()
+    ax_btm.clear()
+    ax.axis(False)
+    ax_btm.axis(False)
+    #  ax.spines['bottom'].set_color('k')
+    #  ax.spines['top'].set_color('k')
+    #  ax.spines['right'].set_color('k')
+    #  ax.spines['left'].set_color('k')
+    #  ax.tick_params(axis='x', colors='k')
+    #  ax.tick_params(axis='y', colors='k')
+    vmin = bounds.vertices[0]
+    vmax = bounds.vertices[2]
+    ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
+    ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
+    #  ax.invert_yaxis()
+    #  ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
+    ax_btm.text(0.5, 0.5, xlabel, horizontalalignment='center', fontdict={'color': 'w', 'size':'20'})
 
 
 def plot_circle(ax, circle, color='', linestyle='', linewidth='', fill=''):
@@ -201,6 +208,7 @@ def highlight_points(ax, pts,
                 ys = [pt.y.evalf()]
 
                 ax.plot(xs, ys, **styles)
+
 
 def plot_selected_points(ax, pts,
                color='#FF09',
@@ -335,7 +343,7 @@ def plot_sequence(ax, sequence, bounds):
 
 
 
-def build_sequence(folder, ax, sequence, bounds):
+def build_sequence(folder, ax, ax_btm, sequence, bounds):
     '''create snapshot for each step in sequence'''
     for i in range(1, len(sequence)+1):
         last_step = sequence[0:i][-1]
@@ -369,7 +377,7 @@ def build_sequence(folder, ax, sequence, bounds):
             typ = 'polygon'
             xlabel = f'area: ${sp.latex(area)}$ • perim: ${sp.latex(perim)}$'
 
-        ax_prep(ax, bounds, xlabel)
+        ax_prep(ax, ax_btm, bounds, xlabel)
 
         if isinstance(last_step, spg.Point):
             plot_selected_points(ax, [last_step])
@@ -383,9 +391,9 @@ def build_sequence(folder, ax, sequence, bounds):
         snapshot(folder, f'{str(i).zfill(5)}-{typ}.png')
 
 
-def plot_group_sections(NAME, ax, history, sections, bounds, filename, title='golden sections'):
+def plot_group_sections(NAME, ax, ax_btm, history, sections, bounds, filename, title='golden sections'):
     xlabel = f'[{len(sections)}] • {title}'
-    ax_prep(ax, bounds, xlabel)
+    ax_prep(ax, ax_btm, bounds, xlabel)
     section_pts = set()
     group_pts = set()
     for i, section in enumerate(sections):
@@ -410,18 +418,19 @@ def plot_group_sections(NAME, ax, history, sections, bounds, filename, title='go
     snapshot(f'{NAME}/groups', f'{filename}-zoom.png')
 
 
-def plot_all_groups(NAME, ax, history, groups, bounds):
+def plot_all_groups(NAME, ax, ax_btm, history, groups, bounds):
     sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
     for i, group in enumerate(sorted_groups_keys):
         i = str(i).zfill(5)
         
-        title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-        plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
+        groupf = str(float(group.evalf()))[0:6]
+        title=f'${sp.latex(group)} \\ \\approx {groupf}\\ldots$'
+        plot_group_sections(NAME, ax, ax_btm, history, groups[group], bounds, filename=i, title=title)
 
 
-def plot_all_ranges(NAME, ax, history, ranges, bounds):
+def plot_all_ranges(NAME, ax, ax_btm,  history, ranges, bounds):
     xlabel = f'ranges: {len(ranges)}'
-    ax_prep(ax, bounds, xlabel)
+    ax_prep(ax, ax_btm,  bounds, xlabel)
     for i, rng in enumerate(ranges):
         gold_points(ax, rng)
         seg = segment(rng[0], rng[3])
@@ -431,9 +440,9 @@ def plot_all_ranges(NAME, ax, history, ranges, bounds):
     snapshot(f'{NAME}/ranges', f'all.png')
 
 
-def plot_all_sections(NAME, ax, history, sections, bounds):
+def plot_all_sections(NAME, ax, ax_btm,  history, sections, bounds):
     xlabel = f'golden sections: {len(sections)}'
-    ax_prep(ax, bounds, xlabel)
+    ax_prep(ax, ax_btm,  bounds, xlabel)
     for i, section in enumerate(sections):
         #  print(i, section
         num = str(i).zfill(5)
@@ -447,17 +456,17 @@ def plot_all_sections(NAME, ax, history, sections, bounds):
     plot_sequence(ax, history, bounds)
     snapshot(f'{NAME}/sections', f'all.png')
 
-def adjust_ratio(w, h, r=16/9):
+def adjust_ratio(w, h, r=FIG_W/FIG_H):
     if w / h < r:
         w = r * h
     if w / h > r:
         h = w / r
     return w, h
 
-def adjust_lims(limx, limy):
+def adjust_lims(limx, limy, r=FIG_W/FIG_H):
     w = abs(limx[1] - limx[0])
     h = abs(limy[1] - limy[0])
-    w2, h2 = adjust_ratio(w, h)
+    w2, h2 = adjust_ratio(w, h, r)
     xdiff = abs(w2 - w) / 2
     ydiff = abs(h2 - h) / 2
     limx[0] -= xdiff
@@ -467,17 +476,17 @@ def adjust_lims(limx, limy):
     return limx, limy
 
 
-def plot_sections(NAME, ax, history, sections, bounds):
+def plot_sections(NAME, ax, ax_btm,  history, sections, bounds):
     for i, section in enumerate(sections):
         num = str(i).zfill(5)
         s0 = section[0].length.simplify()
         s0 = sp.sqrtdenest(s0)
-        s0f = float(s0.evalf())
+        s0f = str(float(s0.evalf()))[0:6]
         s1 = section[1].length.simplify()
         s1 = sp.sqrtdenest(s1)
-        s1f = float(s1.evalf())
-        xlabel = f'${s0f} \\approx {sp.latex(s0)} \\ :\\  {sp.latex(s1)} \\approx {s1f}$'
-        ax_prep(ax, bounds, xlabel)
+        s1f = str(float(s1.evalf()))[0:6]
+        xlabel = f'${s0f}\\ldots \\approx \\ {sp.latex(s0)} \\ :\\  {sp.latex(s1)} \\ \\approx {s1f}\\ldots$'
+        ax_prep(ax, ax_btm,  bounds, xlabel)
         section_pts = set()
         for seg in section:
             for pt in seg.points:
@@ -497,7 +506,7 @@ def plot_sections(NAME, ax, history, sections, bounds):
         snapshot(f'{NAME}/sections', f'{num}-zoom.png')
 
 
-def plot_ranges(NAME, ax, history, ranges, bounds):
+def plot_ranges(NAME, ax, ax_btm,  history, ranges, bounds):
     '''plot each range from points'''
     for i, rng in enumerate(ranges):
         ad = segment(rng[0], rng[3]).length.simplify()
@@ -505,16 +514,16 @@ def plot_ranges(NAME, ax, history, ranges, bounds):
         ac = segment(rng[0], rng[2]).length.simplify()
         bc = segment(rng[1], rng[2]).length.simplify()
         #  return sp.simplify((ad / cd) - (ac / bc))
-        ratio1 = float((ad/cd).evalf())
-        ratio2 = float((ac/bc).evalf())
+        ratio1 = str(float((ad/cd).evalf()))[0:6]
+        ratio2 = str(float((ac/bc).evalf()))[0:6]
 
         num = str(i).zfill(5)
         xlabel = num
         # escape outer brackers for \frac
-        xlabel = f'${ratio1} \\approx \\frac {{ {sp.latex(ad)} }} {{{sp.latex(cd)} }}$'
+        xlabel = f'${ratio1}\\ldots \\approx \\ \\frac {{ {sp.latex(ad)} }} {{{sp.latex(cd)} }}$'
         xlabel += f'  :  '
-        xlabel += f'$ \\frac {{ {sp.latex(ac)} }} {{{sp.latex(bc)} }} \\approx {ratio2}$'
-        ax_prep(ax, bounds, xlabel)
+        xlabel += f'$ \\frac {{ {sp.latex(ac)} }} {{{sp.latex(bc)} }} \\ \\approx {ratio2}\\ldots$'
+        ax_prep(ax, ax_btm,  bounds, xlabel)
         #  print(i, rng)
         gold_points(ax, rng)
         seg = segment(rng[0], rng[3])

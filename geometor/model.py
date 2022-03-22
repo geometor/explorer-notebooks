@@ -30,7 +30,8 @@ history = []
 pts = []
 elements = []
 polygons = []
-
+goldens = []
+groups = {}
 
 def get_limits_from_points(pts, margin=1):
     '''find x, y limits from a set of points'''
@@ -358,6 +359,10 @@ def get_elements_lines():
     return [el for el in elements if isinstance(el, spg.Line2D)]
 
 
+def get_elements_circles():
+    return [el for el in elements if isinstance(el, spg.Circle)]
+
+
 def analyze_model():
     '''Analyze all lines in model for golden sections'''
     print_log(f'\nanalyze_model:')
@@ -407,4 +412,35 @@ def group_sections(sections):
     return groups
 
 
+def model_summary(NAME, start_time):
+    print_log(f'\nMODEL Summary: {NAME}')
+    print_log(f'    history: {len(history)}')
+    print_log(f'    elements: {len(elements)}')
+    lines = get_elements_lines()
+    print_log(f'        lines: {len(lines)}')
+    circles = get_elements_circles()
+    print_log(f'        circles: {len(circles)}')
+    print_log(f'    points: {len(lines)}')
+    print_log(f'\nelapsed: {elapsed(start_time)}')
 
+
+def analyze_summary(NAME, start_time, goldens, groups):
+    print_log(f'\nANALYZE Summary: {NAME}')
+    print_log(f'    goldens: {len(goldens)}')
+    print_log(f'    groups: {len(groups)}')
+    print_log(f'\nelapsed: {elapsed(start_time)}')
+
+
+def complete_summary(NAME, start_time, goldens, groups): 
+    print_log(f'\nCOMPLETE: {NAME}')
+    print_log(f'    elements: {len(elements)}')
+    lines = get_elements_lines()
+    print_log(f'        lines: {len(lines)}')
+    circles = get_elements_circles()
+    print_log(f'        circles: {len(circles)}')
+    print_log(f'    points:   {len(pts)}')
+    print_log(f'    ---')
+    print_log(f'    goldens: {len(goldens)}')
+    print_log(f'    groups: {len(groups)}')
+    print_log(f'\nelapsed: {elapsed(start_time)}')
+          

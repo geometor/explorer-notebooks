@@ -24,108 +24,52 @@ bl = add_element(line(pts[4], pts[5], classes=['bisector']))
 add_element(circle(pts[0], pts[3]))
 add_element(circle(pts[1], pts[2]))
 
-print_log('\nMODEL Summary:')
-print_log(f'    elements: {len(elements)}')
-print_log(f'    points: {len(pts)}')
-print_log(f'\nelapsed: {elapsed(start_time)}')
-
+model_summary(NAME, start_time)
 
 # ANALYZE ***************************
 print_log(f'\nANALYZE: {NAME}')
 goldens, groups = analyze_model()
-print_log('\nANALYZE Summary:')
-print_log(f'    goldens: {len(goldens)}')
-print_log(f'    groups: {len(groups)}')
-print_log(f'\nelapsed: {elapsed(start_time)}')
 
+analyze_summary(NAME, start_time, goldens, groups)
 
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
 limx, limy = get_limits_from_points(pts, margin=.25)
-limx, limy = adjust_lims(limx, limy)
+limx, limy = adjust_lims(limx, limy, r=4/3)
 bounds = set_bounds(limx, limy)
 print_log()
 print_log(f'limx: {limx}')
 print_log(f'limy: {limy}')
 
 #  plt.ion()
-fig, ax = plt.subplots()
+fig, (ax, ax_btm) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [10, 1]})
+ax_btm.axis('off')
+ax.axis('off')
 ax.set_aspect('equal')
-#  limx, limy = (-2, 2), (-1.5, 1.5)
+plt.tight_layout()
 
 title = f'G E O M E T O R'
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
 print_log('\nPlot Summary')
 xlabel = f'elements: {len(elements)} | points: {len(pts)}'
-ax_prep(ax, bounds, xlabel)
+ax_prep(ax, ax_btm, bounds, xlabel)
 plot_sequence(ax, history, bounds)
 snapshot(NAME, '00000.png')
 #  plt.show()
 
 print_log('\nPlot Build')
-build_sequence(NAME, ax, history, bounds)
+build_sequence(NAME, ax, ax_btm, history, bounds)
 
 print_log('\nPlot Goldens')
-plot_sections(NAME, ax, history, goldens, bounds)
+plot_sections(NAME, ax, ax_btm, history, goldens, bounds)
 
 print_log('\nPlot Golden Groups')
-plot_all_groups(NAME, ax, history, groups, bounds)
+plot_all_groups(NAME, ax, ax_btm, history, groups, bounds)
 
-plot_all_sections(NAME, ax, history, goldens, bounds)
+plot_all_sections(NAME, ax, ax_btm, history, goldens, bounds)
 
-print_log(f'\nCOMPLETE: {NAME}')
-print_log(f'    elements: {len(elements)}')
-print_log(f'    points:   {len(pts)}')
-print_log(f'    goldens:  {len(goldens)}')
-print_log(f'\nelapsed: {elapsed(start_time)}')
-      
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
+complete_summary(NAME, start_time, goldens, groups)
 
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
 
 plt.show()

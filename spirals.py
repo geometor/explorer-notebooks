@@ -13,6 +13,7 @@ plt_init_polar()
 #  theta = 2 * np.pi * radii
 
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+
 ax.set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
 ax.set_axis_off()
 

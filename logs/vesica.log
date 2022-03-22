@@ -76,11 +76,14 @@ INFO:root:* add_point: Point2D(0, sqrt(15)/2)
 INFO:root:  ! Point2D(0, sqrt(15)/2) found at index: 9
 INFO:root:  + Circle(Point2D(1/2, 0), 2)
 INFO:root:
-MODEL Summary:
+MODEL Summary: vesica
+INFO:root:    history: 17
 INFO:root:    elements: 6
-INFO:root:    points: 11
+INFO:root:        lines: 2
+INFO:root:        circles: 4
+INFO:root:    points: 2
 INFO:root:
-elapsed: 0:00:00.999555
+elapsed: 0:00:05.642939
 INFO:root:
 ANALYZE: vesica
 INFO:root:
@@ -100,55 +103,59 @@ INFO:root:            GOLDEN: (Point2D(0, -sqrt(15)/2), Point2D(0, -sqrt(3)/2), 
 INFO:root:            GOLDEN: (Point2D(0, -sqrt(3)/2), Point2D(0, sqrt(3)/2), Point2D(0, sqrt(15)/2))
 INFO:root:        goldens: 2
 INFO:root:
-ANALYZE Summary:
+ANALYZE Summary: vesica
 INFO:root:    goldens: 2
 INFO:root:    groups: 2
 INFO:root:
-elapsed: 0:00:01.142662
+elapsed: 0:00:06.619497
 INFO:root:
 PLOT: vesica
 INFO:root:
-INFO:root:limx: [-3.887096307739926, 3.887096307739926]
+INFO:root:limx: [-2.9153222308049447, 2.9153222308049447]
 INFO:root:limy: [-2.1864916731037085, 2.1864916731037085]
 INFO:root:
 Plot Summary
-INFO:root:    * /home/phi/Sessions/vesica/00000.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00000.png
 INFO:root:
 Plot Build
-INFO:root:    * /home/phi/Sessions/vesica/00001-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00002-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00003-line.png
-INFO:root:    * /home/phi/Sessions/vesica/00004-circle.png
-INFO:root:    * /home/phi/Sessions/vesica/00005-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00006-circle.png
-INFO:root:    * /home/phi/Sessions/vesica/00007-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00008-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00009-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00010-line.png
-INFO:root:    * /home/phi/Sessions/vesica/00011-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00012-circle.png
-INFO:root:    * /home/phi/Sessions/vesica/00013-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00014-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00015-point.png
-INFO:root:    * /home/phi/Sessions/vesica/00016-circle.png
-INFO:root:    * /home/phi/Sessions/vesica/00017-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00001-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00002-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00003-line.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00004-circle.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00005-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00006-circle.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00007-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00008-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00009-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00010-line.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00011-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00012-circle.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00013-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00014-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00015-point.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00016-circle.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/00017-point.png
 INFO:root:
 Plot Goldens
-INFO:root:    * /home/phi/Sessions/vesica/sections/00000.png
-INFO:root:    * /home/phi/Sessions/vesica/sections/00000-zoom.png
-INFO:root:    * /home/phi/Sessions/vesica/sections/00001.png
-INFO:root:    * /home/phi/Sessions/vesica/sections/00001-zoom.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/sections/00000.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/sections/00000-zoom.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/sections/00001.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/sections/00001-zoom.png
 INFO:root:
 Plot Golden Groups
-INFO:root:    * /home/phi/Sessions/vesica/groups/00000.png
-INFO:root:    * /home/phi/Sessions/vesica/groups/00000-zoom.png
-INFO:root:    * /home/phi/Sessions/vesica/groups/00001.png
-INFO:root:    * /home/phi/Sessions/vesica/groups/00001-zoom.png
-INFO:root:    * /home/phi/Sessions/vesica/sections/all.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/groups/00000.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/groups/00000-zoom.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/groups/00001.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/groups/00001-zoom.png
+INFO:root:    * /home/phiarchitect/Sessions/vesica/sections/all.png
 INFO:root:
 COMPLETE: vesica
 INFO:root:    elements: 6
+INFO:root:        lines: 2
+INFO:root:        circles: 4
 INFO:root:    points:   11
-INFO:root:    goldens:  2
+INFO:root:    ---
+INFO:root:    goldens: 2
+INFO:root:    groups: 2
 INFO:root:
-elapsed: 0:00:07.947129
+elapsed: 0:00:36.125493
