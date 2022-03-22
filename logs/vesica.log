@@ -83,7 +83,7 @@ INFO:root:        lines: 2
 INFO:root:        circles: 4
 INFO:root:    points: 2
 INFO:root:
-elapsed: 0:00:00.905752
+elapsed: 0:00:00.906301
 INFO:root:
 ANALYZE: vesica
 INFO:root:
@@ -107,7 +107,7 @@ ANALYZE Summary: vesica
 INFO:root:    goldens: 2
 INFO:root:    groups: 2
 INFO:root:
-elapsed: 0:00:01.025927
+elapsed: 0:00:01.049098
 INFO:root:
 PLOT: vesica
 INFO:root:
@@ -119,22 +119,39 @@ INFO:root:    * /home/phi/Sessions/vesica/00000.png
 INFO:root:
 Plot Build
 INFO:root:    * /home/phi/Sessions/vesica/00001-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00001-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00002-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00002-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00003-line.png
+INFO:root:    * /home/phi/Sessions/vesica/00003-line-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00004-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00004-circle-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00005-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00005-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00006-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00006-circle-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00007-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00007-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00008-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00008-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00009-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00009-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00010-line.png
+INFO:root:    * /home/phi/Sessions/vesica/00010-line-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00011-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00011-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00012-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00012-circle-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00013-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00013-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00014-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00014-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00015-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00015-point-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00016-circle.png
+INFO:root:    * /home/phi/Sessions/vesica/00016-circle-zoom.png
 INFO:root:    * /home/phi/Sessions/vesica/00017-point.png
+INFO:root:    * /home/phi/Sessions/vesica/00017-point-zoom.png
 INFO:root:
 Plot Goldens
 INFO:root:    * /home/phi/Sessions/vesica/sections/00000.png
@@ -158,4 +175,4 @@ INFO:root:    ---
 INFO:root:    goldens: 2
 INFO:root:    groups: 2
 INFO:root:
-elapsed: 0:00:06.350962
+elapsed: 0:00:07.313080

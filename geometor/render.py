@@ -405,7 +405,11 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
         if isinstance(last_step, spg.Line):
             current_pts.extend(last_step.points)
         if isinstance(last_step, spg.Circle):
-            current_pts.extend(last_step.bounds.vertices)
+            bd = last_step.bounds
+            print(f'****bd: {bd})')
+            pmin = point(bd[0], bd[1])
+            pmax = point(bd[2], bd[3])
+            current_pts.extend([pmin, pmax])
         if isinstance(last_step, spg.Polygon):
             current_pts.extend(last_step.vertices)
 
