@@ -6,7 +6,8 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'star-5'
+NAME = 'star-'
+NAME += input(f'\nsession name: {NAME}')
 log_init(NAME)
 start_time = timer()
 
@@ -22,11 +23,11 @@ add_element(circle(pts[5], pts[0]))
 add_element(circle(pts[0], pts[6]))
 add_element(circle(pts[1], pts[6]))
 
-add_element(line(pts[11], pts[23], classes=['green']))
 
 add_element(circle(pts[3], pts[0]))
 add_element(circle(pts[2], pts[1]))
 
+add_element(line(pts[11], pts[23], classes=['green']))
 add_element(line(pts[4], pts[39], classes=['blue']))
 
 add_element(line(pts[4], pts[50], classes=['blue']))

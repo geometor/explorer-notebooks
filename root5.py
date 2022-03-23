@@ -6,7 +6,8 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'root5-diags2'
+NAME = 'root5-'
+NAME += input(f'\nsession name: {NAME}')
 log_init(NAME)
 start_time = timer()
 

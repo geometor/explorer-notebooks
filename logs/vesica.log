@@ -83,7 +83,7 @@ INFO:root:        lines: 2
 INFO:root:        circles: 4
 INFO:root:    points: 2
 INFO:root:
-elapsed: 0:00:00.906301
+elapsed: 0:00:00.966301
 INFO:root:
 ANALYZE: vesica
 INFO:root:
@@ -107,7 +107,7 @@ ANALYZE Summary: vesica
 INFO:root:    goldens: 2
 INFO:root:    groups: 2
 INFO:root:
-elapsed: 0:00:01.049098
+elapsed: 0:00:01.110470
 INFO:root:
 PLOT: vesica
 INFO:root:
@@ -175,4 +175,4 @@ INFO:root:    ---
 INFO:root:    goldens: 2
 INFO:root:    groups: 2
 INFO:root:
-elapsed: 0:00:07.313080
+elapsed: 0:00:08.370463

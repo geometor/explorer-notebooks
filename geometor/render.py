@@ -387,10 +387,23 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
 
         if isinstance(last_step, spg.Point):
             plot_selected_points(ax, [last_step])
+            parents = list(last_step.parents)
+            
+            if not pt.classes.count('start'):
+                for el in parents:
+                    if type(el) == sp.Line2D:
+                        plot_line(ax, el, bounds, linestyle='-')
+                    elif type(el) == sp.Circle:
+                        plot_circle(ax, el, linestyle='-')
         if isinstance(last_step, spg.Line):
+            seg = segment(last_step.p1, last_step.p2, classes=last_step.classes)
+            plot_segment2(ax, seg)
             plot_selected_points(ax, last_step.points)
             plot_line(ax, last_step, bounds, linestyle='-')
         if isinstance(last_step, spg.Circle):
+            #  seg = last_step.radius
+            seg = segment(last_step.center, last_step.radius_pt, classes=last_step.classes)
+            plot_segment2(ax, seg)
             plot_selected_points(ax, [last_step.center, last_step.radius_pt])
             plot_circle(ax, last_step, linestyle='-')
         plot_sequence(ax, sequence[0:i], bounds)
@@ -406,7 +419,6 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
             current_pts.extend(last_step.points)
         if isinstance(last_step, spg.Circle):
             bd = last_step.bounds
-            print(f'****bd: {bd})')
             pmin = point(bd[0], bd[1])
             pmax = point(bd[2], bd[3])
             current_pts.extend([pmin, pmax])
@@ -472,6 +484,7 @@ def plot_all_ranges(NAME, ax, ax_btm,  history, ranges, bounds):
 
 def plot_all_sections(NAME, ax, ax_btm,  history, sections, bounds):
     xlabel = f'golden sections: {len(sections)}'
+    all_pts = set()
     ax_prep(ax, ax_btm,  bounds, xlabel)
     for i, section in enumerate(sections):
         #  print(i, section
@@ -480,11 +493,21 @@ def plot_all_sections(NAME, ax, ax_btm,  history, sections, bounds):
         for seg in section:
             for pt in seg.points:
                 section_pts.add(pt)
+                all_pts.add(pt)
         gold_points(ax, section_pts)
         plot_segments(ax, section)
 
     plot_sequence(ax, history, bounds)
     snapshot(f'{NAME}/sections', f'all.png')
+
+    # zoom around section points
+    limx, limy = get_limits_from_points(all_pts, margin=.5)
+    limx, limy = adjust_lims(limx, limy)
+    ax.set_xlim(limx[0], limx[1])
+    ax.set_ylim(limy[0], limy[1])
+    
+    snapshot(f'{NAME}/sections', f'all-zoom.png')
+
 
 def adjust_ratio(w, h, r=FIG_W/FIG_H):
     if w / h < r:

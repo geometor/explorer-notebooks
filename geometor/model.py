@@ -68,6 +68,7 @@ def set_bounds(limx, limy):
 def point(x_val, y_val, parents=set(), classes=[], style={}):
     '''make sympy.geometry.Point'''
     pt = spg.Point(sp.simplify(x_val), sp.simplify(y_val))
+    pt.parents = parents
     pt.elements = parents
     pt.classes = classes
     pt.style = style
@@ -184,8 +185,12 @@ def add_intersection_points_mp(el):
             for pt in result:
                 pt.classes = []
                 pt.elements = set()
-                pt = add_point(pt)
                 pt.elements.update({el, elements[index]})
+                if not hasattr(pt, 'parents'):
+                    if not pt.classes.count('start'):
+                        pt.parents = set()
+                        pt.parents.update({el, elements[index]})
+                pt = add_point(pt)
                 el.pts.add(pt)
                 elements[index].pts.add(pt)
 
