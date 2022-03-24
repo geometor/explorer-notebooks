@@ -87,19 +87,19 @@ classes['cyanpt'] = {'color':'#C90', 'markersize':8, 'marker':'o'}
 classes['magenta'] = {'color':'#F0F3', 'linestyle':'-'}
 
 
-def plt_init(limx='', limy=''):
-    '''configure the MatPlotLib stateful plot engine'''
-    plt.style.use('dark_background')
-    #  plt.figure(num=1, figsize=(7, 5), dpi=120)
-    plt.gca().set_aspect('equal')
+#  def plt_init(limx='', limy=''):
+    #  '''configure the MatPlotLib stateful plot engine'''
+    #  plt.style.use('dark_background')
+    #  #  plt.figure(num=1, figsize=(7, 5), dpi=120)
+    #  plt.gca().set_aspect('equal')
 
-    if limx:
-        ax.set_xlim(limx[0], limx[1])
-    if limy:
-        ax.set_ylim(limy[0], limy[1])
-    ax.set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
-    plt.axis(False)
-    plt.tight_layout()
+    #  if limx:
+        #  ax.set_xlim(limx[0], limx[1])
+    #  if limy:
+        #  ax.set_ylim(limy[0], limy[1])
+    #  ax.set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
+    #  plt.axis(False)
+    #  plt.tight_layout()
 
 
 def plt_init_polar():
@@ -124,7 +124,7 @@ def ax_prep(ax, ax_btm, bounds, xlabel):
     ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
     ax.invert_yaxis()
     #  ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
-    ax_btm.text(0.5, 0.5, xlabel, horizontalalignment='center', fontdict={'color': 'w', 'size':'20'})
+    ax_btm.text(0.5, 0.5, xlabel, ha='center', va='center', fontdict={'color': 'w', 'size':'20'})
 
 
 def plot_circle(ax, circle, color='', linestyle='', linewidth='', fill=''):

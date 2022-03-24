@@ -6,7 +6,7 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'vesica'
+NAME = 'subplots'
 log_init(NAME)
 start_time = timer()
 
@@ -30,13 +30,13 @@ print_log(f'    points: {len(pts)}')
 print_log(f'\nelapsed: {elapsed(start_time)}')
 
 
-# ANALYZE ***************************
-print_log(f'\nANALYZE: {NAME}')
-goldens, groups = analyze_model()
-print_log('\nANALYZE Summary:')
-print_log(f'    goldens: {len(goldens)}')
-print_log(f'    groups: {len(groups)}')
-print_log(f'\nelapsed: {elapsed(start_time)}')
+#  ANALYZE ***************************
+#  print_log(f'\nANALYZE: {NAME}')
+#  goldens, groups = analyze_model()
+#  print_log('\nANALYZE Summary:')
+#  print_log(f'    goldens: {len(goldens)}')
+#  print_log(f'    groups: {len(groups)}')
+#  print_log(f'\nelapsed: {elapsed(start_time)}')
 
 
 # PLOT *********************************
@@ -48,84 +48,43 @@ print_log()
 print_log(f'limx: {limx}')
 print_log(f'limy: {limy}')
 
-#  plt.ion()
-fig, ax = plt.subplots()
+fig = plt.figure(1)
+#  gs = fig.add_gridspec(nrows=2, ncols=1, height_ratios=[20, 1], left=.05, right=.95, hspace=.05, wspace=.05 )
+#  gs = fig.add_gridspec(nrows=2, ncols=1, height_ratios=[.95, .05], left=0, right=1, hspace=0, wspace=0 )
+#  ax = fig.add_subplot(gs[0, :])
+#  ax_btm = fig.add_subplot(gs[1, :])
+gs = fig.add_gridspec(nrows=20, ncols=1, left=0, right=1, hspace=0, wspace=0 )
+ax = fig.add_subplot(gs[0:18, :])
+ax_btm = fig.add_subplot(gs[19, :])
 ax.set_aspect('equal')
-#  limx, limy = (-2, 2), (-1.5, 1.5)
 
 title = f'G E O M E T O R'
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
 print_log('\nPlot Summary')
 xlabel = f'elements: {len(elements)} | points: {len(pts)}'
-ax_prep(ax, bounds, xlabel)
+ax_prep(ax, ax_btm, bounds, xlabel)
+#  plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
+plt.subplots_adjust(left=0, right=1, top=1, bottom=0)
+ax.patch.set_facecolor('#FF0')
+ax.patch.set_alpha(1)
 plot_sequence(ax, history, bounds)
+fig.tight_layout()
 snapshot(NAME, '00000.png')
-#  plt.show()
+fig.show()
 
-print_log('\nPlot Build')
-build_sequence(NAME, ax, history, bounds)
+#  print_log('\nPlot Build')
+#  build_sequence(NAME, ax, ax_btm, history, bounds)
 
-print_log('\nPlot Goldens')
-plot_sections(NAME, ax, history, goldens, bounds)
+#  print_log('\nPlot Goldens')
+#  plot_sections(NAME, ax, ax_btm, history, goldens, bounds)
 
-print_log('\nPlot Golden Groups')
-plot_all_groups(NAME, ax, history, groups, bounds)
+#  print_log('\nPlot Golden Groups')
+#  plot_all_groups(NAME, ax, ax_btm, history, groups, bounds)
 
-plot_all_sections(NAME, ax, history, goldens, bounds)
+#  plot_all_sections(NAME, ax, ax_btm, history, goldens, bounds)
 
-print_log(f'\nCOMPLETE: {NAME}')
-print_log(f'    elements: {len(elements)}')
-print_log(f'    points:   {len(pts)}')
-print_log(f'    goldens:  {len(goldens)}')
-print_log(f'\nelapsed: {elapsed(start_time)}')
-      
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-print_log('\nPlot Golden Groups')
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
+#  complete_summary(NAME, start_time, goldens, groups)
 
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
-sorted_groups_keys = sorted(groups.keys(), key=lambda key: float(key.evalf()), reverse=True)
-for i, group in enumerate(sorted_groups_keys):
-    i = str(i).zfill(3)
-    
-    title=f'${sp.latex(group)} \\approx {float(group.evalf())}$'
-    plot_group_sections(NAME, ax, history, groups[group], bounds, filename=i, title=title)
-
+ax.patch.set_facecolor('#FF0')
 plt.show()
