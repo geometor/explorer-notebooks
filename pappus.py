@@ -11,13 +11,14 @@ from itertools import permutations
 fig, (ax, ax_btm) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [10, 1]})
 ax.set_aspect('equal')
 
-NAME = 'pappus'
+NAME = 'pappus-'
+NAME += input(f'\nsession name: {NAME}')
 
 pappus_lines = []
 Ax = 3
 Bx = 5/2
-B1 = point(0, 1, classes=['B'])
-B2 = point(3/2, 1, classes=['B'])
+B1 = point(0, 1, classes=['B', 'start'])
+B2 = point(3/2, 1, classes=['B', 'start'])
 
 for perm_id in range(6):
     print('PERMUTATION: ', perm_id)
@@ -51,21 +52,9 @@ for perm_id in range(6):
         pappus_line.pts.add(meets[2])
         print('collinear: ', sp.Point.is_collinear(*meets))
 
-    triangle_sq = add_polygon(polygon(get_pts_by_class('square'), classes=['yellow']))
-    triangle_cir = add_polygon(polygon(get_pts_by_class('circle'), classes=['cyan']))
-    triangle_dia = add_polygon(polygon(get_pts_by_class('diamond'), classes=['magenta']))
-
-        
-    #  # ANALYZE ***************************
-    #  print_log(f'\nANALYZE: {NAME}')
-
-    #  harmonics = []
-    #  for el in get_elements_lines():
-        #  result  = analyze_harmonics(el)
-        #  harmonics.extend(result)
-
-    #  print_log('\nANALYZE Summary:')
-    #  print_log(f'    harmonics: {len(harmonics)}')
+    #  triangle_sq = add_polygon(polygon(get_pts_by_class('square'), classes=['yellow']))
+    #  triangle_cir = add_polygon(polygon(get_pts_by_class('circle'), classes=['cyan']))
+    #  triangle_dia = add_polygon(polygon(get_pts_by_class('diamond'), classes=['magenta']))
 
     print_log(f'\nPLOT: {NAME}')
     limx, limy = get_limits_from_points(pts)
@@ -87,13 +76,10 @@ for perm_id in range(6):
     build_sequence(folder, ax, ax_btm, history, bounds)
 
     print_log('\nPlot Harmonic Ranges')
-    #  plot_ranges(folder, ax, ax_btm, history, harmonics, bounds)
-    #  plot_all_ranges(folder, ax, ax_btm, history, harmonics, bounds)
 
     print_log(f'\nPERM: {perm_id}')
     print_log(f'    elements: {len(elements)}')
     print_log(f'    points:   {len(pts)}')
-    #  print_log(f'    ranges:  {len(harmonics)}')
 
 
 # ALL *************************

@@ -13,10 +13,10 @@ def pappus_start(A3x, B1, B2, B3x):
     history.clear()
 
     A = []
-    A.append( add_point( point(0, 0, classes=['A', 'square']) ) )
-    A.append( add_point( point(1, 0, classes=['A', 'circle']) ) )
+    A.append( add_point( point(0, 0, classes=['A', 'start', 'square']) ) )
+    A.append( add_point( point(1, 0, classes=['A', 'start', 'circle']) ) )
     line_a = add_element(line(A[0], A[1], classes=['blue']) )
-    A.append( add_point( point(A3x, 0, classes=['A', 'diamond']) ) )
+    A.append( add_point( point(A3x, 0, classes=['A', 'start', 'diamond']) ) )
     line_a.pts.add(A[-1])
 
     B = []
@@ -28,7 +28,7 @@ def pappus_start(A3x, B1, B2, B3x):
     line_b = line(B1, B2, classes=['blue']) 
     add_element(line_b)
     y_val = line_get_y(line_b, B3x)
-    B.append( add_point( point(B3x, y_val, classes=['B']) ) )
+    B.append( add_point( point(B3x, y_val, classes=['B', 'start']) ) )
     line_b.pts.add(B[-1])
 
     return A, B

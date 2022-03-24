@@ -28,12 +28,12 @@ add_element(circle(pts[3], pts[0]))
 add_element(circle(pts[2], pts[1]))
 
 add_element(line(pts[11], pts[23], classes=['green']))
-add_element(line(pts[4], pts[39], classes=['blue']))
+add_element(line(pts[4], pts[31], classes=['blue']))
 
-add_element(line(pts[4], pts[50], classes=['blue']))
+add_element(line(pts[4], pts[40], classes=['blue']))
 
-add_element(line(pts[5], pts[38], classes=['blue']))
-add_element(line(pts[5], pts[49], classes=['blue']))
+add_element(line(pts[5], pts[30], classes=['blue']))
+add_element(line(pts[5], pts[39], classes=['blue']))
 
 add_element(line(pts[16], pts[12], classes=['green']))
 add_element(line(pts[7], pts[24], classes=['green']))

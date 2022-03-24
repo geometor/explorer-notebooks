@@ -37,15 +37,23 @@ def get_limits_from_points(pts, margin=1):
     '''find x, y limits from a set of points'''
     limx = [0, 0]
     limy = [0, 0]
-
-    for pt in pts:
+    if pts:
+        pt = list(pts)[0]
         ptx = float(pt.x.evalf())
         pty = float(pt.y.evalf())
-        # print(x, y)
-        limx[0] = ptx if limx[0] > ptx else limx[0]
-        limx[1] = ptx if limx[1] < ptx else limx[1]
-        limy[0] = pty if limy[0] > pty else limy[0]
-        limy[1] = pty if limy[1] < pty else limy[1]
+        limx[0] = ptx 
+        limx[1] = ptx
+        limy[0] = pty
+        limy[1] = pty
+
+        for pt in pts:
+            ptx = float(pt.x.evalf())
+            pty = float(pt.y.evalf())
+            # print(x, y)
+            limx[0] = ptx if ptx < limx[0] else limx[0]
+            limx[1] = ptx if ptx > limx[1] else limx[1]
+            limy[0] = pty if pty < limy[0] else limy[0]
+            limy[1] = pty if pty > limy[1] else limy[1]
 
     limx[0] -= margin
     limx[1] += margin

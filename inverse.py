@@ -6,14 +6,15 @@ from itertools import permutations
 
 sp.init_printing()
 
-NAME = 'inverse'
+NAME = 'inverse-'
+NAME += input(f'\nsession name: {NAME}')
 log_init(NAME)
 start_time = timer()
 
 print_log(f'\nMODEL: {NAME}')
 
 # the number to invert
-n = sp.Rational(5,1)
+n = sp.Rational(3,1)
 
 center = point(0, 0, classes=['start'])
 add_point(center)
@@ -33,7 +34,7 @@ add_element(unitcircle)
 #add vertical
 add_element(line(center, B))
 
-N = point(n, 0, classes=['set1pt'])
+N = point(n, 0, classes=['start', 'set1pt'])
 add_point(N)
 
 L1 = line(B, N, classes=['set1'])
@@ -77,44 +78,41 @@ for el in get_elements_lines():
 
 print_log('\nANALYZE Summary:')
 print_log(f'    harmonics: {len(harmonics)}')
-# print_log(f'    groups: {len(groups)}')
-# print_log(f'\nelapsed: {elapsed(start_time)}')
 
-
+      
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
-limx, limy = get_limits_from_points(pts, margin=.5)
+limx, limy = get_limits_from_points(pts, margin=.25)
+limx, limy = adjust_lims(limx, limy, r=4/3)
 bounds = set_bounds(limx, limy)
 print_log()
 print_log(f'limx: {limx}')
 print_log(f'limy: {limy}')
 
 #  plt.ion()
-fig, ax = plt.subplots()
+fig, (ax, ax_btm) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [10, 1]})
+ax_btm.axis('off')
+ax.axis('off')
 ax.set_aspect('equal')
-#  limx, limy = (-2, 2), (-1.5, 1.5)
+plt.tight_layout()
 
 title = f'G E O M E T O R'
 fig.suptitle(title, fontdict={'color': '#960', 'size':'small'})
 
 print_log('\nPlot Summary')
 xlabel = f'elements: {len(elements)} | points: {len(pts)}'
-ax_prep(ax, bounds, xlabel)
+ax_prep(ax, ax_btm, bounds, xlabel)
 plot_sequence(ax, history, bounds)
 snapshot(NAME, '00000.png')
 #  plt.show()
 
 print_log('\nPlot Build')
-build_sequence(NAME, ax, history, bounds)
+build_sequence(NAME, ax, ax_btm, history, bounds)
 
 print_log('\nPlot Harmonic Ranges')
-plot_ranges(NAME, ax, history, harmonics, bounds)
-plot_all_ranges(NAME, ax, history, harmonics, bounds)
+plot_ranges(NAME, ax, ax_btm, history, harmonics, bounds)
+plot_all_ranges(NAME, ax, ax_btm, history, harmonics, bounds)
 
-print_log(f'\nCOMPLETE: {NAME}')
-print_log(f'    elements: {len(elements)}')
-print_log(f'    points:   {len(pts)}')
-print_log(f'    ranges:  {len(ranges)}')
-print_log(f'\nelapsed: {elapsed(start_time)}')
-      
+complete_summary(NAME, start_time, goldens, groups)
+
 plt.show()

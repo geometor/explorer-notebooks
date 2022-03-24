@@ -26,11 +26,37 @@ FIG_H = 9
 plt.rcParams['figure.figsize'] = [FIG_W, FIG_H]
 plt.style.use('dark_background')
 
-style_radius = {'color': '#c099', 'marker': ''}
+#  style_radius = {'color': '#c099', 'marker': ''}
 
 classes = {}
-classes['default_line'] = {'color':'#999', 'linestyle':':', 'linewidth':1}
-classes['default_circle'] = {'color':'#C09', 'linestyle':':', 'linewidth':1, 'fill':False}
+classes['default_line'] = {
+        'color':'#999', 
+        'linestyle':':', 
+        'linewidth':1.5
+        }
+classes['default_line_segment'] = {
+        'color':'#9999', 
+        'linestyle':'-', 
+        'linewidth':5
+        }
+classes['default_circle'] = {
+        'color':'#C09', 
+        'linestyle':':', 
+        'linewidth':1.5, 
+        'fill':False
+        }
+classes['default_circle_segment'] = {
+        'color':'#C099', 
+        'linestyle':'-', 
+        'linewidth':5, 
+        }
+classes['default_segment'] = {
+        'color':'#fc09', 
+        'linestyle':'-', 
+        'linewidth':5, 
+        'marker':'', 
+        'markersize':0,
+        }
 
 classes['blue'] = {'color':'#66F', 'linestyle':':'}
 classes['red'] = {'color':'#F33', 'linestyle':':'}
@@ -253,15 +279,23 @@ def plot_segment(ax, pt1, pt2, color='#fc09', linestyle='-', linewidth=3, marker
     ax.plot( [x1, x2], [y1, y2], **styles )
 
 
-def plot_segment2(ax, seg, color='#fc09', linestyle='-', linewidth=4, marker='', markersize=0):
+def plot_segment2(ax, seg, color='', linestyle='-', linewidth=0, marker='', markersize=0):
     x1 = seg.points[0].x.evalf()
     x2 = seg.points[1].x.evalf()
     y1 = seg.points[0].y.evalf()
     y2 = seg.points[1].y.evalf()
-    styles = {'color':color, 'linestyle':linestyle, 'linewidth':linewidth, 'marker':marker, 'markersize':markersize}
+    #  styles = {'color':color, 'linestyle':linestyle, 'linewidth':linewidth, 'marker':marker, 'markersize':markersize}
+
+    styles = classes['default_segment'].copy()
     for cl in seg.classes:
         if cl in classes:
             styles.update(classes[cl])
+    if color:
+        styles['color'] = color
+    if linestyle:
+        styles['linestyle'] = linestyle
+    if linewidth:
+        styles['linewidth'] = linewidth
     if 'edgecolor' in styles:
         styles['color'] = styles['edgecolor']
         styles.pop('edgecolor')
@@ -372,7 +406,7 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
             rad = sp.sqrtdenest(last_step.radius.simplify())
             area = sp.sqrtdenest(last_step.area.simplify())
             typ = 'circle'
-            xlabel = f'${sp.latex(eq)}$ • rad: ${sp.latex(rad)}$ • A: ${sp.latex(area)}$'
+            xlabel = f'${sp.latex(eq)}$ • r: ${sp.latex(rad)}$ • A: ${sp.latex(area)}$'
         if isinstance(last_step, spg.Polygon):
             area = sp.sqrtdenest(last_step.area.simplify())
             perim = sp.sqrtdenest(last_step.perimeter.simplify())
@@ -396,16 +430,20 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
                     elif type(el) == sp.Circle:
                         plot_circle(ax, el, linestyle='-')
         if isinstance(last_step, spg.Line):
-            seg = segment(last_step.p1, last_step.p2, classes=last_step.classes)
-            plot_segment2(ax, seg)
+            seg = segment(last_step.p1, last_step.p2, classes=['default_line_segment'])
+            seg.classes.extend(last_step.classes)
+            
+            plot_segment2(ax, seg, linestyle='-')
             plot_selected_points(ax, last_step.points)
             plot_line(ax, last_step, bounds, linestyle='-')
         if isinstance(last_step, spg.Circle):
-            #  seg = last_step.radius
-            seg = segment(last_step.center, last_step.radius_pt, classes=last_step.classes)
-            plot_segment2(ax, seg)
+            seg = segment(last_step.center, last_step.radius_pt, classes=['default_circle_segment'])
+            seg.classes.extend(last_step.classes)
+
+            plot_segment2(ax, seg, linestyle='-')
             plot_selected_points(ax, [last_step.center, last_step.radius_pt])
             plot_circle(ax, last_step, linestyle='-')
+
         plot_sequence(ax, sequence[0:i], bounds)
 
         filename = f'{str(i).zfill(5)}-{typ}'
@@ -425,7 +463,7 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
         if isinstance(last_step, spg.Polygon):
             current_pts.extend(last_step.vertices)
 
-        limx, limy = get_limits_from_points(current_pts, margin=.5)
+        limx, limy = get_limits_from_points(current_pts, margin=1)
         limx, limy = adjust_lims(limx, limy)
         ax.set_xlim(limx[0], limx[1])
         ax.set_ylim(limy[0], limy[1])
