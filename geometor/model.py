@@ -449,7 +449,7 @@ def model_summary(NAME, start_time):
     print_log(f'        lines: {len(lines)}')
     circles = get_elements_circles()
     print_log(f'        circles: {len(circles)}')
-    print_log(f'    points: {len(lines)}')
+    print_log(f'    points: {len(pts)}')
     print_log(f'\nelapsed: {elapsed(start_time)}')
 
 
