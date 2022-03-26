@@ -20,13 +20,9 @@ from geometor.utils import *
 
 FIG_W = 16
 FIG_H = 9
-FIG_W = 9
-FIG_H = 9
 
 plt.rcParams['figure.figsize'] = [FIG_W, FIG_H]
 plt.style.use('dark_background')
-
-#  style_radius = {'color': '#c099', 'marker': ''}
 
 classes = {}
 classes['default_line'] = {
@@ -418,6 +414,10 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
             typ = 'segment'
             xlabel = f'seg: ${sp.latex(seg)}$'
 
+        if hasattr(last_step, 'classes') and last_step.classes:
+            typ += '-'
+            typ += '_'.join(last_step.classes)
+
         ax_prep(ax, ax_btm, bounds, xlabel)
 
         if isinstance(last_step, spg.Point):
@@ -555,7 +555,7 @@ def adjust_ratio(w, h, r=FIG_W/FIG_H):
         h = w / r
     return w, h
 
-def adjust_lims(limx, limy, r=FIG_W/FIG_H):
+def adjust_lims(limx, limy, r=FIG_W/(FIG_H-1)):
     w = abs(limx[1] - limx[0])
     h = abs(limy[1] - limy[0])
     w2, h2 = adjust_ratio(w, h, r)
@@ -637,8 +637,7 @@ def snapshot(folder, filename):
     import os
     sessions = os.path.expanduser('~') + '/Sessions'
     out = f'{sessions}/{folder}/'
-    if not os.path.isdir(out):
-        os.mkdir(out)
+    os.makedirs(out, exist_ok=True)
     plt.savefig(out + filename, dpi=120)
     print_log(f'    * {out + filename}')
 
@@ -646,4 +645,47 @@ def snapshot(folder, filename):
 def display(filename):
     from IPython import display
     display.Image(filename)
+
+
+def get_bounds_from_sections(sections, r=FIG_W/(FIG_H-1)):
+    section_pts = set()
+    for i, section in enumerate(sections):
+        for seg in section:
+            for pt in seg.points:
+                section_pts.add(pt)
+    limx, limy = get_limits_from_points(section_pts, margin=.25)
+    limx, limy = adjust_lims(limx, limy, r=r)
+    bounds = set_bounds(limx, limy)
+    return bounds
+
+
+def get_limits_from_points(pts, margin=1):
+    '''find x, y limits from a set of points'''
+    limx = [0, 0]
+    limy = [0, 0]
+    if pts:
+        pt = list(pts)[0]
+        ptx = float(pt.x.evalf())
+        pty = float(pt.y.evalf())
+        limx[0] = ptx 
+        limx[1] = ptx
+        limy[0] = pty
+        limy[1] = pty
+
+        for pt in pts:
+            ptx = float(pt.x.evalf())
+            pty = float(pt.y.evalf())
+            # print(x, y)
+            limx[0] = ptx if ptx < limx[0] else limx[0]
+            limx[1] = ptx if ptx > limx[1] else limx[1]
+            limy[0] = pty if pty < limy[0] else limy[0]
+            limy[1] = pty if pty > limy[1] else limy[1]
+
+    limx[0] -= margin
+    limx[1] += margin
+    limy[0] -= margin
+    limy[1] += margin
+    
+    return [limx, limy]
+    
 

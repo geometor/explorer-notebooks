@@ -10,8 +10,8 @@ from itertools import permutations
 
 sp.init_printing()
 
-BUILD = True
-ANALYZE = True
+BUILD = False
+ANALYZE = False
 
 NAME = 'heptadecagon-'
 NAME += input(f'\nsession name: {NAME}')
@@ -69,12 +69,6 @@ c1 = add_element(circle(C, A))
 add_element(bisect_pts2(A, pts[15]))
 add_element(bisect_pts2(A, pts[21]))
 
-
-#  q = add_element(lns[0])
-#  print('\nq:')
-#  print(q.equation())
-#  print(sp.sqrtdenest(q.equation()))
-
 D = pts[25]
 D.classes = ['set1']
 
@@ -87,35 +81,7 @@ add_element(l2)
 
 add_element(bisect_pts2(pts[27], pts[34]))
 add_element(bisect_pts2(Pn, pts[37]))
-#  print('\nD:')
-#  print(D)
-#  print(f'    x: {D.x.simplify()}')
-#  print(f'    y: {D.y.simplify()}')
-#  print(f'    y: {sp.sqrtdenest(D.y)}')
-
-#  r = q.perpendicular_line(D)
-#  r.classes = ['bisector']
-#  r.parents = {C, D}
-#  r.pts = set()
-
-#  print('\nr:')
-#  print(r.equation())
-#  print('-')
-#  print(sp.sqrtdenest(r.equation()))
-#  print('-')
-#  print(sp.factor(r.equation()))
-#  print('-')
-#  print(sp.sqrt(r.equation() ** 2))
-
-#  add_element(r)
-#  lns = bisect_lines(q, r)
-#  for ln in lns:
-    #  print()
-    #  print(ln.equation())
-    #  print('-')
-    #  print(ln.equation().simplify())
-
-#  add_element(lns[0])
+add_element(circle(pts[41], Pn))
 
 model_summary(NAME, start_time)
 
@@ -129,7 +95,7 @@ if ANALYZE:
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
 limx, limy = get_limits_from_points(pts, margin=.25)
-limx, limy = adjust_lims(limx, limy, r=4/3)
+limx, limy = adjust_lims(limx, limy)
 bounds = set_bounds(limx, limy)
 print_log()
 print_log(f'limx: {limx}')
@@ -157,6 +123,9 @@ if BUILD:
 
 if ANALYZE:
     print_log('\nPlot Goldens')
+
+    bounds = get_bounds_from_sections(goldens)
+
     plot_sections(NAME, ax, ax_btm, history, goldens, bounds)
 
     print_log('\nPlot Golden Groups')

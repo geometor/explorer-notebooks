@@ -18,6 +18,7 @@ from itertools import permutations, combinations
 from multiprocessing import Pool, cpu_count
 
 from geometor.utils import *
+#  from geometor.render import *
 
 # constants
 num_workers = cpu_count()
@@ -32,36 +33,6 @@ elements = []
 polygons = []
 goldens = []
 groups = {}
-
-def get_limits_from_points(pts, margin=1):
-    '''find x, y limits from a set of points'''
-    limx = [0, 0]
-    limy = [0, 0]
-    if pts:
-        pt = list(pts)[0]
-        ptx = float(pt.x.evalf())
-        pty = float(pt.y.evalf())
-        limx[0] = ptx 
-        limx[1] = ptx
-        limy[0] = pty
-        limy[1] = pty
-
-        for pt in pts:
-            ptx = float(pt.x.evalf())
-            pty = float(pt.y.evalf())
-            # print(x, y)
-            limx[0] = ptx if ptx < limx[0] else limx[0]
-            limx[1] = ptx if ptx > limx[1] else limx[1]
-            limy[0] = pty if pty < limy[0] else limy[0]
-            limy[1] = pty if pty > limy[1] else limy[1]
-
-    limx[0] -= margin
-    limx[1] += margin
-    limy[0] -= margin
-    limy[1] += margin
-    
-    return [limx, limy]
-    
 
 
 def set_bounds(limx, limy):
@@ -439,6 +410,7 @@ def group_sections(sections):
             else:
                 groups[seg_len] = [section]
     return groups
+
 
 
 def model_summary(NAME, start_time):

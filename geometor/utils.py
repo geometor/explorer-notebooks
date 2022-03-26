@@ -2,12 +2,16 @@
 import logging
 
 def log_init(name):
-    filename = f'logs/{name}.log'
-    with open(filename, 'w'):
-        pass
+    import os
+    sessions = os.path.expanduser('~') + '/Sessions'
+    out = f'{sessions}/{name}/'
+    os.makedirs(out, exist_ok=True)
+    filename = f'{out}/build.log'
+    #  with open(filename, 'w'):
+        #  pass
 
     logging.basicConfig(
-            filename=f'logs/{name}.log', 
+            filename=filename,
             filemode='w', 
             encoding='utf-8', 
             level=logging.INFO

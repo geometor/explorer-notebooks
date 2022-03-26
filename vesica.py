@@ -36,7 +36,7 @@ analyze_summary(NAME, start_time, goldens, groups)
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
 limx, limy = get_limits_from_points(pts, margin=.25)
-limx, limy = adjust_lims(limx, limy, r=4/3)
+limx, limy = adjust_lims(limx, limy)
 bounds = set_bounds(limx, limy)
 print_log()
 print_log(f'limx: {limx}')
@@ -61,6 +61,9 @@ snapshot(NAME, '00000.png')
 
 print_log('\nPlot Build')
 build_sequence(NAME, ax, ax_btm, history, bounds)
+
+
+bounds = get_bounds_from_sections(goldens)
 
 print_log('\nPlot Goldens')
 plot_sections(NAME, ax, ax_btm, history, goldens, bounds)
