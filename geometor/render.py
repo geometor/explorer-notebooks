@@ -123,6 +123,7 @@ def ax_prep(ax, ax_btm, bounds, xlabel):
     ax.set_xlim(float(vmin.x.evalf()), float(vmax.x.evalf()))
     ax.set_ylim(float(vmin.y.evalf()), float(vmax.y.evalf()))
     ax.invert_yaxis()
+
     #  ax.set_xlabel(xlabel, fontdict={'color': 'w', 'size':'20'})
     ax_btm.text(0.5, 0.5, xlabel, ha='center', va='center', fontdict={'color': 'w', 'size':'20'})
 

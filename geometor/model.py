@@ -152,6 +152,10 @@ def add_point(pt):
     '''add point to pts list - check if exists first'''
     logging.info(f'* add_point: {pt}')
     if isinstance(pt, spg.Point2D):
+        # make new point with simplified values 
+        x = sp.sqrtdenest(pt.x.simplify())
+        y = sp.sqrtdenest(pt.y.simplify())
+        pt = point(x, y, classes=pt.classes)
         for prev_pt in pts:
             if pt.equals(prev_pt):
                 i = pts.index(prev_pt)
@@ -240,18 +244,20 @@ def add_polygon(poly):
 def begin():
     '''create inital two points -
     establishing the unit for the field'''
-    pt = point(sp.Rational(-1, 2), 0, classes=['start'])
-    add_point(pt)
-    pt = point(sp.Rational(1, 2), 0, classes=['start'])
-    add_point(pt)
+    A = point(sp.Rational(-1, 2), 0, classes=['start'])
+    add_point(A)
+    B = point(sp.Rational(1, 2), 0, classes=['start'])
+    add_point(B)
+    return A, B
 
 def begin_zero():
     '''create inital two points -
     establishing the unit for the field'''
-    pt = point(0, 0, classes=['start'])
-    add_point(pt)
-    pt = point(1, 0, classes=['start'])
-    add_point(pt)
+    A = point(0, 0, classes=['start'])
+    add_point(A)
+    B = point(1, 0, classes=['start'])
+    add_point(B)
+    return A, B
 
     
 def bisector(pt1, pt2):
