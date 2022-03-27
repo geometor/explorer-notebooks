@@ -26,6 +26,9 @@ AB = add_element(line(A, B))
 add_element(circle(A, B))
 
 def bisect_pts(pt1, pt2):
+    '''use sympy function
+    add prpoerties to line
+    return line'''
     seg = segment(pt1, pt2)
     ln = seg.perpendicular_bisector()
     ln.classes = ['bisector']

@@ -58,6 +58,7 @@ for perm_id in range(6):
 
     print_log(f'\nPLOT: {NAME}')
     limx, limy = get_limits_from_points(pts)
+    limx, limy = adjust_lims(limx, limy)
     bounds = set_bounds(limx, limy)
 
     ax.clear()
@@ -104,13 +105,21 @@ for i, el in enumerate(pappus_lines):
                 pt = pts[pid]
                 print(f'    {pid}  {pt}')
                 pappus_ints.add(pt)
-            
+
+print_log(f'\nPappus Intersections:')
+for pt in pappus_ints:
+    print(' • ', pt)
+
 star_pts = []
 for i, pt in enumerate(pappus_ints):
     if len(pt.elements) == 3:
         star_pts.append(pt)
         pt.classes.append('star')
         print(i, len(pt.elements), pt)
+
+print_log(f'\nStar Points:')
+for pt in star_pts:
+    print(' • ', pt)
 
 #  print('\nPOINTS:')
 #  for i, pt in enumerate(pts):

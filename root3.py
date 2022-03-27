@@ -8,11 +8,17 @@ BUILD = True
 ANALYZE = True
 
 PART1 = True
-PART2 = False
+PART2 = True
+PART3 = True
+PART4 = True
 if PART1:
     print_log(f'\nPART1')
     if PART2:
         print_log('PART2')
+        if PART3:
+            print_log('PART3')
+            if PART4:
+                print_log('PART4')
 
 NAME = 'root3-'
 NAME += input(f'\nsession name: {NAME}')
@@ -66,26 +72,32 @@ if PART1:
     if PART2:
         pt_apex = D
         add_element(line(pt_apex, pts[22], classes=['green']))
-        add_element(line(pt_apex, pts[19], classes=['set1']))
-        add_element(line(pt_apex, pts[21], classes=['set2']))
-        add_element(line(pt_apex, pts[23], classes=['set2']))
-        add_element(line(pt_apex, pts[18], classes=['set1']))
+        if PART3:
+            add_element(line(pt_apex, pts[19], classes=['set1']))
+            if PART4:
+                add_element(line(pt_apex, pts[21], classes=['set2']))
+                add_element(line(pt_apex, pts[23], classes=['set2']))
+            add_element(line(pt_apex, pts[18], classes=['set1']))
         add_element(line(pt_apex, pts[20], classes=['green']))
 
         pt_apex = pts[6]
         add_element(line(pt_apex, pts[18], classes=['green']))
-        add_element(line(pt_apex, pts[20], classes=['set1']))
-        add_element(line(pt_apex, pts[22], classes=['set2']))
-        add_element(line(pt_apex, pts[19], classes=['set2']))
-        add_element(line(pt_apex, pts[21], classes=['set1']))
+        if PART3:
+            add_element(line(pt_apex, pts[20], classes=['set1']))
+            if PART4:
+                add_element(line(pt_apex, pts[22], classes=['set2']))
+                add_element(line(pt_apex, pts[19], classes=['set2']))
+            add_element(line(pt_apex, pts[21], classes=['set1']))
         add_element(line(pt_apex, pts[23], classes=['green']))
 
         pt_apex = pts[9]
         add_element(line(pt_apex, pts[21], classes=['green']))
-        add_element(line(pt_apex, pts[23], classes=['set1']))
-        add_element(line(pt_apex, pts[18], classes=['set2']))
-        add_element(line(pt_apex, pts[20], classes=['set2']))
-        add_element(line(pt_apex, pts[22], classes=['set1']))
+        if PART3:
+            add_element(line(pt_apex, pts[23], classes=['set1']))
+            if PART4:
+                add_element(line(pt_apex, pts[18], classes=['set2']))
+                add_element(line(pt_apex, pts[20], classes=['set2']))
+            add_element(line(pt_apex, pts[22], classes=['set1']))
         add_element(line(pt_apex, pts[19], classes=['green']))
 
 model_summary(NAME, start_time)

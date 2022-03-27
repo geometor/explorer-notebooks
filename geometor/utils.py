@@ -9,6 +9,7 @@ def log_init(name):
     filename = f'{out}/build.log'
     #  with open(filename, 'w'):
         #  pass
+    print(f'log to: {filename}')
 
     logging.basicConfig(
             filename=filename,
