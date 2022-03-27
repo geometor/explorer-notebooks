@@ -83,7 +83,7 @@ print_log(f'    harmonics: {len(harmonics)}')
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
 limx, limy = get_limits_from_points(pts, margin=.25)
-limx, limy = adjust_lims(limx, limy, r=4/3)
+limx, limy = adjust_lims(limx, limy)
 bounds = set_bounds(limx, limy)
 print_log()
 print_log(f'limx: {limx}')
