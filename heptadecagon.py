@@ -1,6 +1,6 @@
 '''
 this construction is inspried by:
-    https://mathpages.com/home/kmath487.htm
+    https://mathpages.com/home/kmath487.htm
 '''
 from geometor.utils import *
 from geometor.model import *
