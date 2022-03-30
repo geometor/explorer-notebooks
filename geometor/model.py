@@ -445,3 +445,35 @@ def complete_summary(NAME, start_time, goldens, groups):
     print_log(f'    groups: {len(groups)}')
     print_log(f'\nelapsed: {elapsed(start_time)}')
           
+
+def bisect_pts(pt1, pt2):
+    '''use sympy function
+    add prpoerties to line
+    return line'''
+    seg = segment(pt1, pt2)
+    ln = seg.perpendicular_bisector()
+    ln.classes = ['bisector']
+    ln.parents = {pt1, pt2}
+    ln.pts = set()
+    return ln
+
+def bisect_pts2(pt1, pt2):
+    '''use circles but don't add to model'''
+    c1 = circle(pt1, pt2)
+    c2 = circle(pt2, pt1)
+    ints = c1.intersection(c2)
+    ln = line(ints[0], ints[1])
+    ln.classes = ['bisector']
+    ln.parents = {pt1, pt2, ints[0], ints[1]}
+    ln.pts = set()
+    return ln
+
+def bisect_lines(ln1, ln2):
+    lns = ln1.bisectors(ln2)
+    for ln in lns:
+        ln.classes = ['bisector']
+        ln.parents = {ln1.p1, ln1.p2, ln2.p1, ln2.p2}
+        ln.pts = set()
+    return lns
+
+

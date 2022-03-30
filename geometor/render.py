@@ -403,7 +403,9 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
             rad = sp.sqrtdenest(last_step.radius.simplify())
             area = sp.sqrtdenest(last_step.area.simplify())
             typ = 'circle'
+            areaf = str(float(area.evalf()))[0:6]
             xlabel = f'${sp.latex(eq)}$ • r: ${sp.latex(rad)}$ • A: ${sp.latex(area)}$'
+            xlabel += ' $ \\approx ' + areaf + '$'
         if isinstance(last_step, spg.Polygon):
             area = sp.sqrtdenest(last_step.area.simplify())
             perim = sp.sqrtdenest(last_step.perimeter.simplify())
