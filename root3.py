@@ -5,7 +5,7 @@ from geometor.render import *
 sp.init_printing()
 
 BUILD = True
-ANALYZE = True
+ANALYZE = False
 
 PART1 = True
 PART2 = True

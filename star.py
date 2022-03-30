@@ -6,13 +6,13 @@ from itertools import permutations
 
 sp.init_printing()
 
-BUILD = True
+BUILD = False
 ANALYZE = True
 
 GREEN = True
 BLUE = True
 
-PART1 = True
+PART1 = False
 PART2 = False
 PART3 = True
 PART4 = False
@@ -34,25 +34,30 @@ print_log(f'\nMODEL: {NAME}')
 A, B = begin()
 bisector(A, B)
 
-C = pts[5]
-D = pts[4]
+Cw = pts[2]
+Ce = pts[3]
+
+Dn = pts[5]
+Ds = pts[4]
 O = pts[6]
 
-add_element(circle(D, A))
-add_element(circle(C, A))
+add_element(circle(Ds, A))
+add_element(circle(Dn, A))
 
 add_element(circle(A, O))
 add_element(circle(B, O))
 
 
-add_element(circle(pts[3], A))
-add_element(circle(pts[2], B))
+add_element(circle(Ce, A))
+add_element(circle(Cw, B))
 
 
 if GREEN:
     add_element(line(pts[11], pts[23], classes=['green']))
 if BLUE:
-    add_element(line(D, pts[31], classes=['blue']))
+    add_element(line(Ds, pts[31], classes=['blue']))
+#  if RED:
+
 
 if PART1:
     if GREEN:
@@ -60,10 +65,22 @@ if PART1:
         add_element(line(pts[7], pts[24], classes=['green']))
         add_element(line(pts[8], pts[17], classes=['green']))
     if BLUE:
-        add_element(line(D, pts[40], classes=['blue']))
-        add_element(line(C, pts[30], classes=['blue']))
-        add_element(line(C, pts[39], classes=['blue']))
+        add_element(line(Ds, pts[40], classes=['blue']))
+        add_element(line(Dn, pts[30], classes=['blue']))
+        add_element(line(Dn, pts[39], classes=['blue']))
 
+Fnw = pts[42]
+Fne = pts[35]
+Fsw = pts[41]
+Fse = pts[34]
+
+add_element(line(Fnw, Fsw))
+add_element(line(Fne, Fse))
+
+add_element(circle(A, Ce))
+add_element(circle(B, Cw))
+
+add_element(line(pts[68], pts[80]))
 
 model_summary(NAME, start_time)
 
