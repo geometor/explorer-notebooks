@@ -409,8 +409,11 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
         if isinstance(last_step, spg.Polygon):
             area = sp.sqrtdenest(last_step.area.simplify())
             perim = sp.sqrtdenest(last_step.perimeter.simplify())
+            areaf = str(float(area.evalf()))[0:6]
+            perimf = str(float(perim.evalf()))[0:6]
             typ = 'polygon'
             xlabel = f'area: ${sp.latex(area)}$ • perim: ${sp.latex(perim)}$'
+            xlabel += ' $ \\approx ' + perimf + '$'
         if isinstance(last_step, spg.Segment):
             seg = sp.sqrtdenest(last_step.length.simplify())
             typ = 'segment'
@@ -446,6 +449,8 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
             plot_segment2(ax, seg, linestyle='-')
             plot_selected_points(ax, [last_step.center, last_step.radius_pt])
             plot_circle(ax, last_step, linestyle='-')
+        if isinstance(last_step, spg.Polygon):
+            plot_selected_points(ax, last_step.vertices)
 
         plot_sequence(ax, sequence[0:i], bounds)
 
