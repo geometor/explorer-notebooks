@@ -67,6 +67,8 @@ classes['set1pt'] = {'color':'#09C', 'markersize':8, 'marker':'o'}
 classes['set2'] = {'color':'#C33', 'linestyle':':'}
 classes['set2pt'] = {'color':'#C33', 'markersize':8, 'marker':'o'}
 
+classes['ring'] = {'color':'#4444', 'linestyle':'-'}
+
 classes['gold'] = {'color':'#C90', 'linestyle':':'}
 classes['goldpt'] = {'color':'#C90', 'markersize':8, 'marker':'o'}
 
@@ -376,8 +378,9 @@ def plot_sequence(ax, sequence, bounds):
 
 
 
-def build_sequence(folder, ax, ax_btm, sequence, bounds):
+def build_sequence(folder, ax, ax_btm, sequence, bounds, margin=1):
     '''create snapshot for each step in sequence'''
+    folder = folder + '/sequences'
     for i in range(1, len(sequence)+1):
         last_step = sequence[0:i][-1]
         xlabel = str(last_step)
@@ -471,7 +474,7 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds):
         if isinstance(last_step, spg.Polygon):
             current_pts.extend(last_step.vertices)
 
-        limx, limy = get_limits_from_points(current_pts, margin=1)
+        limx, limy = get_limits_from_points(current_pts, margin=margin)
         limx, limy = adjust_lims(limx, limy)
         ax.set_xlim(limx[0], limx[1])
         ax.set_ylim(limy[0], limy[1])

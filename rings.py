@@ -9,21 +9,12 @@ sp.init_printing()
 BUILD = True
 ANALYZE = False
 
-GREEN = True
-BLUE = True
+CIRCLES = True
+POLYGON = True
+#  num_rings=144
+num_rings = int(input(f'\nnumber of rings: '))
 
-PART1 = False
-PART2 = False
-PART3 = True
-PART4 = False
-if PART1:
-    print_log(f'\nPART1')
-    if PART2:
-        print_log('PART2')
-        if PART3:
-            print_log('PART3')
-
-NAME = 'wedges-'
+NAME = f'rings-{num_rings}'
 NAME += input(f'\nsession name: {NAME}')
 log_init(NAME)
 start_time = timer()
@@ -31,36 +22,52 @@ start_time = timer()
 print_log(f'\nMODEL: {NAME}')
 
 # add starting points
-A, B = begin_zero()
+#  A, B = begin_zero()
+A = add_point(point(0, 0))
 
-add_element(circle(A, B))
 
-sweep = 2 * sp.pi - (2 * sp.pi / phi)
-print_log(f'sweep: {sweep}')
+#  add_element(circle(A, B))
 
-theta = math.degrees(2 * np.pi - (2 * np.pi / phi))
+#  sweep = 2 * sp.pi - (2 * sp.pi / phi)
+sweep = 2 * sp.pi - (2 * sp.pi * sp.Rational(89, 144))
+print_log(f'sweep: {sweep} = {sweep.evalf()}')
+
+theta = math.degrees(sweep)
 print_log(f'theta: {theta}')
 
 rays = []
 
-num_rays=144
-for i in range(0, num_rays):
-    ray = spg.Ray(A, angle=i*sweep)
-    print(ray)
-    rays.append(ray)
-    rad = num_rays - i
-    c = circle(A, point(0, rad))
-    ints = c.intersection(ray)
-    pt = ints[0]
+for i in range(0, num_rings):
+    #  ray = spg.Ray(A, angle=i*sweep)
+    #  print(ray)
+    #  rays.append(ray)
+    rad = num_rings - i
+    #  c = circle(A, point(0, rad))
+    #  ints = c.intersection(ray)
+    #  pt = ints[0]
+    pt = point(rad, 0)
+    pt = pt.rotate(i*sweep)
+    #  print(pt)
     pt.classes = []
     pt.parents = set()
     pt.elements = set()
-    add_point(pt)
+    #  add_point(pt)
+    pts.append(pt)
+    history.append(pt)
+    if CIRCLES:
+        c = circle(A, pt, classes=['ring'])
+        #  add_element(circle(A, pt))
+        elements.append(c)
+        history.append(c)
+
     #  plot_wedge_2(ax, A, leafs-i, theta*(i), theta*(i+1), linestyle='-', ec='#000', fc='#c903', linewidth=2)
-print('\nRays: ')
-print(ray) 
-print('\nPoints: ')
-print(pts)
+
+
+#  print('\nPoints: ')
+#  print(pts)
+
+if POLYGON:
+    add_polygon(polygon(pts))
 
 model_summary(NAME, start_time)
 
@@ -102,7 +109,7 @@ snapshot(NAME, '00000.png')
 
 if BUILD:
     print_log('\nPlot Build')
-    build_sequence(NAME, ax, ax_btm, history, bounds)
+    build_sequence(NAME, ax, ax_btm, history, bounds, margin=num_rings/2)
 
 if ANALYZE:
     print_log('\nPlot Goldens')
