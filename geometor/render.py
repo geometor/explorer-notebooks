@@ -406,21 +406,26 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds, margin=1):
             rad = sp.sqrtdenest(last_step.radius.simplify())
             area = sp.sqrtdenest(last_step.area.simplify())
             typ = 'circle'
-            areaf = str(float(area.evalf()))[0:6]
+            #  areaf = str(float(area.evalf()))[0:6]
+            areaf = str(round(float(area.evalf()), 4))
             xlabel = f'${sp.latex(eq)}$ • r: ${sp.latex(rad)}$ • A: ${sp.latex(area)}$'
             xlabel += ' $ \\approx ' + areaf + '$'
         if isinstance(last_step, spg.Polygon):
             area = sp.sqrtdenest(last_step.area.simplify())
             perim = sp.sqrtdenest(last_step.perimeter.simplify())
-            areaf = str(float(area.evalf()))[0:6]
-            perimf = str(float(perim.evalf()))[0:6]
+            #  areaf = str(float(area.evalf()))[0:6]
+            areaf = str(round(float(area.evalf()), 4))
+            #  perimf = str(float(perim.evalf()))[0:6]
+            perimf = str(round(float(perim.evalf()), 4))
             typ = 'polygon'
             xlabel = f'area: ${sp.latex(area)}$ • perim: ${sp.latex(perim)}$'
             xlabel += ' $ \\approx ' + perimf + '$'
         if isinstance(last_step, spg.Segment):
             seg = sp.sqrtdenest(last_step.length.simplify())
+            segf = str(round(float(seg.evalf()), 4))
             typ = 'segment'
             xlabel = f'seg: ${sp.latex(seg)}$'
+            xlabel += ' $ \\approx ' + segf + '$'
 
         if hasattr(last_step, 'classes') and last_step.classes:
             typ += '-'
@@ -452,6 +457,8 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds, margin=1):
             plot_segment2(ax, seg, linestyle='-')
             plot_selected_points(ax, [last_step.center, last_step.radius_pt])
             plot_circle(ax, last_step, linestyle='-')
+        if isinstance(last_step, spg.Segment):
+            plot_selected_points(ax, last_step.points)
         if isinstance(last_step, spg.Polygon):
             plot_selected_points(ax, last_step.vertices)
 
@@ -465,6 +472,8 @@ def build_sequence(folder, ax, ax_btm, sequence, bounds, margin=1):
         if isinstance(last_step, spg.Point):
             current_pts.append(last_step)
         if isinstance(last_step, spg.Line):
+            current_pts.extend(last_step.points)
+        if isinstance(last_step, spg.Segment):
             current_pts.extend(last_step.points)
         if isinstance(last_step, spg.Circle):
             bd = last_step.bounds

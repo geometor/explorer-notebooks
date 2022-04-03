@@ -354,6 +354,27 @@ def analyze_golden(line):
     print_log(f'        goldens: { len(goldens) }')
     return goldens
     
+def analyze_golden_pts(test_pts):
+    '''check all the points on a line for Golden Sections'''
+    goldens = []
+    test_pts = sorted(list(test_pts), key=point_value)
+    sections = list(combinations(test_pts, 3))
+    print_log(f'        points:    {len(test_pts)}')
+    print_log(f'        sections:  {len(sections)}')
+
+    with Pool(num_workers) as pool:
+        results = pool.map(check_golden, sections)
+        for index, result in enumerate(results):
+            if result:
+                section = sections[index]
+                ab = segment(section[0], section[1])
+                bc = segment(section[1], section[2])
+                goldens.append([ab, bc])
+                logging.info(f'            GOLDEN: {sections[index]}')
+            
+    print_log(f'        goldens: { len(goldens) }')
+    return goldens
+    
 
 def get_elements_lines():
     return [el for el in elements if isinstance(el, spg.Line2D)]

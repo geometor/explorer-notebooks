@@ -7,10 +7,10 @@ from itertools import permutations
 sp.init_printing()
 
 BUILD = True
-ANALYZE = False
+ANALYZE = True
 
-CIRCLES = True
-POLYGON = True
+RINGS = True
+POLYGON = False
 #  num_rings=144
 num_rings = int(input(f'\nnumber of rings: '))
 
@@ -54,7 +54,7 @@ for i in range(0, num_rings):
     #  add_point(pt)
     pts.append(pt)
     history.append(pt)
-    if CIRCLES:
+    if RINGS:
         c = circle(A, pt, classes=['ring'])
         #  add_element(circle(A, pt))
         elements.append(c)
@@ -74,9 +74,25 @@ model_summary(NAME, start_time)
 # ANALYZE ***************************
 if ANALYZE:
     print_log(f'\nANALYZE: {NAME}')
-    goldens, groups = analyze_model()
+    #  goldens = analyze_golden_pts(pts)
+    #  print(goldens)
+    #  groups = group_sections(goldens)
 
-    analyze_summary(NAME, start_time, goldens, groups)
+    #  analyze_summary(NAME, start_time, goldens, groups)
+    for i in range(1, len(pts)-2):
+        pt = pts[i]
+        distances = []
+        for test_pt in pts[i+1:]:
+            d = float(pt.distance(test_pt))
+            distances.append(d)
+        nearest_pt_id = distances.index(min(distances)) + i + 1
+        nearest_pt = pts[nearest_pt_id]
+        #  breakpoint()
+        add_polygon(segment(pt, nearest_pt))
+
+
+
+
 
 # PLOT *********************************
 print_log(f'\nPLOT: {NAME}')
@@ -109,26 +125,27 @@ snapshot(NAME, '00000.png')
 
 if BUILD:
     print_log('\nPlot Build')
-    build_sequence(NAME, ax, ax_btm, history, bounds, margin=num_rings/2)
+    build_sequence(NAME, ax, ax_btm, history, bounds, margin=4)
 
 if ANALYZE:
-    print_log('\nPlot Goldens')
+    pass
+    #  print_log('\nPlot Goldens')
 
-    bounds = get_bounds_from_sections(goldens)
+    #  bounds = get_bounds_from_sections(goldens)
 
-    plot_sections(NAME, ax, ax_btm, history, goldens, bounds)
+    #  plot_sections(NAME, ax, ax_btm, history, goldens, bounds)
 
-    print_log('\nPlot Golden Groups')
-    plot_all_groups(NAME, ax, ax_btm, history, groups, bounds)
+    #  print_log('\nPlot Golden Groups')
+    #  plot_all_groups(NAME, ax, ax_btm, history, groups, bounds)
 
-    plot_all_sections(NAME, ax, ax_btm, history, goldens, bounds)
+    #  plot_all_sections(NAME, ax, ax_btm, history, goldens, bounds)
 
-    complete_summary(NAME, start_time, goldens, groups)
+    #  complete_summary(NAME, start_time, goldens, groups)
 
 else:
     model_summary(NAME, start_time)
 
 
 
-plt.show()
+#  plt.show()
 
