@@ -52,11 +52,12 @@ def spiral_params(params):
     
     spiral(n=n, cmap=cmap, color_cycle=color_cycle)
     
-    out = f'out/{cmap_name}-{cycle_pad}'
-    if not os.path.isdir(out):
-        os.mkdir(out)
-    filename = f'{out}/{cmap_name}-{cycle_pad}-{n_pad}.png'
-    plt.savefig(filename, dpi=300)
+    out = f'spirals/{cmap_name}/{cycle_pad}'
+    #  if not os.path.isdir(out):
+        #  os.mkdir(out)
+    #  filename = f'{out}/{cmap_name}-{cycle_pad}-{n_pad}.png'
+    #  plt.savefig(filename, dpi=300)
+    filename = snapshot(out, f'{n_pad}.png')
     return filename
 
 cmap_name = 'copper'
@@ -64,8 +65,10 @@ cmap = mp.cm.get_cmap(cmap_name)
 
 generations = []
 
-for cycle in range(2, 3):
-    for i in range(1,21):
+nodes = 145
+cycles = 35
+for cycle in range(1, cycles):
+    for i in range(1, nodes):
         gen = {'n': i, 'cmap': cmap, 'color_cycle': cycle} 
         generations.append(gen)
         
