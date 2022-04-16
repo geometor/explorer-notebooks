@@ -21,13 +21,15 @@ def spiral(n=144, cmap=mp.cm.YlGn, color_cycle=21, rev=False, offset=0):
     for i in range(n):
         # radius = i * phi
         radius = n - i 
-        theta = 2 * np.pi * i * phi
+        #  theta = 2 * np.pi * i * phi
+        theta = (2 * math.pi) - ((2 * math.pi) / phi)
         color_scale = (((i + offset) % color_cycle) / color_cycle)
         color_scale = color_scale + (1 / (color_cycle * 2))
         if rev:
             color_scale = 1 - color_scale
         color = cmap(color_scale)
-        ax.plot(theta, radius, marker='.', markersize=math.sqrt(radius)+4, color=color)
+        markersize = math.sqrt(radius) + 8
+        ax.plot(theta, radius, marker='.', markersize=markersize, color=color)
 
 #  spiral(n=21, cmap=mp.cm.hot, color_cycle=5)
 #  fig.show()
@@ -53,10 +55,6 @@ def spiral_params(params):
     spiral(n=n, cmap=cmap, color_cycle=color_cycle)
     
     out = f'spirals/{cmap_name}/{cycle_pad}'
-    #  if not os.path.isdir(out):
-        #  os.mkdir(out)
-    #  filename = f'{out}/{cmap_name}-{cycle_pad}-{n_pad}.png'
-    #  plt.savefig(filename, dpi=300)
     filename = snapshot(out, f'{n_pad}.png')
     return filename
 
@@ -66,7 +64,7 @@ cmap = mp.cm.get_cmap(cmap_name)
 generations = []
 
 nodes = 145
-cycles = 35
+cycles = 5
 for cycle in range(1, cycles):
     for i in range(1, nodes):
         gen = {'n': i, 'cmap': cmap, 'color_cycle': cycle} 
