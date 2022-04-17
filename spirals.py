@@ -4,14 +4,12 @@ from geometor.render import *
 
 sp.init_printing()
 
-# log_init('spirals')
 print(f'num_workers: {num_workers}')
 
+nodes = 145
+cycles = 5
+
 plt_init_polar()
-
-#  radii = np.arange(0, 500, phi)
-#  theta = 2 * np.pi * radii
-
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 
 ax.set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
@@ -66,8 +64,6 @@ cmap = mp.cm.get_cmap(cmap_name)
 
 generations = []
 
-nodes = 145
-cycles = 5
 for cycle in range(1, cycles):
     for i in range(1, nodes):
         gen = {'n': i, 'cmap': cmap, 'color_cycle': cycle} 
