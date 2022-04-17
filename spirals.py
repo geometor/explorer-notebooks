@@ -6,8 +6,8 @@ sp.init_printing()
 
 print(f'num_workers: {num_workers}')
 
-nodes = 145
-cycles = 5
+nodes = 1086
+cycles = 13
 
 plt_init_polar()
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
@@ -64,7 +64,7 @@ cmap = mp.cm.get_cmap(cmap_name)
 
 generations = []
 
-for cycle in range(1, cycles):
+for cycle in range(1, cycles + 1):
     for i in range(1, nodes):
         gen = {'n': i, 'cmap': cmap, 'color_cycle': cycle} 
         generations.append(gen)
