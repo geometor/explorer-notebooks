@@ -17,19 +17,22 @@ fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 ax.set_title('G E O M E T O R', fontdict={'color': '#960', 'size':'small'})
 ax.set_axis_off()
 
+phi = (1 + math.sqrt(5)) / 2
+sweep = (2 * math.pi) - ((2 * math.pi) / phi)
+
 def spiral(n=144, cmap=mp.cm.YlGn, color_cycle=21, rev=False, offset=0):
     for i in range(n):
         # radius = i * phi
         radius = n - i 
         #  theta = 2 * np.pi * i * phi
-        theta = (2 * math.pi) - ((2 * math.pi) / phi)
+        angle = i * sweep
         color_scale = (((i + offset) % color_cycle) / color_cycle)
         color_scale = color_scale + (1 / (color_cycle * 2))
         if rev:
             color_scale = 1 - color_scale
         color = cmap(color_scale)
         markersize = math.sqrt(radius) + 8
-        ax.plot(theta, radius, marker='.', markersize=markersize, color=color)
+        ax.plot(angle, radius, marker='.', markersize=markersize, color=color)
 
 #  spiral(n=21, cmap=mp.cm.hot, color_cycle=5)
 #  fig.show()
