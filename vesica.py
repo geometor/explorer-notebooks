@@ -56,7 +56,7 @@ print_log('\nPlot Summary')
 xlabel = f'elements: {len(elements)} | points: {len(pts)}'
 ax_prep(ax, ax_btm, bounds, xlabel)
 plot_sequence(ax, history, bounds)
-snapshot(NAME, '00000.png')
+snapshot(NAME, 'sequences/summary.png')
 #  plt.show()
 
 print_log('\nPlot Build')
