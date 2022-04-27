@@ -1,6 +1,7 @@
-out/
 tags
 tags.lock
 logs/*.log
-__pycache__/
+.ipynb_checkpoints
+__pycache__
 *.swp
+
